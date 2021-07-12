@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>HTTP 완벽 가이드 - 2장 - zig-log</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="zig-log"><meta name="msapplication-TileImage" content="/images/balloon-favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="zig-log"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="URL과 리소스"><meta property="og:type" content="blog"><meta property="og:title" content="HTTP 완벽 가이드 - 2장"><meta property="og:url" content="https://zigsong.github.io/2021/06/27/http-2/"><meta property="og:site_name" content="zig-log"><meta property="og:description" content="URL과 리소스"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://zigsong.github.io/images/http_thumbnail.jpeg"><meta property="article:published_time" content="2021-06-27T07:15:14.000Z"><meta property="article:modified_time" content="2021-06-27T07:21:21.524Z"><meta property="article:author" content="jieun song"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/http_thumbnail.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zigsong.github.io/2021/06/27/http-2/"},"headline":"HTTP 완벽 가이드 - 2장","image":[],"datePublished":"2021-06-27T07:15:14.000Z","dateModified":"2021-06-27T07:21:21.524Z","author":{"@type":"Person","name":"jieun song"},"description":"URL과 리소스"}</script><link rel="canonical" href="https://zigsong.github.io/2021/06/27/http-2/"><link rel="icon" href="/images/balloon-favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ZIG-LOG</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-06-27T07:15:14.000Z" title="2021. 6. 27. 오후 4:15:14">2021-06-27</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-06-27T07:21:21.524Z" title="2021. 6. 27. 오후 4:21:21">2021-06-27</time></span><span class="level-item"><a class="link-muted" href="/categories/http/">http</a></span><span class="level-item">11 minutes read (About 1636 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">HTTP 완벽 가이드 - 2장</h1><div class="content"><h3 id="URL과-리소스"><a href="#URL과-리소스" class="headerlink" title="URL과 리소스"></a>URL과 리소스</h3><img class="preview" src="/images/http_thumbnail.jpeg">
+
+<span id="more"></span>
+
+
+<h2 id="2-1-인터넷의-리소스-탐색하기"><a href="#2-1-인터넷의-리소스-탐색하기" class="headerlink" title="2.1 인터넷의 리소스 탐색하기"></a>2.1 인터넷의 리소스 탐색하기</h2><ul>
+<li>URL<ul>
+<li>브라우저가 정보를 찾는데 필요한 리소스의 위치</li>
+<li>URL을 통해 사람이 HTTP 및 다른 프로토콜을 통해 접근할 수 있다</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>스킴 - 웹 클라이언트가 리소스에 어떻게 접근하는지?</li>
+<li>호스트 - 서버의 위치</li>
+<li>경로 - 리소스의 경로 </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">스킴:&#x2F;&#x2F;서버위치&#x2F;경로</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-1-URL이-있기-전-암흑의-시대"><a href="#2-1-1-URL이-있기-전-암흑의-시대" class="headerlink" title="2.1.1 URL이 있기 전 암흑의 시대"></a>2.1.1 URL이 있기 전 암흑의 시대</h3><hr>
+<h2 id="2-2-URL-문법"><a href="#2-2-URL-문법" class="headerlink" title="2.2 URL 문법"></a>2.2 URL 문법</h2><h3 id="2-2-1-스킴-사용할-프로토콜"><a href="#2-2-1-스킴-사용할-프로토콜" class="headerlink" title="2.2.1 스킴: 사용할 프로토콜"></a>2.2.1 스킴: 사용할 프로토콜</h3><ul>
+<li>URL을 해석하는 애플리케이션이 어떤 프로토콜을 사용하여 리소스를 요청해야 하는지 알려준다</li>
+<li><code>:</code> 문자로 구분</li>
+<li>대소문자 구분 X</li>
+</ul>
+<h3 id="2-2-2-호스트와-포트"><a href="#2-2-2-호스트와-포트" class="headerlink" title="2.2.2 호스트와 포트"></a>2.2.2 호스트와 포트</h3><ul>
+<li>호스트 - 접근하려고 하는 리소스를 가지고 있는 인터넷상의 호스트 장비<ul>
+<li>호스트 명이나 IP 주소로 제공</li>
+</ul>
+</li>
+<li>포트 - 서버가 열어놓은 네트워크 포트<ul>
+<li>기본 포트는 80</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-3-사용자-이름과-비밀번호"><a href="#2-2-3-사용자-이름과-비밀번호" class="headerlink" title="2.2.3 사용자 이름과 비밀번호"></a>2.2.3 사용자 이름과 비밀번호</h3><h3 id="2-2-4-경로"><a href="#2-2-4-경로" class="headerlink" title="2.2.4 경로"></a>2.2.4 경로</h3><ul>
+<li>HTTP URL에서 경로 컴포넌트는 <code>/</code> 문자를 기준으로 경로조각으로 나뉜다</li>
+</ul>
+<h3 id="2-2-5-파라미터"><a href="#2-2-5-파라미터" class="headerlink" title="2.2.5 파라미터"></a>2.2.5 파라미터</h3><ul>
+<li>URL의 파라미터 컴포넌트는, 애플리케이션이 서버에 정확한 요청을 하기 위해 필요한 입력 파라미터를 받는데 사용한다. (리소스에 접근하는데 필요한 추가 정보 전달)</li>
+<li>이름/값 쌍의 리스트로 URL 나머지 부분들로부터 <code>;</code> 문자로 구분하여 URL에 기술한다.</li>
+</ul>
+<h3 id="2-2-6-질의-문자열"><a href="#2-2-6-질의-문자열" class="headerlink" title="2.2.6 질의 문자열"></a>2.2.6 질의 문자열</h3><ul>
+<li>요청받을 리소스 형식의 범위를 좁히기 위해서 질문이나 질의를 받을 수 있다</li>
+<li>물음표(<code>?</code>) 우측에 있는 값들</li>
+<li>많은 게이트웨이가 <code>&amp;</code>로 나뉜 <code>이름=값</code> 쌍 형식의 질의 문자열을 원한다</li>
+</ul>
+<h3 id="2-2-7-프래그먼트"><a href="#2-2-7-프래그먼트" class="headerlink" title="2.2.7 프래그먼트"></a>2.2.7 프래그먼트</h3><ul>
+<li>리소스의 특정 부분을 가리킬 수 있도록, URL은 리소스 내의 조각을 가리킬 수 있는 프래그먼트 컴포넌트를 제공한다</li>
+<li>URL 오른쪽에 <code>#</code> 문자에 이어서 온다</li>
+<li>일반적으로 HTTP 서버는 객체 일부가 아닌 전체만 다루기 때문에 클라이언트는 서버에 프래그먼트를 전달하지 않는다. 브라우저가 서버로부터 전체 리소스를 내려받은 후, 프래그먼트를 사용하여 당신이 보고자 하는 리소스의 일부를 보여준다</li>
+</ul>
+<hr>
+<h2 id="2-3-단축-URL"><a href="#2-3-단축-URL" class="headerlink" title="2.3 단축 URL"></a>2.3 단축 URL</h2><ul>
+<li>많은 브라우저가 사용자가 기억하고 있는 URL 일부를 입력하면 나머지 부분을 자동으로 입력해주는 URL ‘자동 확장’을 지원한다</li>
+</ul>
+<h3 id="2-3-1-상대-URL"><a href="#2-3-1-상대-URL" class="headerlink" title="2.3.1 상대 URL"></a>2.3.1 상대 URL</h3><ul>
+<li><p>상대 URL - URL을 짧게 표기하는 방식</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;www.joes-hardware.com&#x2F;tools.html</span><br></pre></td></tr></table></figure>
+
+<p>  에서</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;./hammers.html&quot;</span>&gt;</span>hammers<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>  → 현재 웹 서버의 <code>/tools.html</code> 리소스를 기준으로 상대경로로 명시</p>
+</li>
+<li><p>상대 URL을 사용하면 리소스 집합을 쉽게 변경할 수 있다.</p>
+</li>
+</ul>
+<p><strong>👾 기저 URL - 상대 URL의 기준점, 가져오는 법은?</strong> </p>
+<ul>
+<li>리소스에서 명시적으로 제공</li>
+<li>리소스를 포함하고 있는 기저 URL</li>
+<li>기저 URL이 없는 경우 - 절대 URL만으로 이루어진 경우</li>
+<li>상대 참조 해석하기<ul>
+<li>URL 분해하기</li>
+<li>상대 URL을 리소스를 참조하는데 사용할 수 있는 절대 경로 형태로 변환하는 알고리즘 사용</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-2-URL-확장"><a href="#2-3-2-URL-확장" class="headerlink" title="2.3.2 URL 확장"></a>2.3.2 URL 확장</h3><ul>
+<li>호스트 명 확장</li>
+<li>히스토리 확장</li>
+</ul>
+<hr>
+<h2 id="2-4-안전하지-않은-문자"><a href="#2-4-안전하지-않은-문자" class="headerlink" title="2.4 안전하지 않은 문자"></a>2.4 안전하지 않은 문자</h2><ul>
+<li>안전한 전송 - 정보가 유실될 위험 없이 URL을 전송하는 것</li>
+<li>URL에서 특정 문자들이 금지된 이유<ul>
+<li>이스케이프 - 안전하지 않은 문자를 안전한 문자로 인코딩</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-4-1-URL-문자-집합"><a href="#2-4-1-URL-문자-집합" class="headerlink" title="2.4.1 URL 문자 집합"></a>2.4.1 URL 문자 집합</h3><ul>
+<li>US-ASCII</li>
+<li>이스케이프 문자열은 US-ASCII에서 사용이 금지된 문자</li>
+</ul>
+<h3 id="2-4-2-인코딩-체계"><a href="#2-4-2-인코딩-체계" class="headerlink" title="2.4.2 인코딩 체계"></a>2.4.2 인코딩 체계</h3><ul>
+<li>인코딩은 안전하지 않은 문자를 퍼센티지 기호(<code>%</code>)로 시작해, ASCII 코드로 표현되는 두 개의 숫자로 이루어진 ‘이스케이프’ 문자로 바꾼다</li>
+</ul>
+<h3 id="2-4-3-문자-제한"><a href="#2-4-3-문자-제한" class="headerlink" title="2.4.3 문자 제한"></a>2.4.3 문자 제한</h3><ul>
+<li>예약된 문자들</li>
+</ul>
+<h3 id="2-4-4-좀-더-알아보기"><a href="#2-4-4-좀-더-알아보기" class="headerlink" title="2.4.4 좀 더 알아보기"></a>2.4.4 좀 더 알아보기</h3><ul>
+<li>입력받은 URL에서 어떤 문자를 인코딩해야 하는지 결정하는 데는 브라우저와 같이 사용자로부터 최초로 URL을 입력받는 애플리케이션에서 하는 것이 가장 적절하다</li>
+<li>하지만 안전한 문자들을 인코딩하지 않는 애플리케이션도 있기 때문에 오동작을 일으킬 수 있다</li>
+<li>보통 URL을 해석하는 애플리케이션은 그것을 처리하기 전에 URL을 디코드해야 한다</li>
+</ul>
+<hr>
+<h2 id="2-5-스킴의-바다"><a href="#2-5-스킴의-바다" class="headerlink" title="2.5 스킴의 바다"></a>2.5 스킴의 바다</h2><table>
+<thead>
+<tr>
+<th>스킴</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>http</strong></td>
+<td>일반 URL 포맷을 지키는 하이퍼텍스트 전송 프로토콜 스킴 <br /> 포트 기본값은 80</td>
+</tr>
+<tr>
+<td><strong>https</strong></td>
+<td>HTTP 커넥션의 양 끝단에서 암호화하기 위해 SSL을 사용/ HTTP와 같은 문법 <br /> 기본 포트값은 443</td>
+</tr>
+<tr>
+<td><strong>mailto</strong></td>
+<td>이메일 주소</td>
+</tr>
+<tr>
+<td><strong>ftp</strong></td>
+<td>파일 전송 프로토콜 <br /> 데이터에 접근하는 용도의 스킴으로 FTP를 사용</td>
+</tr>
+<tr>
+<td><strong>rtsp, rtspu</strong></td>
+<td>실시간 스트리밍 프로토콜을 통해서 읽을 수 있는 오디오 및 비디오와 같은 미디어 리소스 식별자 <br /> rtspu의 ‘u’는 UDP 프로토콜이 사용됨을 의미</td>
+</tr>
+<tr>
+<td><strong>file</strong></td>
+<td>주어진 호스트 기기에서 바로 접근할 수 있는 파일들</td>
+</tr>
+<tr>
+<td><strong>news</strong></td>
+<td>특정 문서나 뉴스 그룹에 접근하는 데 사용 <br /> 리소스의 위치 정보를 충분히 포함하지 않는 특이한 속성이 있다</td>
+</tr>
+<tr>
+<td><strong>telnet</strong></td>
+<td>대화형 서비스에 접근하는데 사용</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="2-6-미래"><a href="#2-6-미래" class="headerlink" title="2.6 미래"></a>2.6 미래</h2><ul>
+<li>URL은 세상 모든 객체에 이름을 지을 수 있고, 새로운 포맷을 쉽게 추가할 수 있게 설계됐다</li>
+<li>또 인터넷 프로토콜 간에 공유할 수 있는 일관된 작명 규칙을 제공한다</li>
+</ul>
+<p><strong>👾 URL의 단점은?</strong></p>
+<ul>
+<li>리소스가 옮겨지면 URL을 더는 사용할 수 없다</li>
+</ul>
+<p>→ 실제 객체의 이름을 사용하는 건 어떨까?</p>
+<ul>
+<li>URN의 등장<ul>
+<li>객체가 옮겨지더라도 항상 객체를 가리킬 수 있는 이름을 제공</li>
+<li>PURL - 리소스의 실제 URL 목록을 관리하고 추적하는 리소스 위치 중개 서버를 두고, 해당 리소스를 우회적으로 제공</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-6-1-지금이-아니면-언제"><a href="#2-6-1-지금이-아니면-언제" class="headerlink" title="2.6.1 지금이 아니면, 언제?"></a>2.6.1 지금이 아니면, 언제?</h3><ul>
+<li>URL에서 URN으로?</li>
+</ul>
+<p><strong>👾 당분간은 URL이 계속 사용될 것이다</strong></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>HTTP 완벽 가이드 - 2장</p><p><a href="https://zigsong.github.io/2021/06/27/http-2/">https://zigsong.github.io/2021/06/27/http-2/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jieun song</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-06-27</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-06-27</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/07/04/woowa-week-22/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">우테코 22주차 기록</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/06/27/http-1/"><span class="level-item">HTTP 완벽 가이드 - 1장</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/profile_hexo.jpeg" alt="zig song"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">zig song</p><p class="is-size-6 is-block">FE Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">44</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-info is-outlined is-rounded" href="/" target="_self" rel="noopener">Home</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wldms5764@gmail.com"><i class="fa fa-envelope"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#URL과-리소스"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">URL과 리소스</span></span></a></li></ul><li><a class="level is-mobile" href="#2-1-인터넷의-리소스-탐색하기"><span class="level-left"><span class="level-item">2</span><span class="level-item">2.1 인터넷의 리소스 탐색하기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#2-1-1-URL이-있기-전-암흑의-시대"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">2.1.1 URL이 있기 전 암흑의 시대</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-2-URL-문법"><span class="level-left"><span class="level-item">3</span><span class="level-item">2.2 URL 문법</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#2-2-1-스킴-사용할-프로토콜"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">2.2.1 스킴: 사용할 프로토콜</span></span></a></li><li><a class="level is-mobile" href="#2-2-2-호스트와-포트"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">2.2.2 호스트와 포트</span></span></a></li><li><a class="level is-mobile" href="#2-2-3-사용자-이름과-비밀번호"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">2.2.3 사용자 이름과 비밀번호</span></span></a></li><li><a class="level is-mobile" href="#2-2-4-경로"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">2.2.4 경로</span></span></a></li><li><a class="level is-mobile" href="#2-2-5-파라미터"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">2.2.5 파라미터</span></span></a></li><li><a class="level is-mobile" href="#2-2-6-질의-문자열"><span class="level-left"><span class="level-item">3.6</span><span class="level-item">2.2.6 질의 문자열</span></span></a></li><li><a class="level is-mobile" href="#2-2-7-프래그먼트"><span class="level-left"><span class="level-item">3.7</span><span class="level-item">2.2.7 프래그먼트</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-3-단축-URL"><span class="level-left"><span class="level-item">4</span><span class="level-item">2.3 단축 URL</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#2-3-1-상대-URL"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">2.3.1 상대 URL</span></span></a></li><li><a class="level is-mobile" href="#2-3-2-URL-확장"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">2.3.2 URL 확장</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-4-안전하지-않은-문자"><span class="level-left"><span class="level-item">5</span><span class="level-item">2.4 안전하지 않은 문자</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#2-4-1-URL-문자-집합"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">2.4.1 URL 문자 집합</span></span></a></li><li><a class="level is-mobile" href="#2-4-2-인코딩-체계"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">2.4.2 인코딩 체계</span></span></a></li><li><a class="level is-mobile" href="#2-4-3-문자-제한"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">2.4.3 문자 제한</span></span></a></li><li><a class="level is-mobile" href="#2-4-4-좀-더-알아보기"><span class="level-left"><span class="level-item">5.4</span><span class="level-item">2.4.4 좀 더 알아보기</span></span></a></li></ul></li><li><a class="level is-mobile" href="#2-5-스킴의-바다"><span class="level-left"><span class="level-item">6</span><span class="level-item">2.5 스킴의 바다</span></span></a></li><li><a class="level is-mobile" href="#2-6-미래"><span class="level-left"><span class="level-item">7</span><span class="level-item">2.6 미래</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#2-6-1-지금이-아니면-언제"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">2.6.1 지금이 아니면, 언제?</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/frontend/"><span class="level-start"><span class="level-item">frontend</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/http/"><span class="level-start"><span class="level-item">http</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/woowacourse/"><span class="level-start"><span class="level-item">woowacourse</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-havruta-fe/"><span class="level-start"><span class="level-item">wtc-havruta-fe</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-pr-log/"><span class="level-start"><span class="level-item">wtc-pr-log</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-study-log/"><span class="level-start"><span class="level-item">wtc-study-log</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><figure class="media-left"><a class="image" href="/2021/07/12/http-6/"><img src="/images/http_thumbnail.jpeg" alt="HTTP 완벽 가이드 - 6장"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-12T07:11:15.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/http-6/">HTTP 완벽 가이드 - 6장</a></p><p class="categories"><a href="/categories/http/">http</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/12/http-5/"><img src="/images/http_thumbnail.jpeg" alt="HTTP 완벽 가이드 - 5장"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-12T07:10:15.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/http-5/">HTTP 완벽 가이드 - 5장</a></p><p class="categories"><a href="/categories/http/">http</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/woowa-week-23/"><img src="/images/woowa-thumbnail.jpeg" alt="우테코 23주차 기록"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:37:37.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/woowa-week-23/">우테코 23주차 기록</a></p><p class="categories"><a href="/categories/woowacourse/">woowacourse</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/fe-svg-without-cra/"><img src="/images/mac-thumbnail.jpeg" alt="CRA 없이 svg 사용하기"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:34:13.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/fe-svg-without-cra/">CRA 없이 svg 사용하기</a></p><p class="categories"><a href="/categories/frontend/">frontend</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/fe-babel-webpack/"><img src="/images/mac-thumbnail.jpeg" alt="babelrc와 webpack.config"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:32:43.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/fe-babel-webpack/">babelrc와 webpack.config</a></p><p class="categories"><a href="/categories/frontend/">frontend</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">July 2021</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">June 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">May 2021</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">April 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">March 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">February 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ZIG-LOG</a><p class="is-size-7"><span>&copy; 2021 jieun song</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

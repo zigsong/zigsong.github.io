@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>HTTP 완벽 가이드 - 6장 - zig-log</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="zig-log"><meta name="msapplication-TileImage" content="/images/balloon-favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="zig-log"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="프락시"><meta property="og:type" content="blog"><meta property="og:title" content="HTTP 완벽 가이드 - 6장"><meta property="og:url" content="https://zigsong.github.io/2021/07/12/http-6/"><meta property="og:site_name" content="zig-log"><meta property="og:description" content="프락시"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://zigsong.github.io/images/http_thumbnail.jpeg"><meta property="article:published_time" content="2021-07-12T07:11:15.000Z"><meta property="article:modified_time" content="2021-07-12T00:04:16.959Z"><meta property="article:author" content="jieun song"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/http_thumbnail.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zigsong.github.io/2021/07/12/http-6/"},"headline":"HTTP 완벽 가이드 - 6장","image":[],"datePublished":"2021-07-12T07:11:15.000Z","dateModified":"2021-07-12T00:04:16.959Z","author":{"@type":"Person","name":"jieun song"},"description":"프락시"}</script><link rel="canonical" href="https://zigsong.github.io/2021/07/12/http-6/"><link rel="icon" href="/images/balloon-favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ZIG-LOG</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-07-12T07:11:15.000Z" title="2021. 7. 12. 오후 4:11:15">2021-07-12</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-07-12T00:04:16.959Z" title="2021. 7. 12. 오전 9:04:16">2021-07-12</time></span><span class="level-item"><a class="link-muted" href="/categories/http/">http</a></span><span class="level-item">17 minutes read (About 2588 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">HTTP 완벽 가이드 - 6장</h1><div class="content"><h3 id="프락시"><a href="#프락시" class="headerlink" title="프락시"></a>프락시</h3><img class="preview" src="/images/http_thumbnail.jpeg">
+
+<br />
+<span id="more"></span>
+
+<p>프락시는 클라이언트와 서버 사이에 위치하여 그들 사이의 HTTP 메시지를 정리하는 중개인처럼 동작한다</p>
+<hr>
+<h2 id="6-1-웹-중개자"><a href="#6-1-웹-중개자" class="headerlink" title="6.1 웹 중개자"></a>6.1 웹 중개자</h2><p>HTTP 프락시 서버는 웹 서버이기도 하고 웹 클라이언트이기도 하다</p>
+<h3 id="6-1-1-개인-프락시와-공유-프락시"><a href="#6-1-1-개인-프락시와-공유-프락시" class="headerlink" title="6.1.1 개인 프락시와 공유 프락시"></a>6.1.1 개인 프락시와 공유 프락시</h3><ul>
+<li>공용 프락시 - 대부분의 프락시는 공용이며 공유된 프락시</li>
+<li>개인 프락시</li>
+</ul>
+<h3 id="6-1-2-프락시-대-게이트웨이"><a href="#6-1-2-프락시-대-게이트웨이" class="headerlink" title="6.1.2 프락시 대 게이트웨이"></a>6.1.2 프락시 대 게이트웨이</h3><ul>
+<li>프락시 - 같은 프로토콜을 사용하는 둘 이상의 애플리케이션을 연결</li>
+<li>게이트웨이 - 서로 다른 프로토콜을 사용하는 둘 이상을 연결</li>
+</ul>
+<p>👾 실질적으로 프락시와 게이트웨이의 차이점은 모호하다</p>
+<hr>
+<h2 id="6-2-왜-프락시를-사용하는가"><a href="#6-2-왜-프락시를-사용하는가" class="headerlink" title="6.2 왜 프락시를 사용하는가?"></a>6.2 왜 프락시를 사용하는가?</h2><p>프락시는 보안을 개선하고, 성능을 높여주며, 비용을 절약한다</p>
+<ul>
+<li>어린이 필터</li>
+<li>문서 접근 제어자  <ul>
+<li>웹 서버들과 웹 리소스에 대한 단일한 접근 제어 전략을 구현하고 감사 추적을 하기 위해 프락시 서버를 사용</li>
+<li>중앙 프락시 서버에서 접근 제어를 설정할 수 있다</li>
+</ul>
+</li>
+<li>보안 방화벽<ul>
+<li>조직 안에 들어오거나 나가는 응용 레벨 프로토콜의 흐름을 네트워크의 한 지점에서 통제한다</li>
+</ul>
+</li>
+<li>웹 캐시<ul>
+<li>인기 있는 문서의 로컬 사본을 관리하고 해당 문서에 대한 요청이 오면 빠르게 제공하여, 느리고 비싼 인터넷 커뮤니케이션을 줄인다</li>
+</ul>
+</li>
+<li>대리 프락시<ul>
+<li>진짜 웹 서버 요청을 받지만 웹 서버와는 달리 요청 받은 콘텐츠의 위치를 찾아내기 위해 다른 서버와 커뮤니케이션</li>
+<li>공용 콘텐츠에 대한 느린 웹 서버의 성능을 개선하기 위해 사용</li>
+</ul>
+</li>
+<li>콘텐츠 라우터<ul>
+<li>인터넷 트래픽 조건과 콘텐츠의 종류에 따라 요청을 특정 웹 서버로 유도</li>
+<li>사용자들에게 제공할 여러 서비스를 구현하는 데 사용</li>
+<li>맞춤형 콘텐츠 라우팅 프락시</li>
+</ul>
+</li>
+<li>트랜스코드<ul>
+<li>콘텐츠를 클라이언트에게 전달하기 전에 본문 포맷을 수정(데이터의 표현 방식을 자연스럽게 변환)</li>
+<li>이미지 크기 줄이기, 텍스트 번역</li>
+</ul>
+</li>
+<li>익명화 프락시(Anonymizer)<ul>
+<li>HTTP 메시지에서 신원을 식별할 수 있는 특성들을 적극적으로 제거함으로써 개인 정보 보호와 익명성 보장에 기여</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="6-3-프락시는-어디에-있는가"><a href="#6-3-프락시는-어디에-있는가" class="headerlink" title="6.3 프락시는 어디에 있는가?"></a>6.3 프락시는 어디에 있는가?</h2><h3 id="6-3-1-프락시-서버-배치"><a href="#6-3-1-프락시-서버-배치" class="headerlink" title="6.3.1 프락시 서버 배치"></a>6.3.1 프락시 서버 배치</h3><ul>
+<li>출구(Egress) 프락시 - 로컬 네트워크와 더 큰 인터넷 사이를 오가는 트래픽을 제어하기 위해 프락시를 로컬 네트워크의 출구에 배치</li>
+<li>접근(입구) 프락시 - 고객으로부터의 모든 요청을 종합적으로 처리하기 위해 프락시를 ISP 접근 지점에 위치</li>
+<li>대리 프락시(리버스 프락시) - 네트워크의 가장 끝에 있는 웹 서버들의 바로 앞에 위치하여 웹 서버로 향하는 모든 요청을 처리하고 필요할 때만 웹 서버에게 자원을 요청</li>
+<li>네트워크 교환 프락시 - 캐시를 이용해 인터넷 혼잡을 완화하고 트래픽 흐름을 감시하기 위해 프락시를 네트워크 사이의 인터넷 피어링 교환 지점들에 위치</li>
+</ul>
+<h3 id="6-3-2-프락시-계층"><a href="#6-3-2-프락시-계층" class="headerlink" title="6.3.2 프락시 계층"></a>6.3.2 프락시 계층</h3><p>프락시 계층에서 프락시 서버들은 부모-자식의 관계를 맺는다</p>
+<ul>
+<li>인바운드 프락시(서버에 가까운 쪽, 부모)</li>
+<li>아웃바운드 프락시(클라이언트에 가까운 쪽, 자식)</li>
+</ul>
+<p>👾 프락시 계층 콘텐츠 라우팅 - 동적 부모 선택</p>
+<ul>
+<li>부하 균형</li>
+<li>지리적 인접성에 근거한 라우팅</li>
+<li>프로토콜/타입 라우팅</li>
+<li>유료 서비스 가입자를 위한 라우팅</li>
+</ul>
+<h3 id="6-3-3-어떻게-프락시가-트래픽을-처리하는가"><a href="#6-3-3-어떻게-프락시가-트래픽을-처리하는가" class="headerlink" title="6.3.3 어떻게 프락시가 트래픽을 처리하는가"></a>6.3.3 어떻게 프락시가 트래픽을 처리하는가</h3><ul>
+<li>클라이언트를 수정한다<ul>
+<li>클라이언트가 프락시를 사용하도록 설정</li>
+</ul>
+</li>
+<li>네트워크를 수정한다<ul>
+<li>클라이언트가 모르는 상태에서, 네트워크 인프라를 가로채서 웹 트래픽을 프락시로 가도록 조정</li>
+</ul>
+</li>
+<li>DNS 이름공간을 수정한다<ul>
+<li>대리 프락시 사용</li>
+</ul>
+</li>
+<li>웹 서버를 수정한다<ul>
+<li>HTTP 리다이렉션 명령을 클라이언트에게 돌려준다</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="6-4-클라이언트-프락시-설정"><a href="#6-4-클라이언트-프락시-설정" class="headerlink" title="6.4 클라이언트 프락시 설정"></a>6.4 클라이언트 프락시 설정</h2><h3 id="6-4-1-클라이언트-프락시-설정-수동"><a href="#6-4-1-클라이언트-프락시-설정-수동" class="headerlink" title="6.4.1 클라이언트 프락시 설정: 수동"></a>6.4.1 클라이언트 프락시 설정: 수동</h3><h3 id="6-4-2-클라이언트-프락시-설정-PAC-파일"><a href="#6-4-2-클라이언트-프락시-설정-PAC-파일" class="headerlink" title="6.4.2 클라이언트 프락시 설정: PAC 파일"></a>6.4.2 클라이언트 프락시 설정: PAC 파일</h3><ul>
+<li>브라우저 기본 설정</li>
+<li>프락시 설정을 그때그때 상황에 맞게 계산해주는 작은 자바스크립트 프로그램</li>
+</ul>
+<h3 id="6-4-3-클라이언트-프락시-설정-WPAD"><a href="#6-4-3-클라이언트-프락시-설정-WPAD" class="headerlink" title="6.4.3 클라이언트 프락시 설정: WPAD"></a>6.4.3 클라이언트 프락시 설정: WPAD</h3><ul>
+<li>웹 프락시 자동발견 프로토콜</li>
+<li>브라우저에게 알맞은 PAC 파일을 자동으로 찾아주는 알고리즘 사용</li>
+</ul>
+<hr>
+<h2 id="6-5-프락시-요청의-미묘한-특징들"><a href="#6-5-프락시-요청의-미묘한-특징들" class="headerlink" title="6.5 프락시 요청의 미묘한 특징들"></a>6.5 프락시 요청의 미묘한 특징들</h2><h3 id="6-5-1-프락시-URI는-서버-URI와-다르다"><a href="#6-5-1-프락시-URI는-서버-URI와-다르다" class="headerlink" title="6.5.1 프락시 URI는 서버 URI와 다르다"></a>6.5.1 프락시 URI는 서버 URI와 다르다</h3><p>클라이언트가 프락시 대신 서버로 요청을 보내면 요청의 URI가 달라진다</p>
+<ul>
+<li>프락시에서는 부분 URI가 아닌 완전한 URI를 사용한다</li>
+</ul>
+<h3 id="6-5-2-가상-호스팅에서-일어나는-같은-문제"><a href="#6-5-2-가상-호스팅에서-일어나는-같은-문제" class="headerlink" title="6.5.2 가상 호스팅에서 일어나는 같은 문제"></a>6.5.2 가상 호스팅에서 일어나는 같은 문제</h3><p>프락시의 ‘스킴/호스트/포트번호 누락’ 문제</p>
+<h3 id="6-5-3-인터셉트-프락시는-부분-URI를-받는다"><a href="#6-5-3-인터셉트-프락시는-부분-URI를-받는다" class="headerlink" title="6.5.3 인터셉트 프락시는 부분 URI를 받는다"></a>6.5.3 인터셉트 프락시는 부분 URI를 받는다</h3><ul>
+<li>대리 프락시 - 원 서버의 호스트 명과 아이피 주소를 사용해 원 서버를 대신하는 프락시 서버</li>
+<li>인터셉트 프락시 - 네트워크 흐름에서 클라이언트에서 서버로 가는 트래픽을 가로채 캐시된 응답을 돌려주는 등의 일을 하는 프락시 서버</li>
+</ul>
+<h3 id="6-5-4-프락시는-프락시-요청과-서버-요청을-모두-다룰-수-있다"><a href="#6-5-4-프락시는-프락시-요청과-서버-요청을-모두-다룰-수-있다" class="headerlink" title="6.5.4 프락시는 프락시 요청과 서버 요청을 모두 다룰 수 있다"></a>6.5.4 프락시는 프락시 요청과 서버 요청을 모두 다룰 수 있다</h3><p>프락시는 명시적인 프락시 요청에 대해서는 완전한 URI를 사용하고 아니면 부분 URI를 사용해야 하며, 웹 서버 요청의 경우에는 가상 Host 헤더를 사용해야 한다</p>
+<h3 id="6-5-5-전송-중-URI-변경"><a href="#6-5-5-전송-중-URI-변경" class="headerlink" title="6.5.5 전송 중 URI 변경"></a>6.5.5 전송 중 URI 변경</h3><p>몇몇 프락시는 URI를 다음 홉으로 보내기 전에 표준 형식으로 ‘정규화’한다</p>
+<h3 id="6-5-6-URI-클라이언트-자동확장과-호스트-명-분석"><a href="#6-5-6-URI-클라이언트-자동확장과-호스트-명-분석" class="headerlink" title="6.5.6 URI 클라이언트 자동확장과 호스트 명 분석"></a>6.5.6 URI 클라이언트 자동확장과 호스트 명 분석</h3><p>브라우저는 프락시가 없다면 사용자가 타이핑한 URI를 가지고 그에 대응하는 IP 주소를 찾는다<br>호스트명이 발견되지 않는다면, 많은 브라우저들은 자동화된 호스트 명의 ‘확장’을 제공하고자 시도한다 (확장 URL)</p>
+<h3 id="6-5-7-프락시-없는-URI-분석"><a href="#6-5-7-프락시-없는-URI-분석" class="headerlink" title="6.5.7 프락시 없는 URI 분석"></a>6.5.7 프락시 없는 URI 분석</h3><p>프락시 없는 브라우저 호스트 명 자동확장</p>
+<h3 id="6-5-8-명시적인-프락시를-사용할-때의-URI-분석"><a href="#6-5-8-명시적인-프락시를-사용할-때의-URI-분석" class="headerlink" title="6.5.8 명시적인 프락시를 사용할 때의 URI 분석"></a>6.5.8 명시적인 프락시를 사용할 때의 URI 분석</h3><p>명시적인 프락시가 있는 경우 부분 호스트 명을 자동확장하지 않는다</p>
+<h3 id="6-5-9-인터셉트-프락시를-이용한-URI-분석"><a href="#6-5-9-인터셉트-프락시를-이용한-URI-분석" class="headerlink" title="6.5.9 인터셉트 프락시를 이용한 URI 분석"></a>6.5.9 인터셉트 프락시를 이용한 URI 분석</h3><p>인터셉트 프락시를 사용하고 있는 브라우저는 죽은 서버의 IP 주소를 탐지할 수 없다</p>
+<hr>
+<h2 id="6-6-메시지-추적"><a href="#6-6-메시지-추적" class="headerlink" title="6.6 메시지 추적"></a>6.6 메시지 추적</h2><p>오늘날 웹 요청의 상당수가 프락시를 지나간다</p>
+<h3 id="6-6-1-Via-헤더"><a href="#6-6-1-Via-헤더" class="headerlink" title="6.6.1 Via 헤더"></a>6.6.1 Via 헤더</h3><p>Via 헤더는 메시지가 지나는 각 중간 노드(프락시나 게이트웨이)의 정보를 나열한다<br>프락시는 또한 네트워크의 라우팅 루프를 탐지하기 위해 Via 헤더를 사용한다</p>
+<ul>
+<li><p>Via 문법</p>
+<ul>
+<li><p>쉼표로 구분된 경유지(waypoint)의 목록</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Via: 1.1 proxy-62.irenes-isp.net, 1.0 cache.joes-hardware.com</span><br></pre></td></tr></table></figure></li>
+<li><p>프로토콜 이름/ 프로토콜 버전/ 노드 이름/ 노드 코멘트</p>
+</li>
+</ul>
+</li>
+<li><p>Via 요청과 응답 경로</p>
+<ul>
+<li>요청 메시지와 응답 메시지 모두 프락시를 지나므로 둘 모두 Via 헤더를 가진다</li>
+</ul>
+</li>
+<li><p>Via와 게이트웨이</p>
+<ul>
+<li>몇몇 프락시는 서버에게 비 HTTP 프로토콜을 사용할 수 있는 게이트웨이 기능을 제공한다</li>
+<li>Via 헤더는 이러한 프로토콜 변환을 기록한다</li>
+</ul>
+</li>
+<li><p>Server 헤더와 Via 헤더</p>
+<ul>
+<li>Server 응답 헤더는 원 서버에 의해 사용되는 소프트웨어를 알려준다</li>
+</ul>
+</li>
+<li><p>Via가 개인정보 보호와 보안에 미치는 영향</p>
+<ul>
+<li>프락시 서버가 네트워크 방화벽의 일부인 경우 프락시는 방화벽 뒤에 숨어있는 호스트의 이름과 포트를 전달해서는 안 된다</li>
+<li>프락시는 정렬된 일련의 Via 정유지 항목들을 하나로 합칠 수 있다<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Via: 1.0 foo, 1.1 concealed-stuff</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h3 id="6-6-2-TRACE-메서드"><a href="#6-6-2-TRACE-메서드" class="headerlink" title="6.6.2 TRACE 메서드"></a>6.6.2 TRACE 메서드</h3><p>요청 메시지를 프락시의 연쇄를 따라가면서 어떤 프락시를 지나가고 어떻게 각 프락시가 요청 메시지를 수정하는지 관찰/추적할 수 있도록 해준다. 프락시 흐름 디버깅을 해주는 것이다.</p>
+<ul>
+<li>Max-Forwards<ul>
+<li>일반적으로 TRACE 메시지는 목적지 서버로의 모든 경로를 여행한다.</li>
+<li>TRACE와 OPTIONS 요청의 프락시 홉 개수를 제한하기 위해 Max-Forwards 헤더를 사용한다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="6-7-프락시-인증"><a href="#6-7-프락시-인증" class="headerlink" title="6.7 프락시 인증"></a>6.7 프락시 인증</h2><p>접근 제어 프락시는 사용자가 유효한 접근 권한 자격을 프락시에 제출하지 않는 한 콘텐츠에 대한 요청을 차단한다.</p>
+<hr>
+<h2 id="6-8-프락시-상호운용성"><a href="#6-8-프락시-상호운용성" class="headerlink" title="6.8 프락시 상호운용성"></a>6.8 프락시 상호운용성</h2><h3 id="6-8-1-지원하지-않는-헤더와-메서드-다루기"><a href="#6-8-1-지원하지-않는-헤더와-메서드-다루기" class="headerlink" title="6.8.1 지원하지 않는 헤더와 메서드 다루기"></a>6.8.1 지원하지 않는 헤더와 메서드 다루기</h3><p>프락시는 이해할 수 없는 헤더 필드는 반드시 그래도 전달해야 하며, 같은 이름의 헤더 필드가 여러 개 있는 경우에는 그들의 상대적인 순서도 반드시 유지해야 한다</p>
+<h3 id="6-8-2-OPTIONS-어떤-기능을-지원하는지-알아보기"><a href="#6-8-2-OPTIONS-어떤-기능을-지원하는지-알아보기" class="headerlink" title="6.8.2 OPTIONS: 어떤 기능을 지원하는지 알아보기"></a>6.8.2 OPTIONS: 어떤 기능을 지원하는지 알아보기</h3><p>HTTP OPTIONS 메서드 - 서버나 웹 서버의 특정 리소스가 어떤 기능을 지원하는지 클라이언트(혹은 프락시)가 알아볼 수 있게 해준다.</p>
+<h3 id="6-8-3-Allow-헤더"><a href="#6-8-3-Allow-헤더" class="headerlink" title="6.8.3 Allow 헤더"></a>6.8.3 Allow 헤더</h3><p>Allow 엔터티 헤더 - 요청 URI에 으해 식별되는 자원에 대해 지원되는 메서드들이나 서버가 지원하는 모든 메서드를 열거한다</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>HTTP 완벽 가이드 - 6장</p><p><a href="https://zigsong.github.io/2021/07/12/http-6/">https://zigsong.github.io/2021/07/12/http-6/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jieun song</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-07-12</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-07-12</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/07/12/http-5/"><span class="level-item">HTTP 완벽 가이드 - 5장</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/profile_hexo.jpeg" alt="zig song"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">zig song</p><p class="is-size-6 is-block">FE Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">44</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-info is-outlined is-rounded" href="/" target="_self" rel="noopener">Home</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wldms5764@gmail.com"><i class="fa fa-envelope"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#프락시"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">프락시</span></span></a></li></ul><li><a class="level is-mobile" href="#6-1-웹-중개자"><span class="level-left"><span class="level-item">2</span><span class="level-item">6.1 웹 중개자</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#6-1-1-개인-프락시와-공유-프락시"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">6.1.1 개인 프락시와 공유 프락시</span></span></a></li><li><a class="level is-mobile" href="#6-1-2-프락시-대-게이트웨이"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">6.1.2 프락시 대 게이트웨이</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-2-왜-프락시를-사용하는가"><span class="level-left"><span class="level-item">3</span><span class="level-item">6.2 왜 프락시를 사용하는가?</span></span></a></li><li><a class="level is-mobile" href="#6-3-프락시는-어디에-있는가"><span class="level-left"><span class="level-item">4</span><span class="level-item">6.3 프락시는 어디에 있는가?</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#6-3-1-프락시-서버-배치"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">6.3.1 프락시 서버 배치</span></span></a></li><li><a class="level is-mobile" href="#6-3-2-프락시-계층"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">6.3.2 프락시 계층</span></span></a></li><li><a class="level is-mobile" href="#6-3-3-어떻게-프락시가-트래픽을-처리하는가"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">6.3.3 어떻게 프락시가 트래픽을 처리하는가</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-4-클라이언트-프락시-설정"><span class="level-left"><span class="level-item">5</span><span class="level-item">6.4 클라이언트 프락시 설정</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#6-4-1-클라이언트-프락시-설정-수동"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">6.4.1 클라이언트 프락시 설정: 수동</span></span></a></li><li><a class="level is-mobile" href="#6-4-2-클라이언트-프락시-설정-PAC-파일"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">6.4.2 클라이언트 프락시 설정: PAC 파일</span></span></a></li><li><a class="level is-mobile" href="#6-4-3-클라이언트-프락시-설정-WPAD"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">6.4.3 클라이언트 프락시 설정: WPAD</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-5-프락시-요청의-미묘한-특징들"><span class="level-left"><span class="level-item">6</span><span class="level-item">6.5 프락시 요청의 미묘한 특징들</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#6-5-1-프락시-URI는-서버-URI와-다르다"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">6.5.1 프락시 URI는 서버 URI와 다르다</span></span></a></li><li><a class="level is-mobile" href="#6-5-2-가상-호스팅에서-일어나는-같은-문제"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">6.5.2 가상 호스팅에서 일어나는 같은 문제</span></span></a></li><li><a class="level is-mobile" href="#6-5-3-인터셉트-프락시는-부분-URI를-받는다"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">6.5.3 인터셉트 프락시는 부분 URI를 받는다</span></span></a></li><li><a class="level is-mobile" href="#6-5-4-프락시는-프락시-요청과-서버-요청을-모두-다룰-수-있다"><span class="level-left"><span class="level-item">6.4</span><span class="level-item">6.5.4 프락시는 프락시 요청과 서버 요청을 모두 다룰 수 있다</span></span></a></li><li><a class="level is-mobile" href="#6-5-5-전송-중-URI-변경"><span class="level-left"><span class="level-item">6.5</span><span class="level-item">6.5.5 전송 중 URI 변경</span></span></a></li><li><a class="level is-mobile" href="#6-5-6-URI-클라이언트-자동확장과-호스트-명-분석"><span class="level-left"><span class="level-item">6.6</span><span class="level-item">6.5.6 URI 클라이언트 자동확장과 호스트 명 분석</span></span></a></li><li><a class="level is-mobile" href="#6-5-7-프락시-없는-URI-분석"><span class="level-left"><span class="level-item">6.7</span><span class="level-item">6.5.7 프락시 없는 URI 분석</span></span></a></li><li><a class="level is-mobile" href="#6-5-8-명시적인-프락시를-사용할-때의-URI-분석"><span class="level-left"><span class="level-item">6.8</span><span class="level-item">6.5.8 명시적인 프락시를 사용할 때의 URI 분석</span></span></a></li><li><a class="level is-mobile" href="#6-5-9-인터셉트-프락시를-이용한-URI-분석"><span class="level-left"><span class="level-item">6.9</span><span class="level-item">6.5.9 인터셉트 프락시를 이용한 URI 분석</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-6-메시지-추적"><span class="level-left"><span class="level-item">7</span><span class="level-item">6.6 메시지 추적</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#6-6-1-Via-헤더"><span class="level-left"><span class="level-item">7.1</span><span class="level-item">6.6.1 Via 헤더</span></span></a></li><li><a class="level is-mobile" href="#6-6-2-TRACE-메서드"><span class="level-left"><span class="level-item">7.2</span><span class="level-item">6.6.2 TRACE 메서드</span></span></a></li></ul></li><li><a class="level is-mobile" href="#6-7-프락시-인증"><span class="level-left"><span class="level-item">8</span><span class="level-item">6.7 프락시 인증</span></span></a></li><li><a class="level is-mobile" href="#6-8-프락시-상호운용성"><span class="level-left"><span class="level-item">9</span><span class="level-item">6.8 프락시 상호운용성</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#6-8-1-지원하지-않는-헤더와-메서드-다루기"><span class="level-left"><span class="level-item">9.1</span><span class="level-item">6.8.1 지원하지 않는 헤더와 메서드 다루기</span></span></a></li><li><a class="level is-mobile" href="#6-8-2-OPTIONS-어떤-기능을-지원하는지-알아보기"><span class="level-left"><span class="level-item">9.2</span><span class="level-item">6.8.2 OPTIONS: 어떤 기능을 지원하는지 알아보기</span></span></a></li><li><a class="level is-mobile" href="#6-8-3-Allow-헤더"><span class="level-left"><span class="level-item">9.3</span><span class="level-item">6.8.3 Allow 헤더</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/frontend/"><span class="level-start"><span class="level-item">frontend</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/http/"><span class="level-start"><span class="level-item">http</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/woowacourse/"><span class="level-start"><span class="level-item">woowacourse</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-havruta-fe/"><span class="level-start"><span class="level-item">wtc-havruta-fe</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-pr-log/"><span class="level-start"><span class="level-item">wtc-pr-log</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-study-log/"><span class="level-start"><span class="level-item">wtc-study-log</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><figure class="media-left"><a class="image" href="/2021/07/12/http-6/"><img src="/images/http_thumbnail.jpeg" alt="HTTP 완벽 가이드 - 6장"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-12T07:11:15.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/http-6/">HTTP 완벽 가이드 - 6장</a></p><p class="categories"><a href="/categories/http/">http</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/12/http-5/"><img src="/images/http_thumbnail.jpeg" alt="HTTP 완벽 가이드 - 5장"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-12T07:10:15.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/http-5/">HTTP 완벽 가이드 - 5장</a></p><p class="categories"><a href="/categories/http/">http</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/woowa-week-23/"><img src="/images/woowa-thumbnail.jpeg" alt="우테코 23주차 기록"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:37:37.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/woowa-week-23/">우테코 23주차 기록</a></p><p class="categories"><a href="/categories/woowacourse/">woowacourse</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/fe-svg-without-cra/"><img src="/images/mac-thumbnail.jpeg" alt="CRA 없이 svg 사용하기"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:34:13.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/fe-svg-without-cra/">CRA 없이 svg 사용하기</a></p><p class="categories"><a href="/categories/frontend/">frontend</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/fe-babel-webpack/"><img src="/images/mac-thumbnail.jpeg" alt="babelrc와 webpack.config"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:32:43.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/fe-babel-webpack/">babelrc와 webpack.config</a></p><p class="categories"><a href="/categories/frontend/">frontend</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">July 2021</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">June 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">May 2021</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">April 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">March 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">February 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ZIG-LOG</a><p class="is-size-7"><span>&copy; 2021 jieun song</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>

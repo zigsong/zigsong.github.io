@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>HTTP 완벽 가이드 - 3장 - zig-log</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="zig-log"><meta name="msapplication-TileImage" content="/images/balloon-favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="zig-log"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="HTTP 메시지"><meta property="og:type" content="blog"><meta property="og:title" content="HTTP 완벽 가이드 - 3장"><meta property="og:url" content="https://zigsong.github.io/2021/07/05/http-3/"><meta property="og:site_name" content="zig-log"><meta property="og:description" content="HTTP 메시지"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://zigsong.github.io/images/http_thumbnail.jpeg"><meta property="article:published_time" content="2021-07-05T07:10:14.000Z"><meta property="article:modified_time" content="2021-07-05T00:19:36.071Z"><meta property="article:author" content="jieun song"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/http_thumbnail.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zigsong.github.io/2021/07/05/http-3/"},"headline":"HTTP 완벽 가이드 - 3장","image":[],"datePublished":"2021-07-05T07:10:14.000Z","dateModified":"2021-07-05T00:19:36.071Z","author":{"@type":"Person","name":"jieun song"},"description":"HTTP 메시지"}</script><link rel="canonical" href="https://zigsong.github.io/2021/07/05/http-3/"><link rel="icon" href="/images/balloon-favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ZIG-LOG</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2021-07-05T07:10:14.000Z" title="2021. 7. 5. 오후 4:10:14">2021-07-05</time></span><span class="level-item">Updated&nbsp;<time dateTime="2021-07-05T00:19:36.071Z" title="2021. 7. 5. 오전 9:19:36">2021-07-05</time></span><span class="level-item"><a class="link-muted" href="/categories/http/">http</a></span><span class="level-item">13 minutes read (About 1901 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">HTTP 완벽 가이드 - 3장</h1><div class="content"><h3 id="HTTP-메시지"><a href="#HTTP-메시지" class="headerlink" title="HTTP 메시지"></a>HTTP 메시지</h3><img class="preview" src="/images/http_thumbnail.jpeg">
+
+<span id="more"></span>
+
+<h2 id="3-1-메시지의-흐름"><a href="#3-1-메시지의-흐름" class="headerlink" title="3.1 메시지의 흐름"></a>3.1 메시지의 흐름</h2><p>HTTP 메시지: HTTP 애플리케이션 간에 주고받은 데이터의 블록들</p>
+<h3 id="3-1-1-메시지는-원-서버-방향을-인바운드로-하여-송신된다"><a href="#3-1-1-메시지는-원-서버-방향을-인바운드로-하여-송신된다" class="headerlink" title="3.1.1 메시지는 원 서버 방향을 인바운드로 하여 송신된다"></a>3.1.1 메시지는 원 서버 방향을 인바운드로 하여 송신된다</h3><ul>
+<li>인바운드 - 서버 방향</li>
+<li>아웃바운드 - 사용자 에이전트 방향</li>
+</ul>
+<h3 id="3-1-2-다운스트림으로-흐르는-메시지"><a href="#3-1-2-다운스트림으로-흐르는-메시지" class="headerlink" title="3.1.2 다운스트림으로 흐르는 메시지"></a>3.1.2 다운스트림으로 흐르는 메시지</h3><p>요청/응답에 관계없이 모든 메시지는 다운스트림으로 흐른다 (교재 그림 3-2 참조)</p>
+<hr>
+<h2 id="3-2-메시지의-각-부분"><a href="#3-2-메시지의-각-부분" class="headerlink" title="3.2 메시지의 각 부분"></a>3.2 메시지의 각 부분</h2><ul>
+<li>시작줄 - 이것이 어떤 메시지인지?</li>
+<li>헤더 블록 - 속성</li>
+<li>본문 - 데이터</li>
+</ul>
+<h3 id="3-2-1-메시지-문법"><a href="#3-2-1-메시지-문법" class="headerlink" title="3.2.1 메시지 문법"></a>3.2.1 메시지 문법</h3><p>요청 메시지의 형식</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;메서드&gt; &lt;요청 URL&gt; &lt;버전&gt;</span><br><span class="line">&lt;헤더&gt;</span><br><span class="line"></span><br><span class="line">&lt;엔터티 본문&gt;</span><br></pre></td></tr></table></figure>
+
+<p>응답 메시지의 형식</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;버전&gt; &lt;상태 코드&gt; &lt;사유 구절&gt;</span><br><span class="line">&lt;헤더&gt;</span><br><span class="line"></span><br><span class="line">&lt;엔터티 본문&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>메서드: 클라이언트 측에서 서버가 리소스에 대해 수행해주길 바라는 동작</p>
+<ul>
+<li>GET, HEAD, POST 등</li>
+</ul>
+</li>
+<li><p>요청 URL: 요청 대상이 되는 리소스를 지칭하는 완전한 URL 혹은 URL의 경로 구성요소</p>
+</li>
+<li><p>버전: 이 메시지에서 사용 중인 HTTP 버전</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP&#x2F;&lt;메이저&gt;.&lt;마이너&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>상태 코드: 요청 중에 무엇이 일어났는지 설명하는 세 자리의 숫자</p>
+</li>
+<li><p>사유 구절: 숫자로 된 상태 코드의 의미를 사람이 이해할 수 있게 설명해주는 짧은 문구</p>
+</li>
+<li><p>헤더들</p>
+</li>
+<li><p>엔터티 본문: 임의의 데이터 블록을 포함, 생략 가능</p>
+</li>
+</ul>
+<h3 id="3-2-2-시작줄"><a href="#3-2-2-시작줄" class="headerlink" title="3.2.2 시작줄"></a>3.2.2 시작줄</h3><ul>
+<li><p>요청줄</p>
+<ul>
+<li>요청 메시지는 서버에게 리소스에 대해 무언가를 해달라고 부탁한다</li>
+<li>클라이언트가 어떤 HTTP 버전으로 말하고 있는지 서버에게 알려주는 HTTP 버전도 포함</li>
+</ul>
+</li>
+<li><p>응답줄</p>
+<ul>
+<li>수행 결과에 대한 상태 정보와 결과 데이터를 클라이언트에게 돌려준다</li>
+</ul>
+</li>
+<li><p>메서드</p>
+<ul>
+<li>서버에게 무엇을 해야 하는지 말해준다</li>
+<li>GET, HEAD,  POST, PUT, TRACE, OPTIONS, DELETE</li>
+</ul>
+</li>
+<li><p>상태 코드</p>
+<ul>
+<li>클라이언트에게 무엇이 일어났는지 말해준다</li>
+<li>응답 메시지의 시작줄에 담겨반환된다<table>
+<thead>
+<tr>
+<th>상태 코드</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100~199</td>
+<td>정보</td>
+</tr>
+<tr>
+<td>200~299</td>
+<td>성공</td>
+</tr>
+<tr>
+<td>300~399</td>
+<td>리다이렉션</td>
+</tr>
+<tr>
+<td>400~499</td>
+<td>클라이언트 에러</td>
+</tr>
+<tr>
+<td>500~599</td>
+<td>서버 에러</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>사유 구절: 애플리케이션 개발자들이 그들의 사용자에게 요청 중에 무슨 일이 일어났는지 알려주기 위해 넘겨줄 수 있는, 상태 코드의 사람이 이해하기 쉬운 버전</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HTTP&#x2F;1.0 200 OK</span><br></pre></td></tr></table></figure>
+
+<p>→ 여기서 <code>OK</code></p>
+</li>
+<li><p>버전 번호: 어떤 애플리케이션이 지워하는 가장 높은 HTTP 버전</p>
+</li>
+</ul>
+<h3 id="3-2-3-헤더요청과-응답-메시지에-추가-정보를-더하며-이름-값-쌍의-목록으로-구성된다"><a href="#3-2-3-헤더요청과-응답-메시지에-추가-정보를-더하며-이름-값-쌍의-목록으로-구성된다" class="headerlink" title="3.2.3 헤더요청과 응답 메시지에 추가 정보를 더하며, 이름 값/쌍의 목록으로 구성된다."></a>3.2.3 헤더요청과 응답 메시지에 추가 정보를 더하며, 이름 값/쌍의 목록으로 구성된다.</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-length: 19</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>헤더 분류 - 일반 헤더/ 요청 헤더/ 응답 헤더/ Entity 헤더/ 확장 헤더</li>
+<li>헤더를 여러 줄로 나누기</li>
+</ul>
+<h3 id="3-2-4-엔터티-본문"><a href="#3-2-4-엔터티-본문" class="headerlink" title="3.2.4 엔터티 본문"></a>3.2.4 엔터티 본문</h3><p>HTTP 메시지의 화물</p>
+<h3 id="3-2-5-버전-0-9-메시지"><a href="#3-2-5-버전-0-9-메시지" class="headerlink" title="3.2.5 버전 0.9 메시지"></a>3.2.5 버전 0.9 메시지</h3><p>HTTP 버전 0.9는 HTTP 프로토콜의 초기 버전</p>
+<hr>
+<h2 id="3-3-메서드"><a href="#3-3-메서드" class="headerlink" title="3.3 메서드"></a>3.3 메서드</h2><h3 id="3-3-1-안전한-메서드-Safe-Method"><a href="#3-3-1-안전한-메서드-Safe-Method" class="headerlink" title="3.3.1 안전한 메서드(Safe Method)"></a>3.3.1 안전한 메서드(Safe Method)</h3><ul>
+<li>서버에 어떤 작용도 없는 HTTP 요청</li>
+<li>GET, HEAD</li>
+</ul>
+<h3 id="3-3-2-GET"><a href="#3-3-2-GET" class="headerlink" title="3.3.2 GET"></a>3.3.2 GET</h3><p>서버에게 리소스를 달라고 요청하기 위해 쓰인다</p>
+<h3 id="3-3-3-HEAD"><a href="#3-3-3-HEAD" class="headerlink" title="3.3.3 HEAD"></a>3.3.3 HEAD</h3><ul>
+<li>GET과 동일하게 동작한다</li>
+<li>클라이언트가 리소스를 실제로 가져올 필요 없이 헤더만을 조사할 수 있도록 해준다</li>
+</ul>
+<h3 id="3-3-4-PUT"><a href="#3-3-4-PUT" class="headerlink" title="3.3.4 PUT"></a>3.3.4 PUT</h3><ul>
+<li>서버에 문서를 쓴다</li>
+<li>콘텐츠를 변경한다</li>
+</ul>
+<h3 id="3-3-5-POST"><a href="#3-3-5-POST" class="headerlink" title="3.3.5 POST"></a>3.3.5 POST</h3><p>서버에 입력 데이터를 전송한다</p>
+<h3 id="3-3-6-TRACE"><a href="#3-3-6-TRACE" class="headerlink" title="3.3.6 TRACE"></a>3.3.6 TRACE</h3><ul>
+<li>클라이언트에게 자신의 요청이 서버에 도달했을 때 어떻게 보이게 되는지 알려준다</li>
+<li>주로 진단을 위해 사용한다</li>
+</ul>
+<h3 id="3-3-7-OPTIONS"><a href="#3-3-7-OPTIONS" class="headerlink" title="3.3.7 OPTIONS"></a>3.3.7 OPTIONS</h3><p>웹 서버에게 여러 가지 종류의 지원 범위에 대해 물어본다</p>
+<h3 id="3-3-8-DELETE"><a href="#3-3-8-DELETE" class="headerlink" title="3.3.8 DELETE"></a>3.3.8 DELETE</h3><p>서버에게 요청 URL로 지정한 리소스를 삭제할 것을 요청한다</p>
+<p><strong>👾 이때 클라이언트는 삭제가 수행되는 것을 보장하지 못한다.</strong><br>HTTP 명세는 서버가 클라이언트에게 알리지 않고 요청을 무시하는 것을 허용하기 때문이다</p>
+<h3 id="3-3-9-확장-메서드"><a href="#3-3-9-확장-메서드" class="headerlink" title="3.3.9 확장 메서드"></a>3.3.9 확장 메서드</h3><ul>
+<li>HTTP/1.1 명세에 정의되지 않은 메서드</li>
+<li>LOOK, MKCOL, COPY, MOVE 등</li>
+</ul>
+<hr>
+<h2 id="3-4-상태-코드"><a href="#3-4-상태-코드" class="headerlink" title="3.4 상태 코드"></a>3.4 상태 코드</h2><p>클라이언트에게 그들의 트랜잭션을 이해할 수 있는 쉬운 방법을 제공한다.</p>
+<h3 id="3-4-1-100-199-정보성-상태-코드"><a href="#3-4-1-100-199-정보성-상태-코드" class="headerlink" title="3.4.1 100-199: 정보성 상태 코드"></a>3.4.1 100-199: 정보성 상태 코드</h3><p>100 Continue는 HTTP 클라이언트 애플리케이션이 서버에 엔터티 본문을 전송하기 전에 그 엔터티 본문을 서버가 받아들일 것인지 확인하려고 할 때, 그 확인 작업을 최적화하기 위한 의도로 도입되었다.</p>
+<ul>
+<li>클라이언트와 100 Continue</li>
+<li>서버와 100 Continue</li>
+<li>프락시와 100 Continue</li>
+</ul>
+<h3 id="3-4-2-200-299-성공-상태-코드"><a href="#3-4-2-200-299-성공-상태-코드" class="headerlink" title="3.4.2 200-299: 성공 상태 코드"></a>3.4.2 200-299: 성공 상태 코드</h3><h3 id="3-4-3-300-399-리다이렉션-상태-코드"><a href="#3-4-3-300-399-리다이렉션-상태-코드" class="headerlink" title="3.4.3 300-399: 리다이렉션 상태 코드"></a>3.4.3 300-399: 리다이렉션 상태 코드</h3><ul>
+<li>클라이언트가 관심있어 하는 리소스에 대해 다른 위치를 사용하라고 말해주거나 그 리소스의 내용 대신 다른 대안 응답을 제공한다</li>
+<li>리다이렉션 상태 코드 중 몇몇은 리소스에 대한 애플리케이션의 로컬 복사본이 원래 서버와 비교했을 때 유효한지 확인하기 위해 사용한다</li>
+<li>서버는 리다이렉트 응답에 들어갈 가장 적절한 리다이렉트 상태 코드를 선택하기 위해 클라이언트의 HTTP 버전을 검사할 필요가 있다</li>
+</ul>
+<h3 id="3-4-4-400-499-클라이언트-에러-상태-코드"><a href="#3-4-4-400-499-클라이언트-에러-상태-코드" class="headerlink" title="3.4.4 400-499: 클라이언트 에러 상태 코드"></a>3.4.4 400-499: 클라이언트 에러 상태 코드</h3><h3 id="3-4-5-500-599-서버-에러-상태-코드"><a href="#3-4-5-500-599-서버-에러-상태-코드" class="headerlink" title="3.4.5 500-599: 서버 에러 상태 코드"></a>3.4.5 500-599: 서버 에러 상태 코드</h3><hr>
+<h2 id="3-5-헤더"><a href="#3-5-헤더" class="headerlink" title="3.5. 헤더"></a>3.5. 헤더</h2><ul>
+<li><p>헤더와 메서드는 클라이언트와 서버가 무엇을 하는지 결정하기 위해 함께 사용된다</p>
+</li>
+<li><p>일반 헤더 - 다양한 목적</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Date: Tue, 3 Oc 1974 02:16:00 GMT</span><br></pre></td></tr></table></figure></li>
+<li><p>요청 헤더 - 서버에게 클라이언트가 받고자 하는 데이터의 타입이 무엇인지와 같은 부가 정보를 제공한다</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Accept: *&#x2F;*</span><br></pre></td></tr></table></figure></li>
+<li><p>응답 헤더 - 응답 메시지는 클라이언트에게 정보를 제공하기 위한 자신만의 헤더를 갖고 있다</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Server: Tiki-Hut&#x2F;1.0</span><br></pre></td></tr></table></figure></li>
+<li><p>엔터티 헤더 - 엔터티 본문에 대한 헤더</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Type: text&#x2F;html; charset&#x3D;iso-latin-1</span><br></pre></td></tr></table></figure></li>
+<li><p>확장 헤더 - 비표준 헤더</p>
+</li>
+</ul>
+<h3 id="3-5-1-일반-헤더"><a href="#3-5-1-일반-헤더" class="headerlink" title="3.5.1 일반 헤더"></a>3.5.1 일반 헤더</h3><p>메시지에 대한 아주 기본적인 정보를 제공한다</p>
+<ul>
+<li>일반 캐시 헤더: HTTP/1.0은 HTTP 애플리케이션에게 매번 원 서버로부터 객체를 가져오는 대신 로컬 복사본으로 캐시할 수 있도록 해주는 헤더</li>
+</ul>
+<h3 id="3-5-2-요청-헤더"><a href="#3-5-2-요청-헤더" class="headerlink" title="3.5.2 요청 헤더"></a>3.5.2 요청 헤더</h3><p>요청이 최초 발생한 곳에서 누가 혹은 무엇이 그 요청을 보냈는지에 대한 정보나 클라이언트의 선호나 능력에 대한 정보를 준다</p>
+<ul>
+<li>Accept 관련 헤더<ul>
+<li>클라이언트가 무엇을 원하고 무엇을 할 수 있는지, 그리고 무엇보다도 원치 않는 것은 무엇인지</li>
+<li>서버는 그 후 이 추가 정보를 활용해서 무엇을 보낼 것인가에 대해 더 똑똑한 결정을 내릴 수 있다</li>
+</ul>
+</li>
+<li>조건부 요청 헤더<ul>
+<li>클라이언트는 서버에게 요청에 응답하기 전에 먼저 조건이 참인지 확인하게 하는 제약을 포함한다</li>
+</ul>
+</li>
+<li>요청 보안 헤더<ul>
+<li>HTTP는 자체적으로 요청을 위한 간단한 인증요구/응답 체계를 갖고 있다</li>
+</ul>
+</li>
+<li>프락시 요청 헤더</li>
+</ul>
+<h3 id="3-5-3-응답-헤더"><a href="#3-5-3-응답-헤더" class="headerlink" title="3.5.3 응답 헤더"></a>3.5.3 응답 헤더</h3><p>클라이언트에게 부가 정보를 제공한다</p>
+<ul>
+<li>협상 헤더</li>
+<li>응답 보안 헤더</li>
+</ul>
+<h3 id="3-5-4-엔터티-헤더"><a href="#3-5-4-엔터티-헤더" class="headerlink" title="3.5.4 엔터티 헤더"></a>3.5.4 엔터티 헤더</h3><ul>
+<li>콘텐츠 헤더</li>
+<li>엔터티 캐싱 헤더</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p>HTTP 완벽 가이드 - 3장</p><p><a href="https://zigsong.github.io/2021/07/05/http-3/">https://zigsong.github.io/2021/07/05/http-3/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jieun song</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2021-07-05</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2021-07-05</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/07/05/http-4/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">HTTP 완벽 가이드 - 4장</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/07/04/woowa-week-22/"><span class="level-item">우테코 22주차 기록</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/profile_hexo.jpeg" alt="zig song"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">zig song</p><p class="is-size-6 is-block">FE Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">44</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-info is-outlined is-rounded" href="/" target="_self" rel="noopener">Home</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wldms5764@gmail.com"><i class="fa fa-envelope"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#HTTP-메시지"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">HTTP 메시지</span></span></a></li></ul><li><a class="level is-mobile" href="#3-1-메시지의-흐름"><span class="level-left"><span class="level-item">2</span><span class="level-item">3.1 메시지의 흐름</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#3-1-1-메시지는-원-서버-방향을-인바운드로-하여-송신된다"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">3.1.1 메시지는 원 서버 방향을 인바운드로 하여 송신된다</span></span></a></li><li><a class="level is-mobile" href="#3-1-2-다운스트림으로-흐르는-메시지"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">3.1.2 다운스트림으로 흐르는 메시지</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-2-메시지의-각-부분"><span class="level-left"><span class="level-item">3</span><span class="level-item">3.2 메시지의 각 부분</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#3-2-1-메시지-문법"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">3.2.1 메시지 문법</span></span></a></li><li><a class="level is-mobile" href="#3-2-2-시작줄"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">3.2.2 시작줄</span></span></a></li><li><a class="level is-mobile" href="#3-2-3-헤더요청과-응답-메시지에-추가-정보를-더하며-이름-값-쌍의-목록으로-구성된다"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">3.2.3 헤더요청과 응답 메시지에 추가 정보를 더하며, 이름 값/쌍의 목록으로 구성된다.</span></span></a></li><li><a class="level is-mobile" href="#3-2-4-엔터티-본문"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">3.2.4 엔터티 본문</span></span></a></li><li><a class="level is-mobile" href="#3-2-5-버전-0-9-메시지"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">3.2.5 버전 0.9 메시지</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-3-메서드"><span class="level-left"><span class="level-item">4</span><span class="level-item">3.3 메서드</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#3-3-1-안전한-메서드-Safe-Method"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">3.3.1 안전한 메서드(Safe Method)</span></span></a></li><li><a class="level is-mobile" href="#3-3-2-GET"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">3.3.2 GET</span></span></a></li><li><a class="level is-mobile" href="#3-3-3-HEAD"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">3.3.3 HEAD</span></span></a></li><li><a class="level is-mobile" href="#3-3-4-PUT"><span class="level-left"><span class="level-item">4.4</span><span class="level-item">3.3.4 PUT</span></span></a></li><li><a class="level is-mobile" href="#3-3-5-POST"><span class="level-left"><span class="level-item">4.5</span><span class="level-item">3.3.5 POST</span></span></a></li><li><a class="level is-mobile" href="#3-3-6-TRACE"><span class="level-left"><span class="level-item">4.6</span><span class="level-item">3.3.6 TRACE</span></span></a></li><li><a class="level is-mobile" href="#3-3-7-OPTIONS"><span class="level-left"><span class="level-item">4.7</span><span class="level-item">3.3.7 OPTIONS</span></span></a></li><li><a class="level is-mobile" href="#3-3-8-DELETE"><span class="level-left"><span class="level-item">4.8</span><span class="level-item">3.3.8 DELETE</span></span></a></li><li><a class="level is-mobile" href="#3-3-9-확장-메서드"><span class="level-left"><span class="level-item">4.9</span><span class="level-item">3.3.9 확장 메서드</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-4-상태-코드"><span class="level-left"><span class="level-item">5</span><span class="level-item">3.4 상태 코드</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#3-4-1-100-199-정보성-상태-코드"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">3.4.1 100-199: 정보성 상태 코드</span></span></a></li><li><a class="level is-mobile" href="#3-4-2-200-299-성공-상태-코드"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">3.4.2 200-299: 성공 상태 코드</span></span></a></li><li><a class="level is-mobile" href="#3-4-3-300-399-리다이렉션-상태-코드"><span class="level-left"><span class="level-item">5.3</span><span class="level-item">3.4.3 300-399: 리다이렉션 상태 코드</span></span></a></li><li><a class="level is-mobile" href="#3-4-4-400-499-클라이언트-에러-상태-코드"><span class="level-left"><span class="level-item">5.4</span><span class="level-item">3.4.4 400-499: 클라이언트 에러 상태 코드</span></span></a></li><li><a class="level is-mobile" href="#3-4-5-500-599-서버-에러-상태-코드"><span class="level-left"><span class="level-item">5.5</span><span class="level-item">3.4.5 500-599: 서버 에러 상태 코드</span></span></a></li></ul></li><li><a class="level is-mobile" href="#3-5-헤더"><span class="level-left"><span class="level-item">6</span><span class="level-item">3.5. 헤더</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#3-5-1-일반-헤더"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">3.5.1 일반 헤더</span></span></a></li><li><a class="level is-mobile" href="#3-5-2-요청-헤더"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">3.5.2 요청 헤더</span></span></a></li><li><a class="level is-mobile" href="#3-5-3-응답-헤더"><span class="level-left"><span class="level-item">6.3</span><span class="level-item">3.5.3 응답 헤더</span></span></a></li><li><a class="level is-mobile" href="#3-5-4-엔터티-헤더"><span class="level-left"><span class="level-item">6.4</span><span class="level-item">3.5.4 엔터티 헤더</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/frontend/"><span class="level-start"><span class="level-item">frontend</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/http/"><span class="level-start"><span class="level-item">http</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/woowacourse/"><span class="level-start"><span class="level-item">woowacourse</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-havruta-fe/"><span class="level-start"><span class="level-item">wtc-havruta-fe</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-pr-log/"><span class="level-start"><span class="level-item">wtc-pr-log</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-study-log/"><span class="level-start"><span class="level-item">wtc-study-log</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><figure class="media-left"><a class="image" href="/2021/07/12/http-6/"><img src="/images/http_thumbnail.jpeg" alt="HTTP 완벽 가이드 - 6장"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-12T07:11:15.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/http-6/">HTTP 완벽 가이드 - 6장</a></p><p class="categories"><a href="/categories/http/">http</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/12/http-5/"><img src="/images/http_thumbnail.jpeg" alt="HTTP 완벽 가이드 - 5장"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-12T07:10:15.000Z">2021-07-12</time></p><p class="title"><a href="/2021/07/12/http-5/">HTTP 완벽 가이드 - 5장</a></p><p class="categories"><a href="/categories/http/">http</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/woowa-week-23/"><img src="/images/woowa-thumbnail.jpeg" alt="우테코 23주차 기록"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:37:37.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/woowa-week-23/">우테코 23주차 기록</a></p><p class="categories"><a href="/categories/woowacourse/">woowacourse</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/fe-svg-without-cra/"><img src="/images/mac-thumbnail.jpeg" alt="CRA 없이 svg 사용하기"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:34:13.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/fe-svg-without-cra/">CRA 없이 svg 사용하기</a></p><p class="categories"><a href="/categories/frontend/">frontend</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/07/11/fe-babel-webpack/"><img src="/images/mac-thumbnail.jpeg" alt="babelrc와 webpack.config"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-07-11T02:32:43.000Z">2021-07-11</time></p><p class="title"><a href="/2021/07/11/fe-babel-webpack/">babelrc와 webpack.config</a></p><p class="categories"><a href="/categories/frontend/">frontend</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">July 2021</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">June 2021</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">May 2021</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">April 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">March 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">February 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ZIG-LOG</a><p class="is-size-7"><span>&copy; 2021 jieun song</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
