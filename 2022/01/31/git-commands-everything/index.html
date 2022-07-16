@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>git 명령어 부셔보기 - zig-log</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="zig-log"><meta name="msapplication-TileImage" content="/images/balloon-favicon.ico"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="zig-log"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="이제는 정복해 보자"><meta property="og:type" content="blog"><meta property="og:title" content="git 명령어 부셔보기"><meta property="og:url" content="https://zigsong.github.io/2022/01/31/git-commands-everything/"><meta property="og:site_name" content="zig-log"><meta property="og:description" content="이제는 정복해 보자"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://zigsong.github.io/images/git-thumbnail.png"><meta property="article:published_time" content="2022-01-31T08:22:25.000Z"><meta property="article:modified_time" content="2022-02-06T15:01:51.443Z"><meta property="article:author" content="jieun song"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/git-thumbnail.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zigsong.github.io/2022/01/31/git-commands-everything/"},"headline":"git 명령어 부셔보기","image":["https://zigsong.github.io/images/git-thumbnail.png"],"datePublished":"2022-01-31T08:22:25.000Z","dateModified":"2022-02-06T15:01:51.443Z","author":{"@type":"Person","name":"jieun song"},"description":"이제는 정복해 보자"}</script><link rel="canonical" href="https://zigsong.github.io/2022/01/31/git-commands-everything/"><link rel="icon" href="/images/balloon-favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">ZIG-LOG</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-01-31T08:22:25.000Z" title="2022. 1. 31. 오후 5:22:25">2022-01-31</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-02-06T15:01:51.443Z" title="2022. 2. 7. 오전 12:01:51">2022-02-07</time></span><span class="level-item"><a class="link-muted" href="/categories/git-github/">git &amp; github</a></span><span class="level-item">an hour read (About 7040 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">git 명령어 부셔보기</h1><div class="content"><h3 id="이제는-정복해-보자"><a href="#이제는-정복해-보자" class="headerlink" title="이제는 정복해 보자"></a>이제는 정복해 보자</h3><img class="preview" src="/images/git-thumbnail.png">
+<br />
+
+<span id="more"></span>
+
+<p>3년이나 개발을 공부해왔음에도 불구하고 매번 답이 안 나오는 git… 🤦‍♀️ 회사 코드를 본격적으로 뜯어보기 전, 설날 기념 잉여인간일 때 git을 정복해야겠다는 생각이 들었다. GUI 도구인 Git Kraken을 사용하고 싶기도 하고…</p>
+<p>(2/6 추가)<br>많이 공부하긴 했으나 더 알아야 할 내용이 많다. 언젠간 추가할 것. 이라고 해놓으면 분명 안하겠지만 두번째 민족 대명절인 추석이 오기 전에는 (…) 할 것이라고 믿는다.</p>
+<hr>
+<h2 id="✅-변경-이력-등록하기"><a href="#✅-변경-이력-등록하기" class="headerlink" title="✅ 변경 이력 등록하기"></a>✅ 변경 이력 등록하기</h2><p>git을 사용하는 로컬 저장소의 workflow는 크게 세 가지 단계로 나뉜다.</p>
+<ol>
+<li><strong>작업 디렉토리(working directory)</strong>: 현재 작업중인 공간으로, 마음대로 편집할 수 있다.</li>
+<li><strong>스테이징 영역(staging area)</strong>: commit할 준비가 된 파일을 잠시 올려두는 공간으로, 작업 디렉토리와 HEAD 사이 징검다리 역할을 한다. <blockquote>
+<p>💡 <strong>스테이징 영역</strong>은 공식적으로는 <strong>인덱스(index)</strong> 라고 표현하고 있지만, 여기서는 일상적으로 사용하는 용어인 <strong>스테이징 영역</strong>을 사용한다.</p>
+</blockquote>
+</li>
+<li><strong>HEAD</strong>: 스테이징 영역에 있는 데이터의 스냅샷을 찍어 커밋(commit)을 생성하여 git이 관리하게 되는 공간이다. 가장 최근 변경본을 가리킨다.</li>
+</ol>
+<p>이때 <strong>작업 디렉토리</strong>의 파일들은 다시 두 가지로 나뉜다. 한번이라도 git의 관리 대상이 되어 스냅샷이 있는 파일의 경우에는 <strong>tracked</strong>, 새롭게 추가되어 git이 아직 모르는 파일은 <strong>untracked</strong> 파일로 구분한다.</p>
+<img src="/images/article/git-commands-everything/01.jpg" width="560px" />
+<br />
+
+<p>‘a.txt’라는 파일을 생성하고 내용을 입력한 뒤, <code>git status</code>를 통해 작업 트리를 확인해보자.</p>
+<blockquote>
+<p>💡 <code>git status</code> 명령어는 작업 디렉토리와 스테이징 영역의 상태를 확인하기 위해서 사용한다.</p>
+</blockquote>
+<img src="/images/article/git-commands-everything/02.png" width="560px" />
+<br />
+
+<p>아직 한번도 git이 관리한 적이 없는 a.txt 파일이 Untracked files에 빨간색 글씨로 표시된다. <code>git add</code> 명령어로 스테이징 영역에 파일을 올려보자.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add a.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 <code>git add</code>에 옵션을 붙여 스테이지(stage)할 파일의 목록을 선택할 수 있다.</p>
+<ul>
+<li><code>git add .</code>: 현재 디렉토리의 모든 변경 내용을 스테이징할 때</li>
+<li><code>git add -A</code>: 모든 디렉토리의 모든 변경 내용을 스테이징할 때</li>
+</ul>
+</blockquote>
+<p>그러면 다음과 같이 a.txt가 commit할 준비가 되어있음을 알려준다.</p>
+<img src="/images/article/git-commands-everything/03.png" width="560px" />
+<br />
+
+<p>이제 변경된 파일을 커밋해보자. <code>git commit</code> 명령어로 현재 스테이징된 파일들을 커밋한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit </span><br></pre></td></tr></table></figure>
+
+<p>위 명령어만 입력하면 다음과 같이 커밋 메시지를 입력할 수 있는 쉘이 뜬다.</p>
+<img src="/images/article/git-commands-everything/04.png" width="560px" />
+<br />
+
+<p>쉘을 이용하는 건 상당히 무섭고 귀찮은 일이므로, 명령어 자체에 커밋 메시지를 추가해보도록 하자.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m [커밋 메시지]</span><br></pre></td></tr></table></figure>
+
+<p>이제 <code>git log</code>로 커밋 내역을 확인해보자. </p>
+<img src="/images/article/git-commands-everything/05.png" width="560px" />
+<br />
+
+<p>로그를 살펴보면 <code>HEAD -&gt; main</code>이라고 되어있는 것을 확인할 수 있다. 여기서 <code>HEAD</code>는 현재 브랜치를 가리키는 포인터이며, 지금의 <code>HEAD</code>가 가리키는 커밋은 바로 다음 커밋의 부모가 된다.</p>
+<p>여기서 다시! a.txt 파일의 내용을 수정한 후, <code>git status</code>를 실행해 보자.</p>
+<img src="/images/article/git-commands-everything/06.png" width="560px" />
+<br />
+
+<p>여전히 빨간 글씨로 표시되지만, 처음에 a.txt를 만들어 Untracked 영역에 있을 때와는 달리 <code>Changes not staged for commit</code>이라는 메시지를 볼 수 있다. Tracked 영역, 즉 이미 git이 관리하고 있는 파일에 수정이 발생한 것이기 때문이다.</p>
+<p>이렇게 작업을 했던 워킹 디렉토리의 변경사항을 날리고 싶다면 <code>git restore a.txt</code> 명령어를 실행해준다.</p>
+<blockquote>
+<p>💡 <code>git restore</code> 명령어는 작업 디렉토리에서 수정한 파일을 되돌리는 명령어다. 이미 스테이징한 파일을 되돌릴 때는 <code>git restore --staged</code> 명령어를 사용하면 된다.</p>
+</blockquote>
+<hr>
+<h2 id="🥊-리모트-저장소-이용하기"><a href="#🥊-리모트-저장소-이용하기" class="headerlink" title="🥊 리모트 저장소 이용하기"></a>🥊 리모트 저장소 이용하기</h2><h3 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h3><p><code>git remote</code> 명령어를 통해 로컬과 연결되어 있는 모든 저장소의 이름을 확인할 수 있다. <code>git clone</code>을 통해 리모트 저장소를 복제했다면 리모트 저장소 이름은 기본적으로 <code>origin</code>이 되며, <code>git remote rename [이전 이름] [새로운 이름]</code> 명령어로 로컬에서 사용할 리모트 저장소 각각의 이름을 바꿀 수 있다.</p>
+<p><code>git remote add [단축 이름] [URL]</code> 명령어를 통해 기존 워킹 디렉토리에 새 리모트 저장소를 추가할 수도 있다. </p>
+<blockquote>
+<p>💡 유용한 <code>git remote</code> 옵션</p>
+</blockquote>
+<ul>
+<li><code>git remote -v</code>: 리모트 저장소들의 이름을 URL과 함께 볼 수 있다.</li>
+<li><code>git remote show [리모트 저장소 이름]</code>: 리모트 저장소의 구체적인 정보(브랜치 등)를 확인할 수 있다.</li>
+</ul>
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a>push</h3><p><code>git commit</code>으로 파일의 변경 이력을 로컬 저장소에 남겼다. 이제 리모트 저장소인 github에 코드의 변경 이력을 반영하기 위해서는 <code>git push</code> 명령어로 로컬 저장소의 내용을 전송해줘야 한다.</p>
+<p><code>git push</code> 명령어는 기본적으로 리모트 저장소 이름과 브랜치 이름을 인자로 받는다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push [저장소 이름] [브랜치 이름]</span><br></pre></td></tr></table></figure>
+
+<p><code>git push</code> 명령어를 사용할 때마다 매번 저장소명과 브랜치명을 입력하는 게 귀찮다면, <code>-u</code> 옵션을 사용하여 최초 한번만 저장소명과 브랜치명을 입력하고 그 이후에는 인자들을 생략할 수 있다.  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+
+<p><code>git log</code>로 확인해보면 아래와 같이 커밋에 빨간 글씨로 <code>origin/main</code>과 <code>origin/HEAD</code>가 추가된 것을 볼 수 있다.</p>
+<img src="/images/article/git-commands-everything/07.png" width="560px" />
+<br />
+
+<h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3><p>리모트 저장소에서 데이터를 가져올 때는 <code>fetch</code> 명령어를 사용한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch [리모트 저장소 이름]</span><br></pre></td></tr></table></figure>
+
+<p>이 명령은 로컬에는 없지만, 리모트 저장소에는 있는 데이터를 모두 가져온다. 이때 데이터를 ‘가져오기’만 하고 merge 시켜주지는 않는다. </p>
+<h3 id="pull"><a href="#pull" class="headerlink" title="pull"></a>pull</h3><p><code>pull</code> 명령어는 리모트 저장소의 브랜치에서 데이터를 가져올 뿐 아니라, 자동으로 로컬 브랜치의 현재 코드에 merge시켜준다. <code>fetch</code>와 <code>merge</code>를 합친 명령어다. </p>
+<p><code>pull</code> 명령어는 아래 브랜치 시스템을 이해하며 더 자세히 알아보자.</p>
+<hr>
+<h2 id="🌴-브랜치-시스템-이해하기"><a href="#🌴-브랜치-시스템-이해하기" class="headerlink" title="🌴 브랜치 시스템 이해하기"></a>🌴 브랜치 시스템 이해하기</h2><h3 id="브랜치-만들고-이동하기"><a href="#브랜치-만들고-이동하기" class="headerlink" title="브랜치 만들고 이동하기"></a>브랜치 만들고 이동하기</h3><p>모든 버전 관리 시스템은 브랜치를 지원하며, git 역시 훌륭한 브랜치 전략을 지원한다. <del>잘 사용하지 못하는 것은 우리의 책임인 것이다.</del> </p>
+<p>git은 데이터를 change set이나 변경사항(diff)으로 기록하지 않고 일련의 스냅샷으로 기록한다는 점이 특징적이다. 새로 브랜치를 만들 때 프로젝트를 통째로 복사하는 대신, git의 브랜치는 어떤 한 커밋을 가리키는 SHA-1 체크섬 파일에 불과하기 때문에 생성과 삭제가 쉽고 효율적인 메모리 관리가 가능하다. </p>
+<p>브랜치를 직접 만들어보자.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch feat1</span><br></pre></td></tr></table></figure>
+
+<p>위 명령어로 브랜치를 만들 수도 있지만, 브랜치 생성과 동시에 해당 브랜치로 이동까지 해줄 수도 있다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b feat1</span><br></pre></td></tr></table></figure>
+
+<p>git은 지금 작업 중인 (로컬) 브랜치를 <code>HEAD</code>라는 특수한 포인터로 파악한다. 방금 전 <code>feat1</code> 브랜치로 이동했으므로 이제 <code>HEAD</code>는 <code>feat1</code> 브랜치를 가리키게 된다.</p>
+<img src="/images/article/git-commands-everything/08.jpg" width="560px" />
+<br />
+
+<p>이 상태에서 ‘feat1.txt’ 파일을 생성하고 커밋을 새로 해보자.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add feat1.txt</span><br><span class="line">git commit -m &quot;create feat1.txt&quot;</span><br></pre></td></tr></table></figure>
+
+<p>이제 <code>HEAD</code>가 가리키는 <code>feat1</code> 브랜치가 <code>main</code>보다 한 단계 앞서있다.</p>
+<img src="/images/article/git-commands-everything/08_1.jpg" width="560px" />
+<br />
+
+<p>다시 <code>main</code> 브랜치로 되돌아가보자.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br></pre></td></tr></table></figure>
+
+<p>이제 <code>main</code> 브랜치가 가리키는 커밋을 <code>HEAD</code>가 가리키게 되었으며, 워킹 디렉토리의 파일도 그 시점으로 되돌려 놓았다.</p>
+<img src="/images/article/git-commands-everything/08_2.jpg" width="560px" />
+<br />
+
+
+<blockquote>
+<p>💡 <strong>유용한 git branch 옵션들</strong></p>
+<ul>
+<li>git branch -r: 리모트 브랜치 목록 보기</li>
+<li>git branch -a: 로컬 브랜치 목록 보기</li>
+<li>git branch -m [이전 이름] [새 이름]: 브랜치 이름 바꾸기</li>
+<li>git branch -d [브랜치 이름]: 브랜치 삭제하기</li>
+</ul>
+</blockquote>
+<h3 id="브랜치-merge하기"><a href="#브랜치-merge하기" class="headerlink" title="브랜치 merge하기"></a>브랜치 merge하기</h3><p>현재 <code>main</code> 브랜치에서 작업을 하다가 특정한 이슈를 처리하기 위해 <code>feat1</code> 브랜치를 만들었다.</p>
+<p>이때 갑자기 프로젝트에 문제가 생겨서 급하게 버그를 해결해야 하는 경우가 발생한다. hotfix 내용에 <code>feat1</code>의 작업 내역이 섞이는 것을 방지하기 위해 다시 <code>main</code> 브랜치로 돌아간 후 <code>hotfix1</code> 브랜치를 만들어 이동한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git checkout -b hotfix1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 이때 <code>feat1</code>에 아직 커밋하지 않은 파일이 있고, 해당 파일이 <code>main</code> 브랜치와 충돌이 난다면 <code>main</code> 브랜치로 checkout할 수 없다. 이때는 <code>git stash</code> 명령어를 통해 워킹 디렉토리를 정리할 수 있다.</p>
+</blockquote>
+<p><code>hotfix1</code> 브랜치에서 버그 수정 후 커밋을 하면 브랜치 히스토리는 아래와 같이 그려질 것이다.</p>
+<img src="/images/article/git-commands-everything/08_3.jpg" width="560px" />
+<br />
+
+<p>hotfix 내용을 운영 환경에 적용하기 위해 <code>hotfix1</code> 브랜치를 <code>main</code> 브랜치에 합쳐야 한다. 여기서 <code>git merge</code>를 사용한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge hotfix1</span><br></pre></td></tr></table></figure>
+
+<img src="/images/article/git-commands-everything/08_4.png" width="560px" />
+<br />
+
+<p><code>hotfix1</code> 브랜치가 가리키는 커밋이 <code>main</code>이 가지고 있는 커밋 히스토리를 모두 포함하고 있기 때문에 브랜치 포인터는 그저 최신 커밋으로 이동한다. 이렇게 단순히 브랜치 포인터를 이동하는 merge 방식을 Fast-forward(빨리감기)라고 부른다. 이때는 merge commit이 생기지 않는다.</p>
+<p>이제 <code>main</code>과 <code>hotfix1</code> 브랜치 포인터는 같은 커밋을 가리키게 되었다.</p>
+<img src="/images/article/git-commands-everything/08_5.jpg" width="560px" />
+<br />
+
+<p>이제 필요 없어진 <code>hotfix1</code> 브랜치는 삭제하고, 원래 작업하던 <code>feat1</code> 브랜치로 돌아가 작업을 계속한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch -d hotfix1</span><br><span class="line">git checkout feat1</span><br></pre></td></tr></table></figure>
+
+<p><code>feat1</code>에서 어느 정도 작업을 한 이후에는 해당 작업 내용을 <code>main</code> 브랜치에 merge해야 한다. 현재 브랜치 히스토리는 아래와 같다.</p>
+<img src="/images/article/git-commands-everything/08_6.jpg" width="560px" />
+<br />
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge feat1</span><br></pre></td></tr></table></figure>
+
+<img src="/images/article/git-commands-everything/08_7.png" width="560px" />
+<br />
+
+<p><code>hotfix1</code>을 merge했을 때와는 메시지가 다르다. 현재 브랜치가 가리키는 커밋이 merge할 브랜치의 조상이 아니므로 (merge할 브랜치의 모든 커밋을 포함하고 있지 않으므로) Fast-forward merge가 불가능하다. 이 경우 git은 각 브랜치가 가리키는 커밋 두 개와 공통 조상 하나를 사용하여 3-way merge를 한다.</p>
+<img src="/images/article/git-commands-everything/08_8.jpg" width="560px" />
+<br />
+
+<p>단순히 브랜치 포인터를 최신 커밋으로 옮기는 게 아니라, 3-way merge의 결과를 별도의 커밋으로 만든 후 해당 브랜치가 그 커밋을 가리키도록 이동시키는 것이다.</p>
+<p>이때 만약 <code>hotfix1</code> 브랜치와 <code>feat1</code> 브랜치가 같은 부분을 수정했다면 작업 내역에 충돌이 발생할 수도 있다. 이 경우 git은 자동 merge를 하지 못하며, 개발자가 Conflict를 해결해줘야 한다.</p>
+<p>충돌한 부분을 모두 해결하고 <code>git add</code> 명령어로 다시 git에 저장한 후, 커밋을 해주면 merge가 완료된다!</p>
+<h3 id="리모트-브랜치와-싱크-맞추기"><a href="#리모트-브랜치와-싱크-맞추기" class="headerlink" title="리모트 브랜치와 싱크 맞추기"></a>리모트 브랜치와 싱크 맞추기</h3><p>지금까지의 작업은 모두 로컬 브랜치에서 진행한 내용이다. 이제 리모트 저장소로 가보자!</p>
+<p>리모트 트래킹 브랜치는 리모트 브랜치를 추적하는 레퍼런스이며 브랜치다. 리모트 트래킹 브랜치는 일종의 북마크로, 리모트 저장소에 마지막으로 연결했던 순간에 브랜치가 무슨 커밋을 가리키고 있었는지를 나타낸다.</p>
+<p>리모트 트래킹 브랜치의 이름은 <code>[리모트 저장소 이름]/[브랜치 이름]</code> 형식으로 되어 있다. github의 레퍼지토리를 clone 받는다면 git은 이 리모트 저장소에 자동으로 <code>origin</code>이라는 이름을 붙이고, <code>main</code> 브랜치를 가리키는 포인터를 만든다. 이 포인터가 바로 <code>origin/main</code>이며, 로컬의 <code>main</code> 브랜치는 <code>origin/main</code>을 가리키게 된다.</p>
+<img src="/images/article/git-commands-everything/09.jpg" width="560px" />
+<br />
+
+<p>리모트 저장소의 <code>main</code> 브랜치에 누군가 다른 내용을 변경한 커밋을 push했다면 로컬의 <code>main</code> 브랜치와 히스토리가 서로 달라지게 된다.</p>
+<img src="/images/article/git-commands-everything/09_1.jpg" width="560px" />
+<br />
+
+<p>이때는 우선 <code>fetch</code> 명령어로 리모트 저장소에 있는 브랜치의 내용을 가져온다. </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 이때 리모트 저장소에서 가져온 최신 커밋 이력은 이름 없는 브랜치로 로컬에 불러와지며, 임시로 <code>FETCH_HEAD</code>라는 특수한 이름을 가진다. <code>git checkout FETCH_HEAD</code> 명령어로 리모트 저장소에서 가져온 업데이트를 확인해볼 수 있다.</p>
+</blockquote>
+<p>그러면 브랜치 히스토리는 아래와 같아진다.</p>
+<img src="/images/article/git-commands-everything/09_2.jpg" width="560px" />
+<br />
+
+<p><code>fetch</code>를 통해 서버의 데이터를 받아와서 저장했지만, 워킹 디렉토리의 파일 내용은 변경되지 않고 그대로 남아있다. 새로 받은 브랜치의 내용을 합쳐주기 위해서 <code>merge</code>를 실행한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge origin/main</span><br></pre></td></tr></table></figure>
+
+<p><code>pull</code> 명령어를 사용하면 <code>fetch</code>와 <code>merge</code>를 한번에 해줄 수 있다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin main</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 협업 시 사용했던 리모트 브랜치를 만든 후 작업을 마쳐 더 이상 해당 브랜치가 필요하지 않게 되었다면, <code>git push origin --delete [브랜치 이름]</code> 명령어로 리모트 브랜치를 삭제해준다.</p>
+</blockquote>
+<hr>
+<h2 id="👩‍🔧-고통의-rebase"><a href="#👩‍🔧-고통의-rebase" class="headerlink" title="👩‍🔧 고통의 rebase"></a>👩‍🔧 고통의 rebase</h2><p><del>고통의 rebase 단계에 진입했다…</del></p>
+<p>merge 말고도 git에서 한 브랜치에서 다른 브랜치로 합치는 방법이 있다. 바로 <strong>rebase</strong>다.</p>
+<img src="/images/article/git-commands-everything/10.jpg" width="560px" />
+<br />
+
+<p>위 그림과 같이 브랜치가 분기되어있을 때, <code>merge</code> 명령어를 사용하여 합치면 3-way merge로 새로운 커밋이 생성된다.</p>
+<p>이때 <code>C4</code>의 변경 사항을 Patch로 만들고 이를 다시 <code>C5</code>에 적용시키는 방법이 있다. 이를 바로 <strong>rebase</strong>라고 한다. <code>rebase</code> 명령어로 한 브랜치의 변경 사항을 다른 브랜치에 적용할 수 있다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feat1</span><br><span class="line">git rebase main</span><br></pre></td></tr></table></figure>
+
+<p>실제로 rebase가 진행되는 과정은 다음과 같다.</p>
+<ol>
+<li><code>main</code>, <code>feat1</code> 두 브랜치가 나뉘기 전인 공통 브랜치(<code>C3</code>)로 이동한 후 그 커밋부터 지금 checkout한 브랜치가 가리키는 커밋까지 diff를 차례대로 만들어 어딘가에 임시로 저장해 놓는다.</li>
+<li>rebase할 브랜치(<code>feat1</code>)가 합칠 브랜치(<code>main</code>)이 가리키는 커밋을 가리키게 하고, 아까 저장해 놓았던 변경사항을 차례대로 적용한다.</li>
+</ol>
+<p>rebase 이후의 브랜치 히스토리는 아래와 같다.</p>
+<img src="/images/article/git-commands-everything/10_1.jpg" width="560px" />
+<br />
+
+<p>이제 <code>main</code> 브랜치도 <code>C4&#39;</code> 커밋을 가질 수 있도록 <code>main</code> 브랜치를 Fast-forward시켜준다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge feat1</span><br></pre></td></tr></table></figure>
+
+<img src="/images/article/git-commands-everything/10_2.jpg" width="560px" />
+<br />
+
+<p>짠!✨ 새로운 머지 커밋 없이 히스토리가 예쁘게 정리되었다.</p>
+<blockquote>
+<p>💡 <strong>merge vs rebase</strong> </p>
+<ul>
+<li>merge: 변경 내용의 이력이 모두 그대로 남아 있기 때문에 이력이 복잡해진다.</li>
+<li>rebase: 이력은 단순해지지만, 원래의 커밋 이력이 변경된다. 정확한 이력을 남겨야 할 경우에는 사용하면 안 된다.</li>
+</ul>
+</blockquote>
+<p>rebase 방식을 사용할 때는 병합 충돌(merge conflict)이 발생하는 모든 커밋들에 대해 충돌을 일일이 해결해줘야 한다. 충돌난 커밋이 너무 많을 때는 rebase보다는 단순 병합(pull)을 하는 것이 더 나을 수도 있다.</p>
+<h3 id="rebase-onto"><a href="#rebase-onto" class="headerlink" title="rebase onto"></a>rebase onto</h3><p><code>rebase --onto</code>는 다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치와 같은 히스토리가 있을 경우에 사용할 수 있는 명령어다. <code>server</code> 브랜치를 만들어서 서버 기능을 추가하고 그 브랜치에서 다시 <code>client</code> 브랜치를 만들어 클라이언트 기능을 추가한다. 마지막으로 <code>server</code> 브랜치로 돌아가서 몇 가지 기능을 더 추가한다.</p>
+<p>아. 그림 그리기 너무 힘들다. 여기서부터는 <a target="_blank" rel="noopener" href="https://git-scm.com/book/ko/v2">출처</a>서 가져온 그림을 그대로 활용하자. 그림의 <code>master</code>를 <code>main</code>으로 바꿔서 생각하면 된다. 아무튼 요즘 github은 <code>main</code>이라는 이름을 사용하고 있으니.</p>
+<img src="/images/article/git-commands-everything/11.png" width="560px" />
+<br />
+
+<p>이때 <code>server</code> 브랜치는 그대로 두고 <code>client</code> 브랜치만 <code>main</code>으로 합치는 상황을 생각해보자. <code>server</code>와는 아무 관련 없는 <code>client</code> 커밋은 <code>C8</code>, <code>C9</code>이다. 이 두 커밋을 <code>main</code> 브랜치에 적용하기 위해서 <code>--onto</code> 옵션을 사용한다. 첫 번째 인자로는 새로운 조상이 될 베이스 커밋을 넘겨주고, 두 번째 인자로는 기존 베이스 커밋을 넘겨준다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --onto main server client</span><br></pre></td></tr></table></figure>
+
+<p><code>server</code> 브랜치와 <code>server</code> 브랜치와 <code>client</code> 브랜치의 공통 조상까지의 커밋을 <code>client</code> 브랜치에서 없애고 그 이후의 <code>client</code> 커밋들을 <code>main</code> 브랜치를 새로운 베이스로 하여 rebase해준다. <del>어려워서 토나올 것 같지만, 분명 이런 게 필요한 경우도 맞닥뜨려봤다.</del></p>
+<img src="/images/article/git-commands-everything/11_1.png" width="560px" />
+<br />
+
+<p>이제 <code>main</code> 브랜치로 돌아가서 Fast-forward시킬 수 있다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge client</span><br></pre></td></tr></table></figure>
+
+<img src="/images/article/git-commands-everything/11_2.png" width="560px" />
+<br />
+
+<p>이제 홀로 남겨진 <code>server</code> 브랜치의 작업이 마무리되면, server 브랜치로 이동 후 <code>git rebase main</code> 명령어로 <code>server</code>를 <code>main</code>에 rebase시켜준다. 결과는 아래와 같다. </p>
+<img src="/images/article/git-commands-everything/11_3.png" width="560px" />
+<br />
+
+<blockquote>
+<p>💡 Tip!<br><code>git rebase [베이스 브랜치] [토픽 브랜치]</code>로 인자를 입력하면, 토픽 브랜치로 checkout하지 않고도 rebase할 수 있다. </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase main server</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>이제 다시 <code>main</code> 브랜치를 Fast-forward시키면 최종적인 브랜치 히스토리가 완성된다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">git merge server</span><br></pre></td></tr></table></figure>
+
+<img src="/images/article/git-commands-everything/11_4.png" width="560px" />
+<br />
+
+<blockquote>
+<p>💡 <strong>rebase 시 주의사항</strong><br>이미 공개 저장소에 push한 커밋을 rebase하면 안 된다. rebase는 기존의 커밋을 그대로 이용하는 것이 아니라, 내용은 같지만 다른 커밋을 새로 만든다. 새 커밋을 push하고 동료 중 누군가가 그 커밋을 pull해서 작업을 한다고 하자. 그런데 그 커밋을 <code>git rebase</code>로 바꿔서 push해버리면 동료가 다시 push했을 때 동료는 다시 merge해야 한다. 그리고 동료가 다시 merge한 내용을 pull하면 내 코드는 정말 엉망이 되어버린다. 🤯</p>
+</blockquote>
+<h3 id="pull-rebase"><a href="#pull-rebase" class="headerlink" title="pull rebase"></a>pull rebase</h3><p>리모트 저장소와 로컬 저장소가 각각 다른 변경 사항을 가지고 있는 경우, Fast-forward merge가 불가능하다. 단순 <code>pull</code>을 하는 경우 별도의 merge commit이 생긴다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Merge branch &#39;main&#39; of https:&#x2F;&#x2F;github.com&#x2F;zigsong&#x2F;git-commands-test</span><br></pre></td></tr></table></figure>
+
+<p>이러한 병합 커밋을 만들지 않으려면 <code>--rebase</code> 옵션으로 rebase merge를 하면 된다. 이는 <code>git fetch</code>와 <code>git rebase</code> 명령어를 순서대로 실행하는 것과 같다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feat1</span><br><span class="line">git pull --rebase origin main</span><br></pre></td></tr></table></figure>
+
+<p>이렇게 하면 로컬 저장소의 브랜치가 리모트 저장소의 브랜치의 최신 커밋으로 rebase되어 병합 커밋이 남지 않는다.</p>
+<p>rebase로 모든 병합 충돌을 해결했다면, 강제(force) 푸쉬를 해줘야 한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -f origin feat1</span><br></pre></td></tr></table></figure>
+
+<p>강제 푸쉬를 하지 않으면 리모트 저장소의 <code>feat1</code> 브랜치를 pull 받아야 하는데, 그러면 로컬 저장소에서 rebase한 커밋과 리모트 저장소의 커밋이 중복되어 동일한 내용의 커밋이 생겨버리기 때문이다.</p>
+<hr>
+<h2 id="🚪-작업-이력-되돌리기"><a href="#🚪-작업-이력-되돌리기" class="headerlink" title="🚪 작업 이력 되돌리기"></a>🚪 작업 이력 되돌리기</h2><h3 id="reset"><a href="#reset" class="headerlink" title="reset"></a>reset</h3><p><code>reset</code> 명령어는 현재 <code>HEAD</code>를 특정한 상태로 되돌린다. 다만 <code>checkout</code> 명령어처럼 <code>HEAD</code>가 가리키는 브랜치를 바꾸지는 않으며, 계속 현재 브랜치를 가리키면서 현재 브랜치가 가리키는 커밋을 바꾼다.</p>
+<p><code>reset</code>에는 크게 3가지 옵션이 있는데, 각 옵션을 통해 <strong>워킹 디렉토리(working directory)</strong> 와 <strong>스테이징 영역(staging area)</strong>, 그리고 현재 브랜치를 가리키는 <strong>HEAD</strong> 를 어떻게 업데이트할 것인지 결정할 수 있다.</p>
+<p>첫 번째로, <code>reset</code>에 <code>--soft</code> 옵션을 붙여 실행하면 <strong>워킹 디렉토리</strong>와 <strong>스테이징 영역</strong>은 건드리지 않고 브랜치가 가리키는 커밋만 이전으로 되돌린다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --soft HEAD~1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>💡 <code>HEAD</code> 뒤에 오는 숫자는 돌아가고 싶은 커밋의 개수이다. <code>HEAD~1</code> 대신 특정 커밋의 해쉬를 입력해도 된다. 바로 직전 커밋으로 돌아가고 싶다면 <code>HEAD^</code>를 사용할 수 있다.</p>
+</blockquote>
+<p>다음으로, <code>reset</code> 명령을 실행할 때 아무 옵션도 주지 않았을 때는 기본적으로 <code>--mixed</code> 옵션을 생략한 것과 같다. 이때 <strong>스테이징 영역</strong>을 현재 <code>HEAD</code>가 가리키는 스냅샷으로 업데이트할 수 있다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [--mixed] HEAD~1</span><br></pre></td></tr></table></figure>
+
+<p>이 경우 <strong>워킹 디렉토리</strong>는 건드리지 않지만, <strong>스테이징 영역</strong>을 비운다. <code>git commit</code> 명령과 <code>git add</code> 명령을 모두 되돌리는 것이다.</p>
+<p>마지막으로 <code>reset</code>에 <code>--hard</code> 옵션을 사용하면 <strong>워킹 디렉토리</strong>까지 되돌린다. </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~1</span><br></pre></td></tr></table></figure>
+
+<p><code>--hard</code> 옵션을 사용한 경우 워킹 디렉토리의 파일까지 강제로 덮어쓰게 되며, 결과를 되돌리는 것이 불가능하므로 주의해서 사용해야 한다. </p>
+<p><code>reset</code> 명령어를 정리하면 다음과 같다.</p>
+<ol>
+<li>HEAD가 가리키는 브랜치를 옮긴다. (<code>--soft</code> 옵션이 붙으면 여기까지)</li>
+<li>스테이징 영역을 HEAD가 가리키는 상태로 만든다. (<code>--hard</code> 옵션이 붙지 않았으면 여기까지)</li>
+<li>워킹 디렉토리를 스테이징 영역의 상태로 만든다.</li>
+</ol>
+<blockquote>
+<p><strong>💡 이때 reset을 취소하고 싶다면?</strong><br><code>git reflog</code>를 통해 작업 내역을 확인한 후, 몇 번째 <code>HEAD</code>로 돌아갈지 선택한 후 아래와 같이 실행한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD@&#123;1&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="revert"><a href="#revert" class="headerlink" title="revert"></a>revert</h3><p><code>reset</code> 명령어는 github과 같은 온라인 원격 저장소에 올라가지 않은 상태의, 로컬 커밋을 되돌리는 명령어다. 작업 내역을 원격 저장소에 올린 경우라도 해당 브랜치를 자기 자신만 사용하고 있다면 문제가 되지 않겠지만, 다른 동료도 해당 브랜치를 사용하는 경우 함부로 <code>reset</code>을 해서는 안 된다. 이때는 <strong>revert</strong>를 사용한다.</p>
+<p><code>revert</code>는 <code>reset</code>과 달리 커밋을 삭제하는 것이 아니라, 커밋을 추가한다. 커밋을 추가하기 때문에 아래와 같은 메시지가 추가된다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Revert &#x27;...&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><code>revert</code>는 <code>reset</code>과 마찬가지로 <code>soft</code>, <code>hard</code> 등의 옵션이 붙을 수 있다. </p>
+<p>아래의 예시를 살펴보자.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;1번 커밋&quot;</span><br><span class="line">git commit -m &quot;2번 커밋&quot;</span><br><span class="line">git commit -m &quot;3번 커밋&quot;</span><br><span class="line"></span><br><span class="line">git revert [1번 커밋의 해쉬]</span><br></pre></td></tr></table></figure>
+
+<p>위처럼 명령어를 실행하면 ‘1번 커밋’ 이후의 커밋들이 삭제되는 것이 아니라, ‘1번 커밋’에 해당하는 내용만 삭제된다. 그리고 revert 커밋이 남게 된다. <code>git log</code> 명령어를 통해 확인할 수 있다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Revert &quot;1번 커밋&quot;</span><br><span class="line">3번 커밋</span><br><span class="line">2번 커밋</span><br><span class="line">1번 커밋</span><br></pre></td></tr></table></figure>
+
+<p>여러 개의 커밋을 되돌릴 때는 아래와 같이 사용한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert [from 커밋의 해쉬]..[to 커밋의 해쉬]</span><br></pre></td></tr></table></figure>
+
+<p><code>reset</code>과 <code>revert</code>의 차이를 그림으로 정리해 보자.</p>
+<img src="/images/article/git-commands-everything/12.jpg" width="560px" />
+<br />
+
+<img src="/images/article/git-commands-everything/12_1.jpg" width="560px" />
+<br />
+
+<p><code>reset</code>과 달리 <code>revert</code>는 중간 커밋만 삭제할 수 있고, 이전으로 되돌린 커밋의 이력이 모두 커밋 메시지를 통해 남기 때문에 히스토리 유지 차원에서 더 유용하다고 할 수 있다.</p>
+<hr>
+<h2 id="☀️-추가-Pull-Request-amp-Merge-PR"><a href="#☀️-추가-Pull-Request-amp-Merge-PR" class="headerlink" title="☀️ 추가! Pull Request &amp; Merge PR"></a>☀️ 추가! Pull Request &amp; Merge PR</h2><p>github에서 PR(Pull Request)을 보내는 경우, merge하려는 베이스 브랜치와 충돌이 없다면 Merge Pull Request 버튼이 활성화된다. 이때 오른쪽의 역삼각형 모양을 눌러보면, 아래와 같이 3가지 옵션이 표시된다.</p>
+<img src="/images/article/git-commands-everything/13.png" width="360px" />
+<br />
+
+<p>팀 프로젝트를 할 때 항상 헷갈렸던 세 가지 옵션들에 대해 살펴보자!</p>
+<p>🔖 <strong>Create a merge commit</strong></p>
+<p>PR의 베이스가 되는 <code>main</code> 브랜치와 토픽 브랜치(여기서는 <code>feat1</code>이라고 하겠다.)의 작업 이력이 다르다면 새로운 merge commit을 생성하게 된다. 히스토리는 아래 그림과 같다.</p>
+<img src="/images/article/git-commands-everything/13_1.png" width="560px" />
+<br />
+
+<p>🔖 <strong>Squash a merge</strong></p>
+<p>squash는 한국어로도 스쿼시란다. ㅡㅡ</p>
+<img src="/images/article/git-commands-everything/13_2.png" width="560px" />
+<br />
+
+<p>‘찌부러뜨리다’라는 말 정도로 해석이 가능한데, 여기서는 PR에 딸려 있는 모든 커밋들을 하나로 합쳐 새로운 커밋으로 만들어 베이스 브랜치인 <code>main</code>에 추가시키는 방식이다. 토픽 브랜치의 커밋 히스토리를 합쳐서 깔끔하게 만들기 위해 사용한다. 역시나 새로운 merge commit이 추가된다.</p>
+<img src="/images/article/git-commands-everything/13_3.png" width="560px" />
+<br />
+
+<p>🔖 <strong>Rebase a merge</strong></p>
+<p>PR에 포함된 모든 커밋들이 합쳐지지 않고 각각 <code>main</code> 브랜치에 추가된다. 각 commit은 모두 하나의 부모를 가진다. 이때 새로운 merge commit을 생성하지 않기 때문에 커밋 히스토리를 하나로 깔끔하게 만들 수 있다. (다만 하나의 브랜치에서 작업한 것처럼 보이게 된다!)</p>
+<img src="/images/article/git-commands-everything/13_4.png" width="560px" />
+<br />
+
+<p>이렇게 어떤 방법으로든 스무스하게 merge가 되면 좋겠지만… 그렇지 못한 경우는 늘상 발생한다. <code>main</code> 브랜치에서 파생한 <code>feat1</code> 브랜치에서 작업 후 <code>main</code> 브랜치를 베이스로 PR을 열어놓은 사이, <code>main</code> 브랜치에서 파생한 또다른 브랜치인 <code>feature2</code>의 작업 내역이 먼저 PR merge됐다면 어떨까? </p>
+<p>(자동 merge가 불가능하다는 회색 버튼이 뜬다 - 사진을 추가해야할 것이다)</p>
+<p>이때 github 상에서 conflict을 해결해줄 수도 있지만, 그러면 새로운 merge commit이 생기는 만큼(확실한가?) 다른 방식을 생각해보게 될 것이다. 이때 <code>git rebase</code>가 다시 한번 등장한다.</p>
+<p>(다음 시간에…)</p>
+<hr>
+<h2 id="🎸-기타"><a href="#🎸-기타" class="headerlink" title="🎸 기타"></a>🎸 기타</h2><h3 id="git-alias"><a href="#git-alias" class="headerlink" title="git alias"></a>git alias</h3><p>git에서 사용할 명령어를 별칭으로 기록해두는 거~ (작성중)</p>
+<h3 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h3><p>git이 관리할 필요가 없는 파일(ex. 로그 파일, 환경변수 파일)들은 <code>.gitignore</code> 파일에 작성하여 git의 관리 대상에서 제외시켜줄 수 있다. 리액트 프로젝트의 경우 용량이 큰 <code>node_modules</code> 폴더와 빌드 아웃풋인 <code>dist</code> 폴더를 <code>.gitignore</code>로 제외시켜주는 것이 일반적이다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node_modules&#x2F;</span><br><span class="line">dist&#x2F;</span><br><span class="line">.env</span><br></pre></td></tr></table></figure>
+
+<h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p>워킹 디렉토리의 내용을 잠시 올려두는 거~ (작성중)</p>
+<h3 id="cherrypick"><a href="#cherrypick" class="headerlink" title="cherrypick"></a>cherrypick</h3><p>특정 브랜치에서 작업을 하던 도중, 다른 브랜치에서 특정 커밋만을 가져올 수 있다. </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feat1</span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
+
+<p><code>feat1</code> 브랜치의 <code>...</code>번 커밋을 <code>feature2</code> 브랜치로 가져오고 싶을 때 cherrypick 명령어를 사용한다.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feature2</span><br><span class="line">git cherry-pick `...`</span><br></pre></td></tr></table></figure>
+
+<img />
+
+<h3 id="git-tag"><a href="#git-tag" class="headerlink" title="git tag"></a>git tag</h3><p>태그로 프로젝트 히스토리에 버전을 명시해주는 거~ (작성중)</p>
+<hr>
+<h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/docs">https://git-scm.com/docs</a><br><a target="_blank" rel="noopener" href="https://git-scm.com/book/ko/v2/">https://git-scm.com/book/ko/v2/</a><br><a target="_blank" rel="noopener" href="https://kyounghwan01.github.io/blog/etc/git/git-reset-revert/%EC%9D%B4-%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%8B%E1%85%B3%E1%86%AF-%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2">https://kyounghwan01.github.io/blog/etc/git/git-reset-revert/이-작업을-하는-이유</a><br><a target="_blank" rel="noopener" href="https://im-developer.tistory.com/182">https://im-developer.tistory.com/182</a>  </p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>git 명령어 부셔보기</p><p><a href="https://zigsong.github.io/2022/01/31/git-commands-everything/">https://zigsong.github.io/2022/01/31/git-commands-everything/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>jieun song</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2022-01-31</p></div></div><div class="level-item is-narrow"><div><h6>Updated on</h6><p>2022-02-07</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/02/03/refactoring-1-2/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">리팩터링 1장 - 2</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/01/29/2022-1-week-4/"><span class="level-item">1월 4주차 기록</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar is-rounded" src="/images/profile_hexo.jpeg" alt="zig song"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">zig song</p><p class="is-size-6 is-block">FE Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Seoul</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">158</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">14</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-info is-outlined is-rounded" href="/" target="_self" rel="noopener">Home</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zigsong"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:wldms5764@gmail.com"><i class="fa fa-envelope"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">Catalogue</h3><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#이제는-정복해-보자"><span class="level-left"><span class="level-item">1.1</span><span class="level-item">이제는 정복해 보자</span></span></a></li></ul><li><a class="level is-mobile" href="#✅-변경-이력-등록하기"><span class="level-left"><span class="level-item">2</span><span class="level-item">✅ 변경 이력 등록하기</span></span></a></li><li><a class="level is-mobile" href="#🥊-리모트-저장소-이용하기"><span class="level-left"><span class="level-item">3</span><span class="level-item">🥊 리모트 저장소 이용하기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#remote"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">remote</span></span></a></li><li><a class="level is-mobile" href="#push"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">push</span></span></a></li><li><a class="level is-mobile" href="#fetch"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">fetch</span></span></a></li><li><a class="level is-mobile" href="#pull"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">pull</span></span></a></li></ul></li><li><a class="level is-mobile" href="#🌴-브랜치-시스템-이해하기"><span class="level-left"><span class="level-item">4</span><span class="level-item">🌴 브랜치 시스템 이해하기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#브랜치-만들고-이동하기"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">브랜치 만들고 이동하기</span></span></a></li><li><a class="level is-mobile" href="#브랜치-merge하기"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">브랜치 merge하기</span></span></a></li><li><a class="level is-mobile" href="#리모트-브랜치와-싱크-맞추기"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">리모트 브랜치와 싱크 맞추기</span></span></a></li></ul></li><li><a class="level is-mobile" href="#👩‍🔧-고통의-rebase"><span class="level-left"><span class="level-item">5</span><span class="level-item">👩‍🔧 고통의 rebase</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#rebase-onto"><span class="level-left"><span class="level-item">5.1</span><span class="level-item">rebase onto</span></span></a></li><li><a class="level is-mobile" href="#pull-rebase"><span class="level-left"><span class="level-item">5.2</span><span class="level-item">pull rebase</span></span></a></li></ul></li><li><a class="level is-mobile" href="#🚪-작업-이력-되돌리기"><span class="level-left"><span class="level-item">6</span><span class="level-item">🚪 작업 이력 되돌리기</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#reset"><span class="level-left"><span class="level-item">6.1</span><span class="level-item">reset</span></span></a></li><li><a class="level is-mobile" href="#revert"><span class="level-left"><span class="level-item">6.2</span><span class="level-item">revert</span></span></a></li></ul></li><li><a class="level is-mobile" href="#☀️-추가-Pull-Request-amp-Merge-PR"><span class="level-left"><span class="level-item">7</span><span class="level-item">☀️ 추가! Pull Request &amp; Merge PR</span></span></a></li><li><a class="level is-mobile" href="#🎸-기타"><span class="level-left"><span class="level-item">8</span><span class="level-item">🎸 기타</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#git-alias"><span class="level-left"><span class="level-item">8.1</span><span class="level-item">git alias</span></span></a></li><li><a class="level is-mobile" href="#gitignore"><span class="level-left"><span class="level-item">8.2</span><span class="level-item">.gitignore</span></span></a></li><li><a class="level is-mobile" href="#git-stash"><span class="level-left"><span class="level-item">8.3</span><span class="level-item">git stash</span></span></a></li><li><a class="level is-mobile" href="#cherrypick"><span class="level-left"><span class="level-item">8.4</span><span class="level-item">cherrypick</span></span></a></li><li><a class="level is-mobile" href="#git-tag"><span class="level-left"><span class="level-item">8.5</span><span class="level-item">git tag</span></span></a></li></ul></li><li><a class="level is-mobile" href="#Ref"><span class="level-left"><span class="level-item">9</span><span class="level-item">Ref</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/frontend/"><span class="level-start"><span class="level-item">frontend</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><li><a class="level is-mobile" href="/categories/git-github/"><span class="level-start"><span class="level-item">git &amp; github</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/javascript/"><span class="level-start"><span class="level-item">javascript</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/nestjs/"><span class="level-start"><span class="level-item">nestjs</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/oop-true-and-false/"><span class="level-start"><span class="level-item">oop-true-and-false</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/refactoring/"><span class="level-start"><span class="level-item">refactoring</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li><li><a class="level is-mobile" href="/categories/retrospective/"><span class="level-start"><span class="level-item">retrospective</span></span><span class="level-end"><span class="level-item tag">32</span></span></a></li><li><a class="level is-mobile" href="/categories/troubleshooting/"><span class="level-start"><span class="level-item">troubleshooting</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/typescript/"><span class="level-start"><span class="level-item">typescript</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/categories/woowacourse/"><span class="level-start"><span class="level-item">woowacourse</span></span><span class="level-end"><span class="level-item tag">35</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-havruta-fe/"><span class="level-start"><span class="level-item">wtc-havruta-fe</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-pr-log/"><span class="level-start"><span class="level-item">wtc-pr-log</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/categories/wtc-study-log/"><span class="level-start"><span class="level-item">wtc-study-log</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/%EA%B8%80%EB%98%90/"><span class="level-start"><span class="level-item">글또</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><figure class="media-left"><a class="image" href="/2022/07/16/2022-7-week-3/"><img src="/images/retrospective-thumbnail.jpeg" alt="7월 3주차 기록"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-07-15T23:40:20.000Z">2022-07-16</time></p><p class="title"><a href="/2022/07/16/2022-7-week-3/">7월 3주차 기록</a></p><p class="categories"><a href="/categories/retrospective/">retrospective</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/07/10/npm-troubleshooting/"><img src="/images/troubleshooting-thumbnail.jpeg" alt="legacy-peer-deps 너 뭐 돼?"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-07-10T13:51:13.000Z">2022-07-10</time></p><p class="title"><a href="/2022/07/10/npm-troubleshooting/">legacy-peer-deps 너 뭐 돼?</a></p><p class="categories"><a href="/categories/troubleshooting/">troubleshooting</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/07/09/2022-7-week-2/"><img src="/images/retrospective-thumbnail.jpeg" alt="7월 2주차 기록"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-07-08T23:39:54.000Z">2022-07-09</time></p><p class="title"><a href="/2022/07/09/2022-7-week-2/">7월 2주차 기록</a></p><p class="categories"><a href="/categories/retrospective/">retrospective</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/07/02/2022-7-week-1/"><img src="/images/retrospective-thumbnail.jpeg" alt="7월 1주차 기록"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-07-02T05:50:48.000Z">2022-07-02</time></p><p class="title"><a href="/2022/07/02/2022-7-week-1/">7월 1주차 기록</a></p><p class="categories"><a href="/categories/retrospective/">retrospective</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2022/06/25/2022-6-week-4/"><img src="/images/retrospective-thumbnail.jpeg" alt="6월 4주차 기록"></a></figure><div class="media-content"><p class="date"><time dateTime="2022-06-25T04:59:05.000Z">2022-06-25</time></p><p class="title"><a href="/2022/06/25/2022-6-week-4/">6월 4주차 기록</a></p><p class="categories"><a href="/categories/retrospective/">retrospective</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/07/"><span class="level-start"><span class="level-item">July 2022</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">June 2022</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">May 2022</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/04/"><span class="level-start"><span class="level-item">April 2022</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">March 2022</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">February 2022</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">January 2022</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">December 2021</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">November 2021</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">October 2021</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/09/"><span class="level-start"><span class="level-item">September 2021</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">August 2021</span></span><span class="level-end"><span class="level-item tag">14</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/07/"><span class="level-start"><span class="level-item">July 2021</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/06/"><span class="level-start"><span class="level-item">June 2021</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/05/"><span class="level-start"><span class="level-item">May 2021</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/04/"><span class="level-start"><span class="level-item">April 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/03/"><span class="level-start"><span class="level-item">March 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/02/"><span class="level-start"><span class="level-item">February 2021</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></div></div></div><!--!--></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">ZIG-LOG</a><p class="is-size-7"><span>&copy; 2022 jieun song</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script></body></html>
