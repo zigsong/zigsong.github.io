@@ -8,8 +8,6 @@ tags: retrospective
 
 <!-- more -->
 
-<img src="/images/thumbnails/weekly-thumbnail.jpg" />
-
 ---
 
 개발자로서 가장 많이 성장한 한 해였고, 그 어느 때보다 좋은 사람들을 많이 만났고, 넘칠 만한 사랑과 도움을 받았다.

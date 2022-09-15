@@ -8,8 +8,6 @@ SSR | 웹 접근성 미션 | EC2 배포
 
 <!-- more -->
 
-<img src="/images/thumbnails/weekly-thumbnail.jpg" />
-
 ---
 
 ## 놀토 프로젝트
