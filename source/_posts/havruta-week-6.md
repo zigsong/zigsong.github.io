@@ -2,13 +2,12 @@
 title: 하프 스터디 6주차 - this
 date: 2021-05-02 08:34:13
 tags: havruta
+thumbnailImage: https://i.imgur.com/ljZQrHo.jpg
 ---
 
 with 디토
 
 <!-- more -->
-
-<img src="/images/thumbnails/havruta-thumbnail.jpeg" />
 
 ---
 

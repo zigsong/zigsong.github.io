@@ -2,13 +2,12 @@
 title: 우테코 28주차 기록
 date: 2021-08-14 17:35:17
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우테코 28주차 기록
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

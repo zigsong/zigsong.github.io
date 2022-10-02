@@ -2,13 +2,12 @@
 title: 우테코 36주차 기록
 date: 2021-10-23 17:07:08
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 할로윈 테마 | 테스트가 펑펑
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

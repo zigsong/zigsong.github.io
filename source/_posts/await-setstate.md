@@ -2,13 +2,12 @@
 title: React의 setState에 await을 붙이면?
 date: 2021-10-16 18:14:08
 tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 React의 setState에 await을 붙이면?
 
 <!-- more -->
-
-<img src="/images/thumbnails/react-thumbnail.png" />
 
 ---
 

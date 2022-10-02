@@ -2,13 +2,12 @@
 title: 자바스크립트 반응형
 date: 2021-10-31 16:42:35
 tags: javascript
+thumbnailImage: https://i.imgur.com/ucikqnG.jpg
 ---
 
 자바스크립트 반응형
 
 <!-- more -->
-
-<img src="/images/thumbnails/js-thumbnail.png" />
 
 ---
 

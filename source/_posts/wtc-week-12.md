@@ -2,13 +2,12 @@
 title: 우테코 12주차 이야기
 date: 2021-04-24 08:45:22
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 Storybook으로 컴포넌트 UI 테스트 | prop drilling | propTypes
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

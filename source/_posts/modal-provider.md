@@ -1,14 +1,13 @@
 ---
 title: ModalProvider 만들기
 date: 2021-07-18 19:38:46
-tags: frontend
+tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 ModalProvider 만들기
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

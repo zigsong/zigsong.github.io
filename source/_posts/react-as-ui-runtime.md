@@ -1,14 +1,13 @@
 ---
 title: UI runtime으로서의 리액트
 date: 2021-09-26 19:01:55
-tags:
+tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 UI runtime으로서의 리액트
 
 <!-- more -->
-
-<img src="/images/thumbnails/react-thumbnail.png" />
 
 ---
 

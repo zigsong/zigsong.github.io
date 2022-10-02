@@ -2,13 +2,12 @@
 title: webpack 설정 뜯어보기
 date: 2021-09-11 20:25:58
 tags: [frontend, webpack]
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 it’s 재정비 타임~
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 놀토 프로젝트에서 사용하는 webpack 설정 재정비 중!
 

@@ -2,13 +2,12 @@
 title: 이펙티브 타입스크립트 3장
 date: 2021-12-18 14:20:02
 tags: effective-typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 타입 추론
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

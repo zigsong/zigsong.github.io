@@ -1,14 +1,13 @@
 ---
 title: 우테코 22주차 기록
 date: 2021-07-04 22:25:07
-tags:
+tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우테코 22주차 기록
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

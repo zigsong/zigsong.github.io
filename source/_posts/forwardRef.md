@@ -2,13 +2,12 @@
 title: 왜 forwardRef를 사용할까?
 date: 2021-07-18 19:42:08
 tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 React의 forwardRef
 
 <!-- more -->
-
-<img src="/images/thumbnails/react-thumbnail.png" />
 
 ---
 

@@ -2,13 +2,12 @@
 title: file input 다루는 법
 date: 2021-07-18 19:44:09
 tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 `<input type="file" />` 다루는 법
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

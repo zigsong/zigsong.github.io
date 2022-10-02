@@ -2,13 +2,12 @@
 title: 리팩터링 7장
 date: 2022-03-24 23:12:52
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 캡슐화
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

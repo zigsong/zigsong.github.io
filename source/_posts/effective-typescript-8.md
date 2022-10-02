@@ -2,13 +2,12 @@
 title: 이펙티브 타입스크립트 8장
 date: 2022-01-20 23:56:59
 tags: effective-typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 타입스크립트로 마이그레이션하기
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

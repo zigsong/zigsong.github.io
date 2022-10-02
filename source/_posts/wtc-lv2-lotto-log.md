@@ -2,13 +2,12 @@
 title: 우테코 Lv2 lotto 학습로그
 date: 2021-04-21 08:49:49
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 우테코 Lv2 lotto 학습로그
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

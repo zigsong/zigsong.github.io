@@ -1,14 +1,13 @@
 ---
 title: babelrc와 webpack.config
 date: 2021-07-11 22:23:28
-tags:
+tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 babelrc와 webpack.config
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

@@ -1,14 +1,13 @@
 ---
 title: 자바스크립트 함수형 프로그래밍과 파이프
 date: 2021-12-03 14:40:20
-tags:
+tags: javascript
+thumbnailImage: https://i.imgur.com/ucikqnG.jpg
 ---
 
 배열에서의 함수형 프로그래밍 | reduce | pipe
 
 <!-- more -->
-
-<img src="/images/thumbnails/js-thumbnail.png" />
 
 ---
 

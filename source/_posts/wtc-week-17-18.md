@@ -2,13 +2,12 @@
 title: 우테코 17-18주차 기록
 date: 2021-06-05 22:33:41
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 React Testing Library | msw | custom hook
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

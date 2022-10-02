@@ -2,13 +2,12 @@
 title: React 18 톺아보기
 date: 2021-10-03 18:39:51
 tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 React 18의 새로운 feature
 
 <!-- more -->
-
-<img src="/images/thumbnails/react-thumbnail.png" />
 
 loadable components에서 SSR로 마이그레이션하다가,
 

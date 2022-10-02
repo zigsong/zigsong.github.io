@@ -2,13 +2,12 @@
 title: 우테코 11주차 이야기
 date: 2021-04-17 08:59:44
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 webpack으로 React 프로젝트 시작하기 | React setState의 비동기성 | React 이모저모
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

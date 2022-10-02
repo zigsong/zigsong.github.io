@@ -2,6 +2,7 @@
 title: 객체지향의 사실과 오해 - 3장
 date: 2022-02-18 19:21:16
 tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 타입과 추상화
@@ -9,8 +10,6 @@ tags: oop-true-and-false
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 > 일단 컴퓨터를 조작하는 것이 추상화를 구축하고, 조작하고, 추론하는 것에 관한 모든 것이라는 것을 깨닫고 나면 (훌륭한) 컴퓨터 프로그램을 작성하기 위한 중요한 전제 조건은 추상화를 정확하게 다루는 능력이라는 것이 명확해진다.
 

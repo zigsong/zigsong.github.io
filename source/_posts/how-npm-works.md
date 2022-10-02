@@ -2,13 +2,12 @@
 title: npm은 어떻게 동작할까
 date: 2021-10-31 16:46:52
 tags: npm
+thumbnailImage: https://i.imgur.com/4i7MZ1Z.jpg
 ---
 
 npm은 어떻게 동작할까
 
 <!-- more -->
-
-<img src="/images/thumbnails/npm-thumbnail.jpeg" />
 
 ---
 

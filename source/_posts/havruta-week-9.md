@@ -2,13 +2,12 @@
 title: 하프 스터디 9주차 - 브라우저 렌더링
 date: 2021-05-30 22:39:37
 tags: havruta
+thumbnailImage: https://i.imgur.com/ljZQrHo.jpg
 ---
 
 with 하루
 
 <!-- more -->
-
-<img src="/images/thumbnails/havruta-thumbnail.jpeg" />
 
 ---
 

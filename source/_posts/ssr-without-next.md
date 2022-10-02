@@ -2,13 +2,12 @@
 title: Next.js 없이 React 앱 SSR 적용하기
 date: 2021-10-02 18:53:39
 tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 SSR | express | hydration
 
 <!-- more -->
-
-<img src="/images/thumbnails/react-thumbnail.png" />
 
 세상에 어떤 사람들이 Next.js를 사용하지 않고 리액트 앱을 SSR로 마이그레이션할까 싶지만… 우리는 해낸다!
 

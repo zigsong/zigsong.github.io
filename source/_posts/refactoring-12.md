@@ -2,6 +2,7 @@
 title: 리팩터링 12장
 date: 2022-05-27 23:43:35
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 상속 다루기
@@ -9,8 +10,6 @@ tags: refactoring
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

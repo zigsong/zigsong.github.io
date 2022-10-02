@@ -2,13 +2,12 @@
 title: 하프 스터디 5주차 - 변수와 데이터타입
 date: 2021-04-25 08:40:34
 tags: havruta
+thumbnailImage: https://i.imgur.com/ljZQrHo.jpg
 ---
 
 with 곤이
 
 <!-- more -->
-
-<img src="/images/thumbnails/havruta-thumbnail.jpeg" />
 
 ---
 

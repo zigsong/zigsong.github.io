@@ -2,13 +2,12 @@
 title: 우테코 14주차 이야기
 date: 2021-05-08 23:34:15
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 git hook | React + TypeScript | Redux
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

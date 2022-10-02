@@ -2,6 +2,7 @@
 title: 객체지향의 사실과 오해 - 1장
 date: 2022-01-29 23:52:09
 tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 협력하는 객체들의 공동체
@@ -9,8 +10,6 @@ tags: oop-true-and-false
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 객체지향의 목표는 실세계를 모방하는 것이 아니라 새로운 세계를 창조하는 것이다. 단순히 실세계를 소프트웨어 안으로 옮겨 담는 것이 아니라 고객과 사용자를 만족시킬 수 있는 신세계를 창조하는 것이다
 

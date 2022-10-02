@@ -2,6 +2,7 @@
 title: 객체지향의 사실과 오해 - 부록
 date: 2022-03-26 22:54:51
 tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 부록A: 추상화 기법
@@ -9,8 +10,6 @@ tags: oop-true-and-false
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 ## 추상화 기법
 

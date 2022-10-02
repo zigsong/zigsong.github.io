@@ -1,14 +1,13 @@
 ---
 title: 우아한 타입스크립트 1부
 date: 2021-12-19 14:11:53
-tags:
+tags: typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 타입시스템 올바르게 사용하는 법
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

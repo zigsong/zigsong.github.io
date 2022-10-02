@@ -2,13 +2,12 @@
 title: 리팩터링 3장
 date: 2022-02-17 19:24:01
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 코드에서 나는 악취
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

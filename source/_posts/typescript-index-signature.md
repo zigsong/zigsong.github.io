@@ -1,14 +1,13 @@
 ---
 title: 타입스크립트의 index signature
 date: 2021-07-18 19:40:26
-tags:
+tags: typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 타입스크립트의 index signature
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

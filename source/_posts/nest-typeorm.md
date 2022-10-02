@@ -6,13 +6,12 @@ tags:
   - mysql
   - nestjs
   - typeorm
+thumbnailImage: https://imgur.com/a/5Ll7ZkN
 ---
 
 이 얼마나 거창한 제목인가…
 
 <!-- more -->
-
-<img src="/images/thumbnails/nest-thumbnail.png" />
 
 사내 웹프론트그룹에서 하고 있는 어떠한 비밀(?..) 프로젝트에서, 막내라는 이유로 그룹장을 하고 있당. 최종적으로 만들고 싶은 플랫폼의 프로토타이핑을 하고, 각자의 꿈을 펼쳐보기로…
 

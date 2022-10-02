@@ -2,13 +2,12 @@
 title: 우테코 Lv1 subway 학습로그
 date: 2021-04-10 09:06:43
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 우테코 Lv1 subway 학습로그
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

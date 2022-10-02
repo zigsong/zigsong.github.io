@@ -2,6 +2,7 @@
 title: 객체지향의 사실과 오해 - 5장
 date: 2022-03-05 18:49:43
 tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 책임과 메시지
@@ -9,8 +10,6 @@ tags: oop-true-and-false
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 존 달리와 밥 라타네는 실험을 통해 ‘책임감 분산’이라는 현상을 발견했다. 사건에 대한 목격자가 많으면 많을수록 개인이 느끼는 책임감은 적어진다. 집단적 위기 상황에서 명확한 책임을 가진 권위자가 없을 때, 대부분의 사람들은 자신에게 명확한 책임이 없는 경우에는 발작 환자를 도와주는 일을 타인의 책임으로 간주해버린다. 그에 반해 이를 보고할 책임이 명확하게 주어진 경우에는 신속하게 위기 상황을 해결하려고 노력한다.
 

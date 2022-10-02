@@ -2,13 +2,12 @@
 title: 리팩터링 9장
 date: 2022-04-14 21:49:26
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 데이터 조직화
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

@@ -2,13 +2,12 @@
 title: 타입스크립트 타입 가드
 date: 2021-08-01 17:41:16
 tags: typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 TypeScript type guard
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

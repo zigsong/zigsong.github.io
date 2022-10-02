@@ -2,13 +2,12 @@
 title: 우테코 32주차 기록
 date: 2021-09-18 20:20:47
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 Lv4 1차 데모데이 | 애플 클론코딩
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

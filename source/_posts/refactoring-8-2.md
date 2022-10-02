@@ -2,15 +2,12 @@
 title: 리팩터링 8장 - 2
 date: 2022-04-07 22:02:04
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 기능 이동 - 2
 
 <!-- more -->
-
----
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

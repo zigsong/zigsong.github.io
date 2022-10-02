@@ -2,13 +2,12 @@
 title: 이펙티브 타입스크립트 7장
 date: 2022-01-15 00:01:25
 tags: effective-typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 코드를 작성하고 실행하기
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

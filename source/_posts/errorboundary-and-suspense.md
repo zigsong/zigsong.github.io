@@ -1,14 +1,13 @@
 ---
 title: Error Boundary와 Suspense
 date: 2021-07-24 17:51:18
-tags: frontend
+tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 Error Boundary와 Suspense
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

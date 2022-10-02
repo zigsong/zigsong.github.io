@@ -2,13 +2,12 @@
 title: 리팩터링 4-5장
 date: 2022-02-24 19:13:18
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 테스트 구축하기 | 리팩토링 카탈로그 보는 법
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

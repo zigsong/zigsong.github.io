@@ -1,14 +1,15 @@
 ---
 title: react hook은 왜 조건문 안에서 쓰면 안 될까?
 date: 2021-08-28 20:42:30
-tags:
+tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 react hook은 왜 조건문 안에서 쓰면 안 될까?
 
 <!-- more -->
 
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
+---
 
 [react 공식 문서](https://ko.reactjs.org/docs/hooks-rules.html#explanation)에 따르면 react hook을 사용하는 규칙 중 아래와 같은 내용이 있다.
 

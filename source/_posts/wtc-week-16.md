@@ -1,14 +1,13 @@
 ---
 title: 우테코 16주차 기록
 date: 2021-05-22 22:45:17
-tags:
+tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 useCallback과 useMemo | React의 Router | Redux Middlware
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

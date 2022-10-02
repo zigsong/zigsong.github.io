@@ -2,13 +2,12 @@
 title: 리액트가 함수 컴포넌트와 클래스 컴포넌트를 구별하는 법
 date: 2021-11-16 16:37:21
 tags: react
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 Overreacted
 
 <!-- more -->
-
-<img src="/images/thumbnails/react-thumbnail.png" />
 
 ---
 

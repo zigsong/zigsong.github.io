@@ -1,7 +1,8 @@
 ---
 title: 우테코 33주차 기록
 date: 2021-10-02 18:59:50
-tags:
+tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 SSR | 웹 접근성 미션 | EC2 배포

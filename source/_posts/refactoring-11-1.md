@@ -1,14 +1,13 @@
 ---
 title: 리팩터링 11장 - 1
 date: 2022-05-14 10:16:07
-tags:
+tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 API 리팩터링 - 1
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

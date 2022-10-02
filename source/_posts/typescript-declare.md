@@ -2,13 +2,12 @@
 title: TypeScript declare
 date: 2021-09-18 20:01:52
 tags: typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 (다시 쓸 예정)
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 놀토 프로젝트에서 사용하는 Kakao API를 TypeScript와 함께 사용하기 위해서는 아래처럼 Kakao API를 초기화해주는 작업이 필요하다.
 

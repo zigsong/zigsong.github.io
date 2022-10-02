@@ -2,13 +2,12 @@
 title: 우테코 Lv1 youtube classroom 학습로그
 date: 2021-03-18 09:50:49
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 우테코 Lv1 youtube classroom 학습로그
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

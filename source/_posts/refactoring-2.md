@@ -2,13 +2,12 @@
 title: 리팩터링 2장
 date: 2022-02-09 22:37:18
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 리팩터링 원칙
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

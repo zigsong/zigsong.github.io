@@ -2,13 +2,12 @@
 title: Babel의 (조금) 모든 것
 date: 2021-09-05 20:33:00
 tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 Babel의 (조금) 모든 것
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 프로젝트를 수행하며 Babel에 대해 알고 싶은 내용들만 정리해보는 글
 

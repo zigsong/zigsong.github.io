@@ -2,13 +2,12 @@
 title: 프론트엔드 성능 분석 & 기본 성능 개선
 date: 2021-08-14 17:30:59
 tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 성능 측정 | bundle 압축 | 이미지 리사이징
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

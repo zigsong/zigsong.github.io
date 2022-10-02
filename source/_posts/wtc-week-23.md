@@ -2,13 +2,12 @@
 title: 우테코 23주차 기록
 date: 2021-07-11 22:15:10
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 Git, Github 활용하기 | React App에서 svg 다루기 | babelrc vs webpack
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

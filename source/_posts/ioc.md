@@ -2,6 +2,7 @@
 title: Inversion of Control (IOC)
 date: 2021-10-23 16:59:24
 tags: design
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 IOC | 제어의 역전

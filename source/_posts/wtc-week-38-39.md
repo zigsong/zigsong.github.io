@@ -2,13 +2,12 @@
 title: 우테코 38~39주차 기록
 date: 2021-11-13 16:40:55
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우아한형제들 지원 기간
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ## 놀토 프로젝트
 

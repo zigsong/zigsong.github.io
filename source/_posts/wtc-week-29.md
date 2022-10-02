@@ -2,13 +2,12 @@
 title: 우테코 29주차 기록
 date: 2021-08-28 17:12:12
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우아한테크코스 29주차
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 
@@ -104,36 +103,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout source code
-      uses: actions/checkout@v2
+      - name: Checkout source code
+        uses: actions/checkout@v2
 
-    - name: Setup node
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14'
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
 
-    - run: npm install
+      - run: npm install
 
-    - name: Setup yarn
-      run: npm install -g yarn
+      - name: Setup yarn
+        run: npm install -g yarn
 
-    - name: Install Dependencies
-      run: yarn
+      - name: Install Dependencies
+        run: yarn
 
-    - name: Build
-      run: yarn build
-      env:
-        GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
+      - name: Build
+        run: yarn build
+        env:
+          GIPHY_API_KEY: ${{ secrets.GIPHY_API_KEY }}
 
-    - name: S3 Deploy
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-      run: aws s3 sync ./dist s3://[s3-bucket-name]/ --acl bucket-owner-full-control
+      - name: S3 Deploy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        run: aws s3 sync ./dist s3://[s3-bucket-name]/ --acl bucket-owner-full-control
 ```
 
 **Ref**
+
 - https://yung-developer.tistory.com/111
 - https://zzsza.github.io/development/2020/06/06/github-action/
 

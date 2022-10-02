@@ -2,13 +2,12 @@
 title: 프론트엔드 성능 베이스캠프
 date: 2021-08-28 20:51:16
 tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 프론트엔드 성능 베이스캠프
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

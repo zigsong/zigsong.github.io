@@ -2,6 +2,7 @@
 title: 우테코 15주차 기록
 date: 2021-05-15 23:23:04
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우아한테크코스 15주차
@@ -9,8 +10,6 @@ tags: woowacourse
 useCallback과 useMemo | React의 Router | Redux Middleware
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

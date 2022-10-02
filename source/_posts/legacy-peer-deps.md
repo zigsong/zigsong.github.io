@@ -1,7 +1,8 @@
 ---
 title: legacy-peer-deps 너 뭐 돼?
 date: 2022-07-10 21:33:53
-tags:
+tags: npm
+thumbnailImage: https://i.imgur.com/Bt0ezcR.jpg
 ---
 
 npm 트러블슈팅 연대기

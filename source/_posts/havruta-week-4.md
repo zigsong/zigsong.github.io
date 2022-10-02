@@ -2,13 +2,12 @@
 title: 하프 스터디 4주차 - 함수
 date: 2021-04-18 08:51:40
 tags: havruta
+thumbnailImage: https://i.imgur.com/ljZQrHo.jpg
 ---
 
 with 카일
 
 <!-- more -->
-
-<img src="/images/thumbnails/havruta-thumbnail.jpeg" />
 
 ---
 

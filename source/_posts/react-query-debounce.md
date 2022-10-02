@@ -2,13 +2,12 @@
 title: react query에서 debounce 쓰기
 date: 2021-07-24 17:53:00
 tags: frontend
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 react query에서 hook으로 debounce 쓰기
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

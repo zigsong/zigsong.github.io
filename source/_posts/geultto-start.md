@@ -2,13 +2,12 @@
 title: 글또 6기를 시작하며
 date: 2021-07-25 17:46:59
 tags: geultto
+thumbnailImage: https://i.imgur.com/NP9iqMn.jpg
 ---
 
 글또 6기를 시작하며
 
 <!-- more -->
-
-<img src="/images/thumbnails/writing-thumbnail.jpeg" />
 
 ---
 

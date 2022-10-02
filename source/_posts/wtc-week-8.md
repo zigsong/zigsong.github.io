@@ -1,14 +1,13 @@
 ---
 title: 우테코 8주차 기록
 date: 2021-03-27 09:09:52
-tags:
+tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우테코 8주차 기록
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

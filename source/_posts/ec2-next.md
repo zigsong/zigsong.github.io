@@ -2,13 +2,12 @@
 title: EC2로 Next.js 앱 배포하기
 date: 2021-10-02 18:45:33
 tags: [aws, next]
+thumbnailImage: https://i.imgur.com/vxZVNXR.png
 ---
 
 EC2 | Next.js | Node.js | pm2 | nginx
 
 <!-- more -->
-
-<img src="/images/thumbnails/aws-thumbnail.png" />
 
 SSR을 사용하는 next.js 앱을 EC2에 배포하려다가 이것도 하고 저것도 하고… 결국 주말 하루를 꼬박 날리고야 만 대장정을 시작해보려고 한다.
 

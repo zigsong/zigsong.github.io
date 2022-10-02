@@ -2,13 +2,12 @@
 title: 리팩터링 1장 - 2
 date: 2022-02-03 22:43:36
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 리팩터링: 첫 번째 예시
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

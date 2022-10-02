@@ -2,13 +2,12 @@
 title: 우테코 Lv3 학습로그 - 프론트엔드 테스트
 date: 2021-08-20 17:14:50
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 프론트엔드 테스트
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

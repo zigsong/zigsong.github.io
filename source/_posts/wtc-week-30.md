@@ -8,8 +8,6 @@ tags: woowacourse
 
 <!-- more -->
 
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
-
 ---
 
 ## 놀토 프로젝트

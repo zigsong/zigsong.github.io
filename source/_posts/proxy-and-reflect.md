@@ -2,13 +2,12 @@
 title: 자바스크립트 Proxy & Reflect
 date: 2021-10-31 16:49:41
 tags: javascript
+thumbnailImage: https://i.imgur.com/ucikqnG.jpg
 ---
 
 Object.defineProperty와 뭐가 다를까?
 
 <!-- more -->
-
-<img src="/images/thumbnails/js-thumbnail.png" />
 
 ---
 

@@ -2,6 +2,7 @@
 title: 애플 클론코딩(을 빙자한 복제)
 date: 2021-09-18 19:07:22
 tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 새로 알게된 CSS 속성들

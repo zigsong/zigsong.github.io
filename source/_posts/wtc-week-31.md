@@ -2,13 +2,12 @@
 title: 우테코 31주차 기록
 date: 2021-09-11 20:29:54
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 렌더링 성능 최적화 | webpack 설정
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

@@ -2,13 +2,12 @@
 title: 우아한 타입스크립트 2부
 date: 2021-12-19 13:59:34
 tags: typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 실전 타입스크립트 코드 작성하기
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

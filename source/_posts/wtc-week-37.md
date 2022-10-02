@@ -2,13 +2,12 @@
 title: 우테코 37주차 기록
 date: 2021-10-27 16:54:48
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 마지막 QA | 마지막 데모데이
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

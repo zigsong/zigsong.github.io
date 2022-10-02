@@ -2,13 +2,12 @@
 title: 우테코 Lv1 Lotto PR로그
 date: 2021-03-08 09:57:35
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/utRJD0g.png
 ---
 
 우테코 Lv1 Lotto PR로그
 
 <!-- more -->
-
-<img src="/images/thumbnails/pr-thumbnail.png" />
 
 ---
 

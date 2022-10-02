@@ -2,13 +2,12 @@
 title: 우테코 3주차 기록
 date: 2021-02-20 10:14:29
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우테코 3주차 기록
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

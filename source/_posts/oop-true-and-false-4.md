@@ -2,6 +2,7 @@
 title: 객체지향의 사실과 오해 - 4장
 date: 2022-02-27 19:01:37
 tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 역할, 책임, 협력
@@ -9,8 +10,6 @@ tags: oop-true-and-false
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 > 우리 모두를 합친 것보다 더 현명한 사람은 없다.
 

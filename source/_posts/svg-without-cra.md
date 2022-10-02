@@ -2,13 +2,12 @@
 title: CRA 없이 svg 사용하기
 date: 2021-07-11 22:22:02
 tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 CRA 없이 svg를 React component로 사용하기
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

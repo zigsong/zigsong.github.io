@@ -2,13 +2,12 @@
 title: 우테코 5주차 기록
 date: 2021-03-06 10:03:09
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우테코 5주차 기록
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

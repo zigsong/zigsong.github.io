@@ -1,14 +1,13 @@
 ---
 title: 우테코 Lv1 racingcar 학습로그
 date: 2021-02-16 10:20:29
-tags:
+tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 우테코 Lv1 racingcar 학습로그
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

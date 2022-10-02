@@ -2,13 +2,12 @@
 title: 우테코 마지막 주차 기록
 date: 2021-11-26 16:33:00
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 면접 | 그리고 마지막
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

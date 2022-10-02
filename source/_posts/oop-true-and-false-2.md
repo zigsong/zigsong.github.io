@@ -2,6 +2,7 @@
 title: 객체지향의 사실과 오해 - 2장
 date: 2022-02-12 22:33:56
 tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 이상한 나라의 객체
@@ -9,8 +10,6 @@ tags: oop-true-and-false
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 - 가림막 막대 실험
   - 사람은 아기 때부터 뚜렷한 경계를 가지고 함께 행동하는 물체를 하나의 개념으로 인지한다.

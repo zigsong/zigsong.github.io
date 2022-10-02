@@ -2,13 +2,12 @@
 title: 리팩터링 6장 - 1
 date: 2022-03-10 18:47:07
 tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 기본적인 리팩터링 - 1
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

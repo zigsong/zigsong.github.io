@@ -2,13 +2,12 @@
 title: 리액트 훅 테스트
 date: 2021-08-01 17:39:23
 tags: frontend
+thumbnailImage: https://i.imgur.com/stTzX5o.png
 ---
 
 react hook test
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

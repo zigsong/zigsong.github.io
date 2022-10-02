@@ -2,6 +2,7 @@
 title: 객체지향의 사실과 오해 - 6장(1)
 date: 2022-03-12 18:44:04
 tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 6장: 객체 지도
@@ -9,8 +10,6 @@ tags: oop-true-and-false
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 > 유일하게 변하지 않는 것은 모든 것이 변한다는 사실 뿐이다.
 

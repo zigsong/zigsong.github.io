@@ -1,14 +1,13 @@
 ---
 title: Web Server와 WAS 간단 정리
 date: 2021-09-12 20:24:09
-tags:
+tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 Web Server와 WAS 간단 정리
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 ---
 

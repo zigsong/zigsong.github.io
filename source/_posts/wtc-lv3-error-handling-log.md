@@ -2,13 +2,12 @@
 title: 우테코 Lv3 학습로그 - 에러 핸들링
 date: 2021-08-19 17:20:37
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/utRJD0g.png
 ---
 
 에러 핸들링
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

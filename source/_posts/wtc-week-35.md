@@ -2,13 +2,12 @@
 title: 우테코 35주차 기록
 date: 2021-10-16 18:33:06
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 끝나지 않는 SSR | 로그인에 refreshToken 이용하기 | setState에 await을 붙이면?
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

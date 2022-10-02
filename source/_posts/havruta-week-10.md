@@ -2,13 +2,12 @@
 title: 하프 스터디 10주차 - 프로토타입
 date: 2021-06-06 22:27:56
 tags: havruta
+thumbnailImage: https://i.imgur.com/ljZQrHo.jpg
 ---
 
 with 피터
 
 <!-- more -->
-
-<img src="/images/thumbnails/havruta-thumbnail.jpeg" />
 
 ---
 

@@ -1,14 +1,13 @@
 ---
 title: 우테코 Lv3 학습로그 - 사용 라이브러리 정리
 date: 2021-08-19 17:25:42
-tags:
+tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 사용 라이브러리 정리
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ## axios
 

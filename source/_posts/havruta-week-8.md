@@ -1,14 +1,13 @@
 ---
 title: 하프 스터디 8주차 - 에러 핸들링
 date: 2021-05-23 22:42:50
-tags:
+tags: havruta
+thumbnailImage: https://i.imgur.com/ljZQrHo.jpg
 ---
 
 with 썬
 
 <!-- more -->
-
-<img src="/images/thumbnails/havruta-thumbnail.jpeg" />
 
 ---
 

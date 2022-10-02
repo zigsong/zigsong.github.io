@@ -2,13 +2,12 @@
 title: 로그인에 refreshToken 적용하기
 date: 2021-10-16 18:21:01
 tags: frontend
+thumbnailImage: https://i.imgur.com/2Dqm3wS.jpg
 ---
 
 SSR | refreshToken
 
 <!-- more -->
-
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 
 기존 놀토 프로젝트에서의 로그인은, 로그인 요청을 보내면 서버에서 보내주는 accessToken을 localStorage에 저장하는 방식으로 이루어졌다. `localStorage`에 accessToken이 있다면 userInfo를 생성하여 현재 로그인 중인 유저의 정보를 만들어냈다.
 

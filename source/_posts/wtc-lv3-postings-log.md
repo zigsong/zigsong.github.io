@@ -2,13 +2,14 @@
 title: 우테코 Lv3 학습로그 - 개발 정리
 date: 2021-08-19 17:24:41
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 개발 정리
 
 <!-- more -->
 
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
+---
 
 ## 왜 `forwardRef`를 사용할까?
 

@@ -2,13 +2,12 @@
 title: git 명령어 부셔보기
 date: 2022-01-31 22:46:00
 tags: git
+thumbnailImage: https://i.imgur.com/Z8d5eWp.png
 ---
 
 이제는 정복해 보자
 
 <!-- more -->
-
-<img src="/images/thumbnails/git-thumbnail.png" />
 
 3년이나 개발을 공부해왔음에도 불구하고 매번 답이 안 나오는 git… 🤦‍♀️ 회사 코드를 본격적으로 뜯어보기 전, 설날 기념 잉여인간일 때 git을 정복해야겠다는 생각이 들었다. GUI 도구인 Git Kraken을 사용하고 싶기도 하고…
 

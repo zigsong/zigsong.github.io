@@ -2,13 +2,12 @@
 title: 우테코 25주차 기록
 date: 2021-07-25 17:48:47
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 우아한테크코스 25주차
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

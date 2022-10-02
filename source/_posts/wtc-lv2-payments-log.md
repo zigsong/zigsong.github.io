@@ -1,14 +1,13 @@
 ---
 title: 우테코 Lv2 payments 학습로그
 date: 2021-05-04 08:31:52
-tags:
+tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 우테코 Lv2 payments 학습로그
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

@@ -1,14 +1,13 @@
 ---
 title: 리팩터링 10장 - 2
 date: 2022-05-06 11:02:27
-tags:
+tags: refactoring
+thumbnailImage: https://i.imgur.com/kAvAwok.jpg
 ---
 
 조건부 로직 간소화 - 2
 
 <!-- more -->
-
-<img src="/images/thumbnails/refactoring-thumbnail.jpeg" />
 
 ---
 

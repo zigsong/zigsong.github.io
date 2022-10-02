@@ -2,13 +2,12 @@
 title: React App s3 & Cloudfront로 배포하기
 date: 2021-08-28 20:46:00
 tags: [aws, frontend]
+thumbnailImage: https://i.imgur.com/vxZVNXR.png
 ---
 
 React App s3 & Cloudfront로 배포하기
 
 <!-- more -->
-
-<img src="/images/thumbnails/aws-thumbnail.png" />
 
 리액트로 만든 앱을 s3와 Cloudfront를 이용해 배포해 보자!
 

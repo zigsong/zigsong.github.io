@@ -2,13 +2,12 @@
 title: 이펙티브 타입스크립트 4장
 date: 2021-12-22 13:53:41
 tags: effective-typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 타입 설계
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

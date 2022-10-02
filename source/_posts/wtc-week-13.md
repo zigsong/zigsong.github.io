@@ -2,13 +2,12 @@
 title: 우테코 13주차 이야기
 date: 2021-05-01 08:37:39
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/bHl7fHd.jpg
 ---
 
 React Portal | Context API
 
 <!-- more -->
-
-<img src="/images/thumbnails/wtc-thumbnail.jpeg" />
 
 ---
 

@@ -1,14 +1,13 @@
 ---
 title: 이펙티브 타입스크립트 2장 - 1
 date: 2021-12-11 14:34:28
-tags:
+tags: effective-typescript
+thumbnailImage: https://i.imgur.com/cKyZ5Kn.jpg
 ---
 
 타입스크립트의 타입 시스템
 
 <!-- more -->
-
-<img src="/images/thumbnails/typescript-thumbnail.jpeg" />
 
 ---
 

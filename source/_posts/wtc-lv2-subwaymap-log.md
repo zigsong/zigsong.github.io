@@ -2,13 +2,12 @@
 title: 우테코 Lv2 subwaymap 학습로그
 date: 2021-06-03 22:36:21
 tags: woowacourse
+thumbnailImage: https://i.imgur.com/frkONDC.jpg
 ---
 
 우테코 Lv2 subwaymap 학습로그
 
 <!-- more -->
-
-<img src="/images/thumbnails/baemin-thumbnail.jpeg" />
 
 ---
 

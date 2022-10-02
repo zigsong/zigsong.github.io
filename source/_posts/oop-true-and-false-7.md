@@ -1,7 +1,8 @@
 ---
 title: 객체지향의 사실과 오해 - 7장
 date: 2022-03-20 23:18:10
-tags:
+tags: oop-true-and-false
+thumbnailImage: https://i.imgur.com/iRLZZl7.jpg
 ---
 
 7장: 함께 모으기
@@ -9,8 +10,6 @@ tags:
 <!-- more -->
 
 ---
-
-<img src="/images/thumbnails/oop-thumbnail.jpeg">
 
 마틴 파울러는 객체지향 설계 안에 존재하는 세 가지 상호 연관된 관점에 대해 설명한다.
 
