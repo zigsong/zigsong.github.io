@@ -59,7 +59,7 @@ gif를 사용하면 안 되는 이유는 다음과 같다.
 
 <img src="02.png" width="480px" />
 
-당연히 'Lottie JSON'으로 받는다. 그런데 생각보다 gif나 mp4의 용량도 크진 않다. (짧아서 그런가?) 'Optimized Lottie JSON'도 있는데, 돈 내야 한다. 자본주의는 무서워
+당연히 'Lottie JSON'으로 받는다. 그런데 생각보다 gif나 mp4의 용량도 크진 않다. (짧아서 그런가?) 'Optimized Lottie JSON'도 있는데, 돈 내야 한다. 자본주의는 무서워 💸
 
 아무튼 .json 확장자 파일로 다운 받아서 열어보니, 다음과 같은 어마무시한 json 덩어리가 나타났다.
 
@@ -97,9 +97,9 @@ json prettifier로 🎀예쁘게🎀 만들어봤다.
         // ... (생략)
 ```
 
-예뻐진 것 같긴 한데, 뭘 나타내는진 알 수 없다. 사실 알 필요는 없는 것 같다 🤷‍♀️ 뭔가 `layers`도 있고 한 걸 보니 여러 레이어의 좌표를 겹친 이미지를 만들 거라는 건 뻔하다. 으이구 뻔해
+예뻐진 것 같긴 한데, 뭘 나타내는진 알 수 없다. 사실 알 필요는 없는 것 같다. 뭔가 `layers`도 있고 한 걸 보니 여러 레이어의 좌표를 겹친 이미지를 만들 거라는 건 뻔하다. 으이구 뻔해 🤦‍♀️
 
-파일을 받았으면 이제 렌더링해보자. 근데 json을 어떻게 렌더링함?
+파일을 받았으면 이제 렌더링해보자. 근데 json을 어떻게 화면에 렌더링함?
 
 ---
 
@@ -107,17 +107,18 @@ json prettifier로 🎀예쁘게🎀 만들어봤다.
 
 로티 애니메이션을 그냥 HTML에서 렌더링하는 일은 (거의) 없을 것이다. 시대를 이끄는 우리 프론트 개발자들은 그런거 잊은지 오래다. 바로 리액트 렌더링하는 거다. (원래 그러면 안 된다.)
 
-누덕누덕 기워줘야 하는 리액트에서 로티를 그냥 렌더링해줄 리 없다. 라이브러리를 설치해야 한다.
+뭘 갖다 쓰려면 참으로 손길이 많이 가는 리액트에서 로티를 그냥 렌더링해줄 리 없다. 라이브러리를 설치해야 한다.
 
 라이브러리 이름도 다 헷갈린다. 역시 일부 도구들은 개발자를 더 혼란스럽게 만든 후 헷갈리지 않고 살아남는 자만 건지려는 시험 전략을 쓰는 것이 틀림없다.
 
-react-lottie, lottie-web, lottie-react 세 가지 라이브러리를 비교해볼 것이다. 선정 이유는... 그냥 세 개가 제일 먼저 띄었다. 눈에 띄지 않는 애들은 이미 도태된 것이다.
+react-lottie, lottie-web, lottie-react 세 가지 라이브러리를 비교해볼 것이다. 선정 이유는... 그냥 세 개가 제일 먼저 띄었다. 눈에 띄지 않는 애들은 이미 도태된 것이다. ~~우리 역시 도태되지 않게 노력해야 할 것이다. 그냥 도태되고 편하게 살고 싶다면 어쩔 수 없지만...~~
 
 ### 🍀 npm-trends
 
 [npm trends](https://npmtrends.com/lottie-react-vs-lottie-web-vs-react-lottie)에 세 개의 라이브러리를 비교해보면, `lottie-react`는 한 물 간듯 하고(star 수도 348 뿐이다.), `lottie-web`의 사용률이 압도적으로 높다. `lottie-web`이 유난히 높은 이유는, 뒤에서도 설명하겠지만, react 전용 라이브러리가 아니기 때문인 것 같다.
 
-<img src="03.png" width="480px" />
+<br />
+<img src="03.png" width="600px" />
 
 ### 🍀 번들 크기
 
@@ -127,13 +128,13 @@ minified 기준으로 보면,
 - lottie-web (ver 5.10.0) - 71.5kB
 - lottie-react (ver 2.3.1) - 70.9kB
 
-로 거의 차이는 없다.
+로 거의 차이는 없다. ~~세상 많이 좋아졌다.~~
 
 ### 🍀 관리 현황 (버전)
 
-- react-lottie - ver 1.2.3으로, 마지막 release가 2018년이다. 처음으로 생겼으나 버려진 게 틀림없다...
+- react-lottie - ver 1.2.3으로, 마지막 release가 2018년이다. 처음으로 생겼으나 버려진 게 틀림없다... ~~원래 첫째들은 대충 키워 무관심 속에 방치되기 마련이다. 내가 첫째라 그런 건 아니다.~~
 - lottie-web - ver 5.10.0으로, 최근까지도 계속 업데이트되고 있다. star 수와 issue도 가장 많다.
-- lottie-react - ver 2.3.1로, 마지막 release는 6개월 전이다. 핫하진 않지만, 꾸준히 사용되고 있는 듯하다.
+- lottie-react - ver 2.3.1로, 마지막 release는 6개월 전이다. 핫하진 않지만, 꾸준히 사용되고 있는 듯하다. 이게 바로 스테디셀러?
 
 이제 또 뭘 비교해야 할까. 그냥 바로 사용 방법으로 넘어가보자.
 
@@ -175,6 +176,7 @@ export default App;
 
 아무튼 `prop-types`도 디펜던시에 추가한다. 그러면 잘 렌더링이 되는 것을 볼 수 있다.
 
+<br />
 <iframe src="https://codesandbox.io/embed/practical-smoke-z7g4xv?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="practical-smoke-z7g4xv"
@@ -184,7 +186,7 @@ export default App;
 
 위 코드의 `defaultOptions`에 들어있는 항목들은 이름만 보면 대충 감이 온다.
 
-- `loop`: 반복 재생 여부. `true`일 때는 무한 반복하며, 숫자를 입력하면 해당 횟수만큼 반복한다,
+- `loop`: 반복 재생 여부. `true`일 때는 무한 반복하며, 숫자를 입력하면 해당 횟수만큼 반복한다.
 - `autoplay`: 자동 재생 여부
 - `animationData`: 재생할 lottie json 파일
 - `rendererSettings`: 이미지의 비율이나 className 등을 추가할 수 있다.
@@ -193,9 +195,9 @@ export default App;
 
 ### 2. lottie-web
 
-`lottie-web`은 에어비앤비가 만든 라이브러리로, 안드로이드, iOS, React Native, 그리고 윈도우에서 사용할 수 있다.
+`lottie-web`은 에어비앤비에서 만든 라이브러리로, 안드로이드, iOS, React Native, 그리고 윈도우에서 사용할 수 있다.
 
-이렇게 범용적이라는 사실은... React JSX 렌더링이나 hook에 특화되어 있지 않다는 뜻이다! 😱
+이렇게 범용적이라는 사실은... React JSX 렌더링이나 hook에 특화되어 있지 않다는 뜻이다! 😱 ~~원래 이것저것 여러가지 메뉴 파는 집은 맛이 없다. 한 두 가지 메뉴만 전문적으로 파는 식당이 진짜 맛집~~
 
 렌더링하는 컴포넌트에 직접 `stop()`, `play()` 등의 메서드를 prop으로 전달하는 대신, 라이브러리에서 제공하는 `lottie` 객체의 `loadAnimation()`을 통해 로드한 애니메이션을 직접 제어하는 방식으로 코드를 작성한다.
 
@@ -228,6 +230,7 @@ export default App;
 
 react에서는 `useRef`을 사용하여 로티 애니메이션을 재생할 dom 요소를 지정하고, `ref.current.play()`와 같은 방식으로 애니메이션을 직접 제어한다.
 
+<br />
 <iframe src="https://codesandbox.io/embed/adoring-villani-5h5hkq?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="adoring-villani-5h5hkq"
@@ -235,13 +238,13 @@ react에서는 `useRef`을 사용하여 로티 애니메이션을 재생할 dom 
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
 
-width, height를 지정해주지 않았더니 무지 부담스럽게 커졌다. ㅋㅋ 아무튼 성공적으로 로드했다.
+width, height를 지정해주지 않았더니 무지 부담스럽게 커졌다. ㅋㅋ ~~뭐든지 멀리서 보아야 아름답다. 로티도 그렇다.~~ ('자세히 보아야 아름답다'가 맞는 시 구절이다.) 아무튼 성공적으로 로드했다.
 
 ### 3. lottie-react
 
 1번과 이름이 비슷하지만, `react-lottie`와 다른 `lottie-react`다.
 
-라이브러리 내부에서 react hook을 사용하기 때문에 react v16.8.0 이상을 사용할 것을 권장한다.
+라이브러리 내부에서 react hook을 사용하기 때문에 react v16.8.0 이상을 사용할 것을 권장한다. 역시 fancy한 것은 특정 세대에만 국한되어 있다. ~~요즈음의 MZ세대를 겨냥한 것이랄까...~~
 
 `lottie-react`를 일반 컴포넌트처럼 사용한다면 아래처럼 작성한다.
 
@@ -255,7 +258,7 @@ const App = () => <Lottie animationData={animationData} loop={true} />;
 export default App;
 ```
 
-`lottie-react`에서 제공하는 hook을 사용한다면 아래처럼 작성한다.
+요즘 애들 쓰는 방식대로 핫하게 살고 싶다면, `lottie-react`에서 제공하는 hook을 사용하여 아래처럼 작성한다.
 
 ```jsx
 import React from "react";
@@ -278,6 +281,7 @@ export default App;
 
 `useLottie` hook을 사용하여 애니메이션을 렌더링한 예제는 아래와 같다.
 
+<br />
 <iframe src="https://codesandbox.io/embed/adoring-villani-5h5hkq?fontsize=14&hidenavigation=1&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
      title="adoring-villani-5h5hkq"
@@ -338,7 +342,7 @@ const useLottie = (
 
 2번의 `lottie-web`을 한번 wrapping한 형태의 라이브러리기 때문이다. hook을 제공하여 보다 편리하게 사용할 수 있도록 해준다.
 
-> 자세한 내용은 [lottie-react github](https://github.com/Gamote/lottie-react/blob/main/src/hooks/useLottie.tsx)에서 알아보자.
+> 자세한 코드는 [lottie-react github](https://github.com/Gamote/lottie-react/blob/main/src/hooks/useLottie.tsx)에서 알아보자.
 
 **🤨 그래서, 어떤 라이브러리?**
 
@@ -346,7 +350,7 @@ const useLottie = (
 
 - 많은 커스텀 설정은 필요없고, 그냥 한번 로티 애니메이션을 띄워보고 싶다면 👉 react-lottie
 - 리액트 뿐 아니라 웹을 사용하는 곳에서 범용적으로 로티 애니메이션을 로드하고자 한다면 👉 lottie-web
-- hook을 사용하고 싶고, 라이브러리에서 정해준 대로 한다면 👉 lottie-react
+- hook을 사용하고 싶고, 라이브러리에서 정해준 대로 편하게 살고 싶다면 👉 lottie-react
 
 (프로젝트에서는 lottie-web을 사용하기로 했다. 위 이유들과는 상관없을지 모르지만... 추후 여러 커스텀 설정들을 추가해볼 수 있으니까!)
 
@@ -358,7 +362,9 @@ const useLottie = (
 
 로티 파일이 어떻게 웹에서 로드되는지 살펴보았다. json으로 애니메이션 로드라니. 뭔가 대단히 낯설고 신기한 방법같아 보였는데 엄청난걸 알아내진 못했다. 그냥 라이브러리 비교나 한 것 같다.
 
-아무튼 이름도 귀여운 로티(?) 잘 사용해보자!
+~~그리고 주말엔 롯데월드에 다녀왔다. 로티의 크리스마스 퍼레이드를 보았다.~~
+
+사실 로티는 개발자가 아니라 디자이너들한테 더 핫한 라이브러리인 것 같다. 이러나 저러나 애니메이션 렌더링에 큰 도움을 주었으니 훌륭한 도구인 것으로... 😎
 
 ---
 
