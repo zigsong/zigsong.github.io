@@ -2,4 +2,4 @@
 *.log
 node_modules/
 public/
-themes/
+themes/public/photos
