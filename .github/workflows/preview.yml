@@ -1,0 +1,39 @@
+name: 'Netlify Preview Deploy'
+
+env:
+  NODE_OPTIONS: --max-old-space-size=7168
+
+on:
+  pull_request:
+    types: ['opened', 'edited', 'synchronize']
+
+jobs:
+  deploy-preview:
+    name: 'Deploy Preview'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploy to preview mode
+        id: pr
+        uses: thundermiracle/netlify-deploy@v3
+        env:
+          ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
+          GATSBY_ALGOLIA_APP_ID: ${{ secrets.GATSBY_ALGOLIA_APP_ID}}
+          GATSBY_ALGOLIA_INDEX_NAME: ${{ secrets.GATSBY_ALGOLIA_INDEX_NAME}}
+          GATSBY_ALGOLIA_SEARCH_KEY: ${{ secrets.GATSBY_ALGOLIA_SEARCH_KEY}}
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN}}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID}}
+          deploy-dir: "./public"
+          build-command: yarn build
+          extra-cache-path: |
+            .cache
+            public
+
+      - name: run lighthouse
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          urls: ${{ steps.pr.outputs.NETLIFY_PREVIEW_URL }}
+          device: all
+          prCommentEnabled: true
+          gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
