@@ -1,6 +1,6 @@
 const site = {
-  pathPrefix: '/gatsby-simple-blog',
-  title: 'Gatsby Starter Blog',
+  pathPrefix: '/',
+  title: 'ziglog',
   author: 'zigsong',
   description: '지그의 개발 블로그',
   siteUrl: 'https://zigsong.github.io/',
@@ -8,10 +8,10 @@ const site = {
   github: 'zigsong',
   medium: '',
   facebook: '',
-  disqusShortName: 'ziglog',
+  disqusShortName: '',
   googleTrackingId: 'G-E7NM1ZBB2T',
   lang: 'en',
-  displayTranslations: true,
+  displayTranslations: false,
   postsPerPage: 7,
 };
 
