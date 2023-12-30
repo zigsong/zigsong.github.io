@@ -3,20 +3,22 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import { Github, Twitter, Facebook, Medium } from '../icons';
 
-const SocialBar = function() {
+const SocialBar = function () {
   return (
     <StaticQuery
       // eslint-disable-next-line no-use-before-define
       query={socialQuery}
-      render={data => {
+      render={(data) => {
         const { twitter, github, medium, facebook } = data.site.siteMetadata.social;
         return (
           <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-evenly',
-              margin: 'auto',
-            }}
+            style={
+              {
+                // display: 'flex',
+                // justifyContent: 'space-evenly',
+                // margin: 'auto',
+              }
+            }
           >
             {facebook && <Facebook username={facebook} />}
             {twitter && <Twitter username={twitter} />}
@@ -27,7 +29,7 @@ const SocialBar = function() {
       }}
     />
   );
-}
+};
 
 const socialQuery = graphql`
   query SocialQuery {

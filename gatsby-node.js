@@ -180,28 +180,27 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
 
   return new Promise((resolve, reject) => {
     resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
-              edges {
-                node {
-                  fields {
-                    slug
-                    langKey
-                    directoryName
-                  }
-                  frontmatter {
-                    date(formatString: "MMMM DD, YYYY")
-                    title
-                    tags
-                  }
+      graphql(`
+        {
+          allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+            edges {
+              node {
+                fields {
+                  slug
+                  langKey
+                  directoryName
+                }
+                frontmatter {
+                  date(formatString: "MMMM DD, YYYY")
+                  description
+                  title
+                  tags
                 }
               }
             }
           }
-        `,
-      ).then((result) => {
+        }
+      `).then((result) => {
         if (result.errors) {
           console.log(result.errors);
           reject(result.errors);
@@ -231,6 +230,14 @@ exports.onCreateNode = ({ node, actions }) => {
       value: path.basename(path.dirname(node.fileAbsolutePath)),
     });
   }
+
+  // if (node.frontmatter) {
+  //   createNodeField({
+  //     node,
+  //     name: 'description',
+  //     value: node.frontmatter.description || '',
+  //   });
+  // }
 };
 
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {

@@ -1,18 +1,18 @@
 const site = {
   pathPrefix: '/gatsby-simple-blog',
   title: 'Gatsby Starter Blog',
-  author: 'Kyle Mathews',
-  description: 'A starter blog demonstrating what Gatsby can do.',
-  siteUrl: 'https://gatsby-simple-blog.thundermiracle.com/',
-  twitter: 'kylemathews',
-  github: 'thundermiracle',
-  medium: 'thundermiracle',
-  facebook: 'thundermiracle',
-  disqusShortName: 'gatsby-simple-blog',
+  author: 'zigsong',
+  description: '지그의 개발 블로그',
+  siteUrl: 'https://zigsong.github.io/',
+  twitter: '',
+  github: 'zigsong',
+  medium: '',
+  facebook: '',
+  disqusShortName: 'ziglog',
   googleTrackingId: 'G-E7NM1ZBB2T',
   lang: 'en',
   displayTranslations: true,
-  postsPerPage: 3,
+  postsPerPage: 7,
 };
 
 const supportedLanguages = {
