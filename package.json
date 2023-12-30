@@ -110,6 +110,6 @@
     "jest": "jest",
     "test": "cross-env NODE_ENV=test yarn run eslint && cross-env NODE_ENV=test yarn run jest",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -b deploy"
+    "deploy": "gatsby build && gh-pages -d public -b main"
   }
 }
