@@ -42,8 +42,6 @@ const queries = [
     settings: {
       attributesToSnippet: [`excerpt:20`],
       attributesForFaceting: ['filterOnly(langKey)'],
-      distinct: 1,
-      attributeForDistinct: 'objectID',
       indexLanguages: ['en', 'zh'],
       queryLanguages: ['en', 'zh'],
       searchableAttributes: ['title', 'excerpt'],
