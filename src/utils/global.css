@@ -56,7 +56,13 @@ code[class*='language-'],
 pre[class*='language-'] {
   color: white;
   background: none;
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  font-family:
+    Consolas,
+    Menlo,
+    Monaco,
+    source-code-pro,
+    Courier New,
+    monospace;
   font-feature-settings: normal;
   text-align: left;
   white-space: pre;
@@ -209,4 +215,14 @@ pre[data-line] {
 .gatsby-highlight pre[class*='language-'] {
   float: left;
   min-width: 100%;
+}
+
+/* img.gatsby-resp-image-image {
+  width: auto !important;
+  height: auto !important;
+} */
+
+.gatsby-small-image-wrapper {
+  width: 360px;
+  margin: auto;
 }
