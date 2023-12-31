@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:100%/1.75 'Merriweather','Georgia',serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.9);font-family:'Merriweather','Georgia',serif;font-weight:400;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:Montserrat,sans-serif;font-weight:900;text-rendering:optimizeLegibility;font-size:2.5rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.73286rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1.4427rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;letter-spacing:0.140625em;text-transform:uppercase;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.83255rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;color:inherit;font-family:'Merriweather','Georgia',serif;font-weight:900;text-rendering:optimizeLegibility;font-size:0.75966rem;line-height:1.1;font-style:italic;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}ul{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;list-style:disc;}ol{margin-left:1.75rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:0.85rem;line-height:1.75rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1rem;line-height:1.75rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}blockquote{margin-left:-1.75rem;margin-right:1.75rem;margin-top:0;padding-bottom:0;padding-left:1.42188rem;padding-right:0;padding-top:0;margin-bottom:1.75rem;font-size:1.20112rem;line-height:1.75rem;color:hsla(0,0%,0%,0.59);font-style:italic;border-left:0.32813rem solid hsla(0,0%,0%,0.9);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.75rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.75rem;}b{font-weight:700;}strong{font-weight:700;}dt{font-weight:700;}th{font-weight:700;}li{margin-bottom:calc(1.75rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}li > ul{margin-left:1.75rem;margin-bottom:calc(1.75rem / 2);margin-top:calc(1.75rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.75rem / 2);}code{font-size:0.85rem;line-height:1.75rem;}kbd{font-size:0.85rem;line-height:1.75rem;}samp{font-size:0.85rem;line-height:1.75rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.16667rem;padding-right:1.16667rem;padding-top:0.875rem;padding-bottom:calc(0.875rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}blockquote > :last-child{margin-bottom:0;}blockquote cite{font-size:1rem;line-height:1.75rem;color:hsla(0,0%,0%,0.9);font-weight:400;}blockquote cite:before{content:"— ";}ul,ol{margin-left:0;}@media only screen and (max-width:480px){ul,ol{margin-left:1.75rem;}blockquote{margin-left:-1.3125rem;margin-right:0;padding-left:0.98438rem;}}h1,h2,h3,h4,h5,h6{margin-top:3.5rem;}a{box-shadow:0 1px 0 0 currentColor;color:#007acc;text-decoration:none;}a:hover,a:active{box-shadow:none;}mark,ins{background:#007acc;color:white;padding:0.10938rem 0.21875rem;text-decoration:none;}a.gatsby-resp-image-link{box-shadow:none;}</style><meta name="generator" content="Gatsby 4.25.8"/><meta name="theme-color" content="#663399"/><meta data-react-helmet="true" name="theme-color" content="#282c35"/><meta data-react-helmet="true" name="description" content="weekly-i-learned"/><meta data-react-helmet="true" property="og:title" content="1월 2주차 기록"/><meta data-react-helmet="true" property="og:description" content="weekly-i-learned"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="zigsong"/><meta data-react-helmet="true" name="twitter:title" content="1월 2주차 기록"/><meta data-react-helmet="true" name="twitter:description" content="weekly-i-learned"/><style data-href="/styles.a8b67082d0d09b1b97f9.css" data-identity="gatsby-global-css">@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:100;src:local("Montserrat Thin "),local("Montserrat-Thin"),url(/static/montserrat-latin-100-8d7d79679b70dbe27172b6460e7a7910.woff2) format("woff2"),url(/static/montserrat-latin-100-ec38980a9e0119a379e2a9b3dbb1901a.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:100;src:local("Montserrat Thin italic"),local("Montserrat-Thinitalic"),url(/static/montserrat-latin-100italic-e279051046ba1286706adc886cf1c96b.woff2) format("woff2"),url(/static/montserrat-latin-100italic-3b325a3173c8207435cd1b76e19bf501.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:200;src:local("Montserrat Extra Light "),local("Montserrat-Extra Light"),url(/static/montserrat-latin-200-9d266fbbfa6cab7009bd56003b1eeb67.woff2) format("woff2"),url(/static/montserrat-latin-200-2d8ba08717110d27122e54c34b8a5798.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:200;src:local("Montserrat Extra Light italic"),local("Montserrat-Extra Lightitalic"),url(/static/montserrat-latin-200italic-6e5b3756583bb2263eb062eae992735e.woff2) format("woff2"),url(/static/montserrat-latin-200italic-a0d6f343e4b536c582926255367a57da.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:300;src:local("Montserrat Light "),local("Montserrat-Light"),url(/static/montserrat-latin-300-00b3e893aab5a8fd632d6342eb72551a.woff2) format("woff2"),url(/static/montserrat-latin-300-ea303695ceab35f17e7d062f30e0173b.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:300;src:local("Montserrat Light italic"),local("Montserrat-Lightitalic"),url(/static/montserrat-latin-300italic-56f34ea368f6aedf89583d444bbcb227.woff2) format("woff2"),url(/static/montserrat-latin-300italic-54b0bf2c8c4c12ffafd803be2466a790.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:400;src:local("Montserrat Regular "),local("Montserrat-Regular"),url(/static/montserrat-latin-400-b71748ae4f80ec8c014def4c5fa8688b.woff2) format("woff2"),url(/static/montserrat-latin-400-0659a9f4e90db5cf51b50d005bff1e41.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:400;src:local("Montserrat Regular italic"),local("Montserrat-Regularitalic"),url(/static/montserrat-latin-400italic-6eed6b4cbb809c6efc7aa7ddad6dbe3e.woff2) format("woff2"),url(/static/montserrat-latin-400italic-7583622cfde30ae49086d18447ab28e7.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:500;src:local("Montserrat Medium "),local("Montserrat-Medium"),url(/static/montserrat-latin-500-091b209546e16313fd4f4fc36090c757.woff2) format("woff2"),url(/static/montserrat-latin-500-edd311588712a96bbf435fad264fff62.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:500;src:local("Montserrat Medium italic"),local("Montserrat-Mediumitalic"),url(/static/montserrat-latin-500italic-c90ced68b46050061d1a41842d6dfb43.woff2) format("woff2"),url(/static/montserrat-latin-500italic-5146cbfe02b1deea5dffea27a5f2f998.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:600;src:local("Montserrat SemiBold "),local("Montserrat-SemiBold"),url(/static/montserrat-latin-600-0480d2f8a71f38db8633b84d8722e0c2.woff2) format("woff2"),url(/static/montserrat-latin-600-b77863a375260a05dd13f86a1cee598f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:600;src:local("Montserrat SemiBold italic"),local("Montserrat-SemiBolditalic"),url(/static/montserrat-latin-600italic-cf46ffb11f3a60d7df0567f8851a1d00.woff2) format("woff2"),url(/static/montserrat-latin-600italic-c4fcfeeb057724724097167e57bd7801.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:700;src:local("Montserrat Bold "),local("Montserrat-Bold"),url(/static/montserrat-latin-700-7dbcc8a5ea2289d83f657c25b4be6193.woff2) format("woff2"),url(/static/montserrat-latin-700-99271a835e1cae8c76ef8bba99a8cc4e.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:700;src:local("Montserrat Bold italic"),local("Montserrat-Bolditalic"),url(/static/montserrat-latin-700italic-c41ad6bdb4bd504a843d546d0a47958d.woff2) format("woff2"),url(/static/montserrat-latin-700italic-6779372f04095051c62ed36bc1dcc142.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:800;src:local("Montserrat ExtraBold "),local("Montserrat-ExtraBold"),url(/static/montserrat-latin-800-db9a3e0ba7eaea32e5f55328ace6cf23.woff2) format("woff2"),url(/static/montserrat-latin-800-4e3c615967a2360f5db87d2f0fd2456f.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:800;src:local("Montserrat ExtraBold italic"),local("Montserrat-ExtraBolditalic"),url(/static/montserrat-latin-800italic-bf45bfa14805969eda318973947bc42b.woff2) format("woff2"),url(/static/montserrat-latin-800italic-fe82abb0bcede51bf724254878e0c374.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:normal;font-weight:900;src:local("Montserrat Black "),local("Montserrat-Black"),url(/static/montserrat-latin-900-e66c7edc609e24bacbb705175669d814.woff2) format("woff2"),url(/static/montserrat-latin-900-8211f418baeb8ec880b80ba3c682f957.woff) format("woff")}@font-face{font-display:swap;font-family:Montserrat;font-style:italic;font-weight:900;src:local("Montserrat Black italic"),local("Montserrat-Blackitalic"),url(/static/montserrat-latin-900italic-4454c775e48152c1a72510ceed3603e2.woff2) format("woff2"),url(/static/montserrat-latin-900italic-efcaa0f6a82ee0640b83a0916e6e8d68.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:300;src:local("Merriweather Light "),local("Merriweather-Light"),url(/static/merriweather-latin-300-fc117160c69a8ea0851b26dd14748ee4.woff2) format("woff2"),url(/static/merriweather-latin-300-58b18067ebbd21fda77b67e73c241d3b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:300;src:local("Merriweather Light italic"),local("Merriweather-Lightitalic"),url(/static/merriweather-latin-300italic-fe29961474f8dbf77c0aa7b9a629e4bc.woff2) format("woff2"),url(/static/merriweather-latin-300italic-23c3f1f88683618a4fb8d265d33d383a.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:400;src:local("Merriweather Regular "),local("Merriweather-Regular"),url(/static/merriweather-latin-400-d9479e8023bef9cbd9bf8d6eabd6bf36.woff2) format("woff2"),url(/static/merriweather-latin-400-040426f99ff6e00b86506452e0d1f10b.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:400;src:local("Merriweather Regular italic"),local("Merriweather-Regularitalic"),url(/static/merriweather-latin-400italic-2de7bfeaf08fb03d4315d49947f062f7.woff2) format("woff2"),url(/static/merriweather-latin-400italic-79db67aca65f5285964ab332bd65f451.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:700;src:local("Merriweather Bold "),local("Merriweather-Bold"),url(/static/merriweather-latin-700-4b08e01d805fa35d7bf777f1b24314ae.woff2) format("woff2"),url(/static/merriweather-latin-700-22fb8afba4ab1f093b6ef9e28a9b6e92.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:700;src:local("Merriweather Bold italic"),local("Merriweather-Bolditalic"),url(/static/merriweather-latin-700italic-cd92541b177652fffb6e3b952f1c33f1.woff2) format("woff2"),url(/static/merriweather-latin-700italic-f87f3d87cea0dd0979bfc8ac9ea90243.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:normal;font-weight:900;src:local("Merriweather Black "),local("Merriweather-Black"),url(/static/merriweather-latin-900-f813fc6a4bee46eda5224ac7ebf1b7be.woff2) format("woff2"),url(/static/merriweather-latin-900-5d4e42cb44410674acd99153d57df032.woff) format("woff")}@font-face{font-display:swap;font-family:Merriweather;font-style:italic;font-weight:900;src:local("Merriweather Black italic"),local("Merriweather-Blackitalic"),url(/static/merriweather-latin-900italic-b7901d85486871c1779c0e93ddd85656.woff2) format("woff2"),url(/static/merriweather-latin-900italic-9647f9fdab98756989a8a5550eb205c3.woff) format("woff")}body{--pink:#ffa7c4;--breadcrumbsDividerSize:20px;--systemFont:'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';background-color:var(--bg)}body.light{--bg:#fff;--header:var(--pink);--textNormal:#222;--textTitle:#222;--textLink:#d23669;--hr:rgba(0,0,0,.2);--inlineCode-bg:rgba(255,229,100,.2);--inlineCode-text:#1a1a1a;--tag-bg:#f7a046;--tag-color:#fff;--breadcrumbsTextColor:#a1c4e9;--breadcrumbsTextColorActive:#888;--linkBackground:rgba(187,239,253,.3);--linkBorder:rgba(0,0,0,.2);--pagination-bg:#f7a046}body.dark{-webkit-font-smoothing:antialiased;--bg:#282c35;--header:#fff;--textNormal:hsla(0,0%,100%,.88);--textTitle:#fff;--textLink:var(--pink);--hr:hsla(0,0%,100%,.2);--inlineCode-bg:#373c49;--inlineCode-text:#e6e6e6;--tag-bg:#8f5b23;--tag-color:#ddd;--breadcrumbsTextColor:#d1c4e9;--breadcrumbsTextColorActive:#eee;--pagination-bg:#8f5b23}a{box-shadow:none}code[class*=language-],pre[class*=language-]{font-feature-settings:normal;word-wrap:normal;background:none;color:#fff;font-family:Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;-webkit-hyphens:none;hyphens:none;line-height:1.5;margin-bottom:0;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{overflow:auto;padding:1.3125rem}pre[class*=language-]::selection{background:#27292a}pre[class*=language-] ::selection,pre[class*=language-]::selection{background:hsla(0,0%,100%,.15);text-shadow:none}:not(pre)>code[class*=language-]{background:var(--inlineCode-bg);border-radius:.3em;color:var(--inlineCode-text);padding:.15em .2em .05em;white-space:normal}.token.attr-name{color:#addb67;font-style:italic}.token.comment{color:#809393}.token.string,.token.url{color:#addb67}.token.variable{color:#d6deeb}.token.number{color:#f78c6c}.token.builtin,.token.char,.token.constant,.token.function{color:#82aaff}.token.punctuation{color:#c792ea}.token.doctype,.token.selector{color:#c792ea;font-style:"italic"}.token.class-name{color:#ffcb8b}.token.keyword,.token.operator,.token.tag{color:#ffa7c4}.token.boolean{color:#ff5874}.token.property{color:#80cbc4}.token.namespace{color:#b2ccd6}pre[data-line]{padding:1em 0 1em 3em;position:relative}.gatsby-highlight-code-line{background-color:#022a4b;border-left:.25em solid #ffa7c4;display:block;padding-left:1.25em;padding-right:1em}.gatsby-highlight,.gatsby-highlight-code-line{margin-left:-1.3125rem;margin-right:-1.3125rem}.gatsby-highlight{-webkit-overflow-scrolling:touch;background:#011627;border-radius:10px;margin-bottom:1.75rem;overflow:auto}@media (max-width:672px){.gatsby-highlight{border-radius:0}}.gatsby-highlight pre[class*=language-]{float:left;min-width:100%}h1{margin-top:1.5rem}article:hover{opacity:.7}blockquote{color:inherit;opacity:.8}h4{font-family:var(--systemFont)}img{margin-bottom:0}.language{display:flex;transition:transform .25s ease}.language:hover{cursor:pointer}.language .icon{fill:var(--textNormal);margin-right:5px}.language span{color:var(--textNormal)}.language-focused{transform:scale(1.1)}.balloon{border-bottom:1px solid var(--textNormal);padding:0 18px;position:relative;width:100%}.balloon:before{border-bottom:9px solid var(--textNormal);top:-9px}.balloon:after,.balloon:before{border-left:9px solid transparent;border-right:9px solid transparent;content:"";display:block;height:0;position:absolute;right:50px;width:0}.balloon:after{border-bottom:9px solid var(--bg);top:-8px}.lang-root{display:flex;justify-content:space-around}.lang-link{background-color:var(--linkBackground);border-bottom:1px solid var(--linkBorder);cursor:pointer;font-size:22px;font-weight:700}.bar{align-items:center;border-bottom:1px solid;display:flex;flex-direction:row-reverse;margin-left:auto;margin-right:auto;padding:5px 30px}.toggle-content{max-height:0;overflow:hidden;transition:max-height .4s ease-in-out}.theme-search-icon{color:var(--textNormal)!important}.react-toggle{-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color:transparent;background-color:transparent;border:0;cursor:pointer;display:inline-block;padding:0;position:relative;touch-action:pan-x;-webkit-user-select:none;user-select:none}.react-toggle-screenreader-only{clip:rect(0 0 0 0);border:0;height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.react-toggle-track{background-color:#0f1114;border-radius:30px;height:24px;padding:0;transition:all .2s ease;width:50px}.react-toggle-track-check{bottom:0;height:17px;left:5px;line-height:0;margin-bottom:auto;margin-top:auto;opacity:0;position:absolute;top:0;transition:opacity .25s ease;width:17px}.react-toggle--checked .react-toggle-track-check,.react-toggle-track-x{opacity:1;transition:opacity .25s ease}.react-toggle-track-x{bottom:0;height:17px;line-height:0;margin-bottom:auto;margin-top:auto;position:absolute;right:5px;top:0;width:17px}.react-toggle--checked .react-toggle-track-x{opacity:0}.react-toggle-thumb{background-color:#fafafa;border-radius:50%;box-sizing:border-box;height:22px;left:1px;position:absolute;top:1px;transform:translateX(0);transition:all .5s cubic-bezier(.23,1,.32,1) 0ms;width:22px}.react-toggle--checked .react-toggle-thumb{border-color:#19ab27;transform:translateX(26px)}.react-toggle--focus .react-toggle-thumb{box-shadow:0 0 2px 3px #ffa7c4}.react-toggle:active .react-toggle-thumb{box-shadow:0 0 5px 5px #ffa7c4}.breadcrumbs{--cssuiBreadcrumbsTextColor:var(--breadcrumbsTextColor,"#000000");--cssuiBreadcrumbsTextColorActive:var(--breadcrumbsTextColorActive,"#ffffff");--cssuiBreadcrumbsDivider:var(--breadcrumbsDivider,"›");--cssuiBreadcrumbsDividerColor:var(--breadcrumbsDividerColor,inherit);--cssuiBreadcrumbsDividerSize:var(--breadcrumbsDividerSize,16px);--cssuiBreadcrumbsIndent:var(--breadcrumbsIndent,8px);display:flex;flex-wrap:wrap;list-style:none;margin-bottom:0;margin-top:0;padding-left:0}.breadcrumbs-ul{margin-left:0}.breadcrumbs-item{color:var(--cssuiBreadcrumbsTextColor);display:inline-block;height:calc(var(--cssuiBreadcrumbsDividerSize) + var(--cssuiBreadcrumbsIndent));margin-bottom:0;margin-right:var(--cssuiBreadcrumbsIndent);padding-right:calc(var(--cssuiBreadcrumbsDividerSize) + var(--cssuiBreadcrumbsIndent));position:relative}.breadcrumbs-item:hover{text-decoration:underline}.breadcrumbs-item:after{color:var(--cssuiBreadcrumbsDividerColor);content:var(--cssuiBreadcrumbsDivider);font-size:var(--cssuiBreadcrumbsDividerSize);height:var(--cssuiBreadcrumbsDividerSize);line-height:1;position:absolute;right:0;text-align:center;top:50%;transform:translateY(-50%);width:var(--cssuiBreadcrumbsDividerSize)}.breadcrumbs-item_active{color:var(--cssuiBreadcrumbsTextColorActive);margin-right:0;padding-right:0}.breadcrumbs-item_active:after{display:none}.breadcrumbs-element{color:inherit;text-decoration:none}.bio{align-items:center;display:flex}.bio .pic{border-radius:100%;margin-bottom:0;min-width:70px}.bio .description{width:100%}.bio .description p{margin-bottom:1rem}.tag-ul{list-style:none;margin:-1.25rem 0 .5rem -.5rem;padding:0}.tag-ul li{display:inline-block;margin:0 0 .3em 1.5em;padding:0}.rotate-icon{border-radius:50%;position:relative;transition:transform .4s ease}.rotate-icon:hover{background-color:transparent;box-shadow:none;cursor:pointer;top:5px;transform:rotate(1turn) scale(1.5)}.round-tag{display:inline-block;margin:0 0 .3em 15px;padding:0}.text{display:block;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.link{border-radius:0 5px 5px 0;color:var(--tag-color,#fff);display:inline-block;font-size:13px;line-height:30px;padding:0 1em 0 .75em;position:relative;text-decoration:none}.link,.link:before{background-color:var(--tag-bg,#3498db);height:30px;transition:.2s}.link:before{border-bottom-left-radius:30px;border-top-left-radius:30px;left:-15px;top:0;width:15px}.link:after,.link:before{content:"";position:absolute}.link:after{background-color:var(--tag-color,#fff);border-radius:100%;display:block;height:6px;left:-6px;margin-top:-3px;top:50%;width:6px;z-index:2}.link:hover{color:var(--tag-color,#fff)}.link:hover,.link:hover:before{background-color:#555}.pagination{align-items:center;display:flex;justify-content:center;margin:20px 0;width:100%}.pagination a{border-radius:8px;color:#000;margin:2px;padding:8px 16px;transition:background-color .3s}.pagination a:hover{background-color:#ddd;border-radius:8px}.pagination span{border-radius:8px;margin:2px;padding:8px 16px}.pagination span.disabled{color:#aaa}.pagination span.active{background-color:var(--pagination-bg);box-shadow:var(--pagination-shadow);color:#fff}.translation-root{background:var(--inlineCode-bg);border:1px solid var(--hr);border-radius:.75em;font-size:.9em;padding:.75em;word-break:break-all}.translation-link{background-color:var(--linkBackground);border-bottom:1px solid var(--linkBorder);cursor:pointer;font-size:.9rem;font-weight:700;margin-right:10px}</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><link rel="icon" href="/favicon-32x32.png?v=4a9773549091c227cd2eb82ccd9c5e3a" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><title data-react-helmet="true">1월 2주차 기록 | ziglog</title><style data-styled="" data-styled-version="5.3.11">.ebjPRL{display:inline-block;vertical-align:middle;overflow:hidden;}/*!sc*/
+data-styled.g1[id="StyledIconBase-sc-ea9ulj-0"]{content:"ebjPRL,"}/*!sc*/
+.bdjiBw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row-reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:0;}/*!sc*/
+.bdjiBw .SearchInput{outline:none;border:none;font-size:1em;-webkit-transition:100ms;transition:100ms;border-radius:2px;color:#050505;width:0;background:transparent;cursor:pointer;margin-left:-1em;padding-left:1em;}/*!sc*/
+.bdjiBw .SearchInput::-webkit-input-placeholder{color:#888;}/*!sc*/
+.bdjiBw .SearchInput::-moz-placeholder{color:#888;}/*!sc*/
+.bdjiBw .SearchInput:-ms-input-placeholder{color:#888;}/*!sc*/
+.bdjiBw .SearchInput::placeholder{color:#888;}/*!sc*/
+.bdjiBw .SearchIcon{width:1em;margin:0.3em;color:#050505;pointer-events:none;}/*!sc*/
+data-styled.g2[id="StyledSearchBox-sc-1apb4jl-0"]{content:"bdjiBw,"}/*!sc*/
+.kagbLT{display:none;max-height:80vh;overflow:auto;-webkit-overflow-scrolling:touch;position:absolute;z-index:2;right:0;top:100%;margin-top:0.5em;width:80vw;max-width:30em;box-shadow:0 0 5px 0;padding:1em;border-radius:2px;background:white;}/*!sc*/
+.kagbLT .HitCount{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;color:#050505;}/*!sc*/
+.kagbLT .Hits ul{list-style:none;margin-left:0;}/*!sc*/
+.kagbLT .Hits li.ais-Hits-item{margin-bottom:1em;color:#050505;}/*!sc*/
+.kagbLT .Hits li.ais-Hits-item a{color:rgb(0,122,204);}/*!sc*/
+.kagbLT .Hits li.ais-Hits-item a h4{margin-bottom:0.2em;}/*!sc*/
+.kagbLT .ais-PoweredBy{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;font-size:80%;}/*!sc*/
+.kagbLT .ais-PoweredBy svg{width:70px;}/*!sc*/
+data-styled.g3[id="StyledSearchResult-sc-dk9ysa-0"]{content:"kagbLT,"}/*!sc*/
+.bqzpBJ{position:relative;margin-right:1em;}/*!sc*/
+data-styled.g4[id="StyledSearchRoot-sc-ljbrqz-0"]{content:"bqzpBJ,"}/*!sc*/
+</style></head><body class="light"><script>
+              (function themeOper(){const onThemeChangeFuncObj={};let preferredTheme;function setTheme(newTheme){window.__theme=newTheme;preferredTheme=newTheme;document.body.className=newTheme;Object.values(onThemeChangeFuncObj).forEach(func=>func(newTheme));}try{preferredTheme=localStorage.getItem('theme');}catch(err){}window.__setPreferredTheme=function(newTheme){setTheme(newTheme);try{localStorage.setItem('theme',newTheme);}catch(err){}};window.__subOnThemeChange=function(key,func){onThemeChangeFuncObj[key]=func;};window.__unsubOnThemeChange=function(key){Reflect.deleteProperty(onThemeChangeFuncObj,key);};const darkQuery=window.matchMedia('(prefers-color-scheme: dark)');darkQuery.addListener(function(e){window.__setPreferredTheme(e.matches?'dark':'light');});setTheme(preferredTheme||(darkQuery.matches?'dark':'light'));})();
+            </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="color:var(--textNormal);background:var(--bg);transition:color 0.2s ease-out, background 0.2s ease-out;min-height:100vh;font-family:var(--systemFont)"><div style="max-width:42rem;margin:auto"><div class="bar"><div class="language " role="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon"><path d="M0 0h24v24H0z" fill="none"></path><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"></path></svg><span>English</span></div><div class="StyledSearchRoot-sc-ljbrqz-0 bqzpBJ"><form class="StyledSearchBox-sc-1apb4jl-0 bdjiBw"><input class="SearchInput" type="text" placeholder="Search" aria-label="Search" value=""/><svg viewBox="0 0 512 512" aria-hidden="true" focusable="false" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="StyledIconBase-sc-ea9ulj-0 ebjPRL SearchIcon theme-search-icon"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zM208 352c79.5 0 144-64.5 144-144S287.5 64 208 64 64 128.5 64 208s64.5 144 144 144z"></path></svg></form><div class="StyledSearchResult-sc-dk9ysa-0 kagbLT"><div class="ais-Hits Hits"><ul class="ais-Hits-list"></ul></div><div class="ais-PoweredBy"><span class="ais-PoweredBy-text">Search by</span> <a href="https://www.algolia.com/?utm_source=react-instantsearch&amp;utm_medium=website&amp;utm_content=&amp;utm_campaign=poweredby" target="_blank" class="ais-PoweredBy-link" aria-label="Algolia" rel="noopener noreferrer"><svg viewBox="0 0 512 117" width="118" height="27" class="ais-PoweredBy-logo"><path fill="#003DFF" d="M249.5 64.2V1.4c0-.9-.7-1.5-1.6-1.4L236.2 2a1.4 1.4 0 0 0-1.2 1.3V67c0 3 0 21.6 22.4 22.3a1.4 1.4 0 0 0 1.5-1.4v-9.5c0-.7-.6-1.3-1.2-1.4-8.2-.9-8.2-11-8.2-12.7ZM443.5 24.4h-11.8c-.8 0-1.4.6-1.4 1.4v62c0 .8.6 1.4 1.4 1.4h11.8c.8 0 1.4-.6 1.4-1.4v-62c0-.8-.6-1.4-1.4-1.4ZM431.7 16.6h11.8c.8 0 1.4-.6 1.4-1.3v-14c0-.8-.7-1.4-1.6-1.3L431.5 2a1.4 1.4 0 0 0-1.2 1.3v12c0 .8.6 1.4 1.4 1.4Zm-20.5 47.6V1.4c0-.9-.7-1.5-1.5-1.4L397.9 2a1.4 1.4 0 0 0-1.2 1.3V67c0 3 0 21.6 22.4 22.3a1.4 1.4 0 0 0 1.5-1.4v-9.5c0-.7-.5-1.3-1.2-1.4-8.2-.9-8.2-11-8.2-12.7Zm-30.7-31c-2.6-2.8-5.8-5-9.6-6.5a31.7 31.7 0 0 0-12-2.3c-4.5 0-8.5.7-12.2 2.3A27.9 27.9 0 0 0 331 43.5a39.6 39.6 0 0 0 0 26.3c1.5 4 3.6 7.5 6.2 10.3 2.6 2.9 5.8 5 9.5 6.7a38 38 0 0 0 12.2 2.4c2.8 0 8.6-.9 12.3-2.4a27 27 0 0 0 9.5-6.7 35.1 35.1 0 0 0 8.3-23c0-4.9-.8-9.6-2.4-13.6-1.5-4-3.5-7.4-6.1-10.2ZM370 71.5a13.1 13.1 0 0 1-11.2 5.6 13 13 0 0 1-11.2-5.6c-2.7-3.6-4-7.9-4-14.2 0-6.3 1.3-11.5 4-15.1a13 13 0 0 1 11.1-5.5 13 13 0 0 1 11.3 5.5c2.6 3.6 4 8.8 4 15 0 6.4-1.3 10.6-4 14.3Zm-161.6-47H197a32 32 0 0 0-27 15 33.8 33.8 0 0 0 8.9 45.9 18.8 18.8 0 0 0 11.2 3.1H191.2l.6-.2h.2a21 21 0 0 0 16.5-14.6V87c0 .8.6 1.4 1.4 1.4h11.7c.8 0 1.4-.6 1.4-1.4V25.8c0-.8-.6-1.4-1.4-1.4h-13Zm0 48.3a17.8 17.8 0 0 1-10.4 3.5h-.2a12.5 12.5 0 0 1-.7 0A18.4 18.4 0 0 1 180.4 51c2.7-6.8 9-11.6 16.6-11.6h11.5v33.3Zm289-48.3H486a32 32 0 0 0-27 15 33.8 33.8 0 0 0 8.8 45.9 18.8 18.8 0 0 0 11.3 3.1h1.1l.6-.2h.2a21 21 0 0 0 16.5-14.6V87c0 .8.6 1.4 1.4 1.4h11.7c.8 0 1.4-.6 1.4-1.4V25.8c0-.8-.6-1.4-1.4-1.4h-13.1Zm0 48.3a17.8 17.8 0 0 1-10.5 3.5h-.9A18.4 18.4 0 0 1 469.4 51c2.6-6.8 9-11.6 16.6-11.6h11.5v33.3ZM306.3 24.4h-11.5a32 32 0 0 0-27 15 33.7 33.7 0 0 0-5.1 14.6 34.6 34.6 0 0 0 0 7.6c1 8.9 5.4 16.7 11.8 22a19.5 19.5 0 0 0 2.2 1.7 18.8 18.8 0 0 0 21.6-.6c3.8-2.7 6.7-6.7 8-11.1V87.9c0 5-1.3 8.9-4 11.5-2.7 2.6-7.3 3.9-13.6 3.9-2.6 0-6.7-.2-10.9-.6a1.4 1.4 0 0 0-1.4 1l-3 10a1.4 1.4 0 0 0 1.1 1.8c5 .7 10 1 12.8 1 11.4 0 19.8-2.4 25.3-7.4 5-4.6 7.8-11.4 8.2-20.7V25.8c0-.8-.6-1.4-1.3-1.4h-13.2Zm0 15s.2 32.4 0 33.4a17.5 17.5 0 0 1-10 3.4h-.2a13.6 13.6 0 0 1-1.7 0A18.7 18.7 0 0 1 278.3 51c2.6-6.8 9-11.6 16.5-11.6h11.5ZM58.2 0A58.3 58.3 0 1 0 86 109.5c.9-.5 1-1.6.3-2.2l-5.5-4.9a3.8 3.8 0 0 0-4-.6A47 47 0 0 1 11 57.5 47.3 47.3 0 0 1 58.2 11h47.3v84L78.7 71.2a2 2 0 0 0-3 .3 22 22 0 1 1 4.4-15.2 4 4 0 0 0 1.3 2.6l7 6.2c.8.7 2 .3 2.3-.8a33 33 0 0 0-30.4-39 33 33 0 0 0-35 32 33.3 33.3 0 0 0 32.2 33.9 32.8 32.8 0 0 0 20-6.3l35.1 31c1.5 1.4 3.9.3 3.9-1.7V2.2a2.2 2.2 0 0 0-2.2-2.2h-56Z"></path></svg></a></div></div></div></div><div class="toggle-content"><div class="balloon " style="padding:20px"><div class="lang-root"><a class="lang-link" href="/">English</a><a class="lang-link" href="/zh-hans/">简体中文</a></div></div></div></div><div style="margin-left:auto;margin-right:auto;max-width:42rem;padding:2.625rem 1.3125rem"><header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2.625rem"><h3 style="font-family:Montserrat, sans-serif;margin-top:0;margin-bottom:0;height:42px;line-height:2.625rem"><a style="box-shadow:none;text-decoration:none;color:rgb(255, 167, 196)" href="/">ziglog</a></h3><div style="height:24px"></div></header><ul class="breadcrumbs breadcrumbs-ul" style="margin-top:-1.5rem"><li class="breadcrumbs-item"><a class="breadcrumbs-element" href="/">Home</a></li><li class="breadcrumbs-item_active"><span class="breadcrumbs-element">1월 2주차 기록</span></li></ul><h1>1월 2주차 기록</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem;margin-top:-1.75rem">January 14, 2023<!-- --> • ☕️☕️☕️☕️ 18 min read</p><ul class="tag-ul"><li><div class="round"><a class="link" href="/tags/weekly"><span class="text">weekly</span></a></div></li></ul><div><p>영어공부 잘 해보자구</p>
+<!-- more -->
+<hr>
+<h2 id="배워가기" style="position:relative;"><a href="#%EB%B0%B0%EC%9B%8C%EA%B0%80%EA%B8%B0" aria-label="배워가기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>배워가기</h2>
+<h3 id="웹-폰트-렌더링-방식" style="position:relative;"><a href="#%EC%9B%B9-%ED%8F%B0%ED%8A%B8-%EB%A0%8C%EB%8D%94%EB%A7%81-%EB%B0%A9%EC%8B%9D" aria-label="웹 폰트 렌더링 방식 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>웹 폰트 렌더링 방식</h3>
+<p>브라우저는 렌더링 과정에서 웹 폰트가 다운되지 않았으면 해당 텍스트의 렌더링을 차단한다.</p>
+<ul>
+<li>FOUT(Flash of unstyled Text): 웹 폰트가 적용되지 않은 폰트 상태(unstyled)에서 폰트가 바뀌면서 텍스트가 번쩍이며 글꼴을 대체한다.</li>
+<li>FOIT(Flash of invisible Text): 웹 폰트가 적용되지 않은 텍스트가 보이지 않는 상태에서 폰트가 바뀌면서 텍스트가 번쩍이면서 텍스트를 보여준다.</li>
+</ul>
+<p>IE는 FOUT 방식으로 차단하고, 그 외 브라우저는 FOIT 방식으로 차단한다.</p>
+<h3 id="css-font-display로-웹-폰트의-로딩-상태에-따른-동작-설정하기" style="position:relative;"><a href="#css-font-display%EB%A1%9C-%EC%9B%B9-%ED%8F%B0%ED%8A%B8%EC%9D%98-%EB%A1%9C%EB%94%A9-%EC%83%81%ED%83%9C%EC%97%90-%EB%94%B0%EB%A5%B8-%EB%8F%99%EC%9E%91-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0" aria-label="css font display로 웹 폰트의 로딩 상태에 따른 동작 설정하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSS <code class="language-text">font-display</code>로 웹 폰트의 로딩 상태에 따른 동작 설정하기</h3>
+<p>CSS의 <code class="language-text">font-display</code> 속성으로 웹 폰트의 로딩 상태에 따른 동작을 설정할 수 있다.</p>
+<ul>
+<li>
+<p><code class="language-text">swap</code>: FOUT 방식 - 웹 폰트 로딩 여부와 관계없이 항상 텍스트를 보여준다.</p>
+</li>
+<li>
+<p><code class="language-text">block</code>: FOIT 방식 - 웹 폰트가 로딩되지 않았을 때는 텍스트를 렌더링하지 않는다.(최대 3초)</p>
+<ul>
+<li>3초가 지나면 웹 폰트가 로딩되지 않았더라도 폴백 폰트(기본 폰트)를 보여주고 웹폰트가 다운 완료되면 렌더링한다.</li>
+</ul>
+</li>
+<li>
+<p><code class="language-text">fallback</code>: 100ms 동안 텍스트가 보이지 않고 그 후 폴백 폰트로 렌더링한다.</p>
+<ul>
+<li>3초 내에 웹 폰트가 다운로드 되면 웹 폰트로 전환되지만, 3초 내에 웹 폰트가 다운되지 않는다면 폴백 폰트를 유지한다.</li>
+<li>3초 이후 다운로드된 웹 폰트는 웹 페이지에 바로 적용되지 않지만 캐시에 남아 추후 사용자가 재방문 시 바로 웹 폰트가 적용된다.</li>
+</ul>
+</li>
+<li>
+<p><code class="language-text">optional</code>: 100ms동안 텍스트가 보이지 않고 그 후 폴백 폰트로 전환한다.</p>
+<ul>
+<li>브라우저가 네트워크 상태에 따라 글꼴을 다운로드 할지, 글꼴을 다운로드 하지 않을지 결정한다.</li>
+</ul>
+</li>
+</ul>
+<p>참고로, pretendard의 <code class="language-text">font-display</code> 는 기본으로 <code class="language-text">swap</code> 이다</p>
+<p>크롬, 파이어폭스 등의 브라우저들은 FOIT 방식으로 폰트를 렌더하기 때문에 네트워크 환경이 좋지 못한 사용자를 고려하려면 <code class="language-text">font-display</code> 를 <code class="language-text">swap</code> 등으로 변경해주는게 좋다.</p>
+<p><strong>Ref</strong></p>
+<ul>
+<li><a href="https://developer.chrome.com/blog/font-display" target="_blank" rel="nofollow noopener noreferrer">Controlling Font Performance with font-display</a></li>
+<li><a href="https://d2.naver.com/helloworld/4969726" target="_blank" rel="nofollow noopener noreferrer">웹 폰트 사용과 최적화의 최근 동향</a></li>
+</ul>
+<h3 id="pnpm의-중복-패키지-제거-방법" style="position:relative;"><a href="#pnpm%EC%9D%98-%EC%A4%91%EB%B3%B5-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%A0%9C%EA%B1%B0-%EB%B0%A9%EB%B2%95" aria-label="pnpm의 중복 패키지 제거 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>pnpm의 중복 패키지 제거 방법</h3>
+<p><strong>tl;dr</strong>
+linux계열에서 pnpm은 hard-link를 이용해서 중복된 패키지들을 store로 관리한다. 윈도우에서는 <a href="https://docs.microsoft.com/en-us/windows/win32/fileio/hard-links-and-junctions" target="_blank" rel="nofollow noopener noreferrer">junctions</a>을 사용한다.</p>
+<p>파일 시스템을 참조하는 방식들을 살펴보자.</p>
+<ul>
+<li>inode
+<ul>
+<li>리눅스 시스템에서 i-node란, 파일에 대한 정보(메타데이터)를 가진, 일종의 데이터를 말한다.</li>
+<li>파일이나 디렉토리는 고유한 i-node를 가진다. 그 결과로 빠르게 파일과 디렉토리를 찾을 수 있다.</li>
+<li><code class="language-text">ls -i</code> 를 통해서 i-node 번호를 볼 수 있다.</li>
+</ul>
+</li>
+<li>soft-link (symbolic link)
+<ul>
+<li><code class="language-text">ln -s</code> 명령어로 생성할 수 있으며, 일종의 바로가기라고 생각하면 된다.</li>
+<li>soft-link는 원본 파일과 다른 inode를 가지고 있다.</li>
+<li>원본이 삭제되면 접근이 불가능하다. 원본 파일명을 변경해도 접근이 불가능하다.</li>
+</ul>
+</li>
+<li>hard-link
+<ul>
+<li><code class="language-text">ln</code> 명령어로 생성한다.</li>
+<li>원본파일과 동일한 i-node를 가지며, 복사본과는 다르다. 복사를 통해 생성한 파일은 다른 i-node를 가진다.</li>
+<li><strong>같은 i-node를 가지기 때문에 전체 디스크에서 용량도 추가되지 않는다.</strong></li>
+<li>원본 파일을 삭제해도 파일에 접근할 수 있음</li>
+</ul>
+</li>
+</ul>
+<p>pnpm의 hardlink와 store prune은 다음과 같다.</p>
+<ul>
+<li>pnpm hard-link
+<ul>
+<li>pnpm으로 패키지를 다운받으면 npm과 달리 node_modules에 저장되는 것이 아니라 디스크에 있는 <code class="language-text">.pnpm-store</code>에 다운받고 hard link를 만들어서 node_modules에 저장한다.</li>
+<li>이런 방식으로 중복되는 패키지를 없애서 디스크 용량을 절약할 수 있다.</li>
+</ul>
+</li>
+<li>pnpm store prune
+<ul>
+<li>어떤 프로젝트에서도 사용하지 않는 패키지들을 pnpm 스토어에서 제거한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="meta--태그로-구글-번역기의-실행-막기" style="position:relative;"><a href="#meta--%ED%83%9C%EA%B7%B8%EB%A1%9C-%EA%B5%AC%EA%B8%80-%EB%B2%88%EC%97%AD%EA%B8%B0%EC%9D%98-%EC%8B%A4%ED%96%89-%EB%A7%89%EA%B8%B0" aria-label="meta  태그로 구글 번역기의 실행 막기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">&lt;meta /></code> 태그로 구글 번역기의 실행 막기</h3>
+<p><code class="language-text">&lt;meta *name*="google" *value*="notranslate" /></code> 를 삽입해서 페이지에서 google 번역기가 실행되는걸 막을 수 있다.</p>
+<p>class에 <code class="language-text">notranslate</code>을 주거나 다음 메타태그를 사용하는 것도 동일하다.</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>google<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>notranslate<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre></div>
+<p>단 class에 옵션 부여 시 해당 태그 번역이 안될 뿐, 번역 버튼은 보인다. (<code class="language-text">&lt;meta /></code> 태그 사용 시 번역 버튼 자체가 보이지 않는다.)</p>
+<blockquote>
+<p>+ HTML 명세에 <code class="language-text">translate</code> 속성도 있다.</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="html"><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">translate</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>no<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre></div>
+</blockquote>
+<p><strong>Ref</strong> <a href="https://html.spec.whatwg.org/multipage/dom.html#attr-translate" target="_blank" rel="nofollow noopener noreferrer">https://html.spec.whatwg.org/multipage/dom.html#attr-translate</a></p>
+<h3 id="헤더에-position-fixed-vs-position-sticky" style="position:relative;"><a href="#%ED%97%A4%EB%8D%94%EC%97%90-position-fixed-vs-position-sticky" aria-label="헤더에 position fixed vs position sticky permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>헤더에 <code class="language-text">position: fixed</code> vs <code class="language-text">position: sticky</code></h3>
+<ul>
+<li><code class="language-text">fixed</code>를 먹인 요소는 쌓임 스택에서 제거되어, 다른 요소들이 해당 공간을 침범할 수 있게 된다. 따라서 헤더를 fixed로 둘 경우, 헤더의 높이만큼 컨텐츠 영역에 padding-top을 먹여야 한다.</li>
+<li><code class="language-text">sticky</code>를 먹인 요소는 쌓임 스택에 남아있어, 다른 요소들이 해당 공간을 침범하지 않는다. 따라서 헤더를 sticky(그리고 top: 0)로 둘 경우, 컨텐츠 영역에 별도의 조치가 필요하지 않다.</li>
+</ul>
+<p><strong>Ref</strong> <a href="https://dev.to/luisaugusto/stop-using-fixed-headers-and-start-using-sticky-ones-1k30" target="_blank" rel="nofollow noopener noreferrer">https://dev.to/luisaugusto/stop-using-fixed-headers-and-start-using-sticky-ones-1k30</a></p>
+<h3 id="html-meta--태그의-description-vs-ogdescription" style="position:relative;"><a href="#html-meta--%ED%83%9C%EA%B7%B8%EC%9D%98-description-vs-ogdescription" aria-label="html meta  태그의 description vs ogdescription permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>html <code class="language-text">&lt;meta /></code> 태그의 <code class="language-text">description</code> vs <code class="language-text">og:description</code></h3>
+<ul>
+<li><code class="language-text">description</code> - 서치 엔진에 잡힐 수 있다.</li>
+<li><code class="language-text">og:description</code> - facebook같은 소셜 플랫폼에 사용된다.</li>
+</ul>
+<p>둘의 <code class="language-text">content</code> 가 같은 경우 합쳐서 쓸 수도 있다</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span>
+  <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span>
+  <span class="token attr-name">property</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>og:description<span class="token punctuation">"</span></span>
+  <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>배달의민족 사장님들을 위해 메뉴부터 광고까지, 가게 관리에 필요한 모든 서비스를 제공합니다.<span class="token punctuation">"</span></span>
+<span class="token punctuation">/></span></span></code></pre></div>
+<p><strong>Ref</strong></p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/38173163/seo-meta-tag-ogdescription-vs-description" target="_blank" rel="nofollow noopener noreferrer">https://stackoverflow.com/questions/38173163/seo-meta-tag-ogdescription-vs-description</a></li>
+<li><a href="https://stackoverflow.com/questions/6203984/combining-the-meta-description-and-open-graph-protocol-description-into-one-tag" target="_blank" rel="nofollow noopener noreferrer">https://stackoverflow.com/questions/6203984/combining-the-meta-description-and-open-graph-protocol-description-into-one-tag</a></li>
+</ul>
+<h3 id="useeffect의-실행-시점을-믿지-마세요" style="position:relative;"><a href="#useeffect%EC%9D%98-%EC%8B%A4%ED%96%89-%EC%8B%9C%EC%A0%90%EC%9D%84-%EB%AF%BF%EC%A7%80-%EB%A7%88%EC%84%B8%EC%9A%94" aria-label="useeffect의 실행 시점을 믿지 마세요 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">useEffect</code>의 실행 시점을 믿지 마세요</h3>
+<p><code class="language-text">useEffect</code> 는 일반적으로 DOM paint 이후에 실행되지만, <code class="language-text">useLayoutEffect</code>에서 상태 업데이트가 발생한 경우 <code class="language-text">useEffect</code>는 paint 이전에 실행될 수도 있다.</p>
+<ol>
+<li>React update 1: 가상 DOM 렌더링, effect 스케줄링, DOM 업데이트</li>
+<li><code class="language-text">useLayoutEffect</code> 호출</li>
+<li><strong>상태 업데이트,</strong> 리렌더링 스케줄링</li>
+<li><strong><code class="language-text">useEffect</code> 호출</strong></li>
+<li>React update 2</li>
+<li>update 2로부터 <code class="language-text">useLayoutEffect</code> 호출</li>
+<li>React는 제어권을 넘기고, 브라우저가 새로운 DOM을 <strong>paints</strong></li>
+<li>update 2로부터 <code class="language-text">useEffect</code> 호출</li>
+</ol>
+<p><strong>→ <code class="language-text">useEffect</code>가 업데이트 이후에 호출될 것이라고 믿지 말아라!</strong></p>
+<p><strong>Ref</strong> <a href="https://blog.thoughtspile.tech/2021/11/15/unintentional-layout-effect/" target="_blank" rel="nofollow noopener noreferrer">https://blog.thoughtspile.tech/2021/11/15/unintentional-layout-effect/</a></p>
+<h3 id="ime" style="position:relative;"><a href="#ime" aria-label="ime permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IME</h3>
+<p>IME(Input Method Editor, 입력 방식 편집기)는 한글처럼 조합이 필요한 언어를 작성하는데 필요한 OS 부속 프로그램이다. (송 -> ㅅ + ㅗ + ㅇ)</p>
+<p>운영체제와 브라우저는 이벤트를 중복처리하기 때문에 한글 입력이 중복으로 입력되는 경우가 생길 수 있다.</p>
+<p>브라우저 이벤트에서는 <code class="language-text">CompositionEvent</code>를 제공하는데, 컴포지션 세션(composition session)은 다음의 단계로 나뉜다.</p>
+<ul>
+<li>compositionstart</li>
+<li>compositionupdate</li>
+<li>compositionend</li>
+</ul>
+<p>따라서 현재 <code class="language-text">Composition</code> 이벤트가 발생중일 때, 이벤트 핸들러에서 return 시키면 중복 입력 문제를 해결할 수 있다. (event의 <code class="language-text">isComposing</code> 속성으로 이벤트가 발생중인지 체크할 수 있다.)</p>
+<h3 id="disabled된-요소는-이벤트가-트리거-되지-않는다" style="position:relative;"><a href="#disabled%EB%90%9C-%EC%9A%94%EC%86%8C%EB%8A%94-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EA%B0%80-%ED%8A%B8%EB%A6%AC%EA%B1%B0-%EB%90%98%EC%A7%80-%EC%95%8A%EB%8A%94%EB%8B%A4" aria-label="disabled된 요소는 이벤트가 트리거 되지 않는다 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">disabled</code> 된 요소는 이벤트가 트리거 되지 않는다.</h3>
+<p><code class="language-text">disabled</code> 된 요소는 이벤트가 트리거 되지 않는다.</p>
+<p><code class="language-text">hover</code> 로 트리거 되는 <code class="language-text">&lt;Input></code> 컴포넌트가 있을 때 아래와 같이 사용하면 <code class="language-text">hover</code> 가 트리거되지 않아 동작하지 않는다.</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Tooltip</span></span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello world<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Input</span></span> <span class="token attr-name">disabled</span> <span class="token punctuation">/></span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Tooltip</span></span><span class="token punctuation">></span></span></code></pre></div>
+<p>이 때 이벤트를 트리거하기 위해서는 <code class="language-text">div</code> 와 같은 요소로 한번 감싸 해당 요소에서 이벤트가 트리거하게 하면 된다. - 아래와 같이 코드를 작성하면 <code class="language-text">hover</code> 로 트리거 되는 <code class="language-text">&lt;Input></code> 컴포넌트는 정상 동작한다.</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Tooltip</span></span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello world<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Input</span></span> <span class="token attr-name">disabled</span> <span class="token punctuation">/></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Tooltip</span></span><span class="token punctuation">></span></span></code></pre></div>
+<h3 id="vite-알아보자" style="position:relative;"><a href="#vite-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90" aria-label="vite 알아보자 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>vite 알아보자</h3>
+<p>vite는 빌드 시 외부 의존성은 esbuild로, 소스코드는 rollup으로 번들링한다. 외부 의존성은 일반적으로 그 내용이 변하지 않기 때문이다.</p>
+<p>중요한 것은, esbuild는 타입 정보 없이 Transpilation만 한다는 것이다. 따라서 <code class="language-text">const enum</code>, 타입만 가져오는(import) 기능을 지원하지 않는다</p>
+<p>이를 감지하기 위해 tsconfig에 <code class="language-text">"isolatedModules": true</code>를 필수로 설정해줘야 한다.</p>
+<p>vite는 소스코드 build 과정에서 rollup을 사용하는데, rollup은 기본적으로 상대경로로 import되는 모듈만 대상으로 한다. 절대경로 import는 런타임에 필요한 외부종속성으로 처리한다. 즉 <code class="language-text">import ‘react’</code>, <code class="language-text">import ‘react-query’</code>와 같은 것들은 무시한다는 얘기다.</p>
+<p>이때 경고가 뜨는데, <code class="language-text">externals</code>에 해다 옵션들을 명시해서 경고를 띄우지 않을 수 있다.</p>
+<p>프로젝트에서 모노레포 공통 코드인 packages를 코드셰어링 형태로 공유하여 사용처의 환경에서 빌드하는 경우가 있다. 이때 사용처의 packages.json에서 <code class="language-text">@packages</code>의 의존성을 명시하고 import하기 때문에 코드상으로는 외부 의존성처럼 보인다.</p>
+<p>하지만 rollup은 <code class="language-text">@packages</code>를 외부 의존성으로 인식해서 빌드대상에 포함하지 않는다. 따라서 rollup에게 특정 상대 모듈은 build에 포함시킬 것을 알려야하는데, 이를 위해 <code class="language-text">@rollup/plugin-node-resolve</code> 플러그인을 사용해야 한다.</p>
+<h3 id="타입-전용-importexport" style="position:relative;"><a href="#%ED%83%80%EC%9E%85-%EC%A0%84%EC%9A%A9-importexport" aria-label="타입 전용 importexport permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>타입 전용 import/export</h3>
+<p><code class="language-text">import type { SomeThing } from “./some-module.js”</code>, <code class="language-text">export type { SomeThing }</code> 등은 타입만을 위한 구문이며, 컴파일시 완전히 제거된다.</p>
+<p>따라서 class를 위와 같은 방식으로 import/export하면 extends에 사용한다거나, 인스턴스를 생성하기 위해 사용할 수 없다.</p>
+<h3 id="nextjs-이모저모" style="position:relative;"><a href="#nextjs-%EC%9D%B4%EB%AA%A8%EC%A0%80%EB%AA%A8" aria-label="nextjs 이모저모 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next.js 이모저모</h3>
+<p>next는 dev server와 prod server를 구분한다</p>
+<ul>
+<li><code class="language-text">next dev</code> - dev 서버를 실행시킨다</li>
+<li><code class="language-text">next build &amp;&amp; next start</code> - prod 서버를 실행시킨다</li>
+</ul>
+<p>dev에서는 fast refresh같은 개발 편리성을, prod에서는 빌드 최적화 등의 추가작업을 제공해준다.</p>
+<blockquote>
+<p>Next.js의 <code class="language-text">getInitialProps</code>는 항상 서버에서 실행되는 것을 보장하지 않는다. 대신 항상 서버 실행이 보장되는 <code class="language-text">getServerSideProps</code>를 사용하자</p>
+</blockquote>
+<p><strong>Ref</strong></p>
+<ul>
+<li><a href="https://nextjs.org/learn/foundations/how-nextjs-works/development-and-production" target="_blank" rel="nofollow noopener noreferrer">https://nextjs.org/learn/foundations/how-nextjs-works/development-and-production</a></li>
+<li><a href="https://upmostly.com/nextjs/getserversideprops-vs-getinitialprops-getstaticprops-in-next-js" target="_blank" rel="nofollow noopener noreferrer">https://upmostly.com/nextjs/getserversideprops-vs-getinitialprops-getstaticprops-in-next-js</a></li>
+</ul>
+<h3 id="edge-runtime" style="position:relative;"><a href="#edge-runtime" aria-label="edge runtime permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Edge Runtime</h3>
+<p>엣지 런타임은 표준 Web API의 서브셋이며, ‘엣지’라는 명칭은 특정한 지역이 아닌 즉각적인 서버리스 컴퓨팅 환경을 가리킨다.</p>
+<p>프레임워크 제작자들의 엣지 컴퓨팅과 웹표준에 기반한 오픈소스 도구 제작에 도움을 주고자 설계되었다. Next.js같은 프레임워크에 통합될 목적으로 설계되었으며, 미니멀하고 보안과 성능이 우수하다.</p>
+<p>엣지 런타임 기반으로 설계된 프레임워크는 어디서든 실행될 수 있다. (뭔가 너무 추상적인…🤔)</p>
+<p><strong>Ref</strong></p>
+<ul>
+<li><a href="https://edge-runtime.vercel.app/" target="_blank" rel="nofollow noopener noreferrer">https://edge-runtime.vercel.app/</a></li>
+<li><a href="https://vercel.com/blog/introducing-the-edge-runtime" target="_blank" rel="nofollow noopener noreferrer">https://vercel.com/blog/introducing-the-edge-runtime</a></li>
+</ul>
+<h3 id="utc-gmt" style="position:relative;"><a href="#utc-gmt" aria-label="utc gmt permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UTC, GMT</h3>
+<ul>
+<li><strong>GMT</strong> - 그리니치 평균시</li>
+<li><strong>UTC</strong> - 국제 표준시로, 1970년 1월 1일 자정을 0 밀리초로 설정하여 기준을 삼아 그 후로 시간의 흐름을 밀리초로 계산한다.</li>
+</ul>
+<p>UTC는 사실상 GMT를 계승한 것이다. 초의 소숫점 단위에서만 차이가 난다.</p>
+<h3 id="datestring" style="position:relative;"><a href="#datestring" aria-label="datestring permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>datestring</h3>
+<p><code class="language-text">new Date()</code>의 인자 값으로 datestring을 사용할 수 있다.</p>
+<p>ex) <code class="language-text">2012-01-26T13:51:50.417-07:00</code> , <code class="language-text">'2007-04-05T14:30Z'</code></p>
+<ul>
+<li><code class="language-text">YYYY-MM-DD</code> – 년:월:일</li>
+<li><code class="language-text">"T"</code> 는 <code class="language-text">YYYY-MM-DD</code> 구분자로 쓰임</li>
+<li><code class="language-text">HH:mm:ss.sss</code> – 시간:분:초.밀리초</li>
+</ul>
+<p>이때 마지막 <code class="language-text">Z</code> 파트는 zone에 대한 정보를 담는다.</p>
+<p>Z파트에서 <code class="language-text">Z</code> 문자만 오면 UTC+0을 의미하며,(<code class="language-text">'2007-04-05T14:30Z'</code>), Z파트를 생략하면 로컬 타임으로 설정된다.</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">let</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2007-04-05T13:00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+d<span class="token punctuation">.</span><span class="token function">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// '2007-04-05T04:00:00.000Z'</span>
+<span class="token comment">// 한국은 UTC+9 때문에 9시간이 빠져서 나온다.</span></code></pre></div>
+<blockquote>
+<p><strong>ISO 8601</strong> 날짜 형식</p>
+<p>01/05/12는 January 5, 2012, or May 1, 2012. 등등 다양하게 표현가능하다.
+이런 모호한 날짜표현을 해결하기 위한 동일한 날짜/시간 형식을 사용한다. 이 표준이 ISO 8601이다.
+<code class="language-text">toISOString</code> 메소드는 date객체를 <strong>ISO 8601</strong> 규칙 기반으로 <a href="https://ko.wikipedia.org/wiki/UTC" target="_blank" rel="nofollow noopener noreferrer">UTC</a> 날짜 및 시간을 표현해준다.</p>
+</blockquote>
+<h3 id="nextjs에서-react-query-사용하기" style="position:relative;"><a href="#nextjs%EC%97%90%EC%84%9C-react-query-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="nextjs에서 react query 사용하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Next.js에서 react-query 사용하기</h3>
+<p>react-query에서 서버사이드에서 query fetching을 할 수 있는 방법을 크게 두 가지</p>
+<ol>
+<li><code class="language-text">initialData</code> 사용</li>
+<li><code class="language-text">&lt;Hydrate /></code> 사용</li>
+</ol>
+<p>제시하고 있는데, 여러 이슈 때문에 2. <code class="language-text">&lt;Hydrate /></code>를 권장하고 있는 것 같다.</p>
+<p>이때 <code class="language-text">&lt;Hydrate /></code>를 쓴다고 앱의 모든 query들이 서버사이드에서 불러와지는 것이 아니라, 서버사이드에서 부르고 싶은 query는 next의 <code class="language-text">getStaticProps</code>에서 <code class="language-text">prefetchQuery</code>를 통해서 불러오고, 클라이언트에서 부르고 싶은 query는 그냥 일반적인 방식으로 리액트 컴포넌트 내에서 호출하면 된다.</p>
+<blockquote>
+<p>Next는 <code class="language-text">prefetchQuery</code> 호출 시 <code class="language-text">queryClient</code>에 지정 queryKey와 fetch data를 매핑해서 저장한다. 해당 <code class="language-text">queryClient</code>를 dehydrate해서 클라이언트의 <code class="language-text">&lt;Hydrate /></code> 에 전달하면 클라이언트에서 사용하는 <code class="language-text">queryClient</code>에서 해당 데이터를 사용해서 미리 queryKey-data 매핑을 해두기 때문에, 이후 동일한 queryKey로 fetching이 이루어질때 그 값을 바로 사용할 수 있는 거십니다. 결국 모든 query를 클라이언트에서 호출하는 로직이 있긴 해야 한다.</p>
+</blockquote>
+<p><strong>Ref</strong> <a href="https://react-query-v3.tanstack.com/guides/ssr#using-nextjs" target="_blank" rel="nofollow noopener noreferrer">https://react-query-v3.tanstack.com/guides/ssr#using-nextjs</a></p>
+<h3 id="자바스크립트-void" style="position:relative;"><a href="#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-void" aria-label="자바스크립트 void permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>자바스크립트 <code class="language-text">void</code></h3>
+<p><strong><code class="language-text">void</code> 연산자</strong>는 주어진 표현식을 평가하고 <code class="language-text">undefined</code>를 반환한다.</p>
+<p>ex) 함수 즉시 실행</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">void</span> <span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">iife</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"iife is executed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Expected output: "iife is executed"</span></code></pre></div>
+<p>오직 <code class="language-text">undefined</code> 원시값을 얻기 위해 <code class="language-text">void 0</code> 또는 <code class="language-text">void(0)</code>처럼 사용할 수도 있다.</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="tsx"><pre class="language-tsx"><code class="language-tsx"><span class="token keyword">void</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">// undefined</span></code></pre></div>
+<p><strong>Ref</strong> <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/void" target="_blank" rel="nofollow noopener noreferrer">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/void</a></p>
+<h3 id="setimmediate" style="position:relative;"><a href="#setimmediate" aria-label="setimmediate permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">setImmediate</code></h3>
+<p>수행시간이 긴 작업을 끝내고 브라우저가 이벤트나 화면 업데이트 등의 작업을 끝낸 직후에 콜백 함수를 실행하기 원할 때 사용한다. (? 언제 실행되는지 모르겠다…)</p>
+<p>비동기로 실행하고 싶지만 최대한 빨리 실행하고 싶을 때 사용한다. (<code class="language-text">setTimeout(() => {}, 0)</code> 보다 먼저 실행되는 것 같다.)</p>
+<p>표준 API가 아니라 브라우저에서는 사용할 수 없다. Node.js 10+에서만 사용 가능하다.</p>
+<p><strong>Ref</strong></p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate" target="_blank" rel="nofollow noopener noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate</a></li>
+<li><a href="https://inpa.tistory.com/entry/NODE-%F0%9F%93%9A-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%A3%A8%ED%94%84-%F0%9F%94%81-setTimeout-setImmediate-processnextTick" target="_blank" rel="nofollow noopener noreferrer">https://inpa.tistory.com/entry/NODE-📚-이벤트-루프-🔁-setTimeout-setImmediate-processnextTick</a></li>
+<li><a href="https://nodejs.dev/en/learn/understanding-setimmediate/" target="_blank" rel="nofollow noopener noreferrer">https://nodejs.dev/en/learn/understanding-setimmediate/</a></li>
+</ul>
+<h3 id="리액트에서-데이터를-로딩하는-3가지-방법" style="position:relative;"><a href="#%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%97%90%EC%84%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%A5%BC-%EB%A1%9C%EB%94%A9%ED%95%98%EB%8A%94-3%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95" aria-label="리액트에서 데이터를 로딩하는 3가지 방법 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>리액트에서 데이터를 로딩하는 3가지 방법</h3>
+<ul>
+<li>
+<p><strong>Fetch-on-render</strong> - 1차 render을 모두 마친 후 필요한 데이터를 로딩 한다</p>
+<ul>
+<li>부모-자식 컴포넌트의 render가 모두 이루어진 후, useEffect or query hook 등에 등록된 data fetching이 완료되면 해당 데이터로 다시 렌더링한다</li>
+<li>하위 컴포넌트를 내려가면서 렌더링하고, data fetching 요청을 하는게 반복되기 때문에 부모 컴포넌트가 리렌더링되는 이유로 하위 컴포넌트의 data fetching이 여러번 실행될 수도 있다. (네트워크 워터풀)</li>
+<li>ex. fetch in useEffect</li>
+</ul>
+</li>
+<li>
+<p><strong>Fetch-then-render</strong> - 자식 컴포넌트를 render하기 전에 필요한 데이터를 모두 로딩한다.</p>
+<ul>
+<li>상위에서 필요한 데이터를 한번에 모두 받고 렌더링이 진행되기 때문에, 워터폴 문제가 발생하지 않는다</li>
+<li>다만 부분적으로 데이터를 가져오고 변경하는게 어렵고, 따라서 유지보수가 힘들다</li>
+<li>ex. relay without suspense</li>
+</ul>
+</li>
+<li>
+<p><strong>Render as you fetch</strong> - 렌더링과 데이터 페치를 동시에</p>
+<ul>
+<li>각 컴포넌트가 자신에게 필요한 data fetching 로직을 가질 수 있다.</li>
+<li>data fetching을 하는 동안 컴포넌트의 렌더링을 막지 않는다.</li>
+<li>Suspense에 data가 fetching중인지 알려주도록 구현해야한다. fetching하는 동안 fallback UI를 보여준다.</li>
+<li>ex. relay with suspense</li>
+</ul>
+</li>
+</ul>
+<h3 id="사용자의-접속-형태-분석하기" style="position:relative;"><a href="#%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%98-%EC%A0%91%EC%86%8D-%ED%98%95%ED%83%9C-%EB%B6%84%EC%84%9D%ED%95%98%EA%B8%B0" aria-label="사용자의 접속 형태 분석하기 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>사용자의 접속 형태 분석하기</h3>
+<ul>
+<li>사용자가 새로고침으로 접속했는지 여부
+<ul>
+<li>window.performance.navigation.type === 1 (TYPE_RELOAD)</li>
+</ul>
+</li>
+<li>사용자가 뒤로가기로 접속했는지 여부
+<ul>
+<li>window.performance.navigation.type === 2 (TYPE_BACK_FORWARD)</li>
+</ul>
+</li>
+<li>사용자가 인식하는 페이지 로딩 시간
+<ul>
+<li>window.performance.timing.loadEventEnd - window.performance.timing.navigationStart</li>
+</ul>
+</li>
+<li>HTTP 요청에서 응답까지 걸린 시간
+<ul>
+<li>window.performance.timing.responseEnd - window.performance.timing.responseStart</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="이것저것" style="position:relative;"><a href="#%EC%9D%B4%EA%B2%83%EC%A0%80%EA%B2%83" aria-label="이것저것 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>이것저것</h2>
+<ul>
+<li>woff2 폰트는 모든 폰트 포맷 중 용량이 가장 작고, 모든 브라우저에서 사용 가능하다. (이제 safari에서도 지원한다.)</li>
+<li>브라우저 마음대로 <code class="language-text">body</code> 태그에 <code class="language-text">margin: 8px</code> 를 넣는 경우가 있다
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/119d6d15875555c5e482fd6922062061/e8950/01.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 15.54054054054054%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAIAAAAcOLh5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAcUlEQVQI12Ooqq7V1NHX0TPU0TXQ1tHX0tbDgwwMTQ2NzAwMTQwMTW3tHBiqauoNPb0dfP19vAOtbR3NLWwsLG1xIStreytrBytre0srO2dnd4bikjJlNS1DYzN9QxNdfSM9fWM8SFffCIK0dQ2srO0AFjMm8CZiBdUAAAAASUVORK5CYII='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="01" title="01" src="/static/119d6d15875555c5e482fd6922062061/fcda8/01.png" srcset="/static/119d6d15875555c5e482fd6922062061/12f09/01.png 148w,
+/static/119d6d15875555c5e482fd6922062061/e4a3f/01.png 295w,
+/static/119d6d15875555c5e482fd6922062061/fcda8/01.png 590w,
+/static/119d6d15875555c5e482fd6922062061/efc66/01.png 885w,
+/static/119d6d15875555c5e482fd6922062061/c83ae/01.png 1180w,
+/static/119d6d15875555c5e482fd6922062061/e8950/01.png 2000w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
+<ul>
+<li>사용자들 보기 좋으라고 그렇게 만들었다고 한다. CSS로 직접 빼줘야 한다;</li>
+</ul>
+</li>
+<li>github action의 checkout@v3을 사용해서 checkout 할 때에는 <code class="language-text">with: ref: main</code>과 같이 branch를 명시한다. 기본적으론 push 등 action이 발생한 branch로 이미 checkout 되어 있지만, <code class="language-text">git checkout HEAD^</code> 을 사용하면 좀 더 마음이 편해질 수 있다.</li>
+<li>Headless UI Component: 기능은 있지만 스타일은 없는 컴포넌트</li>
+<li><code class="language-text">git checkout -f</code> - 커밋되지 않은 변경 사항을 제거할 때 사용할 수 있다. 다만 unstage 상태의 파일의 변경사항이 모두 사라지니 조심하자.</li>
+<li>쉘 명령어: <code class="language-text">test -d</code> - 해당 파일이 존재하는지 여부를 반환한다.
+<ul>
+<li>ex) <code class="language-text">test -d node_modules || npm install --legacy-peer-deps</code></li>
+</ul>
+</li>
+<li>월드카페 - 열린 대화, 친밀한 대화를 촉진하고, 아이디어들을 연결하여 집단 지성에 이를 수 있게끔 구조화된 대화 프로세스이다.</li>
+<li><code class="language-text">"eslint.workingDirectories": [{ "mode": "auto" }]</code> - 여러 프로젝트가 존재하는 레포의 경우(ex. 모노레포) 각기 다른 설정의 린트 구성 파일을 가져야할 때 설정한다.</li>
+<li>webpack 에서 <a href="https://joshua1988.github.io/webpack-guide/devtools/webpack-dev-server.html" target="_blank" rel="nofollow noopener noreferrer">proxyTarget</a>을 사용하면 개발환경 API에 cors 오류 없이 API 요청을 보낼 수 있다.</li>
+<li>github에는 코드 리뷰 리마인더가 기본으로 있다. (<a href="https://docs.github.com/en/organizations/organizing-members-into-teams/managing-scheduled-reminders-for-your-team" target="_blank" rel="nofollow noopener noreferrer">Ref</a>)</li>
+<li>KDA는 Key Information / Decisions / Action Items</li>
+<li>deduping - 리액트 쿼리의 맥락에서 중복된 요청을 단일 요청으로 처리해주는 것을 의미한다.</li>
+<li>mermaid 를 사용하면 git graph 도 이쁘게 그릴 수 있다 (<a href="https://mermaid.js.org/syntax/gitgraph.html" target="_blank" rel="nofollow noopener noreferrer">https://mermaid.js.org/syntax/gitgraph.html</a>)</li>
+</ul>
+<hr>
+<h2 id="기타공유" style="position:relative;"><a href="#%EA%B8%B0%ED%83%80%EA%B3%B5%EC%9C%A0" aria-label="기타공유 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>기타공유</h2>
+<h3 id="당신이-모르는-자바스크립트의-메모리-누수의-비밀" style="position:relative;"><a href="#%EB%8B%B9%EC%8B%A0%EC%9D%B4-%EB%AA%A8%EB%A5%B4%EB%8A%94-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EB%A9%94%EB%AA%A8%EB%A6%AC-%EB%88%84%EC%88%98%EC%9D%98-%EB%B9%84%EB%B0%80" aria-label="당신이 모르는 자바스크립트의 메모리 누수의 비밀 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>당신이 모르는 자바스크립트의 메모리 누수의 비밀</h3>
+<p>메모리 누수는 부주의 또는 일부 프로그램 오류로 인해 더 사용되지 않는 메모리를 해제하지 못하는 것이다. 간단히, 어떤 변수가 100M의 메모리를 점유한다고 할 때, 이 변수가 사용되지 않더라도 수동 또는 자동으로 해제되지 않아 계속 메모리를 점유하는 것을 말한다.</p>
+<p>자바스크립트를 사용하며 어떤 상황들에서 메모리 누수가 발생할까? 다음은 공통적인 사례들이다.</p>
+<ul>
+<li>클로저의 잘못된 사용</li>
+<li>의도치않게 생성된 전역 변수</li>
+<li>분리된 DOM 노드</li>
+<li>콘솔 출력</li>
+<li>해제하지 않은 타이머</li>
+</ul>
+<p>크롬 DevTools로 자바스크립트 애플리케이션의 메모리 사용량을 관찰할 수 있다.</p>
+<p>⬇️ 이어서 보기 (엄청 흥미로우니 꼭 보기)</p>
+<p><strong>Ref</strong> <a href="https://ui.toast.com/posts/ko_20210611" target="_blank" rel="nofollow noopener noreferrer">https://ui.toast.com/posts/ko_20210611</a></p>
+<h3 id="state-of-js-2022" style="position:relative;"><a href="#state-of-js-2022" aria-label="state of js 2022 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>state-of-js 2022</h3>
+<p>프론트엔드 프레임워크로 스벨트가 점점 떠오르고 있다 😯 언젠가 한번 써봐야 하는데</p>
+<p>빌드 툴로는 vite가 심상치 않아보인다.</p>
+<p><strong>Ref</strong> <a href="https://2022.stateofjs.com/en-US/" target="_blank" rel="nofollow noopener noreferrer">https://2022.stateofjs.com/en-US/</a></p>
+<h3 id="promise는-왜-취소가-안-될까" style="position:relative;"><a href="#promise%EB%8A%94-%EC%99%9C-%EC%B7%A8%EC%86%8C%EA%B0%80-%EC%95%88-%EB%90%A0%EA%B9%8C" aria-label="promise는 왜 취소가 안 될까 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Promise는 왜 취소가 안 될까?</h3>
+<p>TC39에서 처음에 Promise의 취소 기능을 제안할 때는, Promise의 3가지 상태(pending/fulfilled/rejected)에 더해 새로운 ‘취소 상태(canceled)‘의 필요성을 주장했다. 이 과정에서는 취소 상태와 함께 ‘취소 토큰(Cancel Token)‘을 도입하자는 제안도 있었다.</p>
+
+          <div class="gatsby-remark-prismjs-copy-button-container">
+            <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
+              Copy
+            </div>
+          </div>
+          
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">const</span> cancelToken <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>“cancelButton”<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">timeout</span><span class="token punctuation">(</span><span class="token parameter">ms<span class="token punctuation">,</span> cancelToken</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> timeoutHandle <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ms<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cancelToken<span class="token operator">?.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timeoutHandle<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">timeout</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">,</span> cancelToken<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">alert</span><span class="token punctuation">(</span>“timeout<span class="token operator">!</span>”<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>그러나 Promise로 취소 토큰을 구현하면 취소 여부를 동기적으로 알 수 없다는 단점이 있다.</p>
+<p>따라서 동기 및 비동기 방식에 사용할 수 있을 분 아니라, 취소 기능과 관련된 다양한 편의 기능을 제공하면서 범용성이 있는 인터페이스를 가지는 취소 토큰 표준이 최종적으로 제안되었다.</p>
+<blockquote>
+<p>이때 제안된 취소 토큰은 비록 표준으로 채택되지 못했지만, Axios에서 <a href="https://axios-http.com/kr/docs/cancellation" target="_blank" rel="nofollow noopener noreferrer">요청을 취소하기 위한 기능</a>에서 구현되었다.</p>
+</blockquote>
+<p>그러던 와중에 <code class="language-text">AbortController</code>와 <code class="language-text">AbortSignal</code>이 등장했는데?!</p>
+<p>⬇️ 이어서 보기 (+ 광고 SDK에서 렌더링 취소 문제를 해결한 방법)</p>
+<p><strong>Ref</strong> <a href="https://tech.kakao.com/2023/01/11/promise-cancelation-in-javascript/" target="_blank" rel="nofollow noopener noreferrer">https://tech.kakao.com/2023/01/11/promise-cancelation-in-javascript/</a></p>
+<hr>
+<h2 id="마무리" style="position:relative;"><a href="#%EB%A7%88%EB%AC%B4%EB%A6%AC" aria-label="마무리 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>마무리</h2>
+<p>신년이라 그런지 TIL을 많이많이 올려주시는 중… 나도 동참하기로 했다. 하루에 하나라도 배우기!</p>
+<p>신년 목표같은거 구체적으로 세우지 않는 편이지만, 2주째 영어공부 열심히 하고 있다. 원서 읽기도 재미있다. 끝까지 흥미 잃지 않고 노력해서 호주 가서 날라댕겨보자 🦘</p></div><hr/><div style="margin-top:-1rem">Relative Posts<!-- -->:</div><a style="box-shadow:none" rel="bookmark" href="/weekly/2023-1-week-3/"><article style="margin-bottom:0.875rem"><header><h3 style="font-family:Montserrat, sans-serif;font-size:1.75rem;margin:0.875rem 0.4375rem 0">1월 3주차 기록</h3><small style="margin-left:0.4375rem">January 20, 2023</small></header></article></a><a style="box-shadow:none" rel="bookmark" href="/weekly/2023-1-week-1/"><article style="margin-bottom:0.875rem"><header><h3 style="font-family:Montserrat, sans-serif;font-size:1.75rem;margin:0.875rem 0.4375rem 0">1월 1주차 기록</h3><small style="margin-left:0.4375rem">January 7, 2023</small></header></article></a><hr style="margin-bottom:1.75rem"/><div style="margin-bottom:4.375rem"><div class="bio"><div data-gatsby-image-wrapper="" style="width:70px;height:70px;margin-right:0.875rem" class="gatsby-image-wrapper pic"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#e8e8d8;width:70px;height:70px;position:relative"></div><picture><source type="image/webp" data-srcset="/static/ba740cde857ed0a3f815e785774b71ab/299bc/profile-pic.webp 70w,/static/ba740cde857ed0a3f815e785774b71ab/29111/profile-pic.webp 140w" sizes="70px"/><img data-gatsby-image-ssr="" data-main-image="" style="border-radius:50%;opacity:0" sizes="70px" decoding="async" loading="lazy" data-src="/static/ba740cde857ed0a3f815e785774b71ab/19d7e/profile-pic.jpg" data-srcset="/static/ba740cde857ed0a3f815e785774b71ab/19d7e/profile-pic.jpg 70w,/static/ba740cde857ed0a3f815e785774b71ab/2787c/profile-pic.jpg 140w" alt="zigsong"/></picture><noscript><picture><source type="image/webp" srcSet="/static/ba740cde857ed0a3f815e785774b71ab/299bc/profile-pic.webp 70w,/static/ba740cde857ed0a3f815e785774b71ab/29111/profile-pic.webp 140w" sizes="70px"/><img data-gatsby-image-ssr="" data-main-image="" style="border-radius:50%;opacity:0" sizes="70px" decoding="async" loading="lazy" src="/static/ba740cde857ed0a3f815e785774b71ab/19d7e/profile-pic.jpg" srcSet="/static/ba740cde857ed0a3f815e785774b71ab/19d7e/profile-pic.jpg 70w,/static/ba740cde857ed0a3f815e785774b71ab/2787c/profile-pic.jpg 140w" alt="zigsong"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><div class="description"><p>지그의 개발 블로그</p><div><a href="https://github.com/zigsong" target="_blank" rel="noopener noreferrer" class="rotate-icon" aria-label="github link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RERCMUIwOUY4NkNFMTFFM0FBNTJFRTMzNTJEMUJDNDYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RERCMUIwOUU4NkNFMTFFM0FBNTJFRTMzNTJEMUJDNDYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkU1MTc4QTJBOTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkU1MTc4QTJCOTlBMDExRTI5QTE1QkMxMDQ2QTg5MDREIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jUqS1wAAApVJREFUeNq0l89rE1EQx3e3gVJoSPzZeNEWPKgHoa0HBak0iHiy/4C3WvDmoZ56qJ7txVsPQu8qlqqHIhRKJZceesmhioQEfxTEtsoSpdJg1u/ABJ7Pmc1m8zLwgWTmzcw3L+/te+tHUeQltONgCkyCi2AEDHLsJ6iBMlgHL8FeoqokoA2j4CloRMmtwTmj7erHBXPgCWhG6a3JNXKdCiDl1cidVbXZkJoXQRi5t5BrxwoY71FzU8S4JuAIqFkJ2+BFSlEh525b/hr3+k/AklDkNsf6wTT4yv46KIMNpsy+iMdMc47HNWxbsgVcUn7FmLAzzoFAWDsBx+wVP6bUpp5ewI+DOeUx0Wd9D8F70BTGNjkWtqnhmT1JQAHcUgZd8Lo3rQb1LAT8eJVUfgGvHQigGp+V2Z0iAUUl8QH47kAA1XioxIo+bRN8OG8F/oBjwv+Z1nJgX5jpdzQDw0LCjsPmrcW7I/iHScCAEDj03FtD8A0EyuChHgg4KTlJQF3wZ7WELppnBX+dBFSVpJsOBWi1qiRgSwnOgoyD5hmuJdkWCVhTgnTvW3AgYIFrSbZGh0UW/Io5Vp+DQoK7o80pztWMemZbgxeNwCNwDbw1fIfgGZjhU6xPaJgBV8BdsMw5cbZoHsenwYFxkZzl83xTSKTiviCAfCsJLysH3POfC8m8NegyGAGfLP/VmGmfSChgXroR0RSWjEFv2J/nG84cuKFMf4sTCZqXuJd4KaXFVjEG3+tw4eXbNK/YC9oXXs3O8NY8y99L4BXY5cvLY/Bb2VZ58EOJVcB18DHJq9lRsKr8inyKGVjlmh29mtHs3AHfuhCwy1vXT/Nu2GKQt+UHsGdctyX6eQyNvc+5sfX9Dl7Pe2J/BRgAl2CpwmrsHR0AAAAASUVORK5CYII=" alt="RotateLinkImg-icon" width="24" height="24" role="presentation"/></a></div></div></div></div><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0;margin-left:0"><li><a rel="prev" href="/weekly/2023-1-week-3/">← <!-- -->1월 3주차 기록</a></li><li><a rel="next" href="/weekly/2023-1-week-1/">1월 1주차 기록<!-- --> →</a></li></ul><footer style="margin-top:4.375rem;padding-top:1.75rem;text-align:center"><p>Made of<!-- --> <a href="https://github.com/thundermiracle/gatsby-simple-blog" target="_blank" rel="noopener noreferrer">gatsby-simple-blog</a></p></footer></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-E7NM1ZBB2T"></script><script>
+      
+      
+      if(true) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer && window.dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-E7NM1ZBB2T', {"send_page_view":false});
+      }
+      </script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/weekly/2023-1-week-2/";window.___webpackCompilationHash="eb4b3c1a7422f7887647";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-574574a8e23bbb0edcf2.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-561500033f4a04beaade.js"],"component---src-pages-404-js":["/component---src-pages-404-js-36073bfdca563509f48c.js"],"component---src-templates-blog-index-js":["/component---src-templates-blog-index-js-e71422f52ecd8bacaa94.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-27e173e31720b9492978.js"],"component---src-templates-tag-page-js":["/component---src-templates-tag-page-js-01714bddc47f6e2cfedf.js"],"component---src-templates-tags-js":["/component---src-templates-tags-js-ac08bd62c3f8612fae51.js"]};/*]]>*/</script><script src="/app-574574a8e23bbb0edcf2.js" async=""></script><script src="/framework-4aa03a005c86cb8ec811.js" async=""></script><script src="/webpack-runtime-06369fdc4cdeb072879a.js" async=""></script></body></html>
