@@ -52,10 +52,19 @@
               (function themeOper(){const onThemeChangeFuncObj={};let preferredTheme;function setTheme(newTheme){window.__theme=newTheme;preferredTheme=newTheme;document.body.className=newTheme;Object.values(onThemeChangeFuncObj).forEach(func=>func(newTheme));}try{preferredTheme=localStorage.getItem('theme');}catch(err){}window.__setPreferredTheme=function(newTheme){setTheme(newTheme);try{localStorage.setItem('theme',newTheme);}catch(err){}};window.__subOnThemeChange=function(key,func){onThemeChangeFuncObj[key]=func;};window.__unsubOnThemeChange=function(key){Reflect.deleteProperty(onThemeChangeFuncObj,key);};const darkQuery=window.matchMedia('(prefers-color-scheme: dark)');darkQuery.addListener(function(e){window.__setPreferredTheme(e.matches?'dark':'light');});setTheme(preferredTheme||(darkQuery.matches?'dark':'light'));})();
             </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="color:var(--textNormal);background:var(--bg);transition:color 0.2s ease-out, background 0.2s ease-out;min-height:100vh;font-family:var(--systemFont)"><div style="margin-left:auto;margin-right:auto;max-width:42rem;padding:2.625rem 1.3125rem"><header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2.625rem"><h3 style="font-family:Montserrat, sans-serif;margin-top:0;margin-bottom:0;height:42px;line-height:2.625rem"><a style="box-shadow:none;text-decoration:none;color:rgb(255, 167, 196)" href="/">ziglog</a></h3><div style="height:24px"></div></header><ul class="breadcrumbs breadcrumbs-ul" style="margin-top:-1.5rem"><li class="breadcrumbs-item"><a class="breadcrumbs-element" href="/">Home</a></li><li class="breadcrumbs-item_active"><span class="breadcrumbs-element">애플 클론코딩(을 빙자한 복제)</span></li></ul><h1>애플 클론코딩(을 빙자한 복제)</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem;margin-top:-1.75rem">September 18, 2021<!-- --> • ☕️ 5 min read</p><ul class="tag-ul"><li><div class="round"><a class="link" href="/tags/frontend"><span class="text">frontend</span></a></div></li></ul><div><p>새로 알게된 CSS 속성들</p>
 <!-- more -->
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
 <p>우테코 Lv4 마크업 미션으로 애플 클론코딩을 진행했다. 14일 화요일에 미션이 주어졌는데, 제출일은 16일 아침까지고, 한국 시간 15일 새벽 2시에 애플 신제품 발표로 홈페이지가 리뉴얼되면서 (ㅎ) 알면서도 곤혹을 치뤘다. 또 모든 크루들이 그랬겠지만, 17일에 있었던 데모데이 준비까지 겹쳐 이틀 밤을 거의 새다시피 하고 몸이 엉망진창이…</p>
 <p>일부 섹션을 생략한 완성작은 <a href="https://zigsong.github.io/html-apple-store/" target="_blank" rel="nofollow noopener noreferrer">여기</a>에…</p>
-<img src="01.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/bcc55880879119ec54e30d60b09a609b/5c953/01.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 56.75675675675676%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAC/klEQVQozzWO3U9bBRjGT+JGOafn9NAOTs9pT09b1tINOlaKZBP6QcsKIp32A8Y2zJBmA1mm8iVsOAJM2GTEBHQfOuLMvFATNZlGLkymiTfGxJvdaPTGxBtvvPE/+JlCvPjlfZ7ked48gjvSiX40idGSxmjpxozlMI/nMGN9mLFefG19+8R6931s31e1t7UHvTmFFumk/nAHrmAbQqQjT2tiiGd7LpA6fYVsaYZ0YZp0cYZMaY7s4Jtky/NkBq+RHVogW54jU5olVZgikb9CZ/8E8ewFWpPDHD3xEoLb8KMbfsKhKO3xFJWRKW6/dY+tlR02rt/n7cUP2Nh6zMNvn7K2+jE3Ft7j5uIdNq/fZ3nmNpNjC0yMzlE8/QqZdAFBVFxIigtFrcehuvB4/PQl+9h8Y5knd77g9++e8s8vf/Lvb3/z1w+/8sen3/Pzztc8XNoi350n4AsRbmzG8DTirDcRRNmJXXEhO1woihNZVqkRZURZJRQ5wdjUBtPFs3y58i6PP9plNP8yyfYEXsOPKCkctEkcsElU/1THCbWyhqi4sTsMHE4vmjtIOBglcbyLcmKAhddusTq9wq35dZavblPseoFULMGxpjheI4TLZaGoXiSHQY3sRjgg61SpUQwk1cRvRTnV2c9YocLq6ze4u7bDowe7fPJgl+2lu6xMLjFZukQxXSAaakets7DZDQ5KOs/YDQSbw8Cm6NhVDx5PE5mTOeYn5tlcv8c725+z8egJ73/1E9uf/cjND79haW2Hxdl1Lg+P82JqgKD3CHbZoLY6StYR3HoQtxbA8kWIHztJz3M5zgwMUTl/kZHhCpXKFBcvX6Py6lXGx2cZHbnE2cI5+rt66W5LEm/uwPSEadACuOotBK3BRHdbeI0gfu9hGq0wAU8jXs3iVOZ5hsrnOTM4Qrl0jlJhmO5kjkOqjqlZBIwgPj2w19cafLgOeRDEWoX/kUQHdklFsdehyE50zYvHsGhqauFIJLqndbeJbK/by8mSunerPVF0UCsq/AfraYG+00yHMQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="01" title="01" src="/static/bcc55880879119ec54e30d60b09a609b/fcda8/01.png" srcset="/static/bcc55880879119ec54e30d60b09a609b/12f09/01.png 148w,
+/static/bcc55880879119ec54e30d60b09a609b/e4a3f/01.png 295w,
+/static/bcc55880879119ec54e30d60b09a609b/fcda8/01.png 590w,
+/static/bcc55880879119ec54e30d60b09a609b/efc66/01.png 885w,
+/static/bcc55880879119ec54e30d60b09a609b/c83ae/01.png 1180w,
+/static/bcc55880879119ec54e30d60b09a609b/5c953/01.png 3540w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <h2 id="html-tags" style="position:relative;"><a href="#html-tags" aria-label="html tags permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTML tags</h2>
 <h3 id="aside" style="position:relative;"><a href="#aside" aria-label="aside permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code class="language-text">&lt;aside></code></h3>
 <p>문서의 주요 내용과 간접적으로만 연관된 부분을 나타낼 때 사용한다. 주로 사이드바 혹은 콜아웃 박스로 표현한다.</p>
@@ -80,7 +89,17 @@
 <li>이미지가 없어도 문서를 읽는 데 지장이 없는 경우</li>
 </ul>
 <p>실제로 애플 공홈에서도 각 섹션별 이미지를 <code class="language-text">background-image</code> 속성으로 설정하고 있었다. (그새 홈페이지가 또 바뀌었다..)</p>
-<img src="02.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/6e29b/02.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 42.567567567567565%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABpElEQVQoz5WSS0sbYRSG528U6kKrySRmEsdJZjITE41MlKwKVixCi4jErrqoYEW0daGICSgIreDOhbe6kuKUBiF1Y6mXaC3aIK6yqNhSg7/Ap0xAqZcILs7qO+9znsP5hIBYx22lOAwMb5RGLU7I10i9vxnVFcbvDFEqY5dQ6qG2SsdU43S1dtP5JEFbczvB6vr7Ay8DzhCyGMHnjqJ7Y6geE6kicLPvLuBFk+YKE3DVYcoxnhotuMq9BD0R2s1nKA79TkvhOkxxhHCXKUiPNEa7ezkbsvjxeonc5BZsw1hPCrGsBs0duRUs3DiE1MDE4Agfpqb5umJxnP7GeeYnzOdhA/LLWeJBE7nKQC1laE/S3GHEhzJjvW+xZmdYWZiDwh9OT/Icb+9w9GKOw74072te0Wd0IDk0VDGMX7xqKdgwe5JcqRNVYhxkVsmmP/EumeLv0SG/ct9ZHp4i+SDB+sskuecp1rQ3PK5uwuvUi9n/Vy8a2v9LKlcZ7x+isJ/lZGeD37ubFHJ7ZBYX6elIYA0Oc773BazPMLrEx9YBfEXLqyv/Az2lZA1O5aGCAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="02" title="02" src="/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/fcda8/02.png" srcset="/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/12f09/02.png 148w,
+/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/e4a3f/02.png 295w,
+/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/fcda8/02.png 590w,
+/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/efc66/02.png 885w,
+/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/c83ae/02.png 1180w,
+/static/3df8be0d12bb4ec2d8d0458ef3b3a4f6/6e29b/02.png 1610w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p><strong>Ref</strong>
 <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/aside" target="_blank" rel="nofollow noopener noreferrer">https://developer.mozilla.org/ko/docs/Web/HTML/Element/aside</a>
 <a href="https://www.youtube.com/watch?v=T7h8O7dpJIg" target="_blank" rel="nofollow noopener noreferrer">https://www.youtube.com/watch?v=T7h8O7dpJIg</a></p>
@@ -91,7 +110,16 @@
 <h3 id="float" style="position:relative;"><a href="#float" aria-label="float permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>float</h3>
 <p>요소가 일반적인 흐름을 벗어나 어디에 ‘뜰’ 것인지를 정하는 속성이다. 웹 개발을 배우기 시작했을 때 접했는데, 거의(사실 한 번도) 사용하지 않고 있었다. 문서 흐름의 좌측이나 우측으로 배치되며 메인 콘텐츠의 흐름을 벗어나 사용한다. 애플 홈페이지에서는 footer의 일부 텍스트에 포함되어 있었다. 의미를 고려했을 때 유용하게 사용해볼 수 있을 것 같다.</p>
 <p><strong>&#x3C;footer의 locale 정보만 우측으로 치우친 경우></strong>
-<img src="03.png" /></p>
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/9def8a9d626a0b2e4b175eef596c093b/fe9e8/03.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 46.621621621621614%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABTklEQVQoz2WR226DMBBE+Y2AwfgGxlwTolSR+lj1//9oqllkK1IfVjb4eGa8W/W9xbrusNajaVpM04yUFtm3rcb9fmIYIupawbmA5/Ml3zzftgPLshWWVWlt4f0gF5TqEMKIlNYCcE8hntOchtk8xiTimRVBQjHOIkaI6ZZll28Cj8cT+35H1/Vi9n5/YxyTsEy37w8xyXxFcJ6vRITGccI0LQWY503+aW1gjBOznPBiZ0n+8WQjPaQwoRBiMWAxBS/ebg2sDTjPl7yChjz710MKsQ8UrstQ1uLKlUUBJqQ5BclzPY5TZpBFK4J5IE2tEMeIfTsQfBDoszicr6831vUoA2J6hmpzD68UTkr1AZ0Z0ZkBSvuSjsnkUqslWf7PvbyMoVQHpUSwl775EGF9gg0JxkUpTtX7UVbnBkl4GXgR4qu06vBjWvw6jbVV+ANKdv19thZLwAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="03" title="03" src="/static/9def8a9d626a0b2e4b175eef596c093b/fcda8/03.png" srcset="/static/9def8a9d626a0b2e4b175eef596c093b/12f09/03.png 148w,
+/static/9def8a9d626a0b2e4b175eef596c093b/e4a3f/03.png 295w,
+/static/9def8a9d626a0b2e4b175eef596c093b/fcda8/03.png 590w,
+/static/9def8a9d626a0b2e4b175eef596c093b/efc66/03.png 885w,
+/static/9def8a9d626a0b2e4b175eef596c093b/fe9e8/03.png 1146w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span></p>
 <blockquote>
 <p>👾 <code class="language-text">clear</code> 속성에 대해서도 알아보자!</p>
 </blockquote>
@@ -130,7 +158,17 @@
 <h3 id="flex-direction-row-reverse" style="position:relative;"><a href="#flex-direction-row-reverse" aria-label="flex direction row reverse permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>flex-direction: row-reverse</h3>
 <p><code class="language-text">reverse</code>를 쓸 바에는 그냥 좌측에 와야 할 요소를 코드 상으로 먼저 적으면 되는 거 아닌가? 생각했었다. 그런데 아래와 같이 이미지와 텍스트가 좌우 배치되어있지만 웹 접근성을 고려했을 때 텍스트가 먼저 읽혀야 하는 경우(특히나 다른 섹션들은 텍스트가 이미지보다 좌측에 등장하여 일관성 유지가 필요하다.) <code class="language-text">row-reverse</code> 값을 사용해야 한다는 것을 깨달았다.</p>
 <p><strong>&#x3C;이미지와 텍스트가 보여지는 순서와 의미상 순서가 일치하지 않는 경우></strong>
-<img src="04.png" /></p>
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/deeb5aa33cd09d8b4493ba63c1660298/2f8cb/04.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 58.10810810810811%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACiklEQVQoz4WT2UvUURTH55/oJTCXcZwZx9HZx5mfM26MaYyaS+4jM2aajrkkraBQubUQUUYhBD2IZZBatJJmST4IlpgG0UOEPfRQFoG0UPSJ+9NxQaiHw7333Hu+53vO+V6FRZOEUS2RpHMzVdLFZ38vr/ynmPSeYaFiiGl/P8eCzTj0KZhiJMT7f5nCpnWhjrLQnhWAk8P8OjfA96FhLhmauWfo5Wp9F8U5u4iLsGHVuuQgsYb2wszqtUQKcaFT2gkk5/Ht4iDcGeXL2G26Y2roy2yn+9ARjNHO1YAEZSL6CCv6SBsJSjtGlWMDsMKikbBqXOhVdnLtbpYe3uf3zDh369rp7+khz1OIPtKORS3JAPmZpZTt9ONNK6Agq4wMKZv4KNsqS4VFvYycqEth6xYll9sOwLtpHpzooq3xoFyqeCgZ0nGbMyjy+qjxNVBdXk9prh9vagEp1kwc8amYYpyC4TJdW6wLTZiZzpZGfryZ4Pr5C6TbsjCoHJhUTjxOLw3V+wlWNVPnbyJY1UJ9oInW4GHZ5zJ6QoASgqUAFVOUEtx0tDazz1ePLtwqJxL+9MQdBIprqSyspiK/ij0VQXn1FeymJKeSZMv2NYaiZDEc0ej89EIeDw7SUFknn4U/1B+DMlHeu00eUm1ZchvMMdLqYFaGkrQqBV24hbFrN5h98ojTxzsoz/bJvpBERIAzPo1UW6YMJljb45I3ykYcRFmx4RZqiqr4+nqO+YlxZp+OMnpzBG2YaZPmjCqnXJ5gFgJbm/JK76zaJMYGBvjz/i0jV/o429EJP5eoLalBu80sJ13PZL1tFnaElaN7W1ice87i/AwLU8/4+PIFfPrA5PAtDNGO/365EOBfeETVQmku3CkAAAAASUVORK5CYII='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="04" title="04" src="/static/deeb5aa33cd09d8b4493ba63c1660298/fcda8/04.png" srcset="/static/deeb5aa33cd09d8b4493ba63c1660298/12f09/04.png 148w,
+/static/deeb5aa33cd09d8b4493ba63c1660298/e4a3f/04.png 295w,
+/static/deeb5aa33cd09d8b4493ba63c1660298/fcda8/04.png 590w,
+/static/deeb5aa33cd09d8b4493ba63c1660298/efc66/04.png 885w,
+/static/deeb5aa33cd09d8b4493ba63c1660298/c83ae/04.png 1180w,
+/static/deeb5aa33cd09d8b4493ba63c1660298/2f8cb/04.png 1689w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span></p>
 <p><strong>Ref</strong>
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position" target="_blank" rel="nofollow noopener noreferrer">https://developer.mozilla.org/en-US/docs/Web/CSS/background-position</a>
 <a href="https://developer.mozilla.org/ko/docs/Web/CSS/float" target="_blank" rel="nofollow noopener noreferrer">https://developer.mozilla.org/ko/docs/Web/CSS/float</a>

@@ -243,7 +243,16 @@
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RightPane</span></span><span class="token punctuation">></span></span><span class="token plain-text">
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Layout</span></span><span class="token punctuation">></span></span></code></pre></div>
 <p><code class="language-text">Suspense</code>로 감싸진 <code class="language-text">Comments</code> 컴포넌트는, 해당 부분의 HTML이 모두 그려질 때까지 기다리는 대신 <code class="language-text">fallback</code> 컴포넌트를 반환한다.</p>
-<img src="01.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/fb169fdd8f9945f579d4943e8096fb6d/97bfd/01.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 74.32432432432432%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAABo0lEQVQ4y5WUWY+jMBCE8///XR7zPBxZDt8HuahRNTZBmV1pJ1IpjWk+2tVtTuu6YlmWD2XkXJQSUhFjrtW82+22xTkjxoj7/Y7T6/VCCAHOOTjv5d86B2MtjDHQ2kApjVkpKK2hKWO2+1XGyhpfugPHaYJ1HtpYKElgsoOmSryr5NVr5wPmWQnn9Hw+EUPANE1o2hZN26Hve1yvf0Rd16NpWtFX06BtO7RdJ9dd32MYR4zjhGma30Bu04eAEBNiXmR7s9JIyw0hZoSUEVPeY+ZJHLm+yM6GYXgD6RXL9gU4DCOGcZLYhygAXyRxOF5nWB/kGe89To/HQ4wWYEhSCf1gldUja2ujNj91aYLSW9OYr5SC9+4DGDcgkzlO//6tP2KOjLV2A5JOYCxe8a3svqSv6w6v83hcr/cIZC92IL0S4wtwXX8CL5cLzufzu7YP4O5hBdYuHrd8fMiWYf9bheRIl6uHAixbZgM+gUdPj2tHII+fjA3fzFlyIQqYx+m3P3J4zvfBds7LmaToBdf/V2wgPxQCZMnp8EWpoh+/EYvg1+YbeW+KibJwbTwAAAAASUVORK5CYII='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="01" title="01" src="/static/fb169fdd8f9945f579d4943e8096fb6d/fcda8/01.png" srcset="/static/fb169fdd8f9945f579d4943e8096fb6d/12f09/01.png 148w,
+/static/fb169fdd8f9945f579d4943e8096fb6d/e4a3f/01.png 295w,
+/static/fb169fdd8f9945f579d4943e8096fb6d/fcda8/01.png 590w,
+/static/fb169fdd8f9945f579d4943e8096fb6d/efc66/01.png 885w,
+/static/fb169fdd8f9945f579d4943e8096fb6d/97bfd/01.png 1078w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>(프론트)서버에서 <code class="language-text">Comments</code>에 필요한 데이터 fetching이 완료되면, 리액트는 <strong>같은 stream</strong>으로 추가적인 HTML을 전달한다. 이렇게 뒤늦게 HTML을 쑤셔 넣는(?) 것을 ‘<strong>pop in</strong>‘이라고 한다. 각 컴포넌트는 서로 다른 컴포넌트의 데이터가 완전히 로드될 때까지 기다릴 필요가 없다.</p>
 <p>클라이언트 단의 <strong>Selective Hydration</strong>은 데이터를 모두 불러올 때까지 페이지의 다른 부분들이 블로킹되는 문제를 해결한다. 리액트는 로드되는 순서대로 부분적으로 hydration을 진행한다.</p>
 <h3 id="선택적-hydration" style="position:relative;"><a href="#%EC%84%A0%ED%83%9D%EC%A0%81-hydration" aria-label="선택적 hydration permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>선택적 hydration</h3>

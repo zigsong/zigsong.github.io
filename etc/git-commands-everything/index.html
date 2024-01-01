@@ -50,7 +50,7 @@
     })
   </script><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="dns-prefetch" href="https://www.googletagmanager.com"/><link rel="icon" href="/favicon-32x32.png?v=4a9773549091c227cd2eb82ccd9c5e3a" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=4a9773549091c227cd2eb82ccd9c5e3a"/><title data-react-helmet="true">git 명령어 부셔보기 | ziglog</title><style data-styled="" data-styled-version="5.3.11"></style></head><body class="light"><script>
               (function themeOper(){const onThemeChangeFuncObj={};let preferredTheme;function setTheme(newTheme){window.__theme=newTheme;preferredTheme=newTheme;document.body.className=newTheme;Object.values(onThemeChangeFuncObj).forEach(func=>func(newTheme));}try{preferredTheme=localStorage.getItem('theme');}catch(err){}window.__setPreferredTheme=function(newTheme){setTheme(newTheme);try{localStorage.setItem('theme',newTheme);}catch(err){}};window.__subOnThemeChange=function(key,func){onThemeChangeFuncObj[key]=func;};window.__unsubOnThemeChange=function(key){Reflect.deleteProperty(onThemeChangeFuncObj,key);};const darkQuery=window.matchMedia('(prefers-color-scheme: dark)');darkQuery.addListener(function(e){window.__setPreferredTheme(e.matches?'dark':'light');});setTheme(preferredTheme||(darkQuery.matches?'dark':'light'));})();
-            </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="color:var(--textNormal);background:var(--bg);transition:color 0.2s ease-out, background 0.2s ease-out;min-height:100vh;font-family:var(--systemFont)"><div style="margin-left:auto;margin-right:auto;max-width:42rem;padding:2.625rem 1.3125rem"><header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2.625rem"><h3 style="font-family:Montserrat, sans-serif;margin-top:0;margin-bottom:0;height:42px;line-height:2.625rem"><a style="box-shadow:none;text-decoration:none;color:rgb(255, 167, 196)" href="/">ziglog</a></h3><div style="height:24px"></div></header><ul class="breadcrumbs breadcrumbs-ul" style="margin-top:-1.5rem"><li class="breadcrumbs-item"><a class="breadcrumbs-element" href="/">Home</a></li><li class="breadcrumbs-item_active"><span class="breadcrumbs-element">git 명령어 부셔보기</span></li></ul><h1>git 명령어 부셔보기</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem;margin-top:-1.75rem">January 31, 2022<!-- --> • ☕️☕️☕️☕️ 18 min read</p><ul class="tag-ul"><li><div class="round"><a class="link" href="/tags/git"><span class="text">git</span></a></div></li></ul><div><p>이제는 정복해 보자</p>
+            </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div style="color:var(--textNormal);background:var(--bg);transition:color 0.2s ease-out, background 0.2s ease-out;min-height:100vh;font-family:var(--systemFont)"><div style="margin-left:auto;margin-right:auto;max-width:42rem;padding:2.625rem 1.3125rem"><header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2.625rem"><h3 style="font-family:Montserrat, sans-serif;margin-top:0;margin-bottom:0;height:42px;line-height:2.625rem"><a style="box-shadow:none;text-decoration:none;color:rgb(255, 167, 196)" href="/">ziglog</a></h3><div style="height:24px"></div></header><ul class="breadcrumbs breadcrumbs-ul" style="margin-top:-1.5rem"><li class="breadcrumbs-item"><a class="breadcrumbs-element" href="/">Home</a></li><li class="breadcrumbs-item_active"><span class="breadcrumbs-element">git 명령어 부셔보기</span></li></ul><h1>git 명령어 부셔보기</h1><p style="font-size:0.83255rem;line-height:1.75rem;display:block;margin-bottom:1.75rem;margin-top:-1.75rem">January 31, 2022<!-- --> • ☕️☕️☕️☕️ 21 min read</p><ul class="tag-ul"><li><div class="round"><a class="link" href="/tags/git"><span class="text">git</span></a></div></li></ul><div><p>이제는 정복해 보자</p>
 <!-- more -->
 <p>3년이나 개발을 공부해왔음에도 불구하고 매번 답이 안 나오는 git… 🤦‍♀️ 회사 코드를 본격적으로 뜯어보기 전, 설날 기념 잉여인간일 때 git을 정복해야겠다는 생각이 들었다. GUI 도구인 Git Kraken을 사용하고 싶기도 하고…</p>
 <p>(2/6 추가)
@@ -74,12 +74,31 @@
 </li>
 </ol>
 <p>이때 <strong>작업 디렉토리</strong>의 파일들은 다시 두 가지로 나뉜다. 한번이라도 git의 관리 대상이 되어 스냅샷이 있는 파일의 경우에는 <strong>tracked</strong>, 새롭게 추가되어 git이 아직 모르는 파일은 <strong>untracked</strong> 파일로 구분한다.</p>
-<img src="01.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/44829d1bbb533e087b2873a914ef04e4/bb17f/01.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAQAF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAdyGTEf/xAAWEAEBAQAAAAAAAAAAAAAAAAAREAD/2gAIAQEAAQUCcwv/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAADAAMAAAAAAAAAAAAAAAAAAREQIXH/2gAIAQEAAT8hHDFhN2iP/9oADAMBAAIAAwAAABAs/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEBAQADAQAAAAAAAAAAAAARAQAhMVFh/9oACAEBAAE/ELHl561FOQSamOLLKHzP0B1oIO//2Q=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="01" title="01" src="/static/44829d1bbb533e087b2873a914ef04e4/1c72d/01.jpg" srcset="/static/44829d1bbb533e087b2873a914ef04e4/a80bd/01.jpg 148w,
+/static/44829d1bbb533e087b2873a914ef04e4/1c91a/01.jpg 295w,
+/static/44829d1bbb533e087b2873a914ef04e4/1c72d/01.jpg 590w,
+/static/44829d1bbb533e087b2873a914ef04e4/a8a14/01.jpg 885w,
+/static/44829d1bbb533e087b2873a914ef04e4/fbd2c/01.jpg 1180w,
+/static/44829d1bbb533e087b2873a914ef04e4/bb17f/01.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>‘a.txt’라는 파일을 생성하고 내용을 입력한 뒤, <code class="language-text">git status</code>를 통해 작업 트리를 확인해보자.</p>
 <blockquote>
 <p>💡 <code class="language-text">git status</code> 명령어는 작업 디렉토리와 스테이징 영역의 상태를 확인하기 위해서 사용한다.</p>
 </blockquote>
-<img src="02.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/8c20103bf6c243cc7d57694f832d4888/00172/02.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 29.054054054054056%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABXElEQVQY00WQyU7bUBSG/S4kIbEzkdi+1/fGTWL7OiQMYgkIsWLatGoX3VSqkBjaShUrJAaJF2DBG7BhFG/1IV+UsPj1/ecsPukcJxKCqhhjrp/JLh4wV0+Y6xeyy0c75zdvJOf3ZFevrN6+8PP5N9/uvtLOEoIoResRkTJ0/QFBmOCM8jFhPKH//Qx/54hw74Rw/5Rg99jO4uAvYq/gP9If//lzvMPhry1aUUwgUuoNxVypQ2Xep1zxcdJ0icSsoRY3UOMN4uUt5GgdPdlksLptuysneGqFZm+ZeDhE9/vUmpJmS+PVJdVaOIuTmTW+DJdQMqHdjGg1pE2nrW0WWoq6G+LVAhp1Qc2NKJUD5qufKURTOj2dY7RBKcNCp4/rSUs/GFqGIp11pUfIKMP1BKVyl3KlO5PNhErlJIMJfjCgFy+idI6Qme1SGfvwSOVWVMgLCvnBYj8VTU9+B32B2Az8Ups9AAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="02" title="02" src="/static/8c20103bf6c243cc7d57694f832d4888/fcda8/02.png" srcset="/static/8c20103bf6c243cc7d57694f832d4888/12f09/02.png 148w,
+/static/8c20103bf6c243cc7d57694f832d4888/e4a3f/02.png 295w,
+/static/8c20103bf6c243cc7d57694f832d4888/fcda8/02.png 590w,
+/static/8c20103bf6c243cc7d57694f832d4888/efc66/02.png 885w,
+/static/8c20103bf6c243cc7d57694f832d4888/00172/02.png 1044w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>아직 한번도 git이 관리한 적이 없는 a.txt 파일이 Untracked files에 빨간색 글씨로 표시된다. <code class="language-text">git add</code> 명령어로 스테이징 영역에 파일을 올려보자.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -97,7 +116,16 @@
 </ul>
 </blockquote>
 <p>그러면 다음과 같이 a.txt가 commit할 준비가 되어있음을 알려준다.</p>
-<img src="03.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/89da4894b1ae2abdd5107b3c8026f003/8b69f/03.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 20.945945945945947%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA7klEQVQY01XMy07CUABF0X6KoUopKX3fe9tCn9LyEA0xxESjUWHiDMPAKJron29DHaiDlT05OdpwVFGWDVLmZOs96uGdqLX/6eMH0f0b8eYTcfuCuHtFbb5Y757YPq/Y7m5wkpRQVUh1ilZW56TZnEOVLAj9FCVyIlng2jGxKslGNb6b0DmyONEdjGMXXffo6EHLMARdI2xpdbPkbHFFUS6YzldcLK+pp5dESUMoKlw/w7ITAlGSDCc4XorRk5h9hdmXrZ75S7MGh3GBbCZEsxmezBHjBpXW+H6O66VYgxg/yFHRGNsZ0TXEv5O/h99GQIlLEJNqfQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="03" title="03" src="/static/89da4894b1ae2abdd5107b3c8026f003/fcda8/03.png" srcset="/static/89da4894b1ae2abdd5107b3c8026f003/12f09/03.png 148w,
+/static/89da4894b1ae2abdd5107b3c8026f003/e4a3f/03.png 295w,
+/static/89da4894b1ae2abdd5107b3c8026f003/fcda8/03.png 590w,
+/static/89da4894b1ae2abdd5107b3c8026f003/efc66/03.png 885w,
+/static/89da4894b1ae2abdd5107b3c8026f003/8b69f/03.png 912w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이제 변경된 파일을 커밋해보자. <code class="language-text">git commit</code> 명령어로 현재 스테이징된 파일들을 커밋한다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -108,7 +136,15 @@
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git commit</code></pre></div>
 <p>위 명령어만 입력하면 다음과 같이 커밋 메시지를 입력할 수 있는 쉘이 뜬다.</p>
-<img src="04.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/a8d05a5c01fc567b648de43905bd5692/e51a6/04.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 34.45945945945946%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABJ0lEQVQoz31Q6W6CYBDkWUwrHiDIjXJ7cUurWLRpfzR9/1eYZtfShMT0x2T2W2Z3hxGa5oaFsoZhxtD0kLHUAuhGNGB16UNRPWbDjCDJLjT93u81c8mBUJQXlNUF212DNDtht29QH6/orl/Iyxbn9pO/U6+q33A6f+D2/s3a+thhf3jh3rG5YTZ3IARhzhcItrNhns5szCUXk6nFICG9qS/JKwb9FTG5kpU15MWKtQJdIFdV3SEvWkRxCdOK4bg7+EEGz0/5SBgViJMKXpDx4Fg0MBZNiBPztza4FkhIQ5a9gWUnMK0E5NoPM8717sLl/BTVZ2e980cQ/CCF7WxxSF//MqQD5JgCf3rWBi56JzTc82ChqkcYjVTOiUA50RDV/zl5tIwW/gAzZOhQKNIFmwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="04" title="04" src="/static/a8d05a5c01fc567b648de43905bd5692/fcda8/04.png" srcset="/static/a8d05a5c01fc567b648de43905bd5692/12f09/04.png 148w,
+/static/a8d05a5c01fc567b648de43905bd5692/e4a3f/04.png 295w,
+/static/a8d05a5c01fc567b648de43905bd5692/fcda8/04.png 590w,
+/static/a8d05a5c01fc567b648de43905bd5692/e51a6/04.png 783w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>쉘을 이용하는 건 상당히 무섭고 귀찮은 일이므로, 명령어 자체에 커밋 메시지를 추가해보도록 하자.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -119,10 +155,27 @@
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git commit -m [커밋 메시지]</code></pre></div>
 <p>이제 <code class="language-text">git log</code>로 커밋 내역을 확인해보자.</p>
-<img src="05.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/a4c6f8562f23188abc903145cf6df350/d6331/05.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 29.72972972972973%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABFklEQVQY04WOW3PBUBhF/RfiFK2EnBNaDEmDFLmQuETQur10+v9fVyc647Ee1nx7z55Z8xWiRcByHRFGU9bpnNUmJNsv2O5isn3M6ZJyOC5Js4hk5RPOJwTRhOnUxfYTBskZo+3SXE1Qjk0h210ZezFWyyVODiTLT4ajOV/Hb9LthdP5h9X6SBBu2WZXiiWTslB/lE00rYEQEqFJhFAUmmYf3egi1QBTDVCWTV3vYDR6N/Kc73k2ZZ+nivUvhWKpiW70cIchrbbL69uIl3qHktZEK+ffyDt5fyi0Wg72u4+udzFUH03I21Cttak9t2+3Um09FN2FphzgfcTYjk8QbZj5a6SysZ0Z7jBi7C3o9rybVDyph8Jf++LKJKEKAxIAAAAASUVORK5CYII='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="05" title="05" src="/static/a4c6f8562f23188abc903145cf6df350/fcda8/05.png" srcset="/static/a4c6f8562f23188abc903145cf6df350/12f09/05.png 148w,
+/static/a4c6f8562f23188abc903145cf6df350/e4a3f/05.png 295w,
+/static/a4c6f8562f23188abc903145cf6df350/fcda8/05.png 590w,
+/static/a4c6f8562f23188abc903145cf6df350/d6331/05.png 702w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>로그를 살펴보면 <code class="language-text">HEAD -> main</code>이라고 되어있는 것을 확인할 수 있다. 여기서 <code class="language-text">HEAD</code>는 현재 브랜치를 가리키는 포인터이며, 지금의 <code class="language-text">HEAD</code>가 가리키는 커밋은 바로 다음 커밋의 부모가 된다.</p>
 <p>여기서 다시! a.txt 파일의 내용을 수정한 후, <code class="language-text">git status</code>를 실행해 보자.</p>
-<img src="06.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/e69959cd8ecea7e87efa33edab1400c8/636c2/06.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 27.7027027027027%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWUlEQVQY00WQyW7bQBBE+TEOaVsiRYqiNDPcxE37QngRnCCAb7kEdpwg8Mk/YMF7DvncF8zAiA8P3V2HQnVZ+bgi8GPSqz3q5hV5/Yi6eUH9eDZTXD0ir5+If/1BfN8T/3wjuf3L3cNv9vtL7h++oWY1A1WT5wusslozmZ2g4glhmCNlgxAVUVQwEhX5eEmWzXFdie1E2M4Axw5xnAGHR0OjOe+6xirKNUk6o6o31E1LnExpJi1xOqPnJ/T8FD9IOe4Ijo5HdF1F15XG7JMdGpzDyNwaa725YLO54OT0K9v2M9P5KeNiZdi2X1iudswXZ2bqT5brHee7S+pmy3BUImSN10v+m1peV1D3E6ogJnAlsqeIPMWBHZpUOl2nK/GDzCTWmuvFRg/6GYOowPXUh6F+tSyWTCctQtSUxcqUqztNs7mpQJPlC9Op3sflCqka+mFujOz3PvX+D2Kd0nTrBCmUAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="06" title="06" src="/static/e69959cd8ecea7e87efa33edab1400c8/fcda8/06.png" srcset="/static/e69959cd8ecea7e87efa33edab1400c8/12f09/06.png 148w,
+/static/e69959cd8ecea7e87efa33edab1400c8/e4a3f/06.png 295w,
+/static/e69959cd8ecea7e87efa33edab1400c8/fcda8/06.png 590w,
+/static/e69959cd8ecea7e87efa33edab1400c8/efc66/06.png 885w,
+/static/e69959cd8ecea7e87efa33edab1400c8/636c2/06.png 911w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>여전히 빨간 글씨로 표시되지만, 처음에 a.txt를 만들어 Untracked 영역에 있을 때와는 달리 <code class="language-text">Changes not staged for commit</code>이라는 메시지를 볼 수 있다. Tracked 영역, 즉 이미 git이 관리하고 있는 파일에 수정이 발생한 것이기 때문이다.</p>
 <p>이렇게 작업을 했던 워킹 디렉토리의 변경사항을 날리고 싶다면 <code class="language-text">git restore a.txt</code> 명령어를 실행해준다.</p>
 <blockquote>
@@ -161,7 +214,16 @@
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git push -u origin main</code></pre></div>
 <p><code class="language-text">git log</code>로 확인해보면 아래와 같이 커밋에 빨간 글씨로 <code class="language-text">origin/main</code>과 <code class="language-text">origin/HEAD</code>가 추가된 것을 볼 수 있다.</p>
-<img src="07.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/b53609c497024d5b15dac677df4fa6c4/5caea/07.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 22.2972972972973%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAxklEQVQY04WNy06DQABF+ZcyA9SCwDxgBgilD3wtNUatFDf2///gmFZ3Lro4OTc3ubnB2/uB3f6Rj8+J55dXjvMX36cT0zxzmI6sNyO2arFuoKhGVrYj0w0+dbSZR6U1PnP0t548cwSlWnOm7R5QekOpBozdkhc9ttqRLGsWoUIIhRQlkdRIqQljwyIyiNgQRr9ZRoYgzTy+GSl0z83KEYrygpDq4ig2xIm9SvLnoGnvaLt7+uGJvOio3Z5zp81Asvw/vHbwA5zageiqMyMoAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="07" title="07" src="/static/b53609c497024d5b15dac677df4fa6c4/fcda8/07.png" srcset="/static/b53609c497024d5b15dac677df4fa6c4/12f09/07.png 148w,
+/static/b53609c497024d5b15dac677df4fa6c4/e4a3f/07.png 295w,
+/static/b53609c497024d5b15dac677df4fa6c4/fcda8/07.png 590w,
+/static/b53609c497024d5b15dac677df4fa6c4/efc66/07.png 885w,
+/static/b53609c497024d5b15dac677df4fa6c4/5caea/07.png 996w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <h3 id="fetch" style="position:relative;"><a href="#fetch" aria-label="fetch permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>fetch</h3>
 <p>리모트 저장소에서 데이터를 가져올 때는 <code class="language-text">fetch</code> 명령어를 사용한다.</p>
 
@@ -200,7 +262,17 @@
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git checkout -b feat1</code></pre></div>
 <p>git은 지금 작업 중인 (로컬) 브랜치를 <code class="language-text">HEAD</code>라는 특수한 포인터로 파악한다. 방금 전 <code class="language-text">feat1</code> 브랜치로 이동했으므로 이제 <code class="language-text">HEAD</code>는 <code class="language-text">feat1</code> 브랜치를 가리키게 된다.</p>
-<img src="08.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/a587ee20a3783e5acd587d4354ac280d/bb17f/08.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuTUlQf//EABYQAAMAAAAAAAAAAAAAAAAAAAAgQf/aAAgBAQABBQJKf//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAAIDAAAAAAAAAAAAAAAAAAERACAh/9oACAEBAAE/IXsBZq//2gAMAwEAAgADAAAAEP8A/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAACAgIDAAAAAAAAAAAAAAABERAxACFBUXH/2gAIAQEAAT8QIhC35gUik6lHbhdx/9k='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="08" title="08" src="/static/a587ee20a3783e5acd587d4354ac280d/1c72d/08.jpg" srcset="/static/a587ee20a3783e5acd587d4354ac280d/a80bd/08.jpg 148w,
+/static/a587ee20a3783e5acd587d4354ac280d/1c91a/08.jpg 295w,
+/static/a587ee20a3783e5acd587d4354ac280d/1c72d/08.jpg 590w,
+/static/a587ee20a3783e5acd587d4354ac280d/a8a14/08.jpg 885w,
+/static/a587ee20a3783e5acd587d4354ac280d/fbd2c/08.jpg 1180w,
+/static/a587ee20a3783e5acd587d4354ac280d/bb17f/08.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이 상태에서 ‘feat1.txt’ 파일을 생성하고 커밋을 새로 해보자.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -212,7 +284,17 @@
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git add feat1.txt
 git commit -m "create feat1.txt"</code></pre></div>
 <p>이제 <code class="language-text">HEAD</code>가 가리키는 <code class="language-text">feat1</code> 브랜치가 <code class="language-text">main</code>보다 한 단계 앞서있다.</p>
-<img src="09.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/0499814e396cbf68b12087df13965071/bb17f/09.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuTUlQf//EABYQAQEBAAAAAAAAAAAAAAAAABEAIP/aAAgBAQABBQJnP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABcQAAMBAAAAAAAAAAAAAAAAAAABEBH/2gAIAQEAAT8hwKnP/9oADAMBAAIAAwAAABBP/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAEAAQQDAAAAAAAAAAAAAAABERAhMUEAUWH/2gAIAQEAAT8Q9HMY4KXdxYqFSNPdP//Z'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="09" title="09" src="/static/0499814e396cbf68b12087df13965071/1c72d/09.jpg" srcset="/static/0499814e396cbf68b12087df13965071/a80bd/09.jpg 148w,
+/static/0499814e396cbf68b12087df13965071/1c91a/09.jpg 295w,
+/static/0499814e396cbf68b12087df13965071/1c72d/09.jpg 590w,
+/static/0499814e396cbf68b12087df13965071/a8a14/09.jpg 885w,
+/static/0499814e396cbf68b12087df13965071/fbd2c/09.jpg 1180w,
+/static/0499814e396cbf68b12087df13965071/bb17f/09.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>다시 <code class="language-text">main</code> 브랜치로 되돌아가보자.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -223,7 +305,17 @@ git commit -m "create feat1.txt"</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git checkout main</code></pre></div>
 <p>이제 <code class="language-text">main</code> 브랜치가 가리키는 커밋을 <code class="language-text">HEAD</code>가 가리키게 되었으며, 워킹 디렉토리의 파일도 그 시점으로 되돌려 놓았다.</p>
-<img src="10.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/cfab12aa4644d915a4c4efa97371c01f/bb17f/10.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAdyVKg//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAACAwEAAAAAAAAAAAAAAAABEQAQIVH/2gAIAQEAAT8hY7Ac00hFX//aAAwDAQACAAMAAAAQ7/8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGxAAAgIDAQAAAAAAAAAAAAAAAREAMRAhYZH/2gAIAQEAAT8Q5IOg2rxwHkI6QARdY//Z'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="10" title="10" src="/static/cfab12aa4644d915a4c4efa97371c01f/1c72d/10.jpg" srcset="/static/cfab12aa4644d915a4c4efa97371c01f/a80bd/10.jpg 148w,
+/static/cfab12aa4644d915a4c4efa97371c01f/1c91a/10.jpg 295w,
+/static/cfab12aa4644d915a4c4efa97371c01f/1c72d/10.jpg 590w,
+/static/cfab12aa4644d915a4c4efa97371c01f/a8a14/10.jpg 885w,
+/static/cfab12aa4644d915a4c4efa97371c01f/fbd2c/10.jpg 1180w,
+/static/cfab12aa4644d915a4c4efa97371c01f/bb17f/10.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <blockquote>
 <p>💡 <strong>유용한 git branch 옵션들</strong></p>
 <ul>
@@ -249,7 +341,17 @@ git checkout -b hotfix1</code></pre></div>
 <p>💡 이때 <code class="language-text">feat1</code>에 아직 커밋하지 않은 파일이 있고, 해당 파일이 <code class="language-text">main</code> 브랜치와 충돌이 난다면 <code class="language-text">main</code> 브랜치로 checkout할 수 없다. 이때는 <code class="language-text">git stash</code> 명령어를 통해 워킹 디렉토리를 정리할 수 있다.</p>
 </blockquote>
 <p><code class="language-text">hotfix1</code> 브랜치에서 버그 수정 후 커밋을 하면 브랜치 히스토리는 아래와 같이 그려질 것이다.</p>
-<img src="11.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/45c4f02253f9550a5d60eb7a3a3f44c4/bb17f/11.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHtzclQf//EABcQAAMBAAAAAAAAAAAAAAAAAAAQEQH/2gAIAQEAAQUCpXq//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRAAAgMBAAAAAAAAAAAAAAAAARAAEUGB/9oACAEBAAE/IepphYX/2gAMAwEAAgADAAAAEOw//8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QJ//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAAIDAAMAAAAAAAAAAAAAAAERECExAEFR/9oACAEBAAE/ECIBqhWcajLB8nAbfUf/2Q=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="11" title="11" src="/static/45c4f02253f9550a5d60eb7a3a3f44c4/1c72d/11.jpg" srcset="/static/45c4f02253f9550a5d60eb7a3a3f44c4/a80bd/11.jpg 148w,
+/static/45c4f02253f9550a5d60eb7a3a3f44c4/1c91a/11.jpg 295w,
+/static/45c4f02253f9550a5d60eb7a3a3f44c4/1c72d/11.jpg 590w,
+/static/45c4f02253f9550a5d60eb7a3a3f44c4/a8a14/11.jpg 885w,
+/static/45c4f02253f9550a5d60eb7a3a3f44c4/fbd2c/11.jpg 1180w,
+/static/45c4f02253f9550a5d60eb7a3a3f44c4/bb17f/11.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>hotfix 내용을 운영 환경에 적용하기 위해 <code class="language-text">hotfix1</code> 브랜치를 <code class="language-text">main</code> 브랜치에 합쳐야 한다. 여기서 <code class="language-text">git merge</code>를 사용한다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -260,10 +362,29 @@ git checkout -b hotfix1</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git checkout main
 git merge hotfix1</code></pre></div>
-<img src="12.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/d3f833a3299f4dcc69533d53795b36a7/4ef49/12.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 18.243243243243242%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAABAUlEQVQY01WPz0vCYACG98cstyVON3LTfc5vOi2HGpJaFHjy5CGXNSmK6KbRQU0LoUP/6hP0kw4P73t6Xl4ll7aQg4T9h3ei+zfCmy3F8QLvYomIF3jxEjFZ447mePGa8t0L/nyI/3SG1T3AETXC8BAZNCn5DZRub0BQbWHZErcQkjE9VNUipe2h7ti/XTecL/T8dzpoWh5N/4/SbPWJ2sfk8iEiaCNrHfywg+3WCepHVBs9HBFhmCX0TAkjW8bIFjGsArtm8VOu/YwYDoqupnH758jrLfJyRZBsqCQb/MkKefVMZbohmL7ijmZ44xXl2zX+bIh4PKU+OMFMC1L634MPiKGS6DlYO24AAAAASUVORK5CYII='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="12" title="12" src="/static/d3f833a3299f4dcc69533d53795b36a7/fcda8/12.png" srcset="/static/d3f833a3299f4dcc69533d53795b36a7/12f09/12.png 148w,
+/static/d3f833a3299f4dcc69533d53795b36a7/e4a3f/12.png 295w,
+/static/d3f833a3299f4dcc69533d53795b36a7/fcda8/12.png 590w,
+/static/d3f833a3299f4dcc69533d53795b36a7/efc66/12.png 885w,
+/static/d3f833a3299f4dcc69533d53795b36a7/4ef49/12.png 890w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p><code class="language-text">hotfix1</code> 브랜치가 가리키는 커밋이 <code class="language-text">main</code>이 가지고 있는 커밋 히스토리를 모두 포함하고 있기 때문에 브랜치 포인터는 그저 최신 커밋으로 이동한다. 이렇게 단순히 브랜치 포인터를 이동하는 merge 방식을 Fast-forward(빨리감기)라고 부른다. 이때는 merge commit이 생기지 않는다.</p>
 <p>이제 <code class="language-text">main</code>과 <code class="language-text">hotfix1</code> 브랜치 포인터는 같은 커밋을 가리키게 되었다.</p>
-<img src="13.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/507ab2c1a5073b83dad09592e20cd187/bb17f/13.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuZUyoH//EABUQAQEAAAAAAAAAAAAAAAAAABEg/9oACAEBAAEFAmv/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAACAwEAAAAAAAAAAAAAAAABEQAQUTH/2gAIAQEAAT8hTYThpQjir//aAAwDAQACAAMAAAAQH/8A/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QJ//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAAICAwEAAAAAAAAAAAAAAAERACEQMVFB/9oACAEBAAE/EE+IEkI2jeE4O6iyhXaGP//Z'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="13" title="13" src="/static/507ab2c1a5073b83dad09592e20cd187/1c72d/13.jpg" srcset="/static/507ab2c1a5073b83dad09592e20cd187/a80bd/13.jpg 148w,
+/static/507ab2c1a5073b83dad09592e20cd187/1c91a/13.jpg 295w,
+/static/507ab2c1a5073b83dad09592e20cd187/1c72d/13.jpg 590w,
+/static/507ab2c1a5073b83dad09592e20cd187/a8a14/13.jpg 885w,
+/static/507ab2c1a5073b83dad09592e20cd187/fbd2c/13.jpg 1180w,
+/static/507ab2c1a5073b83dad09592e20cd187/bb17f/13.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이제 필요 없어진 <code class="language-text">hotfix1</code> 브랜치는 삭제하고, 원래 작업하던 <code class="language-text">feat1</code> 브랜치로 돌아가 작업을 계속한다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -275,7 +396,17 @@ git merge hotfix1</code></pre></div>
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git branch -d hotfix1
 git checkout feat1</code></pre></div>
 <p><code class="language-text">feat1</code>에서 어느 정도 작업을 한 이후에는 해당 작업 내용을 <code class="language-text">main</code> 브랜치에 merge해야 한다. 현재 브랜치 히스토리는 아래와 같다.</p>
-<img src="14.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/82df669a2357739ae8f27742073cac92/bb17f/14.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuNmVA/8QAFhABAQEAAAAAAAAAAAAAAAAAERAg/9oACAEBAAEFAnBP/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGRAAAgMBAAAAAAAAAAAAAAAAARAAEVEh/9oACAEBAAE/IabAbPGcL//aAAwDAQACAAMAAAAQHz//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAaEAEAAgMBAAAAAAAAAAAAAAABABEQITFR/9oACAEBAAE/EOfqDsCJeKnZSWVRDQT/2Q=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="14" title="14" src="/static/82df669a2357739ae8f27742073cac92/1c72d/14.jpg" srcset="/static/82df669a2357739ae8f27742073cac92/a80bd/14.jpg 148w,
+/static/82df669a2357739ae8f27742073cac92/1c91a/14.jpg 295w,
+/static/82df669a2357739ae8f27742073cac92/1c72d/14.jpg 590w,
+/static/82df669a2357739ae8f27742073cac92/a8a14/14.jpg 885w,
+/static/82df669a2357739ae8f27742073cac92/fbd2c/14.jpg 1180w,
+/static/82df669a2357739ae8f27742073cac92/bb17f/14.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
             <div class="gatsby-remark-prismjs-copy-button" tabindex="0" role="button" aria-pressed="false" onclick="gatsbyRemarkCopyToClipboard(this, this.parentNode.nextElementSibling)">
@@ -285,9 +416,27 @@ git checkout feat1</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git checkout main
 git merge feat1</code></pre></div>
-<img src="15.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/e0465b1579f06624e2ec0624bc0969dc/77800/15.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 17.567567567567565%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAAAsTAAALEwEAmpwYAAABEklEQVQY003MQUvCAABAYX9JWNo2p2ma0+l02tRtDnGEYAUWYZcOBUGhBJYgJUEaEZFpB4mChOg3vmiH6PDBOz2fHAyTOexj3X5RuppjDxcYl3OsmwXV4Sf6xSt6/x2t84LWmaD3PjBGM4rTA4qTNvGmjaqb2HaDUsXFV3d3KFcbKDmLbN6hWHZRNYtMzsYwt4gnNxFllVAk+0+GUFRFiqSR5BSipHgEMYnPqTXZ3d7HKFg4potj1qkYDtGwwvKSjBCIIaxEEQMxz2+v+tcQ/AkE/wbBQAIxpCCFUh5fal3FOBrQGH9j9WY4gzeM7jPa2ROZ0wfSx3fkulPUk5FHO59SuH4kf98iN25Ra+8RkdS/6Q8K3ZcC4XdTOQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="15" title="15" src="/static/e0465b1579f06624e2ec0624bc0969dc/fcda8/15.png" srcset="/static/e0465b1579f06624e2ec0624bc0969dc/12f09/15.png 148w,
+/static/e0465b1579f06624e2ec0624bc0969dc/e4a3f/15.png 295w,
+/static/e0465b1579f06624e2ec0624bc0969dc/fcda8/15.png 590w,
+/static/e0465b1579f06624e2ec0624bc0969dc/77800/15.png 855w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p><code class="language-text">hotfix1</code>을 merge했을 때와는 메시지가 다르다. 현재 브랜치가 가리키는 커밋이 merge할 브랜치의 조상이 아니므로 (merge할 브랜치의 모든 커밋을 포함하고 있지 않으므로) Fast-forward merge가 불가능하다. 이 경우 git은 각 브랜치가 가리키는 커밋 두 개와 공통 조상 하나를 사용하여 3-way merge를 한다.</p>
-<img src="16.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/5a2c2480a20f93a2e9d58133c8f7c135/bb17f/16.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuLmVUf//EABYQAQEBAAAAAAAAAAAAAAAAABEQAP/aAAgBAQABBQJzSf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAAMBAQAAAAAAAAAAAAAAAAABESAh/9oACAEBAAE/IYIF1Yf/2gAMAwEAAgADAAAAEB8//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAECFBUf/aAAgBAQABPxBfeOYHRCQfaIE402Q6/9k='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="16" title="16" src="/static/5a2c2480a20f93a2e9d58133c8f7c135/1c72d/16.jpg" srcset="/static/5a2c2480a20f93a2e9d58133c8f7c135/a80bd/16.jpg 148w,
+/static/5a2c2480a20f93a2e9d58133c8f7c135/1c91a/16.jpg 295w,
+/static/5a2c2480a20f93a2e9d58133c8f7c135/1c72d/16.jpg 590w,
+/static/5a2c2480a20f93a2e9d58133c8f7c135/a8a14/16.jpg 885w,
+/static/5a2c2480a20f93a2e9d58133c8f7c135/fbd2c/16.jpg 1180w,
+/static/5a2c2480a20f93a2e9d58133c8f7c135/bb17f/16.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>단순히 브랜치 포인터를 최신 커밋으로 옮기는 게 아니라, 3-way merge의 결과를 별도의 커밋으로 만든 후 해당 브랜치가 그 커밋을 가리키도록 이동시키는 것이다.</p>
 <p>이때 만약 <code class="language-text">hotfix1</code> 브랜치와 <code class="language-text">feat1</code> 브랜치가 같은 부분을 수정했다면 작업 내역에 충돌이 발생할 수도 있다. 이 경우 git은 자동 merge를 하지 못하며, 개발자가 Conflict를 해결해줘야 한다.</p>
 <p>충돌한 부분을 모두 해결하고 <code class="language-text">git add</code> 명령어로 다시 git에 저장한 후, 커밋을 해주면 merge가 완료된다!</p>
@@ -295,9 +444,29 @@ git merge feat1</code></pre></div>
 <p>지금까지의 작업은 모두 로컬 브랜치에서 진행한 내용이다. 이제 리모트 저장소로 가보자!</p>
 <p>리모트 트래킹 브랜치는 리모트 브랜치를 추적하는 레퍼런스이며 브랜치다. 리모트 트래킹 브랜치는 일종의 북마크로, 리모트 저장소에 마지막으로 연결했던 순간에 브랜치가 무슨 커밋을 가리키고 있었는지를 나타낸다.</p>
 <p>리모트 트래킹 브랜치의 이름은 <code class="language-text">[리모트 저장소 이름]/[브랜치 이름]</code> 형식으로 되어 있다. github의 레퍼지토리를 clone 받는다면 git은 이 리모트 저장소에 자동으로 <code class="language-text">origin</code>이라는 이름을 붙이고, <code class="language-text">main</code> 브랜치를 가리키는 포인터를 만든다. 이 포인터가 바로 <code class="language-text">origin/main</code>이며, 로컬의 <code class="language-text">main</code> 브랜치는 <code class="language-text">origin/main</code>을 가리키게 된다.</p>
-<img src="17.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/11f28487236021bdfc11fdbf58245abc/bb17f/17.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQAC/9oADAMBAAIQAxAAAAHclZaI/8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQABBQJf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGhAAAQUBAAAAAAAAAAAAAAAAAQAQESFRQf/aAAgBAQABPyGRqBvjQMUW3//aAAwDAQACAAMAAAAQ+P8A/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QJ//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAQABBQEAAAAAAAAAAAAAAAERABAhMWFR/9oACAEBAAE/EEtilURh23J7qiCSM8t//9k='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="17" title="17" src="/static/11f28487236021bdfc11fdbf58245abc/1c72d/17.jpg" srcset="/static/11f28487236021bdfc11fdbf58245abc/a80bd/17.jpg 148w,
+/static/11f28487236021bdfc11fdbf58245abc/1c91a/17.jpg 295w,
+/static/11f28487236021bdfc11fdbf58245abc/1c72d/17.jpg 590w,
+/static/11f28487236021bdfc11fdbf58245abc/a8a14/17.jpg 885w,
+/static/11f28487236021bdfc11fdbf58245abc/fbd2c/17.jpg 1180w,
+/static/11f28487236021bdfc11fdbf58245abc/bb17f/17.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>리모트 저장소의 <code class="language-text">main</code> 브랜치에 누군가 다른 내용을 변경한 커밋을 push했다면 로컬의 <code class="language-text">main</code> 브랜치와 히스토리가 서로 달라지게 된다.</p>
-<img src="18.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/e0c6f3ec029b61c232b0e4d2aabe907d/bb17f/18.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAAB7ksy6Ef/xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAYEAADAQEAAAAAAAAAAAAAAAAAASEQUf/aAAgBAQABPyEuUqXc/9oADAMBAAIAAwAAABBIP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EAB4QAAICAAcAAAAAAAAAAAAAAAABETEhQVFhcZGh/9oACAEBAAE/EJeno3CEseRUUyNh2FR//9k='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="18" title="18" src="/static/e0c6f3ec029b61c232b0e4d2aabe907d/1c72d/18.jpg" srcset="/static/e0c6f3ec029b61c232b0e4d2aabe907d/a80bd/18.jpg 148w,
+/static/e0c6f3ec029b61c232b0e4d2aabe907d/1c91a/18.jpg 295w,
+/static/e0c6f3ec029b61c232b0e4d2aabe907d/1c72d/18.jpg 590w,
+/static/e0c6f3ec029b61c232b0e4d2aabe907d/a8a14/18.jpg 885w,
+/static/e0c6f3ec029b61c232b0e4d2aabe907d/fbd2c/18.jpg 1180w,
+/static/e0c6f3ec029b61c232b0e4d2aabe907d/bb17f/18.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이때는 우선 <code class="language-text">fetch</code> 명령어로 리모트 저장소에 있는 브랜치의 내용을 가져온다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -311,7 +480,17 @@ git merge feat1</code></pre></div>
 <p>💡 이때 리모트 저장소에서 가져온 최신 커밋 이력은 이름 없는 브랜치로 로컬에 불러와지며, 임시로 <code class="language-text">FETCH_HEAD</code>라는 특수한 이름을 가진다. <code class="language-text">git checkout FETCH_HEAD</code> 명령어로 리모트 저장소에서 가져온 업데이트를 확인해볼 수 있다.</p>
 </blockquote>
 <p>그러면 브랜치 히스토리는 아래와 같아진다.</p>
-<img src="19.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/b97302a9f4bd13ceb04c606a99fb9ac6/bb17f/19.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIBBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuZUyoH//EABYQAQEBAAAAAAAAAAAAAAAAABEQAP/aAAgBAQABBQJzSf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAQADAQAAAAAAAAAAAAAAAAEAEDER/9oACAEBAAE/IeIiGU6r/9oADAMBAAIAAwAAABB8P//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABsQAAIDAAMAAAAAAAAAAAAAAAERABAhMVFh/9oACAEBAAE/EPSJMHU9hMD3TAhIYXOV/9k='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="19" title="19" src="/static/b97302a9f4bd13ceb04c606a99fb9ac6/1c72d/19.jpg" srcset="/static/b97302a9f4bd13ceb04c606a99fb9ac6/a80bd/19.jpg 148w,
+/static/b97302a9f4bd13ceb04c606a99fb9ac6/1c91a/19.jpg 295w,
+/static/b97302a9f4bd13ceb04c606a99fb9ac6/1c72d/19.jpg 590w,
+/static/b97302a9f4bd13ceb04c606a99fb9ac6/a8a14/19.jpg 885w,
+/static/b97302a9f4bd13ceb04c606a99fb9ac6/fbd2c/19.jpg 1180w,
+/static/b97302a9f4bd13ceb04c606a99fb9ac6/bb17f/19.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p><code class="language-text">fetch</code>를 통해 서버의 데이터를 받아와서 저장했지만, 워킹 디렉토리의 파일 내용은 변경되지 않고 그대로 남아있다. 새로 받은 브랜치의 내용을 합쳐주기 위해서 <code class="language-text">merge</code>를 실행한다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -337,7 +516,17 @@ git merge feat1</code></pre></div>
 <h2 id="-고통의-rebase" style="position:relative;"><a href="#-%EA%B3%A0%ED%86%B5%EC%9D%98-rebase" aria-label=" 고통의 rebase permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>👩‍🔧 고통의 rebase</h2>
 <p><del>고통의 rebase 단계에 진입했다…</del></p>
 <p>merge 말고도 git에서 한 브랜치에서 다른 브랜치로 합치는 방법이 있다. 바로 <strong>rebase</strong>다.</p>
-<img src="20.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/84465dc231fc3119c4d7f21858869c08/bb17f/20.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuTUlQf//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEAAQUCX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAQADAQAAAAAAAAAAAAAAAAEAEBFR/9oACAEBAAE/IdIvLTa//9oADAMBAAIAAwAAABDP/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAEAAgIDAAAAAAAAAAAAAAABESEAEDFBcf/aAAgBAQABPxBDlDJKao3GoHow4QXPmv/Z'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="20" title="20" src="/static/84465dc231fc3119c4d7f21858869c08/1c72d/20.jpg" srcset="/static/84465dc231fc3119c4d7f21858869c08/a80bd/20.jpg 148w,
+/static/84465dc231fc3119c4d7f21858869c08/1c91a/20.jpg 295w,
+/static/84465dc231fc3119c4d7f21858869c08/1c72d/20.jpg 590w,
+/static/84465dc231fc3119c4d7f21858869c08/a8a14/20.jpg 885w,
+/static/84465dc231fc3119c4d7f21858869c08/fbd2c/20.jpg 1180w,
+/static/84465dc231fc3119c4d7f21858869c08/bb17f/20.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>위 그림과 같이 브랜치가 분기되어있을 때, <code class="language-text">merge</code> 명령어를 사용하여 합치면 3-way merge로 새로운 커밋이 생성된다.</p>
 <p>이때 <code class="language-text">C4</code>의 변경 사항을 Patch로 만들고 이를 다시 <code class="language-text">C5</code>에 적용시키는 방법이 있다. 이를 바로 <strong>rebase</strong>라고 한다. <code class="language-text">rebase</code> 명령어로 한 브랜치의 변경 사항을 다른 브랜치에 적용할 수 있다.</p>
 
@@ -355,7 +544,17 @@ git rebase main</code></pre></div>
 <li>rebase할 브랜치(<code class="language-text">feat1</code>)가 합칠 브랜치(<code class="language-text">main</code>)이 가리키는 커밋을 가리키게 하고, 아까 저장해 놓았던 변경사항을 차례대로 적용한다.</li>
 </ol>
 <p>rebase 이후의 브랜치 히스토리는 아래와 같다.</p>
-<img src="21.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/be0b9fd5f467b85686a9db29a3c9fa13/bb17f/21.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAd2EqD//xAAWEAADAAAAAAAAAAAAAAAAAAAAESD/2gAIAQEAAQUCHP8A/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGBAAAwEBAAAAAAAAAAAAAAAAABARATH/2gAIAQEAAT8hqZwhF//aAAwDAQACAAMAAAAQLD//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAYEAEBAQEBAAAAAAAAAAAAAAARAQBRMf/aAAgBAQABPxAdmDfAV1MXuHJipAA3m//Z'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="21" title="21" src="/static/be0b9fd5f467b85686a9db29a3c9fa13/1c72d/21.jpg" srcset="/static/be0b9fd5f467b85686a9db29a3c9fa13/a80bd/21.jpg 148w,
+/static/be0b9fd5f467b85686a9db29a3c9fa13/1c91a/21.jpg 295w,
+/static/be0b9fd5f467b85686a9db29a3c9fa13/1c72d/21.jpg 590w,
+/static/be0b9fd5f467b85686a9db29a3c9fa13/a8a14/21.jpg 885w,
+/static/be0b9fd5f467b85686a9db29a3c9fa13/fbd2c/21.jpg 1180w,
+/static/be0b9fd5f467b85686a9db29a3c9fa13/bb17f/21.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이제 <code class="language-text">main</code> 브랜치도 <code class="language-text">C4'</code> 커밋을 가질 수 있도록 <code class="language-text">main</code> 브랜치를 Fast-forward시켜준다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -366,7 +565,17 @@ git rebase main</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git checkout main
 git merge feat1</code></pre></div>
-<img src="22.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/d89d6495dee2114f0f5c197a3d581827/bb17f/22.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAd2EqD//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAEFAl//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAYEAEBAAMAAAAAAAAAAAAAAAAAEQEQMf/aAAgBAQABPyGqxxE1/9oADAMBAAIAAwAAABB8P//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABkQAQADAQEAAAAAAAAAAAAAAAEAETFRIf/aAAgBAQABPxCnSJDxHy9isPZThEpQGVkCgJ//2Q=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="22" title="22" src="/static/d89d6495dee2114f0f5c197a3d581827/1c72d/22.jpg" srcset="/static/d89d6495dee2114f0f5c197a3d581827/a80bd/22.jpg 148w,
+/static/d89d6495dee2114f0f5c197a3d581827/1c91a/22.jpg 295w,
+/static/d89d6495dee2114f0f5c197a3d581827/1c72d/22.jpg 590w,
+/static/d89d6495dee2114f0f5c197a3d581827/a8a14/22.jpg 885w,
+/static/d89d6495dee2114f0f5c197a3d581827/fbd2c/22.jpg 1180w,
+/static/d89d6495dee2114f0f5c197a3d581827/bb17f/22.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>짠!✨ 새로운 머지 커밋 없이 히스토리가 예쁘게 정리되었다.</p>
 <blockquote>
 <p>💡 <strong>merge vs rebase</strong></p>
@@ -379,7 +588,17 @@ git merge feat1</code></pre></div>
 <h3 id="rebase-onto" style="position:relative;"><a href="#rebase-onto" aria-label="rebase onto permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>rebase onto</h3>
 <p><code class="language-text">rebase --onto</code>는 다른 토픽 브랜치에서 갈라져 나온 토픽 브랜치와 같은 히스토리가 있을 경우에 사용할 수 있는 명령어다. <code class="language-text">server</code> 브랜치를 만들어서 서버 기능을 추가하고 그 브랜치에서 다시 <code class="language-text">client</code> 브랜치를 만들어 클라이언트 기능을 추가한다. 마지막으로 <code class="language-text">server</code> 브랜치로 돌아가서 몇 가지 기능을 더 추가한다.</p>
 <p>아. 그림 그리기 너무 힘들다. 여기서부터는 <a href="https://git-scm.com/book/ko/v2" target="_blank" rel="nofollow noopener noreferrer">출처</a>서 가져온 그림을 그대로 활용하자. 그림의 <code class="language-text">master</code>를 <code class="language-text">main</code>으로 바꿔서 생각하면 된다. 아무튼 요즘 github은 <code class="language-text">main</code>이라는 이름을 사용하고 있으니.</p>
-<img src="23.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/f54626d837798ff42b6986fdf9d19637/cb93d/23.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 58.78378378378378%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABYlAAAWJQFJUiTwAAABfUlEQVQoz42SO09bQRBG/Q9Tp0hPg5IqoqZA0PEDkj4VRURBg4RSRRGiQqIn2Di+730/7vVBu/iFFSwXs3e+WembM7N3FKNn7xh6oqhxNz9xVz/wtzf082F13/eBUTqGIeZI+bs65UCcPqJPDumOPmG/nbzWglsbhmDRusMYgfeWpI3pci3lIbh8l7RzmhA91muatsBHl002pxhZK6nKMU0zRcmWrKtnqmpCXf3DGknbzrJWssEahRAlRTHOjTenWI28jrdjJuJE5ZzKjRJxoljqTBwczkq0bHBWMdr1CKmB94a6fqYonmibGWZBPJv9petKrNVIr3kqJwivdxsuF70Mo+VGbfENDn//B/n7mvBwtz3y21gbr3UiSuR5Z/OBXnfo4wPk4QfM2Zf3DZck27Rpr0o1SFkv9uowokKWE6ysdxNuk77mLr9yWYwRosrEah6ZqhZNv5/hNvVq5KGnT3/C9QXq4jv+1+X+hv9bQRwiUQv06WfE14+Y8yNeAAQznD9m4A7IAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="23" title="23" src="/static/f54626d837798ff42b6986fdf9d19637/fcda8/23.png" srcset="/static/f54626d837798ff42b6986fdf9d19637/12f09/23.png 148w,
+/static/f54626d837798ff42b6986fdf9d19637/e4a3f/23.png 295w,
+/static/f54626d837798ff42b6986fdf9d19637/fcda8/23.png 590w,
+/static/f54626d837798ff42b6986fdf9d19637/efc66/23.png 885w,
+/static/f54626d837798ff42b6986fdf9d19637/c83ae/23.png 1180w,
+/static/f54626d837798ff42b6986fdf9d19637/cb93d/23.png 2304w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이때 <code class="language-text">server</code> 브랜치는 그대로 두고 <code class="language-text">client</code> 브랜치만 <code class="language-text">main</code>으로 합치는 상황을 생각해보자. <code class="language-text">server</code>와는 아무 관련 없는 <code class="language-text">client</code> 커밋은 <code class="language-text">C8</code>, <code class="language-text">C9</code>이다. 이 두 커밋을 <code class="language-text">main</code> 브랜치에 적용하기 위해서 <code class="language-text">--onto</code> 옵션을 사용한다. 첫 번째 인자로는 새로운 조상이 될 베이스 커밋을 넘겨주고, 두 번째 인자로는 기존 베이스 커밋을 넘겨준다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -390,7 +609,17 @@ git merge feat1</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git rebase --onto main server client</code></pre></div>
 <p><code class="language-text">server</code> 브랜치와 <code class="language-text">server</code> 브랜치와 <code class="language-text">client</code> 브랜치의 공통 조상까지의 커밋을 <code class="language-text">client</code> 브랜치에서 없애고 그 이후의 <code class="language-text">client</code> 커밋들을 <code class="language-text">main</code> 브랜치를 새로운 베이스로 하여 rebase해준다. <del>어려워서 토나올 것 같지만, 분명 이런 게 필요한 경우도 맞닥뜨려봤다.</del></p>
-<img src="24.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/1616ec180096cbcb72afb8753b6c9f3e/23d36/24.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 40.54054054054054%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABNUlEQVQoz21QPU9DMQx8v5uVBQkJxMaAhAQTYigrSHTvxMDCxIKgKur7aF5iJ/YLh5zSD9oOJ10c+3y+ahgEK6imfa4RA4D0OgHdnCGORxjwg8H+9f+MobLCspi2hAxauMpG0F2dII4fytvqKzEVXkITqhgDmvoLzs3BHNB132iaKSg4eN8WHvwCnBW1MvosiOzRtrPSyzHACaFmB8l/DlNiiBhiQYwEoh5MPYLvYEsTewRXg8ICKRFC3yD4FpIIPHmGe7qHzj5Qbd+/C3NoTnzfgbkvvHcNkibU5lK4ZMm35wgXR5C3l02Gh2CiOWtxrSrI9rb8Pt8RLo9B16fQbl4yXSLvO1wHvSNusdipYgvmU9DjHXg8gvoF1GYtrsSHT94VNW5iFgGTgwyCAIDMbdZ1j2X9C+NaaCLLcSQzAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="24" title="24" src="/static/1616ec180096cbcb72afb8753b6c9f3e/fcda8/24.png" srcset="/static/1616ec180096cbcb72afb8753b6c9f3e/12f09/24.png 148w,
+/static/1616ec180096cbcb72afb8753b6c9f3e/e4a3f/24.png 295w,
+/static/1616ec180096cbcb72afb8753b6c9f3e/fcda8/24.png 590w,
+/static/1616ec180096cbcb72afb8753b6c9f3e/efc66/24.png 885w,
+/static/1616ec180096cbcb72afb8753b6c9f3e/c83ae/24.png 1180w,
+/static/1616ec180096cbcb72afb8753b6c9f3e/23d36/24.png 2354w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이제 <code class="language-text">main</code> 브랜치로 돌아가서 Fast-forward시킬 수 있다.</p>
 
           <div class="gatsby-remark-prismjs-copy-button-container">
@@ -401,9 +630,29 @@ git merge feat1</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git checkout main
 git merge client</code></pre></div>
-<img src="25.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/20e02a2be6fd3cd2d8ea3e019c0653ef/e3261/25.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 34.45945945945946%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABDElEQVQoz52RvU7DMBSF86I8SHfYK7Z2hi6wwhuwMQACIVVCSAy00CaxHf/byYdqQKK0LAxH9/rY+nyPXaUU+Lf6RLIKfznDzY6Jz49UOUd2ldjv/9KQyUZhz6foySFxfkvVdQ1Ns8RsNqyiaRYoVeOcRsoVQryX3hhBUy8wWpR12y6RYoWPDgnUDESgCsHgXEcMjhhdOWwLvCsXbBS8xXuD1qLU4A1G1VgtSN5inu5RD9ckuf6OnLbi9n0q8LZ925qwrl/RXYvPkXUwyCGRtcSOR+jRAfHmiuqvB9/Ad/royUB6maNPxpiLU7LtPv1g8U5vf8o+0E8/fwHj/A4zPcKdTUhakIeeXFJ5PgA0xhjgL6QJJAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="25" title="25" src="/static/20e02a2be6fd3cd2d8ea3e019c0653ef/fcda8/25.png" srcset="/static/20e02a2be6fd3cd2d8ea3e019c0653ef/12f09/25.png 148w,
+/static/20e02a2be6fd3cd2d8ea3e019c0653ef/e4a3f/25.png 295w,
+/static/20e02a2be6fd3cd2d8ea3e019c0653ef/fcda8/25.png 590w,
+/static/20e02a2be6fd3cd2d8ea3e019c0653ef/efc66/25.png 885w,
+/static/20e02a2be6fd3cd2d8ea3e019c0653ef/c83ae/25.png 1180w,
+/static/20e02a2be6fd3cd2d8ea3e019c0653ef/e3261/25.png 2324w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이제 홀로 남겨진 <code class="language-text">server</code> 브랜치의 작업이 마무리되면, server 브랜치로 이동 후 <code class="language-text">git rebase main</code> 명령어로 <code class="language-text">server</code>를 <code class="language-text">main</code>에 rebase시켜준다. 결과는 아래와 같다.</p>
-<img src="26.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/2c0c42248283def0344ac5c8128f901d/b77b1/26.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 18.243243243243242%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAtklEQVQY01WQS04DQQxE5/4XQYgDgBAgdkCyQYCQWMARImZ67Lbd3XloOgEmC8ufKpc/Q2uFWoNaf/06XtVo+OYOu76ghtFaPeUU7zaojrgrqhNm0i3n9FdzzwfMM/L5xvTygJsgve+I2Yy1gu4Lg8g/oJpYcpHvTkpp1wfMaUc2Qb/emV6fDoJyXERGLDLy8cy4uWU4PbkQkTtx8YtYhGF5JlrgjzfY1Tm1rE9e3rHHt/fY5Rk/4TUz1c6r5xcAAAAASUVORK5CYII='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="26" title="26" src="/static/2c0c42248283def0344ac5c8128f901d/fcda8/26.png" srcset="/static/2c0c42248283def0344ac5c8128f901d/12f09/26.png 148w,
+/static/2c0c42248283def0344ac5c8128f901d/e4a3f/26.png 295w,
+/static/2c0c42248283def0344ac5c8128f901d/fcda8/26.png 590w,
+/static/2c0c42248283def0344ac5c8128f901d/efc66/26.png 885w,
+/static/2c0c42248283def0344ac5c8128f901d/c83ae/26.png 1180w,
+/static/2c0c42248283def0344ac5c8128f901d/b77b1/26.png 2408w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <blockquote>
 <p>💡 Tip!
 <code class="language-text">git rebase [베이스 브랜치] [토픽 브랜치]</code>로 인자를 입력하면, 토픽 브랜치로 checkout하지 않고도 rebase할 수 있다.</p>
@@ -426,7 +675,17 @@ git merge client</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git checkout main
 git merge server</code></pre></div>
-<img src="27.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/6c20a66f71580ecd16a9d58fc4883c5f/37114/27.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 12.837837837837837%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAeUlEQVQI113LzQ4CMQhG0b7/27k1Lt36VygUyuQzoGMmLkjLPW2LcESs7/jhdGzbsa2/5oj9vgwBwM8nNPcJVcacDHeFKsFMakQ6Pk6Yc5RnM9Pas5dnWwa7XtASmB9gftYjojtEqD72fvu1cuVqmj52l/IxXtBleANWK+lofPZqQQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="27" title="27" src="/static/6c20a66f71580ecd16a9d58fc4883c5f/fcda8/27.png" srcset="/static/6c20a66f71580ecd16a9d58fc4883c5f/12f09/27.png 148w,
+/static/6c20a66f71580ecd16a9d58fc4883c5f/e4a3f/27.png 295w,
+/static/6c20a66f71580ecd16a9d58fc4883c5f/fcda8/27.png 590w,
+/static/6c20a66f71580ecd16a9d58fc4883c5f/efc66/27.png 885w,
+/static/6c20a66f71580ecd16a9d58fc4883c5f/c83ae/27.png 1180w,
+/static/6c20a66f71580ecd16a9d58fc4883c5f/37114/27.png 2300w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <blockquote>
 <p>💡 <strong>rebase 시 주의사항</strong>
 이미 공개 저장소에 push한 커밋을 rebase하면 안 된다. rebase는 기존의 커밋을 그대로 이용하는 것이 아니라, 내용은 같지만 다른 커밋을 새로 만든다. 새 커밋을 push하고 동료 중 누군가가 그 커밋을 pull해서 작업을 한다고 하자. 그런데 그 커밋을 <code class="language-text">git rebase</code>로 바꿔서 push해버리면 동료가 다시 push했을 때 동료는 다시 merge해야 한다. 그리고 동료가 다시 merge한 내용을 pull하면 내 코드는 정말 엉망이 되어버린다. 🤯</p>
@@ -563,25 +822,92 @@ git revert [1번 커밋의 해쉬]</code></pre></div>
           
 <div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git revert [from 커밋의 해쉬]..[to 커밋의 해쉬]</code></pre></div>
 <p><code class="language-text">reset</code>과 <code class="language-text">revert</code>의 차이를 그림으로 정리해 보자.</p>
-<img src="28.jpeg" />
-<img src="29.jpeg" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/7597dc06d3edea9a97b9e95941e9e869/bb17f/28.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAdwSoP/EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEAAQUCX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABoQAAICAwAAAAAAAAAAAAAAABARAFEBIWH/2gAIAQEAAT8h3Udhdyf/2gAMAwEAAgADAAAAEFw//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPxA//8QAHRABAAEDBQAAAAAAAAAAAAAAAQAQEVExQWFxkf/aAAgBAQABPxBcXsOAe5rLoBbdXLT/2Q=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="28" title="28" src="/static/7597dc06d3edea9a97b9e95941e9e869/1c72d/28.jpg" srcset="/static/7597dc06d3edea9a97b9e95941e9e869/a80bd/28.jpg 148w,
+/static/7597dc06d3edea9a97b9e95941e9e869/1c91a/28.jpg 295w,
+/static/7597dc06d3edea9a97b9e95941e9e869/1c72d/28.jpg 590w,
+/static/7597dc06d3edea9a97b9e95941e9e869/a8a14/28.jpg 885w,
+/static/7597dc06d3edea9a97b9e95941e9e869/fbd2c/28.jpg 1180w,
+/static/7597dc06d3edea9a97b9e95941e9e869/bb17f/28.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/2e18245bae76d54733d4c8c296555f21/bb17f/29.jpg" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 77.70270270270271%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAQABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAQACBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHuCS1Ef//EABUQAQEAAAAAAAAAAAAAAAAAACAh/9oACAEBAAEFAqv/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAaEAABBQEAAAAAAAAAAAAAAAAAAREhYYEx/9oACAEBAAE/IcEp0SRrGs0//9oADAMBAAIAAwAAABBc/wD/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAADAAIDAAAAAAAAAAAAAAAAAREhUUFhkf/aAAgBAQABPxCbeCszU6XI0VF7l7iTVrPJ/9k='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="29" title="29" src="/static/2e18245bae76d54733d4c8c296555f21/1c72d/29.jpg" srcset="/static/2e18245bae76d54733d4c8c296555f21/a80bd/29.jpg 148w,
+/static/2e18245bae76d54733d4c8c296555f21/1c91a/29.jpg 295w,
+/static/2e18245bae76d54733d4c8c296555f21/1c72d/29.jpg 590w,
+/static/2e18245bae76d54733d4c8c296555f21/a8a14/29.jpg 885w,
+/static/2e18245bae76d54733d4c8c296555f21/fbd2c/29.jpg 1180w,
+/static/2e18245bae76d54733d4c8c296555f21/bb17f/29.jpg 2154w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p><code class="language-text">reset</code>과 달리 <code class="language-text">revert</code>는 중간 커밋만 삭제할 수 있고, 이전으로 되돌린 커밋의 이력이 모두 커밋 메시지를 통해 남기 때문에 히스토리 유지 차원에서 더 유용하다고 할 수 있다.</p>
 <hr>
 <h2 id="️-추가-pull-request--merge-pr" style="position:relative;"><a href="#%EF%B8%8F-%EC%B6%94%EA%B0%80-pull-request--merge-pr" aria-label="️ 추가 pull request  merge pr permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>☀️ 추가! Pull Request &#x26; Merge PR</h2>
 <p>github에서 PR(Pull Request)을 보내는 경우, merge하려는 베이스 브랜치와 충돌이 없다면 Merge Pull Request 버튼이 활성화된다. 이때 오른쪽의 역삼각형 모양을 눌러보면, 아래와 같이 3가지 옵션이 표시된다.</p>
-<img src="30.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 541px; ">
+      <a class="gatsby-resp-image-link" href="/static/aa3e8ed781dfae22423d49882f487d8f/9d576/30.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 83.1081081081081%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC8UlEQVQ4y21US4/URhD270GK+A+IS7SAuHHMRiICbou4BEWb60ockNj8AiIuHBDLAfEQEkEK2QeRAuxrdmZnh/GrbU/bnhm73fbani+qmvHuLGDpU1dVt76u+qrahkxG6IUuOtJER1qMQ2njcGZ3Qxv9yMNR6MKOA+iiRH5cnaIoURQF8hmMx/svcf7RVVx7fhuX1m5iYe0G48env+DKs1u4+ORnnHu4gB/+vIwLTxZhCgHH9WHaAn3LRt+L0fVztEUGS2oYr7vr+OnFr1h+v4rlf1bx2/sHuPPuHu7+fR+/r/+Bpb9WsPjqLq6/WcbS2xV4MoTwJRwvgON6cIIh+gMNN9Lw4hxGojVKXULKCEL48LwAw2iEQSDZH8YjREGEQAxQ5RW++01qpFohyVMYSmtorWHZDnb39hmd7hEO2h389/ET2p1DbO/u4fP2DmQYoiiOkecFskwjTRXbk8kEKsuRF8cwkjTjS4ajMTx/AC8YwBE+/EBChhH8YIBgICG8gPf6lgPTduEKH47wEEUxE47TDEmWw0iV5kCSKgSsT4AwipkwHo74IvJtRzBxs1dWp+XXdc2E6TwhlaCyDKlSJ+UopZAkKcqy/Fa2yYSJ6tlKlSqdwxinig8c9b5gc+tf7O230GodsJatgzY2Nj/AcdyTTIioqipe58mJh0tuCCkT0ol0sxzBIxEMQtbQ9XwumeaOdDQth2PNBY2G6TwhaWXaDvqmDdsV8PyAyWglnwhlGMNyXPapKXSeGkOdT5Q+JaxnZVRVjbqeakL2iT/LYn5tbJaAm6LOZkjztr6xxfO23zrA9s4udnb3sLG5BVeIE62+bsyphtSU4mzJwvMhZcj6UVmkoTMrj2dxNlKkH+3NE8ajBKNEEeF0sEfjBL2+NdXH85mk98Vku9GxaQbpSeTz32HPRLvbp6c3fTKpyhAPxxiOE4yTlEFZ00pDT5jfI1/nxRmUVQ2jLKtZIJ/+0+YOkE/xBvkZghyZnoLizWz+D8518u4LwI+BAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="30" title="30" src="/static/aa3e8ed781dfae22423d49882f487d8f/9d576/30.png" srcset="/static/aa3e8ed781dfae22423d49882f487d8f/12f09/30.png 148w,
+/static/aa3e8ed781dfae22423d49882f487d8f/e4a3f/30.png 295w,
+/static/aa3e8ed781dfae22423d49882f487d8f/9d576/30.png 541w" sizes="(max-width: 541px) 100vw, 541px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>팀 프로젝트를 할 때 항상 헷갈렸던 세 가지 옵션들에 대해 살펴보자!</p>
 <p>🔖 <strong>Create a merge commit</strong></p>
 <p>PR의 베이스가 되는 <code class="language-text">main</code> 브랜치와 토픽 브랜치(여기서는 <code class="language-text">feat1</code>이라고 하겠다.)의 작업 이력이 다르다면 새로운 merge commit을 생성하게 된다. 히스토리는 아래 그림과 같다.</p>
-<img src="31.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/4704a706ebf27e84e0c0796267122d2c/78ed4/31.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 47.972972972972975%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABVElEQVQoz61S30vCUBjdv95fUVBP0lMvQdOQEMp8kJiYorRym7U1d93UUOc277Z7T+yHOkYSROfycc/lO/fAx/kE/ADOeVplfgxFrVAUlz8X+YfjoqO78H0f9YGDOArR06aQiZv2Wa4VeBzvjThjWXEOxljiCEpDOJaB09s+Gh0FpjlB5X4Em1hoPY8gveh7w+QI+AW6acH3Nkf7i7mDJd0cRn6rV/Bp6CCzBeSmCKV9l3LLIuhdn8OSu6nYVocwOw1sGTDRXqE2bzBbrqHJCh5OrsAjlo1s1M7guS62MQcZtDFX+qAxgxdQjGsXMLqPIIsV9H4bWksEmS8x1TWQ4RPWfgDva4XpZQ8sjDND/ANsnSCkNA+F7UJBIZQ88aSXh5TcbK89hJdgpCpZiKlhad+O7WCZJ4iiCLZt4308hqqq6ftPI+8MgyBAtVqFKIqQJClN+RuypAHaTTT0kgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="31" title="31" src="/static/4704a706ebf27e84e0c0796267122d2c/fcda8/31.png" srcset="/static/4704a706ebf27e84e0c0796267122d2c/12f09/31.png 148w,
+/static/4704a706ebf27e84e0c0796267122d2c/e4a3f/31.png 295w,
+/static/4704a706ebf27e84e0c0796267122d2c/fcda8/31.png 590w,
+/static/4704a706ebf27e84e0c0796267122d2c/efc66/31.png 885w,
+/static/4704a706ebf27e84e0c0796267122d2c/c83ae/31.png 1180w,
+/static/4704a706ebf27e84e0c0796267122d2c/78ed4/31.png 2566w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>🔖 <strong>Squash a merge</strong></p>
 <p>squash는 한국어로도 스쿼시란다. ㅡㅡ</p>
-<img src="32.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/a0783cd9cfec797dc4e32c34073dd0ec/77085/32.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 36.486486486486484%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAxElEQVQoz42Ryw7CIBBF+/0u/QhXrtz4BcZPMalNH7E8B7hmEJDWNnHSG6CUk8O08d6DHIErhLAZ5xyMMeBv1+F9ay1eRsR5Q0QYxxHW2F0oA/u+hxAiQnhdhxmG7BfYdk8oo3eBDJnnGVrrAvwxTbZNNAgeHgHxSZA8p+BB3i3gdViIr8xjAW7V+j0f4j7mwzwykK2llFBKVYapF8UiwVqacOyuOA/3hUnuW/4pdRrlDKRWRfkD9BH4sAMO3QWn6YZ/6w2S3iam3r/EEgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="32" title="32" src="/static/a0783cd9cfec797dc4e32c34073dd0ec/fcda8/32.png" srcset="/static/a0783cd9cfec797dc4e32c34073dd0ec/12f09/32.png 148w,
+/static/a0783cd9cfec797dc4e32c34073dd0ec/e4a3f/32.png 295w,
+/static/a0783cd9cfec797dc4e32c34073dd0ec/fcda8/32.png 590w,
+/static/a0783cd9cfec797dc4e32c34073dd0ec/efc66/32.png 885w,
+/static/a0783cd9cfec797dc4e32c34073dd0ec/c83ae/32.png 1180w,
+/static/a0783cd9cfec797dc4e32c34073dd0ec/77085/32.png 2764w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>‘찌부러뜨리다’라는 말 정도로 해석이 가능한데, 여기서는 PR에 딸려 있는 모든 커밋들을 하나로 합쳐 새로운 커밋으로 만들어 베이스 브랜치인 <code class="language-text">main</code>에 추가시키는 방식이다. 토픽 브랜치의 커밋 히스토리를 합쳐서 깔끔하게 만들기 위해 사용한다. 역시나 새로운 merge commit이 추가된다.</p>
-<img src="33.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/690a12bf31c1a77e0f445ddbe27b6e02/ba40d/33.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 47.972972972972975%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABb0lEQVQoz52Sb0vbUBSH872FfYe99OV816HOIXMoGlqsOClGdLqLaWlrIWmTmv9dmpR780hS21XtcOwHB86Pe8/hHJ6j8RcVRbGMUlEU4joj8jxf/smyDNu2mabpskZbLVrNX3sv+k1DuPS6Hba+X9BonnNUP+NMWC/+a4VSVFEWr+bPXklJHIz5fHLFx+0m4qfB5jeDX/dtzi9v2Nd/MLJtfD+ommq8o5EXEvgecZKQzuSb93QSM3y0UM+DaIPTPdqtOo4f0RU3iINPWJaF64cI/QviqEbZJn50eDj9ShQn2IM+d4c1hkObXq/P1sYxkzCbT+g0d/DMK2YFBI7F+LZJmk4rPzR0uvVdnCDBGXTpNPYYez5x4OGa12R5RhQkHHxok7jZv638rgq4u+gwCeektULJOYgF1QWU0itZQZlDUiglXwBbXIDt/CG99mzWndHrvJSUEtM0MS4NDMMgn+X/t/Jq41arha7rCCEqyk+g9/0U7XCJ/QAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="33" title="33" src="/static/690a12bf31c1a77e0f445ddbe27b6e02/fcda8/33.png" srcset="/static/690a12bf31c1a77e0f445ddbe27b6e02/12f09/33.png 148w,
+/static/690a12bf31c1a77e0f445ddbe27b6e02/e4a3f/33.png 295w,
+/static/690a12bf31c1a77e0f445ddbe27b6e02/fcda8/33.png 590w,
+/static/690a12bf31c1a77e0f445ddbe27b6e02/efc66/33.png 885w,
+/static/690a12bf31c1a77e0f445ddbe27b6e02/c83ae/33.png 1180w,
+/static/690a12bf31c1a77e0f445ddbe27b6e02/ba40d/33.png 2524w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>🔖 <strong>Rebase a merge</strong></p>
 <p>PR에 포함된 모든 커밋들이 합쳐지지 않고 각각 <code class="language-text">main</code> 브랜치에 추가된다. 각 commit은 모두 하나의 부모를 가진다. 이때 새로운 merge commit을 생성하지 않기 때문에 커밋 히스토리를 하나로 깔끔하게 만들 수 있다. (다만 하나의 브랜치에서 작업한 것처럼 보이게 된다!)</p>
-<img src="34.png" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/640d3ceeb63a946a5882b29054deb0f0/b85c3/34.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 37.16216216216216%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABBUlEQVQoz6WRX0/CQBDE+f4fyURfgWpMtJBQYuVPKRTQHm2vV+7O689AG4Em+uIkk92dh9nJbo8O6rq+qde6MQbnHNZa6la75gm98+BcK7qW9U+VUrKKInzfZzAYkKYp8/n8ZNdhs6DHH1DaoLVGaYtIUwpVXRIDXzVY19C4NqFWBZF3R14q4uCVePyEsrB4vCd5GyPzjLXfR1aaaOQhxZ4g2vPgr/DDmP5kzct0yWwnG0NblYiJR16UZNsVh82CojJ8BM+I+J08O/AZjjgUEhHPKDNBvEvZipLqaNAONkmCUqox5J8w+kgYhkTLZXPDX5/iuv3lUe7E9mZCCIbDIUEwPSf8Bp88HeTmjPAHAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="34" title="34" src="/static/640d3ceeb63a946a5882b29054deb0f0/fcda8/34.png" srcset="/static/640d3ceeb63a946a5882b29054deb0f0/12f09/34.png 148w,
+/static/640d3ceeb63a946a5882b29054deb0f0/e4a3f/34.png 295w,
+/static/640d3ceeb63a946a5882b29054deb0f0/fcda8/34.png 590w,
+/static/640d3ceeb63a946a5882b29054deb0f0/efc66/34.png 885w,
+/static/640d3ceeb63a946a5882b29054deb0f0/c83ae/34.png 1180w,
+/static/640d3ceeb63a946a5882b29054deb0f0/b85c3/34.png 2580w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>이렇게 어떤 방법으로든 스무스하게 merge가 되면 좋겠지만… 그렇지 못한 경우는 늘상 발생한다. <code class="language-text">main</code> 브랜치에서 파생한 <code class="language-text">feat1</code> 브랜치에서 작업 후 <code class="language-text">main</code> 브랜치를 베이스로 PR을 열어놓은 사이, <code class="language-text">main</code> 브랜치에서 파생한 또다른 브랜치인 <code class="language-text">feature2</code>의 작업 내역이 먼저 PR merge됐다면 어떨까?</p>
 <p>(자동 merge가 불가능하다는 회색 버튼이 뜬다 - 사진을 추가해야할 것이다)</p>
 <p>이때 github 상에서 conflict을 해결해줄 수도 있지만, 그러면 새로운 merge commit이 생기는 만큼(확실한가?) 다른 방식을 생각해보게 될 것이다. 이때 <code class="language-text">git rebase</code>가 다시 한번 등장한다.</p>

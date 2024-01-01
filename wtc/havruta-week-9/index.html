@@ -100,7 +100,17 @@
 <p>합성은 웹 페이지의 각 부분을 레이어로 분리해 별도로 래스터화하고 컴포지터 스레드(compositor thread)라고 하는 별도의 스레드에서 웹 페이지로 합성하는 기술이다.</p>
 <p>합성의 이점은 메인 스레드와 별개로 작동할 수 있다는 점이다. 컴포지터 스레드는 JavaScript 실행이나 스타일 계산을 기다리지 않아도 된다. 이것이 합성만 하는 애니메이션이 성능상 가장 부드럽다고 보는 이유이다.</p>
 <p>크롬 개발자도구의 <strong>Layers</strong> 탭에 들어가보면 홈페이지가 어떠한 계층으로 이루어져 있는지 알 수 있다.
-<img src="01.png" /></p>
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/e646e82bf79aecd3ea43fc55ff82c99b/1134b/01.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAADgklEQVQ4y3WT22tcRRzHz/+whdzaJHvfPZc9u2fP2Vuy2fsmm3vaYBFSJMk2bZ/ap4KgQvVvMMYIBX3xRajig6ZtbqCCeEFUSm1fhLYPIRFy2e5uNkk/cia1iODAZ2YYfvOd78zvN1LcMLAMAzUYxIqESZhRVE3HtBIkU/10dnbhcbtwOBz4fAFU3SARjlJMp4jFDUwrSSyeJKQb6OEokjZxFXNqAWXwEt7C63hyryHHK0StfhGcSpikzCCKGkFRQsiqgaF5iIaDBGWdnh4X3d1Ountc+AMKkjN7keLMdUqXbpCfuUFy+hpexcDp9OD2+EXg1PkLVK9cZXauynx1gbnqZaqXF3hjfp6Z+Tlmq9eYrV5BVkJIWsBPMV8gl8mS6U+TisVxu31CyOX24XC0cW/zHju02OcIux3zQozb1Ng+/IujrQZHuw0y2RySrIUZGp1iePwCldEpBocn8PplIWg7dJxpY2VtlXqjxtMnf7Kzs0W90WRv74DW8Qm/PXvAna/usPHNfdLpDJJtM5MrvaRIvjgk3kII2g7PtLNyd5XG7h7PHj1mf3uHk+MTmoctDvZrfPr9Z9z+9nM2n/xKNldAUrUwldFJSoMjgpHx88iKzrlu5yuHa+sb4orPGw2azSbNWo1W85Ba7TnbDx7y9OfH7G/tksnmkRQtTKE8THFwRLjL5svCYc+rK7ezuXEqWK83aNYbtOp16gcHNGo1sd56AbX6IemBDJKihhgcHqMyMiGw5wUrQcmwKFtxBjSd9999j7sff8IvX37BH+urPFzf5NHGJr+vrvHjytf8dP87flhZ42KphKSGE5RHzlMYmiSdr2AmsiK7vb1Oep1u/H6ZfLnC5MQYt25e5503b/LW27dYXPyAD5eWWV7+iKWl2ywuLmNZcSQ1ZFKqjAvS2TIRM4nH66enp5e29g68vqAgIGu4vUFcHr84sLOrm7b2LkF7xymBoIJkd76Xm/wBGa8vQCzRTyZXxoylCNq/QwmRzhROyRZJ9mUwzDghPUrEiKFHTPSwSThiIAVljX9jJyRqJRkcHhcCvoCCnbhUf5a+gbyY24f/E29XRFAOCWRFtR2qnKKJRZ9fxor3MToxjR6x6Og8K7JtO5FVnbPnekWN2mX1X5wuN5KuRwiHIyiqhs8fwOPxEYv3MTY5zdDIJP6gKlyrWgSny0uv0/O/uN1e/gaQdWGQd0L18wAAAABJRU5ErkJggg=='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="01" title="01" src="/static/e646e82bf79aecd3ea43fc55ff82c99b/fcda8/01.png" srcset="/static/e646e82bf79aecd3ea43fc55ff82c99b/12f09/01.png 148w,
+/static/e646e82bf79aecd3ea43fc55ff82c99b/e4a3f/01.png 295w,
+/static/e646e82bf79aecd3ea43fc55ff82c99b/fcda8/01.png 590w,
+/static/e646e82bf79aecd3ea43fc55ff82c99b/efc66/01.png 885w,
+/static/e646e82bf79aecd3ea43fc55ff82c99b/c83ae/01.png 1180w,
+/static/e646e82bf79aecd3ea43fc55ff82c99b/1134b/01.png 1470w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span></p>
 <p>Layout 과정을 거쳐 화면에 UI를 화면에 표현하기 위한 계산이 끝나면 Paint 과정을 거친다. Layout 과정에서 Render Layer가 2개 이상 생성되면 각각의 Layer를 Painting 한 뒤 하나의 이미지로 Composite하는 과정을 추가로 거쳐 브라우저에 표현한다.</p>
 <p>페이지의 여러 부분이 잠재적으로 여러 레이어로 그려졌기 때문에 페이지가 정확히 렌더링되려면 정확한 순서로 화면에 그려야 한다. 실수로 한 요소가 다른 요소 위에 잘못 나타날 수 있기 때문에 이는 다른 요소와 겹치는 요소가 있는 경우에 특히 중요하다. (브라우저가 요소 순서 그대로만 화면을 그려내면 <code class="language-text">z-index</code>가 적용되지 않는 문제)</p>
 <ul>

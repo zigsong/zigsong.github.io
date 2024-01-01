@@ -243,7 +243,17 @@ chrome<span class="token punctuation">.</span>runtime<span class="token punctuat
   <span class="token comment">// ...</span>
 <span class="token punctuation">}</span></code></pre></div>
 <p>그런데, 컨테이너의 <code class="language-text">MutationObserver</code> 실행에 따라 <code class="language-text">commentsContainerLoaded</code>이 반복적으로 실행되어서, 위 코드의 <code class="language-text">commentsContent</code>에 붙인 click 이벤트에 대한 핸들러가 여러 번 붙게 되고, 그렇게 되면 실제 결과는…</p>
-<img src="01.png" width="100%" />
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/fc477/01.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 75.67567567567568%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAPCAYAAADkmO9VAAAACXBIWXMAABYlAAAWJQFJUiTwAAACk0lEQVQ4y52Sy0tUURzHJ8pwxnndO+c+586948wdH/NSZ2owUdRSNIiiF6gVCZMYhjYiaWJURiURBD2JbBFRm7ZFD4p2UYtoVS1a9o98wlEigihbfPgeOOd8+J3D1/N5x1O+9D3j68BLvu18w5e+53zvesm19nvsGjzJ1NAsV87d5kJ5iecDd7nYPk17wwCvti3zrushHzoe8bH4mPfZ+7xtvIlnPnuCs4UKi1umOZOfZD4zwfn0JMMNIxRy3aSdVrbmu9me6qESH2EoOkjKyjKTKXM6N85U5jDTiSPMOIep2MN4akQEv2URiBqsrGuEzCYh41UEAaERUHT8QiOoGXgNjTpdpy5QxwbfRmolHxFTwSvVsdFfQ02wFo+sWsh6HEl3iBj1RMz6asormHFkI/4zV84oZpxjo2VKLVtpyxXIZbKk3BQNbgohCzxh1UQynFV0+88YNrLh4Bcm5wb7eT07znL5EMXWFgqFAtlsFl3XfxGuXfoj1X2HoGqRlkLsdKOUmpIYhlEVhUKhKusShg2HiBolpqgEhcZmrw+fz4c/ECAQDFb5d+HPb4mxu6vIxOgB9h3cS6G3k3jCRUg6djS2HuGaVLUY6W/j6kQvD87O8eLmDXoyObSgoNlar9B0CEWiXB5O82S+xNNLi3y6c4tOt56YX2BJ6vonDKsW430tnDnaz9zEGEunKnQX2xC+MHFf+D+erMdobGomaphYtk3MiSMUjUwmi6mov/XwHwgrJmq9i9FSQBYKbjKJ4zi4rosky3hCikFYtwlpNqGVauir+TvhtdoEJIXU0DAd+/dg2iZNzWny+TyJRAJJkvCoUQfNTqLFEn9Ft5MI0+b4yBjX5xdYmKlQLBYplUqk02mEEPwAuom+imtXC3sAAAAASUVORK5CYII='); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="01" title="01" src="/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/fcda8/01.png" srcset="/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/12f09/01.png 148w,
+/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/e4a3f/01.png 295w,
+/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/fcda8/01.png 590w,
+/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/efc66/01.png 885w,
+/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/c83ae/01.png 1180w,
+/static/0d7e7d83e2b0cd2f6280fc0e9acfb4d1/fc477/01.png 2426w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy" decoding="async">
+  </a>
+    </span>
 <p>😱😱😱</p>
 <p>왜 똑같은 이벤트리스너가 여러 개 붙는거야!</p>
 <p>수소문 끝에, 한 <a href="https://stackoverflow.com/questions/11430672/javascript-how-to-check-if-event-already-added" target="_blank" rel="nofollow noopener noreferrer">stackoverflow</a> 글을 보니 이벤트핸들러가 저렇게 익명함수로 되어있으면 서로 다른 함수로 인식하여 중복으로 붙일 수 있다고 한다… 같은 <code class="language-text">click</code> 이벤트에 대해서는 이벤트핸들러를 한번만 붙일 수 있게 이름을 붙인 콜백함수 형태로 넘겨주자.</p>
