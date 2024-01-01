@@ -6,7 +6,7 @@ import { useLang } from 'context/LanguageContext';
 
 import './Pagination.css';
 
-const Pagination = function({ currentPage, totalPageNumber }) {
+const Pagination = function ({ currentPage, totalPageNumber }) {
   const { homeLink } = useLang();
 
   const befMark =
@@ -25,8 +25,8 @@ const Pagination = function({ currentPage, totalPageNumber }) {
   return (
     <div className="pagination">
       {befMark}
-      {Array.from({ length: totalPageNumber })
-        .map((_, ind) => ind + 1)
+      {Array.from({ length: 12 })
+        .map((_, ind) => 12 * Math.floor((currentPage - 1) / 12) + ind + 1)
         .map((pageNum) => {
           return pageNum === currentPage ? (
             <span key={`pageNum-${pageNum}`} className="active">
@@ -41,7 +41,7 @@ const Pagination = function({ currentPage, totalPageNumber }) {
       {nextMark}
     </div>
   );
-}
+};
 
 Pagination.propTypes = {
   currentPage: PropTypes.number,
