@@ -64,7 +64,7 @@ export default class Counter extends React.Component {
 }
 ```
 
-<img src="01.gif" />
+<img src="../../assets/await-setstate/01.gif" />
 
 `decrease`와 `increase`에서 발생하는 3번의 `setState` 호출들은 모두 업데이트 이전의 동일한 `count` 값을 참조하고 있기 때문에, 3씩 커지거나 작아지지 않는다.
 
@@ -84,7 +84,7 @@ increase = async () => {
 
 정말 될까?
 
-<img src="02.gif" />
+<img src="../../assets/await-setstate/02.gif" />
 
 진짜 된다! 😮 한번에 3씩 값이 바뀐다.
 

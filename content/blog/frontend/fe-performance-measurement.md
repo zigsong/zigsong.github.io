@@ -27,7 +27,7 @@ tags: ["frontend"]
 ## ✅ Performance 측정
 
 사용자들의 웹 경험에서 중요한 공통 집합인 **Core Web Vitals**는 아래와 같다.
-<img src="01.png" />
+<img src="../../assets//fe-performance-measurement/01.png" />
 
 - **Largest Contentful Paint**: 인식되는 로드 속도를 측정하는 항목으로, 페이지의 주요 콘텐츠가 로드되었을 가능성이 높은 시점에 페이지 로드 타임라인에 점을 표시한다.
 - **First Input Delay**: 응답성을 측정하는 항목으로, 사용자가 페이지와 처음 상호 작용하려고 할 때 느끼는 경험을 정량화한다.
@@ -35,7 +35,7 @@ tags: ["frontend"]
 
 크롬 개발자 도구의 Performance 패널에서 확인 가능한 **FCP(First ContentFul Paint)** 와 **LCP(Largest Contentful Paint)**, 추가적으로 **Onload** 이벤트가 실행되는 시점을 측정했다.
 
-<img src="02.png" />
+<img src="../../assets//fe-performance-measurement/02.png" />
 
 우리 서비스에서 hero element가 되는 중요한 요소들, 그리고 주요 기능이라고 생각하는 기능들에서의 인터랙션을 중심으로 성능을 측정했다. 이 역시 bundle 압축과 이미지 리사이징을 통해 시간을 많이 앞당길 수 있었다.
 
@@ -55,14 +55,14 @@ tags: ["frontend"]
 
 AWS CloudFront는 Behaviors에 들어가서, Cache Policy를 새로 설정하거나 기존 옵션을 변경하면 된다. 화면의 View Policy에 들어가서, `gzip`과 `brotli` 설정을 Enabled해준다.
 
-<img src="03.png" />
-<img src="04.png" />
+<img src="../../assets//fe-performance-measurement/03.png" />
+<img src="../../assets//fe-performance-measurement/04.png" />
 
 그러면 네트워크 탭 Response Header의 `content-encoding` 항목에 `br`(brotli)이 표시되는 것을 알 수 있다.
 
 > 👾 최종 사용자가 `gzip`과 `brotli` 두 형식을 모두 지원하는 경우, CloudFront는 brotli를 사용한다.
 
-<img src="05.png" />
+<img src="../../assets//fe-performance-measurement/05.png" />
 
 그렇게 해서 줄어든 `bundle.js`의 용량은?!
 
@@ -74,7 +74,7 @@ AWS CloudFront는 Behaviors에 들어가서, Cache Policy를 새로 설정하거
 
 아무래도 첫 화면부터 많은 이미지를 로드하고 있다보니, 초기 렌더링 속도가 아주아주 느렸다. 사용자가 정말 무거운 파일을 올리기라도 한다면, 로드해 오는 자원의 크기가 7MB를 넘을 정도.
 
-<img src="06.png" />
+<img src="../../assets//fe-performance-measurement/06.png" />
 
 서버 이미지 리사이징을 사용하여 이미지 용량을 줄일 수 있었다. 흔쾌히 도와준 백엔드 팀원들에게 감사하다는 말을 전한다. 🙇‍♀️ 일정 크기 이상의 이미지일 경우, 현재 최대 400px(너비, 높이 중 하나)로 이미지를 저장하여 받아온다.
 
@@ -85,10 +85,10 @@ AWS CloudFront는 Behaviors에 들어가서, Cache Policy를 새로 설정하거
 측정할 때마다 결과가 다르게 나오는 lighthouse지만, 그래도 참고용으로 기록해두기로 했다.
 
 **<bundle 압축, 이미지 리사이징 이전>**
-<img src="07.png" />
+<img src="../../assets//fe-performance-measurement/07.png" />
 
 **<bundle 압축, 이미지 리사이징 이후>**
-<img src="08.png" />
+<img src="../../assets//fe-performance-measurement/08.png" />
 
 조금이나마 점수가 개선된 것을 확인할 수 있다.
 

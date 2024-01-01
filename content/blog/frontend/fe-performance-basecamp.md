@@ -27,10 +27,10 @@ tags: ["frontend"]
 ### 성능 개선 이전
 
 **<lighthouse 성능 지표>**
-<img src="01.png" width="520px" />
+<img src="../../assets/fe-performance-basecamp/01.png" width="520px" />
 
 **<WepPageTest, Paris Fast 3G 성능 지표>**
-<img src="02.png" width="560px" />
+<img src="../../assets/fe-performance-basecamp/02.png" width="560px" />
 
 ### 1. 요청 크기 줄이기
 
@@ -51,7 +51,7 @@ module.exports = {
 };
 ```
 
-<img src="03.png" />
+<img src="../../assets/fe-performance-basecamp/03.png" />
 
 > 👾 (추후 다룰 parsing과 gzip을 사용하면) 3가지 버전으로 각 구성요소의 크기를 확인할 수 있다.
 >
@@ -62,10 +62,10 @@ module.exports = {
 우선 `gzip`을 사용해서 CDN에서 가져오는 소스코드의 크기를 줄였다. aws cloudfront에서 gzip 압축에 관한 내용은 [여기](https://zigsong.github.io/2021/08/14/fe-performance-measurement/#✅-bundle-js-압축하기)서 확인할 수 있다.
 
 **<gzip 적용 이전>**
-<img src="04.png" />
+<img src="../../assets/fe-performance-basecamp/04.png" />
 
 **<gzip 적용 이후>**
-<img src="05.png" />
+<img src="../../assets/fe-performance-basecamp/05.png" />
 
 CSS 최적화도 진행했다. 우선 **MiniCssExtractPlugin**을 이용하여 CSS 파일을 별도 파일로 추출했다. CSS 코드가 포함된 JS 파일 별로 CSS 파일을 생성하기 때문에 CSS가 헤더에 주입되는 것이 아니라 별도의 파일로 분리된다. 그래서 DOM에 `<style>` 태그로 CSS를 넣어주는 **style-loader**와 함께 사용할 수 없다. webpack config에 **style-loader** 대신 넣어준다.
 
@@ -93,28 +93,28 @@ module.exports = {
 
 그리고 **CssMinimizerWebpackPlugin**을 이용하여 CSS 파일을 최적화하고 축소해주었다. 번들 결과 dist 폴더 내의 css 파일이 아래와 같이 압축된 것을 확인할 수 있다. 번들 파일의 크기는 798kB에서 757kB로 줄었다.
 
-<img src="06.png" />
+<img src="../../assets/fe-performance-basecamp/06.png" />
 
 > 🤔 **MiniCssExtractPlugin**을 이용하여 CSS 파일을 별도로 추출하는 방식이 항상 성능상으로 좋은 방식인지는 의문이다. 현재는 우선 소스코드의 크기가 줄어서 개선이 이루어졌지만, 더 공부해봐야 할 부분이다.
 
 마지막으로(순서가 CSS 최적화보다 먼저 왔어야 할 것 같지만!) JavaScript 소스코드를 난독화하여 크기를 줄일 수 있었다. **UglifyJS**와 **Terser**가 소스코드 난독화를 해주는 대표적인 라이브러리인데, 각각 사용했을 때 압축률은 거의 동일하다. 그러나 **Terser**가 파싱 속도가 조금 더 빠르다고 한다. [npm-trends](https://www.npmtrends.com/terser-vs-terser-webpack-plugin-vs-uglify-js-vs-uglifyjs-webpack-plugin)에서도 **Terser**가 뜨고 있다.
 
-<img src="07.png" />
+<img src="../../assets/fe-performance-basecamp/07.png" />
 
 (추가) webpack v5 이상부터는 **Terser**가 기본으로 설정되어 있다. 세부 옵션을 지정해주고 싶다면 **terser-webpack-plugin**을 설치하여 커스터마이징해주면 되지만, 따로 설정할 것이 없다고 판단하여 사용하지 않았다.
 
 파싱 이후 **webpack-bundle-analyzer**로 분석한 코드는 다음과 같다. 아래에 나올 코드 스플리팅을 적용한 후 측정했기 때문에 결과물이 청크 파일들로 분리되어 있는데, **Terser** 등으로 난독화(최소화)되어 있는 전체 번들의 크기가 757kB에서 231kB로 크게 줄어든 것을 확인할 수 있다.
 
 **<Stat 크기>**
-<img src="08.png" width="480px" />
+<img src="../../assets/fe-performance-basecamp/08.png" width="480px" />
 
 **<Parsed 크기>**
-<img src="09.png" width="480px" />
+<img src="../../assets/fe-performance-basecamp/09.png" width="480px" />
 
 **✅ 이미지 크기 줄이기**
 너무나도 큰 hero 이미지의 크기 때문에 LCP(Largest Content Paint) 수치가 꽝이었다. 빌드를 하면 친절하게 warning까지 띄워준다.
 
-<img src="10.png" />
+<img src="../../assets/fe-performance-basecamp/10.png" />
 
 게다가 현재 gif들도 많이 사용되고 있어서 성능이 처참하다. gif를 지양하고 있다는 것은 처음 알았는데, 구체적인 이유는 [이곳](https://medium.com/vingle-tech-blog/stop-using-gif-as-animation-3c6d223fd35a)에서 확인해볼 수 있다.
 
@@ -124,10 +124,10 @@ module.exports = {
 > 구글에서 만든 이미지 파일 포맷. 손실 압축(JPEG)과 비손실 압축(PNG, GIF)를 모두 지원하며, 손실/비손실 모두 약 30% 정도 용량을 줄여 보다 빠른 웹 사이트 로딩이 가능하다.
 
 **<이미지 변환 이전>**
-<img src="11.png" />
+<img src="../../assets/fe-performance-basecamp/11.png" />
 
 **<이미지 변환 이후>**
-<img src="12.png" />
+<img src="../../assets/fe-performance-basecamp/12.png" />
 
 참고로 `mp4`를 사용하기 위해서는 `<video>`와 `<source>` 태그를 활용한다.
 
@@ -200,7 +200,7 @@ const Home = () => {
 
 해당 페이지로 링크되는 DOM 요소에 마우스 호버 시, 사용자의 동작을 예측하고 미리 청크 파일을 불러온다. 이렇게 마우스를 해당하는 DOM 요소에 올리면 크롬 개발자 도구의 Network 탭에서 새로운 청크 파일을 불러오는 것을 볼 수 있다!
 
-<img src="13.gif" width="560px" />
+<img src="../../assets/fe-performance-basecamp/13.gif" width="560px" />
 
 그밖에도 loadable은 SSR, Library Splitting 등의 기능을 지원하고 있다고 하니, 유용하게 활용해보자.
 
@@ -213,8 +213,8 @@ https://loadable-components.com/docs/prefetching/
 **✅ CloudFront 캐시 설정**
 cloudfront의 cache를 CachingOptimized로 선택하고, 기본으로 설정된 TTL(Time-To-Live) 설정을 해주었다.
 
-<img src="14.png" width="560px" />
-<img src="15.png" />
+<img src="../../assets/fe-performance-basecamp/14.png" width="560px" />
+<img src="../../assets/fe-performance-basecamp/15.png" />
 
 ✔️ **Minimum TTL**
 **객체가 업데이트되었는지 여부를 확인**하기 위해 CloudFront에서 오리진으로 다른 요청을 전송하기 전에 객체를 CloudFront 캐시에 유지할 최소 시간(초)을 지정한다.
@@ -227,11 +227,11 @@ cloudfront의 cache를 CachingOptimized로 선택하고, 기본으로 설정된 
 
 과제에서는 정적 파일들이 전부 제대로 캐싱이 되고 있지 않아서 성능 측정 시 해당 부분의 점수가 낮았다. 그래서 바뀔 일이 거의 없는 정적 파일들, 예를 들면 메인 페이지에서 사용되는 이미지 파일들의 경우 header에 `Cache-Control: max-age`를 넣어주었다. 많은 경우 정적 파일들에 대해서 `max-age`를 1년으로 설정해 주고 있기 때문에 그대로 적용해 보았다.
 
-<img src="16.png" width="560px" />
+<img src="../../assets/fe-performance-basecamp/16.png" width="560px" />
 
 `max-age`를 설정해 준 파일들의 경우 두 번째 이후 로드 시 memory cache에서 불러오는 것을 확인할 수 있다!
 
-<img src="17.png" width="560px" />
+<img src="../../assets/fe-performance-basecamp/17.png" width="560px" />
 
 긴 캐시 지속 기간의 문제는, 새로 바뀐 코드가 푸쉬되어도 cloudfront에서 새로 업데이트되지 않는다는 것이다. webpack은 앱을 빌드할 때마다 결과물 파일들에 유니크한 해쉬 이름을 붙여주어서 새로운 파일이 업데이트되었음을 알릴 수 있게끔 해준다.
 
@@ -284,10 +284,10 @@ https://joshua1988.github.io/web-development/webpack/caching-strategy/
 동일한 props로 반복적으로 렌더되는 자식 컴포넌트들을 `React.memo`로 감싸주었다.
 
 **<memoize 이전>** 모든 GifItem이 리렌더링
-<img src="18.gif"  />
+<img src="../../assets/fe-performance-basecamp/18.gif"  />
 
 **<memoize 이후>** 기존의 GifItem은 리렌더링이 되지 않음
-<img src="19.gif"  />
+<img src="../../assets/fe-performance-basecamp/19.gif"  />
 
 **✅ LayoutShift 없이 hover 애니메이션이 일어나야 한다.**
 CSS에서 layout shift가 발생하는 `top` 속성 대신 `transform: translate`을 사용했다.
@@ -299,9 +299,9 @@ CSS에서 layout shift가 발생하는 `top` 속성 대신 `transform: translate
 이렇게 여러 단계로 성능 개선을 마친 이후 재측정한 결과!
 
 **<lighthouse 성능 지표>**
-<img src="20.png"  />
+<img src="../../assets/fe-performance-basecamp/20.png"  />
 
 **<WepPageTest, Paris Fast 3G 성능 지표>**
-<img src="21.png"  />
+<img src="../../assets/fe-performance-basecamp/21.png"  />
 
 이밖에도 웹폰트 다운로드 개선, 이미지 preload 등 성능을 개선할 수 있는 영역은 끝이 없다. 일단 이 정도로 정리하고 앞으로 우리 서비스에서 개선해나갈 수 있는 부분들을 계속해서 찾아 나가고자 한다.

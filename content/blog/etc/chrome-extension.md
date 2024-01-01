@@ -18,11 +18,11 @@ tags: ["extension"]
 
 '유튜브'라는 카테고리에 봉착되어 유튜브에서 무엇이 불편한고...를 계속 생각하게 되었고, 얼마 지나지 않아 꽤나 날 귀찮게 만들었던 동작을 떠올렸다!
 
-<img src="01.jpeg" />
+<img src="../../assets/chrome-extension/01.jpeg" />
 
 고것은 바로... 유튜브의 타임라인 댓글.
 
-<img src="02.png" width="360px" />
+<img src="../../assets/chrome-extension/02.png" width="360px" />
 
 유튜브 영상에 댓글을 달 때, 내가 맘에 들었던 순간의 재생시간을 따서 붙이면 댓글 본문 앞에 링크 형태로 타임 라인 댓글이 붙는다. 이 링크를 클릭하면 영상의 해당 시간대로 돌아가서 그 부분부터 재생이 된다!
 
@@ -138,7 +138,7 @@ tags: ["extension"]
 
 아래 캡쳐에서처럼 무난하게 `<ytd-comments id="comments">`를 불러오면 된다고 생각했는데,
 
-<img src="03.png" />
+<img src="../../assets/chrome-extension/03.png" />
 
 `document.querySelector("#comments")`는 계속 null이 뜨는 것이 아니겠어... 😇
 
@@ -253,7 +253,7 @@ const commentsContentObserver = new MutationObserver(commentsContentLoaded);
 
 `commentsContentLoaded`에서 붙잡은 `const content = thread.querySelector("#comment-content");`로 댓글 각 아이템을 선택할 수 있게 되었다!
 
-<img src="04.png" />
+<img src="../../assets/chrome-extension/04.png" />
 
 ---
 
@@ -273,13 +273,13 @@ const commentsContentObserver = new MutationObserver(commentsContentLoaded);
 
 그러나 유튜브는 생각보다 호락호락하지 않았다. 위에서 `id="comment-content"`로 셀렉팅한 개별 댓글 요소는 또 내부적으로 자식 요소를 많이 가지고 있는데, 그중 `<!--css-build:shady-->`라고 표시된 부분이 있었다.
 
-<img src="05.png" />
+<img src="../../assets/chrome-extension/05.png" />
 
 문제는, `id="comment-content"`에 해당하는 요소를 그대로 복사해서 영상 하단에 붙이면 `<!--css-build:shady-->` 하위의 노드들은 복사되지 않는다는 것이었다...
 
 아래 캡쳐는 어떤 댓글의 타임라인을 클릭한 직후인데, 댓글이 복사될 '영역(컨테이너)'는 생성이 되었지만 우측 인스펙터에서도 볼 수 있듯, `id="comment-content"` 하위의 요소가 아무것도 딸려오지 않은 것을 알 수 있다.
 
-<img src="06.png" />
+<img src="../../assets/chrome-extension/06.png" />
 
 유튜브에서 왜 `<--css-build:shady-->` 이런걸 사용하는진 모르겠지만, 그대로 검색해보니 [Polymer CSS Builder](https://github.com/Polymer/polymer-css-build)라는 것을 쓰는 것 같다... 그리고 이 라이브러리가 궁극적으로 만들고자 하는 것은 아마도, [shadow dom](https://developer.mozilla.org/ko/docs/Web/Web_Components/Using_shadow_DOM)이 아닐까. 특정 UI를 프리셋으로 만들어놓고 두고두고 편리하게 사용할 목적의 웹 컴포넌트를 만든 것 같다. 아무튼 며칠 내내 그 어떤 방법을 써도 `<--css-build:shady-->` 안의 것들을 복사할 수는 없었다.
 

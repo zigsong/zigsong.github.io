@@ -8,7 +8,6 @@ IOC | 제어의 역전
 
 <!-- more -->
 
-<img src="/images/thumbnails/design-thumbnail.jpg" />
 
 Kent C Dodds의 [Inversion of Control](https://kentcdodds.com/blog/inversion-of-control)을 ~~내맘대로~~ 번역한 글이다.
 

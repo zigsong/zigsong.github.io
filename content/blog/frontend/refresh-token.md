@@ -62,7 +62,7 @@ CSRF 공격을 받았을 경우를 생각해 보자. 이때도 해커는 `refres
 
 그림으로 살펴보자.
 
-<img src="/refresh-token/01.png" />
+<img src="../../assets/refresh-token/01.png" />
 
 > **😮 왜 백엔드 서버에서 `refreshToken`을 직접 쿠키에 담지 않았나?**
 

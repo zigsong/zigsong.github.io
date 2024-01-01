@@ -31,13 +31,13 @@ git을 사용하는 로컬 저장소의 workflow는 크게 세 가지 단계로 
 
 이때 **작업 디렉토리**의 파일들은 다시 두 가지로 나뉜다. 한번이라도 git의 관리 대상이 되어 스냅샷이 있는 파일의 경우에는 **tracked**, 새롭게 추가되어 git이 아직 모르는 파일은 **untracked** 파일로 구분한다.
 
-<img src="01.jpeg" />
+<img src="../../assets/git-commands-everything/01.jpeg" />
 
 ‘a.txt’라는 파일을 생성하고 내용을 입력한 뒤, `git status`를 통해 작업 트리를 확인해보자.
 
 > 💡 `git status` 명령어는 작업 디렉토리와 스테이징 영역의 상태를 확인하기 위해서 사용한다.
 
-<img src="02.png" />
+<img src="../../assets/git-commands-everything/02.png" />
 
 아직 한번도 git이 관리한 적이 없는 a.txt 파일이 Untracked files에 빨간색 글씨로 표시된다. `git add` 명령어로 스테이징 영역에 파일을 올려보자.
 
@@ -52,7 +52,7 @@ git add a.txt
 
 그러면 다음과 같이 a.txt가 commit할 준비가 되어있음을 알려준다.
 
-<img src="03.png" />
+<img src="../../assets/git-commands-everything/03.png" />
 
 이제 변경된 파일을 커밋해보자. `git commit` 명령어로 현재 스테이징된 파일들을 커밋한다.
 
@@ -62,7 +62,7 @@ git commit
 
 위 명령어만 입력하면 다음과 같이 커밋 메시지를 입력할 수 있는 쉘이 뜬다.
 
-<img src="04.png" />
+<img src="../../assets/git-commands-everything/04.png" />
 
 쉘을 이용하는 건 상당히 무섭고 귀찮은 일이므로, 명령어 자체에 커밋 메시지를 추가해보도록 하자.
 
@@ -72,13 +72,13 @@ git commit -m [커밋 메시지]
 
 이제 `git log`로 커밋 내역을 확인해보자.
 
-<img src="05.png" />
+<img src="../../assets/git-commands-everything/05.png" />
 
 로그를 살펴보면 `HEAD -> main`이라고 되어있는 것을 확인할 수 있다. 여기서 `HEAD`는 현재 브랜치를 가리키는 포인터이며, 지금의 `HEAD`가 가리키는 커밋은 바로 다음 커밋의 부모가 된다.
 
 여기서 다시! a.txt 파일의 내용을 수정한 후, `git status`를 실행해 보자.
 
-<img src="06.png" />
+<img src="../../assets/git-commands-everything/06.png" />
 
 여전히 빨간 글씨로 표시되지만, 처음에 a.txt를 만들어 Untracked 영역에 있을 때와는 달리 `Changes not staged for commit`이라는 메시지를 볼 수 있다. Tracked 영역, 즉 이미 git이 관리하고 있는 파일에 수정이 발생한 것이기 때문이다.
 
@@ -119,7 +119,7 @@ git push -u origin main
 
 `git log`로 확인해보면 아래와 같이 커밋에 빨간 글씨로 `origin/main`과 `origin/HEAD`가 추가된 것을 볼 수 있다.
 
-<img src="07.png" />
+<img src="../../assets/git-commands-everything/07.png" />
 
 ### fetch
 
@@ -161,7 +161,7 @@ git checkout -b feat1
 
 git은 지금 작업 중인 (로컬) 브랜치를 `HEAD`라는 특수한 포인터로 파악한다. 방금 전 `feat1` 브랜치로 이동했으므로 이제 `HEAD`는 `feat1` 브랜치를 가리키게 된다.
 
-<img src="08.jpeg" />
+<img src="../../assets/git-commands-everything/08.jpeg" />
 
 이 상태에서 ‘feat1.txt’ 파일을 생성하고 커밋을 새로 해보자.
 
@@ -172,7 +172,7 @@ git commit -m "create feat1.txt"
 
 이제 `HEAD`가 가리키는 `feat1` 브랜치가 `main`보다 한 단계 앞서있다.
 
-<img src="09.jpeg" />
+<img src="../../assets/git-commands-everything/09.jpeg" />
 
 다시 `main` 브랜치로 되돌아가보자.
 
@@ -182,7 +182,7 @@ git checkout main
 
 이제 `main` 브랜치가 가리키는 커밋을 `HEAD`가 가리키게 되었으며, 워킹 디렉토리의 파일도 그 시점으로 되돌려 놓았다.
 
-<img src="10.jpeg" />
+<img src="../../assets/git-commands-everything/10.jpeg" />
 
 > 💡 **유용한 git branch 옵션들**
 >
@@ -206,7 +206,7 @@ git checkout -b hotfix1
 
 `hotfix1` 브랜치에서 버그 수정 후 커밋을 하면 브랜치 히스토리는 아래와 같이 그려질 것이다.
 
-<img src="11.jpeg" />
+<img src="../../assets/git-commands-everything/11.jpeg" />
 
 hotfix 내용을 운영 환경에 적용하기 위해 `hotfix1` 브랜치를 `main` 브랜치에 합쳐야 한다. 여기서 `git merge`를 사용한다.
 
@@ -215,13 +215,13 @@ git checkout main
 git merge hotfix1
 ```
 
-<img src="12.png" />
+<img src="../../assets/git-commands-everything/12.png" />
 
 `hotfix1` 브랜치가 가리키는 커밋이 `main`이 가지고 있는 커밋 히스토리를 모두 포함하고 있기 때문에 브랜치 포인터는 그저 최신 커밋으로 이동한다. 이렇게 단순히 브랜치 포인터를 이동하는 merge 방식을 Fast-forward(빨리감기)라고 부른다. 이때는 merge commit이 생기지 않는다.
 
 이제 `main`과 `hotfix1` 브랜치 포인터는 같은 커밋을 가리키게 되었다.
 
-<img src="13.jpeg" />
+<img src="../../assets/git-commands-everything/13.jpeg" />
 
 이제 필요 없어진 `hotfix1` 브랜치는 삭제하고, 원래 작업하던 `feat1` 브랜치로 돌아가 작업을 계속한다.
 
@@ -232,18 +232,18 @@ git checkout feat1
 
 `feat1`에서 어느 정도 작업을 한 이후에는 해당 작업 내용을 `main` 브랜치에 merge해야 한다. 현재 브랜치 히스토리는 아래와 같다.
 
-<img src="14.jpeg" />
+<img src="../../assets/git-commands-everything/14.jpeg" />
 
 ```
 git checkout main
 git merge feat1
 ```
 
-<img src="15.png" />
+<img src="../../assets/git-commands-everything/15.png" />
 
 `hotfix1`을 merge했을 때와는 메시지가 다르다. 현재 브랜치가 가리키는 커밋이 merge할 브랜치의 조상이 아니므로 (merge할 브랜치의 모든 커밋을 포함하고 있지 않으므로) Fast-forward merge가 불가능하다. 이 경우 git은 각 브랜치가 가리키는 커밋 두 개와 공통 조상 하나를 사용하여 3-way merge를 한다.
 
-<img src="16.jpeg" />
+<img src="../../assets/git-commands-everything/16.jpeg" />
 
 단순히 브랜치 포인터를 최신 커밋으로 옮기는 게 아니라, 3-way merge의 결과를 별도의 커밋으로 만든 후 해당 브랜치가 그 커밋을 가리키도록 이동시키는 것이다.
 
@@ -259,11 +259,11 @@ git merge feat1
 
 리모트 트래킹 브랜치의 이름은 `[리모트 저장소 이름]/[브랜치 이름]` 형식으로 되어 있다. github의 레퍼지토리를 clone 받는다면 git은 이 리모트 저장소에 자동으로 `origin`이라는 이름을 붙이고, `main` 브랜치를 가리키는 포인터를 만든다. 이 포인터가 바로 `origin/main`이며, 로컬의 `main` 브랜치는 `origin/main`을 가리키게 된다.
 
-<img src="17.jpeg" />
+<img src="../../assets/git-commands-everything/17.jpeg" />
 
 리모트 저장소의 `main` 브랜치에 누군가 다른 내용을 변경한 커밋을 push했다면 로컬의 `main` 브랜치와 히스토리가 서로 달라지게 된다.
 
-<img src="18.jpeg" />
+<img src="../../assets/git-commands-everything/18.jpeg" />
 
 이때는 우선 `fetch` 명령어로 리모트 저장소에 있는 브랜치의 내용을 가져온다.
 
@@ -275,7 +275,7 @@ git fetch origin
 
 그러면 브랜치 히스토리는 아래와 같아진다.
 
-<img src="19.jpeg" />
+<img src="../../assets/git-commands-everything/19.jpeg" />
 
 `fetch`를 통해 서버의 데이터를 받아와서 저장했지만, 워킹 디렉토리의 파일 내용은 변경되지 않고 그대로 남아있다. 새로 받은 브랜치의 내용을 합쳐주기 위해서 `merge`를 실행한다.
 
@@ -299,7 +299,7 @@ git pull origin main
 
 merge 말고도 git에서 한 브랜치에서 다른 브랜치로 합치는 방법이 있다. 바로 **rebase**다.
 
-<img src="20.jpeg" />
+<img src="../../assets/git-commands-everything/20.jpeg" />
 
 위 그림과 같이 브랜치가 분기되어있을 때, `merge` 명령어를 사용하여 합치면 3-way merge로 새로운 커밋이 생성된다.
 
@@ -317,7 +317,7 @@ git rebase main
 
 rebase 이후의 브랜치 히스토리는 아래와 같다.
 
-<img src="21.jpeg" />
+<img src="../../assets/git-commands-everything/21.jpeg" />
 
 이제 `main` 브랜치도 `C4'` 커밋을 가질 수 있도록 `main` 브랜치를 Fast-forward시켜준다.
 
@@ -326,7 +326,7 @@ git checkout main
 git merge feat1
 ```
 
-<img src="22.jpeg" />
+<img src="../../assets/git-commands-everything/22.jpeg" />
 
 짠!✨ 새로운 머지 커밋 없이 히스토리가 예쁘게 정리되었다.
 
@@ -343,7 +343,7 @@ rebase 방식을 사용할 때는 병합 충돌(merge conflict)이 발생하는 
 
 아. 그림 그리기 너무 힘들다. 여기서부터는 [출처](https://git-scm.com/book/ko/v2)서 가져온 그림을 그대로 활용하자. 그림의 `master`를 `main`으로 바꿔서 생각하면 된다. 아무튼 요즘 github은 `main`이라는 이름을 사용하고 있으니.
 
-<img src="23.png" />
+<img src="../../assets/git-commands-everything/23.png" />
 
 이때 `server` 브랜치는 그대로 두고 `client` 브랜치만 `main`으로 합치는 상황을 생각해보자. `server`와는 아무 관련 없는 `client` 커밋은 `C8`, `C9`이다. 이 두 커밋을 `main` 브랜치에 적용하기 위해서 `--onto` 옵션을 사용한다. 첫 번째 인자로는 새로운 조상이 될 베이스 커밋을 넘겨주고, 두 번째 인자로는 기존 베이스 커밋을 넘겨준다.
 
@@ -353,7 +353,7 @@ git rebase --onto main server client
 
 `server` 브랜치와 `server` 브랜치와 `client` 브랜치의 공통 조상까지의 커밋을 `client` 브랜치에서 없애고 그 이후의 `client` 커밋들을 `main` 브랜치를 새로운 베이스로 하여 rebase해준다. ~~어려워서 토나올 것 같지만, 분명 이런 게 필요한 경우도 맞닥뜨려봤다.~~
 
-<img src="24.png" />
+<img src="../../assets/git-commands-everything/24.png" />
 
 이제 `main` 브랜치로 돌아가서 Fast-forward시킬 수 있다.
 
@@ -362,11 +362,11 @@ git checkout main
 git merge client
 ```
 
-<img src="25.png" />
+<img src="../../assets/git-commands-everything/25.png" />
 
 이제 홀로 남겨진 `server` 브랜치의 작업이 마무리되면, server 브랜치로 이동 후 `git rebase main` 명령어로 `server`를 `main`에 rebase시켜준다. 결과는 아래와 같다.
 
-<img src="26.png" />
+<img src="../../assets/git-commands-everything/26.png" />
 
 > 💡 Tip!
 > `git rebase [베이스 브랜치] [토픽 브랜치]`로 인자를 입력하면, 토픽 브랜치로 checkout하지 않고도 rebase할 수 있다.
@@ -382,7 +382,7 @@ git checkout main
 git merge server
 ```
 
-<img src="27.png" />
+<img src="../../assets/git-commands-everything/27.png" />
 
 > 💡 **rebase 시 주의사항**
 > 이미 공개 저장소에 push한 커밋을 rebase하면 안 된다. rebase는 기존의 커밋을 그대로 이용하는 것이 아니라, 내용은 같지만 다른 커밋을 새로 만든다. 새 커밋을 push하고 동료 중 누군가가 그 커밋을 pull해서 작업을 한다고 하자. 그런데 그 커밋을 `git rebase`로 바꿔서 push해버리면 동료가 다시 push했을 때 동료는 다시 merge해야 한다. 그리고 동료가 다시 merge한 내용을 pull하면 내 코드는 정말 엉망이 되어버린다. 🤯
@@ -497,8 +497,8 @@ git revert [from 커밋의 해쉬]..[to 커밋의 해쉬]
 
 `reset`과 `revert`의 차이를 그림으로 정리해 보자.
 
-<img src="28.jpeg" />
-<img src="29.jpeg" />
+<img src="../../assets/git-commands-everything/28.jpeg" />
+<img src="../../assets/git-commands-everything/29.jpeg" />
 
 `reset`과 달리 `revert`는 중간 커밋만 삭제할 수 있고, 이전으로 되돌린 커밋의 이력이 모두 커밋 메시지를 통해 남기 때문에 히스토리 유지 차원에서 더 유용하다고 할 수 있다.
 
@@ -508,7 +508,7 @@ git revert [from 커밋의 해쉬]..[to 커밋의 해쉬]
 
 github에서 PR(Pull Request)을 보내는 경우, merge하려는 베이스 브랜치와 충돌이 없다면 Merge Pull Request 버튼이 활성화된다. 이때 오른쪽의 역삼각형 모양을 눌러보면, 아래와 같이 3가지 옵션이 표시된다.
 
-<img src="30.png" />
+<img src="../../assets/git-commands-everything/30.png" />
 
 팀 프로젝트를 할 때 항상 헷갈렸던 세 가지 옵션들에 대해 살펴보자!
 
@@ -516,23 +516,23 @@ github에서 PR(Pull Request)을 보내는 경우, merge하려는 베이스 브�
 
 PR의 베이스가 되는 `main` 브랜치와 토픽 브랜치(여기서는 `feat1`이라고 하겠다.)의 작업 이력이 다르다면 새로운 merge commit을 생성하게 된다. 히스토리는 아래 그림과 같다.
 
-<img src="31.png" />
+<img src="../../assets/git-commands-everything/31.png" />
 
 🔖 **Squash a merge**
 
 squash는 한국어로도 스쿼시란다. ㅡㅡ
 
-<img src="32.png" />
+<img src="../../assets/git-commands-everything/32.png" />
 
 ‘찌부러뜨리다’라는 말 정도로 해석이 가능한데, 여기서는 PR에 딸려 있는 모든 커밋들을 하나로 합쳐 새로운 커밋으로 만들어 베이스 브랜치인 `main`에 추가시키는 방식이다. 토픽 브랜치의 커밋 히스토리를 합쳐서 깔끔하게 만들기 위해 사용한다. 역시나 새로운 merge commit이 추가된다.
 
-<img src="33.png" />
+<img src="../../assets/git-commands-everything/33.png" />
 
 🔖 **Rebase a merge**
 
 PR에 포함된 모든 커밋들이 합쳐지지 않고 각각 `main` 브랜치에 추가된다. 각 commit은 모두 하나의 부모를 가진다. 이때 새로운 merge commit을 생성하지 않기 때문에 커밋 히스토리를 하나로 깔끔하게 만들 수 있다. (다만 하나의 브랜치에서 작업한 것처럼 보이게 된다!)
 
-<img src="34.png" />
+<img src="../../assets/git-commands-everything/34.png" />
 
 이렇게 어떤 방법으로든 스무스하게 merge가 되면 좋겠지만… 그렇지 못한 경우는 늘상 발생한다. `main` 브랜치에서 파생한 `feat1` 브랜치에서 작업 후 `main` 브랜치를 베이스로 PR을 열어놓은 사이, `main` 브랜치에서 파생한 또다른 브랜치인 `feature2`의 작업 내역이 먼저 PR merge됐다면 어떨까?
 

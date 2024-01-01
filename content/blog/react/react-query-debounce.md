@@ -70,7 +70,7 @@ const TechInput = () => {
 }
 ```
 
-<img src="01.gif" width="560px" />
+<img src="../../assets/react-query-debounce/01.gif" width="560px" />
 
 사용자가 한 글자씩 입력할 때마다 요청이 발생하는 것이 아니라, 잠시 기다린 후 요청이 발생하는 것을 확인할 수 있다. 모든 input change마다 request가 발생하지 않고 조금 delay를 두고 request를 보내기 때문에 네트워크 요청 횟수를 줄일 수 있다.
 

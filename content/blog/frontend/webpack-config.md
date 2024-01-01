@@ -49,7 +49,7 @@ module.exports = {
 npx browserslist
 ```
 
-<img src="01.png" />
+<img src="../../assets/webpack-config/01.png" />
 
 ### ✅ file-loader 대신 asset/resource
 

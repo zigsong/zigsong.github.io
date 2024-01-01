@@ -17,7 +17,7 @@ tags: ["frontend"]
 
 (👇 얘 아님)
 
-<img src="01.png" width="360px" />
+<img src="../../assets/lottie/01.png" width="360px" />
 
 ---
 
@@ -57,7 +57,7 @@ gif를 사용하면 안 되는 이유는 다음과 같다.
 
 이렇게 우측 상단에 다운로드 버튼을 클릭하면, 어떤 파일 형식으로 받을 것인지 물어본다.
 
-<img src="02.png" width="480px" />
+<img src="../../assets/lottie/02.png" width="480px" />
 
 당연히 'Lottie JSON'으로 받는다. 그런데 생각보다 gif나 mp4의 용량도 크진 않다. (짧아서 그런가?) 'Optimized Lottie JSON'도 있는데, 돈 내야 한다. 자본주의는 무서워 💸
 
@@ -118,7 +118,7 @@ react-lottie, lottie-web, lottie-react 세 가지 라이브러리를 비교해�
 [npm trends](https://npmtrends.com/lottie-react-vs-lottie-web-vs-react-lottie)에 세 개의 라이브러리를 비교해보면, `lottie-react`는 한 물 간듯 하고(star 수도 348 뿐이다.), `lottie-web`의 사용률이 압도적으로 높다. `lottie-web`이 유난히 높은 이유는, 뒤에서도 설명하겠지만, react 전용 라이브러리가 아니기 때문인 것 같다.
 
 <br />
-<img src="03.png" width="600px" />
+<img src="../../assets/lottie/03.png" width="600px" />
 
 ### 🍀 번들 크기
 

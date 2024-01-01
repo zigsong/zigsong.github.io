@@ -202,7 +202,7 @@ React 18에서는 Suspense를 사용할 수 있다. 컴포넌트를 분리하고
 
 `Suspense`로 감싸진 `Comments` 컴포넌트는, 해당 부분의 HTML이 모두 그려질 때까지 기다리는 대신 `fallback` 컴포넌트를 반환한다.
 
-<img src="01.png" />
+<img src="../../assets/react-18/01.png" />
 
 (프론트)서버에서 `Comments`에 필요한 데이터 fetching이 완료되면, 리액트는 **같은 stream**으로 추가적인 HTML을 전달한다. 이렇게 뒤늦게 HTML을 쑤셔 넣는(?) 것을 ‘**pop in**‘이라고 한다. 각 컴포넌트는 서로 다른 컴포넌트의 데이터가 완전히 로드될 때까지 기다릴 필요가 없다.
 

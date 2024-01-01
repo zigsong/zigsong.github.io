@@ -181,7 +181,7 @@ $ node ./dist-server/main.js
 
 개발자 도구의 네트워크 탭을 열어보면, 서버에서 만든 응답에서부터 이미 모든 HTML 요소들이 마크업되어 내려오는 것을 확인할 수 있다. (왜 Happy Chuseok이 뜨는지는…)
 
-<img src="01.png" />
+<img src="../../assets/ssr-without-next/01.png" />
 
 ---
 
@@ -354,7 +354,7 @@ About 페이지에서 접속 시 아래와 같이 script 태그로 About의 청�
 
 (서버 코드 파일에서 ‘/about’ url 요청에 대한 처리를 위해 `app.get` 코드도 추가해준 상태다.)
 
-<img src="02.png" />
+<img src="../../assets/ssr-without-next/02.png" />
 
 ---
 

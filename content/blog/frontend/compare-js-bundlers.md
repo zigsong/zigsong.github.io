@@ -118,7 +118,7 @@ webpack vs parcel vs rollup vs esbuild vs vite
   - JSX, CSS 또는 Vue/Svelte 컴포넌트와 같이 컴파일링이 필요하고, 수정이 잦은 Non-plian JS 소스코드
     → Native ESM을 이용해 소스코드를 제공하여, 브라우저를 번들러처럼 사용한다.
     - 조건부 동적 import 이후의 코드는 현재 화면에서 실제로 사용되어야만 처리된다
-      <img src="01.png" >
+      <img src="../../assets/compare-js-bundlers/01.png" >
   - ☝️production에서는 rollup을 사용한다
 
     > 💡 **production에서는 esbuild가 아닌 번들링 방식을 사용하는 이유**
@@ -142,7 +142,7 @@ webpack vs parcel vs rollup vs esbuild vs vite
   - CSS를 자동으로 추출해 파일로 분리
   - 빌드 시 Direct import 구문에 대해 `<link ref="modulepreload">` 디렉티브를 이용해 미리 모듈을 캐싱하도록 자동으로 변환
   - 모든 Direct import 구문을 preload하여 불필요한 네트워크 요청을 줄인다
-    <img src="02.png" >
+    <img src="../../assets/compare-js-bundlers/02.png" >
 
 - 👎 tree-shaking, 코드 스플리팅을 지원하지 않는다.
 - 👎 rollup 번들러를 사용한 pre-configured 빌드 환경에서 rollup config를 뜯어내기가 아주 어렵다
@@ -155,7 +155,7 @@ webpack vs parcel vs rollup vs esbuild vs vite
 
 이럴수가..?
 
-<img src="03.png" >
+<img src="../../assets/compare-js-bundlers/03.png" >
 
 ---
 

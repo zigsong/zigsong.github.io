@@ -17,7 +17,7 @@ SSR을 사용하는 next.js 앱을 EC2에 배포하려다가 이것도 하고 �
 
 aws 계정에 로그인한 후, EC2 대시보드에 들어가 우측 상단의 [인스턴스 시작] 버튼을 누른다.
 
-<img src="01.png" />
+<img src="../../assets/ec2-next/01.png" />
 
 ### ✅ 단계 1: AMI 선택
 
@@ -27,7 +27,7 @@ AMI는 Amazon Machine Image의 약자로, 인스턴스를 시작하는 데 필�
 
 호스팅 컴퓨터로 Ubuntu 18.04 버전의 SSD Volume type을 선택한다.
 
-<img src="02.png" />
+<img src="../../assets/ec2-next/02.png" />
 
 > 👾 **SSD란?**
 > Solid State Disk의 약자로, 보조기억장치를 가리킨다.
@@ -37,13 +37,13 @@ AMI는 Amazon Machine Image의 약자로, 인스턴스를 시작하는 데 필�
 
 ~~현재 테크코스의 계정으로 내 돈은 아니지만~~, 아무튼 간에 t2.micro 또는 t2.medium을 선택한다. 프리티어 이용 시 t2.micro만 사용 가능하다.
 
-<img src="03.png" />
+<img src="../../assets/ec2-next/03.png" />
 
 ### ✅ 단계 3: 인스턴스 세부 정보 구성
 
 VPC와 서브넷을 선택하고, 퍼블릭 IP를 활성화해준다. (노출되어도 상관없는 정보라고 믿어본다…)
 
-<img src="04.png" />
+<img src="../../assets/ec2-next/04.png" />
 
 **VPC**란 Virtual Private Cloud의 약자로, 사용자의 AWS 계정 전용 가상 네트워크다. VPC가 없다면 수많은 EC2 인스턴스들이 서로 거미줄처럼 연결되고 인터넷과 연결되어 복잡도를 증가시킬 것이다.
 VPC를 적용하여 VPC별로 네트워크를 구성하고, 독립적으로 네트워크 설정을 줄 수 있다. 또, VPC를 사용하면 리소스 배치, 연결 및 보안을 포함하여 가상 네트워킹 환경을 제어할 수 있다
@@ -52,7 +52,7 @@ VPC를 적용하여 VPC별로 네트워크를 구성하고, 독립적으로 네�
 
 VPC와 서브넷은 아래와 같은 구조로 이루어져 있다.
 
-<img src="05.png" />
+<img src="../../assets/ec2-next/05.png" />
 
 > 👾 **EC2? VPC?**
 >
@@ -69,13 +69,13 @@ VPC와 서브넷은 아래와 같은 구조로 이루어져 있다.
 
 원하는 볼륨 크기를 설정한다. EC2의 하드디스크 용량을 설정하는 것이다. (30GiB 이상을 권장한다. 하지만 그냥 기본값으로 하고 넘어갔다. 내 돈이 아니니까…💸)
 
-<img src="06.png" />
+<img src="../../assets/ec2-next/06.png" />
 
 ### ✅ 단계 5: 태그 추가
 
 다른 사람의 서버와 구분할 수 있도록 `Name` 태그를 붙여준다.
 
-<img src="07.png" />
+<img src="../../assets/ec2-next/07.png" />
 
 ### ✅ 단계 6: 보안 그룹 구성
 
@@ -87,7 +87,7 @@ ex) SSH 접속 포트는 22번, 서비스 기본 포트는 80번
 - 인바운드 - 외부에서 인스턴스로 들어오는 요청
 - 아웃바운드 - 인스턴스에서 외부로 나가는 트래픽
 
-<img src="08.png" />
+<img src="../../assets/ec2-next/08.png" />
 
 ### ✅ 단계 7: 인스턴스 시작 검토
 
@@ -96,17 +96,17 @@ ex) SSH 접속 포트는 22번, 서비스 기본 포트는 80번
 이 키페어는 SSH로 접속 시 필요한 키로, 한번 발급 받은 후 분실하면 다시 찾을 수 없으니 잘 보관해두자! 🔑
 (`.pem` 파일 형식으로 생성된다)
 
-<img src="09.png" width="560px" />
+<img src="../../assets/ec2-next/09.png" width="560px" />
 
 기본적으로 RSA 방식으로 암호화된 공개키-비밀키 형식의 키페어를 제공하지만, 올해 8월부터 제공하는 ED25519 방식의 키페어를 발급 받으면 더욱 높은 수준의 보안 시스템을 이용할 수 있다고 한다.
 
 클라이언트의 SSH에서 AWS EC2 인스턴스에 접속할 때 키페어는 다음과 같은 과정을 통해 교환된다.
 
-<img src="10.png" />
+<img src="../../assets/ec2-next/10.png" />
 
 이렇게 EC2 인스턴스가 생성되었다! ~~고작~~ 첫 번째 단계가 끝났다 😑
 
-<img src="11.png" />
+<img src="../../assets/ec2-next/11.png" />
 
 ---
 
@@ -114,11 +114,11 @@ ex) SSH 접속 포트는 22번, 서비스 기본 포트는 80번
 
 방금 만든 인스턴스를 클릭하고, [연결] 버튼을 눌러준다.
 
-<img src="12.png" />
+<img src="../../assets/ec2-next/12.png" />
 
 그러면 다음과 같이 친절하게 SSH 연결을 위한 커맨드를 알려준다.
 
-<img src="13.png" />
+<img src="../../assets/ec2-next/13.png" />
 
 로컬에서 발급받은 pem(키페어) 파일이 있는 위치로 이동하여, 시키는 대로 입력한다.
 
@@ -132,11 +132,11 @@ $ ssh -i "KEY-zigsong-deploy-guidebook.pem" ubuntu@ec2-13-125-205-164.ap-northea
 
 이때, 첫 접속 시 다음과 같은 에러가 발생할 수 있다. 원격지의 호스트를 로컬에 연결할 때 첫 번째로 자격을 증명하기 위한 과정이다. ‘yes’를 선택하여 쭉 넘어간다.
 
-<img src="14.png" />
+<img src="../../assets/ec2-next/14.png" />
 
 정상적으로 실행되면 다음과 같이 원격지 호스트 컴퓨터인 EC2 인스턴스에 접속된다!
 
-<img src="15.png" />
+<img src="../../assets/ec2-next/15.png" />
 
 ---
 
@@ -219,20 +219,20 @@ app.prepare().then(() => {
 
 next.js 커스텀 서버에서 사용하는 포트 번호는 EC2 인스턴스의 보안 그룹에서 인바운드 규칙에 포함되어 있어야 한다. 우테코 루트 계정을 사용하는 현재 보안 그룹에 따로 손을 댈 수 없어서, 기존 보안 그룹에 있는 8080 포트를 사용했다. ‘원본’의 ‘0.0.0.0/0’은 모든 소스를 허용함을 의미한다.
 
-<img src="16.png" />
+<img src="../../assets/ec2-next/16.png" />
 
 ssh 내부에서 아까 clone 받은 프로젝트 레포지토리로 들어가서, `next build`를 통해 커스텀 서버에서 관리할 파일을 생성한다. 실행 결과는 다음과 같다.
 
-<img src="17.png" />
+<img src="../../assets/ec2-next/17.png" />
 
 이제 `next start`로 서버를 실행해 준다. (모든 커맨드는 ssh 셸 안에서 이루어진다.)
 
 인스턴스의 퍼블릭 IP 주소 또는 퍼블릭 DNS에 포트 ‘:8000’을 붙여 접속하면 정상적으로 next.js 앱이 뜨는 것을 확인할 수 있다.
 
-<img src="18.png" />
+<img src="../../assets/ec2-next/18.png" />
 
 **<그렇게 탄생한 앱>**
-<img src="19.png" />
+<img src="../../assets/ec2-next/19.png" />
 
 …앱이 아주 썰렁하다. 어쩔 수 없다.
 
@@ -259,7 +259,7 @@ $ pm2 start server.js --name "next" # 프로세스 이름을 따로 지정하고
 
 `pm2 list` 명령어로 현재 실행중인 프로세스들을 확인할 수 있다.
 
-<img src="20.png" />
+<img src="../../assets/ec2-next/20.png" />
 
 이것저것 만져보며 프로세스를 일시정지하거나, 삭제하거나, error 시 재가동해 보자.
 
@@ -324,11 +324,11 @@ nginx가 정상적으로 구동되고 있는지 확인해 보자.
 $ ps -ef | grep nginx
 ```
 
-<img src="21.png" />
+<img src="../../assets/ec2-next/21.png" />
 
 현재 EC2 인스턴스의 기본 포트(80, 또는 생략 가능)으로 접속하면 아래와 같은 화면이 나타난다.
 
-<img src="22.png" />
+<img src="../../assets/ec2-next/22.png" />
 
 nginx를 정상적으로 설치했다면, 기본 포트에 우리의 next.js 앱을 띄워주도록 설정을 수정해줘야 한다. nginx의 config를 설정하는 방법을 찾다가, 구글 검색 결과 최상단에 위치한 블로그를 많이 참고했다. 그런데 그 글이 우리 놀토 팀원 [아마찌의 포스트](https://velog.io/@new_wisdom/AWS-EC2에-Node.jsExpress-pm2-nginx-배포하기)였다니 😮
 
@@ -366,11 +366,11 @@ $ sudo nginx -t
 
 참고로 nginx 서버에서 80포트를 사용하므로, EC2 인스턴스의 인바운드 규칙 역시 80포트를 포함하고 있어야 한다.
 
-<img src="23.png" />
+<img src="../../assets/ec2-next/23.png" />
 
 이제 EC2 퍼블릭 IP의 기본 포트로 앱 접속이 가능하다!
 
-<img src="24.png" />
+<img src="../../assets/ec2-next/24.png" />
 
 ---
 
@@ -380,11 +380,11 @@ $ sudo nginx -t
 
 나만의 도메인을 등록해보자. ~~미션에까지 돈을 쓰고 싶진 않기 때문에~~ [내도메인 한국](https://xn--220b31d95hq8o.xn--3e0b707e/) 사이트에서 괜찮은 주소를 찾았다. EC2에서 제공하는 Public IP 주소만 연결해주면 된다.
 
-<img src="25.png" />
+<img src="../../assets/ec2-next/25.png" />
 
 여전히 별거없지만, 이제 나름 도메인이라고 붙인 주소로 접속할 수 있다.
 
-<img src="26.png" />
+<img src="../../assets/ec2-next/26.png" />
 
 그런데 아무래도 저 ‘주의 요함’ 문구가 마음에 들지 않는다. HTTPS를 붙여 보안 설정을 강화해보도록 하자.
 
@@ -392,7 +392,7 @@ $ sudo nginx -t
 
 nginx의 site-available 파일에 다시 들어가서 HTTPS 접속을 원하는 서버의 이름을 `server_name`으로 추가해준다. (위에서 생성한 도메인을 붙이면 된다.)
 
-<img src="27.png" />
+<img src="../../assets/ec2-next/27.png" />
 
 Certbot을 설치한다.
 
@@ -413,7 +413,7 @@ $ sudo certbot --nginx
 
 그러면 다음과 같은 2가지 선택지 중 선택하라고 나온다.
 
-<img src="28.png" />
+<img src="../../assets/ec2-next/28.png" />
 
 HTTP로 접속했을 때, HTTPS로 자동 리다이렉트되도록 설정할 것인지 묻는 옵션이다. 2번을 선택하면 Certbot에서 nginx 설정을 알아서 바꿔준다. ~~따로 설정하기 머리 아프기 때문에~~ 2번을 선택한다.
 
@@ -434,11 +434,11 @@ $ 0 18 1 * * certbot renew --renew-hook="sudo service restart nginx"
 
 그럼 진짜 설정 끝!
 
-<img src="29.png" />
+<img src="../../assets/ec2-next/29.png" />
 
 이제 HTTPS로 접속할 수 있다. ‘주의 요함’ 대신 자물쇠 아이콘이 걸려있다.
 
-<img src="30.png" />
+<img src="../../assets/ec2-next/30.png" />
 
 ---
 

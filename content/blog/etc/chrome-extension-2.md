@@ -202,7 +202,7 @@ const commentsContainerLoaded: MutationCallback = (mutationsList) => {
 
 그런데, 컨테이너의 `MutationObserver` 실행에 따라 `commentsContainerLoaded`이 반복적으로 실행되어서, 위 코드의 `commentsContent`에 붙인 click 이벤트에 대한 핸들러가 여러 번 붙게 되고, 그렇게 되면 실제 결과는...
 
-<img src="01.png" width="100%" />
+<img src="../../assets/chrome-extension-2/01.png" width="100%" />
 
 😱😱😱
 

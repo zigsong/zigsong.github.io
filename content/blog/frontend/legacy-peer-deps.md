@@ -11,8 +11,6 @@ npm 트러블슈팅 연대기
 
 ---
 
-<img src="/images/thumbnails/troubleshooting-thumbnail.jpeg" />
-
 프로젝트에서 패키지를 하나 업데이트하려고 시도했던 일이 시발점이 되어 무려 주말 포함 일주일을 나를 괴롭혔던 문제… 돌아버리는 줄 알았다.
 
 새로 업데이트한 패키지가 잘 동작하지 않아 `node_modules`를 삭제하고 `npm i`를 했더니 처음 보는 오만가지 에러가 발생했다.
@@ -87,17 +85,17 @@ package-lock.json 기반으로 프로젝트의 패키지들을 설치하는 것�
 
 너무 고마워서 배라 깊티 보내주니 헛소리를 하는 동기… 이름을 가리지 않아주면 더욱 좋아할 것 같다.
 
-<img src="01.png" width="320px" />
+<img src="../../assets/legacy-peer-deps/01.png" width="320px" />
 
 [나와 비슷한 문제를 겪고 있는 분](https://github.com/npm/cli/issues/5128)에게 답글도 달아주었다 ㅎㅎ
 
-<img src="02.png" />
+<img src="../../assets/legacy-peer-deps/02.png" />
 
 처음으로 생태계에 기여한 것 같아 기쁘다. 저 분도 해결되실진 모르겠지만…
 
 대충 영어로 적어보고 파파고 돌려보니 얼추 맞는 소리인 것 같다.
 
-<img src="03.png" />
+<img src="../../assets/legacy-peer-deps/03.png" />
 
 ~~아직 영어 실력 다 안 죽었네~~
 

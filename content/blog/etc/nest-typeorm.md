@@ -10,7 +10,7 @@ tags: ["docker", "mysql", "nestjs", "typeorm"]
 
 사내 웹프론트그룹에서 하고 있는 어떠한 비밀(?..) 프로젝트에서, 막내라는 이유로 그룹장을 하고 있당. 최종적으로 만들고 싶은 플랫폼의 프로토타이핑을 하고, 각자의 꿈을 펼쳐보기로…
 
-<img src="01.png" />
+<img src="../../assets/nest-typeorm/01.png" />
 
 그렇게 무모하게 Nest.js가 뭔지도 잘 모른채, 그저 fancy하다는 이유로 첫 삽을 파보았다.
 
@@ -58,7 +58,7 @@ nest g controller [name]
 nest g resource [name]
 ```
 
-<img src="02.png" width="400px" />
+<img src="../../assets/nest-typeorm/02.png" width="400px" />
 
 ✔️ **Provider**
 
@@ -157,7 +157,7 @@ sudo apt-get install yum
 apt-get: command not found
 ```
 
-<img src="03.png" width="400px" />
+<img src="../../assets/nest-typeorm/03.png" width="400px" />
 
 (아마도) `homebrew`로 간신히 도커를 설치하고, mysql 실행을 위해 mysql image를 pull해준다. 아니?! 이게 대체 무슨 소리냐
 
@@ -177,7 +177,7 @@ docker pull mysql
 docker images
 ```
 
-<img src="04.png" />
+<img src="../../assets/nest-typeorm/04.png" />
 
 mysql이 잘 받아진 것 같다 _^^_
 
@@ -223,7 +223,7 @@ docker run --name [container name] -e MYSQL_ROOT_PASSWORD=<password> -d -p 3306:
 
 `3306:3306`은, 각각 host의 포트와 container의 포트를 가리킨다. host의 3306번 포트와 docker container의 3306번 포트를 연결하라는 의미다. 처음에 무지성으로 쓰다가, 위대하신 이고잉 선생님의 강의를 듣고 이해 완.
 
-<img src="05.png" />
+<img src="../../assets/nest-typeorm/05.png" />
 
 _(영광스러운 캡쳐도 떠 두었다.)_
 
@@ -239,7 +239,7 @@ _(영광스러운 캡쳐도 떠 두었다.)_
 
 거의 반나절을 고민한 끝에 찾아냈다.
 
-<img src="06.png" />
+<img src="../../assets/nest-typeorm/06.png" />
 
 🤯🤯🤯
 
@@ -247,7 +247,7 @@ _(영광스러운 캡쳐도 떠 두었다.)_
 
 로컬에서 돌아가고 있던 MySQL 서버를 꺼준 후 다시 실행하면, 짜잔!
 
-<img src="07.png" />
+<img src="../../assets/nest-typeorm/07.png" />
 
 _(갑자기 나타난 docker desktop)_
 
@@ -259,7 +259,7 @@ _(갑자기 나타난 docker desktop)_
 
 현재 실행중인 프로세스 뿐 아니라 전체 프로세스를 확인하기 위해서는 `docker ps -a` 를 입력하면 된다. (`-a`는 누가 봐도 `all` 임을 짐작할 수 있다. 아님 말고)
 
-<img src="08.png" />
+<img src="../../assets/nest-typeorm/08.png" />
 
 컨테이너가 하나밖에 없어서 썰렁하다. 새 컨테이너를 만들긴 귀찮으니 잠시 `mysql-local` 컨테이너를 꺼준 후 뭐가 나오는지 봐준다.
 
@@ -267,7 +267,7 @@ _(갑자기 나타난 docker desktop)_
 docker stop mysql-local
 ```
 
-<img src="09.png" />
+<img src="../../assets/nest-typeorm/09.png" />
 
 아까와는 달리 `STATUS`가 `Exited`로 표기된 것을 알 수 있다. 이제 보여주기식 실행이 끝났으니 다시 실행시킨다. `docker start mysql-local`을 하면 될 것 같았으나, 안 된다. 1년차 개발자의 짬을 믿고 `docker restart mysql-local` 을 입력해준다. 성공. ✌️
 
@@ -291,7 +291,7 @@ ex) `docker exec mysql-test pwd`
 
 아무튼 그렇게 실행해준다.
 
-<img src="10.png" />
+<img src="../../assets/nest-typeorm/10.png" />
 
 - `-i` : interactive shell
 - `-t`: terminal
@@ -312,7 +312,7 @@ ex) `docker exec mysql-test pwd`
 
 docker는 아무리 찾아봐도 이해가 되지 않았는데, [이고잉 선생님의 도커 입문 수업](https://www.youtube.com/watch?v=Ps8HDIAyPD0&list=PLuHgQVnccGMDeMJsGq2O-55Ymtx0IdKWf)을 듣고 갈증이 싹 가셨다.
 
-<img src="11.png" />
+<img src="../../assets/nest-typeorm/11.png" />
 
 ---
 
@@ -331,29 +331,29 @@ mysql -u root -p
 - `-u` `root`: root user를 사용ㅎ안다.
 - `-p` : `p`는 `password`의 약자다. `-p [password]` 와 같은 식으로 바로 입력해줄 수도 있다. 패스워드를 생략하고 `-p` 만 사용하면 아래와 같은 패스워드 입력창이 뜬다.
 
-<img src="12.png" />
+<img src="../../assets/nest-typeorm/12.png" />
 
 패스워드까지 입력하면, ta-da! 🎉
 
-<img src="13.png" />
+<img src="../../assets/nest-typeorm/13.png" />
 
 mysql 서버가 실행되었다.
 
 그치만 난 쿼리를 해본지 오래됐으므로 workbench로 간다.
 
-<img src="14.png" />
+<img src="../../assets/nest-typeorm/14.png" />
 
 UI는 정말 못생겼지만, 맥도날드 키오스크에서 헤매고 계실 우리 어머니들의 심정을 헤아려가며 찾다보면 어떻게든 테이블과 데이터를 만들 수 있다. 우여곡절을 거친 신입 개발자는 이제 뭘 클릭하는 데 거침없다. 우당탕탕 만들었기 때문에 어떻게 만들었는지 설명하진 못한다.
 
 적당히 `techtree` 라는 이름의 테이블을 생성하고, `name`, `desc`, `image`, `url`, `type`, `id` 라는 필드(column이라고 해야될 듯 하다.)를 만들어주었다.
 
-<img src="15.png" />
+<img src="../../assets/nest-typeorm/15.png" />
 
 그리고 데이터도 2개 심어주었는데, 워크벤치 껐다가 다시 켜니 이전에 심어둔 데이터를 어디서 확인하는지 도통 모르겠다 ㅡㅡ 내 데이터 내놔라 👊
 
 그래서 이건 그냥 shell에서 확인했다.
 
-<img src="16.png" />
+<img src="../../assets/nest-typeorm/16.png" />
 
 `desc`는 한글로 썼다고 저렇게 표시해주냐 ㅡㅡ 성공한 사람이 되어서 한글을 전세계 제1언어가 되게 하리라. 물론 거짓말이다. 그냥 아무도 모르게 조용히 살고 싶다.
 
@@ -548,13 +548,13 @@ export class TechStackModule {}
 
 자 이제 `yarn start` 로 서버를 실행시켜주면…! 두둥탁 🥁
 
-<img src="17.png" />
+<img src="../../assets/nest-typeorm/17.png" />
 
 인생은 원래 뜻대로 되는 일이 별로 없다.
 
 게다가 저 마지막 줄에 `TechStacksController (?)` 물음표는 정말 사람 킹받게 한다.
 
-<img src="18.png" />
+<img src="../../assets/nest-typeorm/18.png" />
 
 여기저기 수소문한 끝에, 앱의 root가 되는 `app.module.ts`에서 중복으로 TechStack의 물건들을 갖다 써서 그런다고 한다.
 
@@ -574,7 +574,7 @@ import { TechStacksService } from "./tech-stacks/tech-stacks.service";
 export class AppModule {}
 ```
 
-<img src="19.png" />
+<img src="../../assets/nest-typeorm/19.png" />
 
 성공 🤩
 
@@ -582,14 +582,14 @@ export class AppModule {}
 
 이제 브라우저에서 localhost:3000으로 접속하면 아까 mysql로 봤던 데이터를 확인할 수 있다.
 
-<img src="20.png" />
+<img src="../../assets/nest-typeorm/20.png" />
 
 포스트맨에서도 물론 잘 나온다규
 
-<img src="21.png" />
+<img src="../../assets/nest-typeorm/21.png" />
 
 아까 만든 `Repository.create()` 메서드로 데이터 추가도 할 수 있다. 후후…
-<img src="22.gif" />
+<img src="../../assets/nest-typeorm/22.gif" />
 
 이제 끝!
 

@@ -106,7 +106,7 @@ class MyClass {
 const test = new MyClass();
 ```
 
-<img src="01.png" width="400px" />
+<img src="../../assets/havruta-week-4/01.png" width="400px" />
 
 react class의 constructor에 선언한 메소드의 경우 모두 class 인스턴스에 매핑된다.
 
@@ -125,7 +125,7 @@ class MyClass {
 const test = new MyClass();
 ```
 
-<img src="02.png" width="440px" />
+<img src="../../assets/havruta-week-4/02.png" width="440px" />
 
 이때 `method3()`과 같은 선언 방식은 아래와 같은 문제들이 뒤따른다.
 

@@ -9,13 +9,11 @@ tags: ["frontend"]
 
 <!-- more -->
 
-<img src="/images/thumbnails/frontend-thumbnail.jpeg" />
-
 우테코 Lv4 마크업 미션으로 애플 클론코딩을 진행했다. 14일 화요일에 미션이 주어졌는데, 제출일은 16일 아침까지고, 한국 시간 15일 새벽 2시에 애플 신제품 발표로 홈페이지가 리뉴얼되면서 (ㅎ) 알면서도 곤혹을 치뤘다. 또 모든 크루들이 그랬겠지만, 17일에 있었던 데모데이 준비까지 겹쳐 이틀 밤을 거의 새다시피 하고 몸이 엉망진창이…
 
 일부 섹션을 생략한 완성작은 [여기](https://zigsong.github.io/html-apple-store/)에…
 
-<img src="01.png" />
+<img src="../../assets/apple-clone/01.png" />
 
 ## HTML tags
 
@@ -44,7 +42,7 @@ tags: ["frontend"]
 
 실제로 애플 공홈에서도 각 섹션별 이미지를 `background-image` 속성으로 설정하고 있었다. (그새 홈페이지가 또 바뀌었다..)
 
-<img src="02.png" />
+<img src="../../assets/apple-clone/02.png" />
 
 **Ref**
 https://developer.mozilla.org/ko/docs/Web/HTML/Element/aside
@@ -63,7 +61,7 @@ https://www.youtube.com/watch?v=T7h8O7dpJIg
 요소가 일반적인 흐름을 벗어나 어디에 ‘뜰’ 것인지를 정하는 속성이다. 웹 개발을 배우기 시작했을 때 접했는데, 거의(사실 한 번도) 사용하지 않고 있었다. 문서 흐름의 좌측이나 우측으로 배치되며 메인 콘텐츠의 흐름을 벗어나 사용한다. 애플 홈페이지에서는 footer의 일부 텍스트에 포함되어 있었다. 의미를 고려했을 때 유용하게 사용해볼 수 있을 것 같다.
 
 **<footer의 locale 정보만 우측으로 치우친 경우>**
-<img src="03.png" />
+<img src="../../assets/apple-clone/03.png" />
 
 > 👾 `clear` 속성에 대해서도 알아보자!
 
@@ -105,7 +103,7 @@ Webkit 기반의 Safari 및 Mac 등에서 완벽히 구현되며 이 외에는 �
 `reverse`를 쓸 바에는 그냥 좌측에 와야 할 요소를 코드 상으로 먼저 적으면 되는 거 아닌가? 생각했었다. 그런데 아래와 같이 이미지와 텍스트가 좌우 배치되어있지만 웹 접근성을 고려했을 때 텍스트가 먼저 읽혀야 하는 경우(특히나 다른 섹션들은 텍스트가 이미지보다 좌측에 등장하여 일관성 유지가 필요하다.) `row-reverse` 값을 사용해야 한다는 것을 깨달았다.
 
 **<이미지와 텍스트가 보여지는 순서와 의미상 순서가 일치하지 않는 경우>**
-<img src="04.png" />
+<img src="../../assets/apple-clone/04.png" />
 
 **Ref**
 https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
