@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { Github, Twitter, Facebook, Medium } from '../icons';
+import { Github, Twitter, Facebook, Medium, LinkedIn, Email } from '../icons';
 
 const SocialBar = function () {
   return (
@@ -9,7 +9,9 @@ const SocialBar = function () {
       // eslint-disable-next-line no-use-before-define
       query={socialQuery}
       render={(data) => {
-        const { twitter, github, medium, facebook } = data.site.siteMetadata.social;
+        const { twitter, github, medium, facebook, linkedIn, email } =
+          data.site.siteMetadata.social;
+
         return (
           <div
             style={
@@ -24,6 +26,8 @@ const SocialBar = function () {
             {twitter && <Twitter username={twitter} />}
             {github && <Github username={github} />}
             {medium && <Medium username={medium} />}
+            {linkedIn && <LinkedIn username={linkedIn} />}
+            {email && <Email mailLink={email} />}
           </div>
         );
       }}
@@ -40,6 +44,8 @@ const socialQuery = graphql`
           github
           medium
           facebook
+          linkedIn
+          email
         }
       }
     }

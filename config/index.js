@@ -8,6 +8,8 @@ const site = {
   github: 'zigsong',
   medium: '',
   facebook: '',
+  linkedIn: 'jieun-song-436982226',
+  email: 'wldms5764@gmail.com',
   disqusShortName: '',
   googleTrackingId: 'G-E7NM1ZBB2T',
   lang: 'en',
