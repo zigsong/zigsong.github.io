@@ -5,12 +5,17 @@ import { useLang } from 'context/LanguageContext';
 import { rhythm } from 'utils/typography';
 
 import LanguageBar from './LanguageBar';
+import Search from '../Search';
 import Header from './Header';
 import Footer from './Footer';
 import ReadModeToggle from './ReadModeToggle';
 import Breadcrumbs from '../Breadcrumbs';
 
-const Layout = function({ children, location, title, breadcrumbs }) {
+const searchIndices = [
+  { name: process.env.GATSBY_ALGOLIA_INDEX_NAME, title: process.env.GATSBY_ALGOLIA_INDEX_NAME },
+];
+
+const Layout = function ({ children, location, title, breadcrumbs }) {
   const { lang, homeLink, refresh } = useLang();
 
   React.useEffect(() => {
@@ -27,7 +32,7 @@ const Layout = function({ children, location, title, breadcrumbs }) {
         fontFamily: 'var(--systemFont)',
       }}
     >
-      <LanguageBar lang={lang} />
+      {/* <LanguageBar lang={lang} /> */}
       <div
         style={{
           marginLeft: 'auto',
@@ -45,7 +50,15 @@ const Layout = function({ children, location, title, breadcrumbs }) {
           }}
         >
           <Header base={homeLink} location={location} title={title} />
-          <ReadModeToggle />
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <Search indices={searchIndices} />
+            <ReadModeToggle />
+          </div>
         </header>
         <Breadcrumbs
           base={homeLink}
@@ -59,7 +72,7 @@ const Layout = function({ children, location, title, breadcrumbs }) {
       </div>
     </div>
   );
-}
+};
 
 Layout.propTypes = {
   children: PropTypes.any,
