@@ -1,13 +1,12 @@
 {
   "parser": "@babel/eslint-parser",
   "extends": ["airbnb", "plugin:react/recommended", "prettier"],
-  "plugins": ["jest", "react-hooks"],
+  "plugins": ["react-hooks"],
   "env": {
     "browser": true,
     "es6": true,
     "node": true,
     "worker": true,
-    "jest/globals": true
   },
   "rules": {
     "arrow-body-style": 0,
@@ -44,13 +43,13 @@
     "react/react-in-jsx-scope": 0,
     "react/jsx-props-no-spreading": 0,
     "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 2
+    "react-hooks/exhaustive-deps": 2,
   },
   "settings": {
     "import/resolver": {
       "babel-module": {
-        "root": ["./"]
-      }
-    }
-  }
+        "root": ["./"],
+      },
+    },
+  },
 }
