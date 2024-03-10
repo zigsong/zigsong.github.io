@@ -42,8 +42,8 @@ const queries = [
     settings: {
       attributesToSnippet: [`excerpt:20`],
       attributesForFaceting: ['filterOnly(langKey)'],
-      indexLanguages: ['en', 'zh'],
-      queryLanguages: ['en', 'zh'],
+      indexLanguages: ['en'],
+      queryLanguages: ['en'],
       searchableAttributes: ['title', 'excerpt'],
       ranking: ['typo', 'geo', 'words', 'filters', 'proximity', 'attribute', 'exact', 'custom'],
     },
