@@ -1,7 +1,7 @@
 ---
 title: 기상천외 Dart&Flutter
 date: 2024-05-26 08:19:23
-tags: ["flutter"]
+tags: ["flutter", "main"]
 description: 이제 시작이다
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 자바스크립트 함수형 프로그래밍과 파이프
 date: 2021-12-03 14:40:20
-tags: ["javascript"]
+tags: ["javascript", "main"]
 
 ---
 

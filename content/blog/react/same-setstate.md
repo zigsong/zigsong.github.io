@@ -1,7 +1,7 @@
 ---
 title: React 리렌더링 삐그덕 삐그덕
 date: 2024-8-4 18:14:08
-tags: ["react"]
+tags: ["react", "main"]
 description: React state를 같은 값으로 업데이트했을 때
 ---
 

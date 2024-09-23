@@ -1,7 +1,7 @@
 ---
 title: 로그인에 refreshToken 적용하기
 date: 2021-10-16 18:21:01
-tags: ["frontend"]
+tags: ["frontend", "main"]
 
 ---
 

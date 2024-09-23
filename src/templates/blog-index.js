@@ -7,6 +7,7 @@ import Layout from 'components/Layout';
 import SEO from 'components/SEO';
 import PostAbbrev from 'components/PostAbbrev';
 import Pagination from 'components/Pagination';
+import TagList from 'components/TagList';
 import { useLang } from 'context/LanguageContext';
 import { formatMessage } from 'utils/i18n';
 
@@ -26,6 +27,12 @@ const BlogIndex = function ({ pageContext, data, location }) {
       <h3>
         {formatMessage('tfIndCountPosts', { count: data.allMarkdownRemark.totalCount, from, to })}
       </h3>
+      <TagList
+        style={{ margin: '0.5rem 0 0.5rem -0.5rem' }}
+        tags={['main', 'react', 'javascript', 'frontend', 'weekly', 'retrospective']}
+        baseUrl={`${homeLink}tags`}
+      />
+      <hr />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug;
         return (

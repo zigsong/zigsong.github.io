@@ -1,7 +1,7 @@
 ---
 title: 자바스크립트 Proxy & Reflect
 date: 2021-10-31 16:49:41
-tags: ["javascript"]
+tags: ["javascript", "main"]
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: React App s3 & Cloudfront로 배포하기
 date: 2021-08-28 20:46:00
-tags: ["aws", "frontend"]
+tags: ["aws", "frontend", "main"]
 thumbnailImage: https://i.imgur.com/vxZVNXR.png
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: useRef의 배신
 date: 2023-06-28 20:35:38
-tags: ["react"]
+tags: ["react", "main"]
 ---
 
 useRef는 첫 렌더링 시 값을 가지지 않을 수도 있다

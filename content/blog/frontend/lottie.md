@@ -1,7 +1,7 @@
 ---
 title: 로티로 애니메이션 만들기
 date: 2022-12-08 22:36:09
-tags: ["frontend"]
+tags: ["frontend", "main"]
 
 ---
 
