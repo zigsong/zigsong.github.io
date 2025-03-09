@@ -96,9 +96,9 @@ description: 우아한형제들에서의 3년
 
 첫 직장인 우아한형제들에서의 소중한 경험들을 거름으로 삼아 이제 인생의 또 다른 썰들을 만들어보려고 한다. 
 
-그리고 아마,,, 내 운명과도 같은 밴드도 계속 😇 
-
 <figure style="text-align: center;">
-  <img src="../../assets/woowabros-retrospective/03.png" />
-  <figcaption>마지막 퇴사파티, 선물로 받은 드럼광인 zig 스틱 🥺</figcaption>
+  <img src="../../assets/woowabros-retrospective/03.JPG" />
+  <figcaption>마지막 퇴사파티, 감사한 선물들 🥺</figcaption>
 </figure>
+
+(그리고 아마,,, 내 운명과도 같은 밴드도 계속 😇)
