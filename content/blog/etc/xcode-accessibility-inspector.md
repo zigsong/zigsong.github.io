@@ -2,6 +2,7 @@
 title: Xcode Accessibility Inspector로 알아보는 모바일 접근성 개선
 date: 2025-04-12 10:13:00
 tags: ["xcode", "accessibility"]
+description: Xcode가 간지도 나긴 해
 ---
 
 <!-- more -->

@@ -2,6 +2,7 @@
 title: 생각보다 깔끔하고 매력적인 zod 
 date: 2025-05-17 23:41:16
 tags: ["typescript"]
+description: 이름도 맘에 듦
 ---
 
 TypeScript는 컴파일 타임에만 타입을 검사하지만, 런타임에서는 타입 정보가 사라진다.
